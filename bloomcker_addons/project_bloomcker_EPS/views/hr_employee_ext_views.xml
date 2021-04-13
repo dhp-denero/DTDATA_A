@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="employee_view_form_ext" model="ir.ui.view">
+            <field name="name">employee.view.form.ext</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="import_food"/>
+                    <field name="import_mobility"/>
+                    <field name="eps_check"/>
+                    <field name="plan_eps" attrs="{'invisible':[('eps_check', '=' ,False)]}"/>
+                    <field name="work_condition"/>
+                    <field name="work_condition_fuel"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

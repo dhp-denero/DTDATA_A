@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<openerp>
+    <data>
+
+        <record id="project_project_ext_view" model="ir.ui.view">
+            <field name="name">project.project.ext.view</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.project_project_view_form_simplified"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="means_ext" string="Recursos">
+                      <tree string="Asignaciones" editable="bottom">
+                            <field name="id"/>
+                      </tree>
+                    </field>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="project_project_ext_edit_view" model="ir.ui.view">
+            <field name="name">project.project.ext.edit.view</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <br/>
+                    <span>Cotización Inicial: </span>
+                    <field name="quotation_bl" string="Cotización Inicial"/>
+                </xpath>
+
+                <xpath expr="//sheet" position="inside">
+                    <strong>Selección de Recursos</strong>
+                    <field name="means_ext" string="Recursos">
+                      <tree string="Asignaciones" editable="bottom">
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                      </tree>
+                    </field>
+                </xpath>
+
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

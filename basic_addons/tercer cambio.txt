@@ -1,0 +1,17 @@
+estado transferido en albaranes (x 
+
+
+
+no fecha fin o mayor a fecha nomina
+
+en generar no asiento contable
+
+
+ene procesamiento de nomas 
+en generar nomimas 
+normalmente calcula la hoja a la hora de jalar las nominas
+calcula sus reglas salariales
+el objetivo es:
+calcular hoja que solo jale las nominas
+agregar boton calcular hojas para que recien ahi calcule las hojas
+

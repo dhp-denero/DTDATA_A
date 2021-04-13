@@ -1,0 +1,8 @@
+"id","aparece_en_nomina","company_id/id","create_date","create_uid/id","code","note","children_ids/id","is_ing_or_desc","name","parent_id/id","secuencia","write_date","write_uid/id"
+"__export__.hr_salary_rule_category_42","True","base.main_company","2019-06-25 23:48:19","base.user_root","ING","","","Ingreso","INGRESOS","","1","2019-06-25 23:48:19","base.user_root"
+"__export__.hr_salary_rule_category_43","True","base.main_company","2019-06-25 23:48:19","base.user_root","APOR_TRA","","","Descuento","APORTES TRABAJADOR","","2","2019-06-25 23:48:19","base.user_root"
+"__export__.hr_salary_rule_category_44","True","base.main_company","2019-06-25 23:48:19","base.user_root","DES_NET","","","Descuento","DESCUENTOS AL NETO","","3","2019-06-25 23:48:19","base.user_root"
+"__export__.hr_salary_rule_category_45","False","base.main_company","2019-06-25 23:48:19","base.user_root","DES_AFE","","","Descuento","DESCUENTOS AFECTOS","","4","2019-06-25 23:48:19","base.user_root"
+"__export__.hr_salary_rule_category_46","False","base.main_company","2019-06-25 23:48:19","base.user_root","POR","","","Descuento","PORCENTAJES","","5","2019-06-25 23:48:19","base.user_root"
+"__export__.hr_salary_rule_category_47","False","base.main_company","2019-06-25 23:48:19","base.user_root","SUB","","","Descuento","SUBTOTALES","","6","2019-06-25 23:48:19","base.user_root"
+"__export__.hr_salary_rule_category_48","True","base.main_company","2019-06-25 23:48:19","base.user_root","APOR_EMP","","","Descuento","APORTES EMPLEADOR","","7","2019-06-25 23:48:19","base.user_root"

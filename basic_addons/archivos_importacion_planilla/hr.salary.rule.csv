@@ -1,0 +1,805 @@
+"id","active","appears_on_payslip","quantity","category_id/id","cod_sunat","company_id/id","condition_select","condition_python","create_date","create_uid/id","analytic_account_id/id","account_credit/id","account_debit/id","code","amount_python_compute","note","input_ids/id","is_subtotal","amount_fix","account_tax_id/id","name","amount_percentage","amount_percentage_base","condition_range","condition_range_max","condition_range_min","register_id/id","parent_rule_id/id","child_ids/id","sequence","amount_select","write_date","write_uid/id"
+"__export__.hr_salary_rule_390","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","BAS","result=worked_days.DLAB.number_of_days*(contract.wage/30)","","","False","0.0","","Básico","0.0","","contract.wage","0.0","0.0","","","","1","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_391","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","FAL","result=worked_days.FAL.number_of_days*(contract.wage/30)","","","False","0.0","","Faltas","0.0","","contract.wage","0.0","0.0","","","","2","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_392","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","TAR","result=worked_days.TAR.minutos*(contract.wage/30/8/60)","","","False","0.0","","Tardanzas","0.0","","contract.wage","0.0","0.0","","","","3","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_393","True","True","1.0","__export__.hr_salary_rule_category_47","0121","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_622_01","BAS_M","result=BAS-FAL-TAR","","","False","0.0","","Basico del mes","0.0","","contract.wage","0.0","0.0","","","","4","Código Python","2019-07-08 16:38:30","base.user_root"
+"__export__.hr_salary_rule_394","True","True","1.0","__export__.hr_salary_rule_category_42","0201","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_6211_03","AF","if employee.children>0:
+ result = 93
+else:
+ result=0","","","False","0.0","","Asignación Familiar","0.0","","contract.wage","0.0","0.0","","","","5","Código Python","2019-07-08 16:38:42","base.user_root"
+"__export__.hr_salary_rule_395","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_6211_02","HE25","result = ((contract.wage /30 / 8)*(1+worked_days.HE25.tasa/100))*worked_days.HE25.number_of_hours","","","False","0.0","","Horas extras 25%","0.0","","contract.wage","0.0","0.0","","","","6","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_396","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_6211_02","HE35","result = ((contract.wage /30 / 8)*(1+worked_days.HE35.tasa/100))*worked_days.HE35.number_of_hours","","","False","0.0","","Horas extras de 35%","0.0","","contract.wage","0.0","0.0","","","","7","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_397","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_6211_02","HE100","result = ((contract.wage /30 / 8)*(1+worked_days.HE100.tasa/100))*worked_days.HE100.number_of_hours","","","False","0.0","","Horas extras 100%","0.0","","contract.wage","0.0","0.0","","","","8","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_398","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_6211_04","BONR","result = inputs.BONR.amount","","","False","0.0","","Bonificacion","0.0","","contract.wage","0.0","0.0","","","","10","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_399","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_621200","COMI","result = inputs.COMI.amount","","","False","0.0","","Comisiones","0.0","","contract.wage","0.0","0.0","","","","11","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_400","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_6211_05","SMAR","result = inputs.SMAR.amount
+","","","False","0.0","","Subsidio Maternidad","0.0","","contract.wage","0.0","0.0","","","","12","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_401","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_6211_05","SUBE","result = inputs.SUBE.amount","","","False","0.0","","Subsidio por enfermedad","0.0","","contract.wage","0.0","0.0","","","","13","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_402","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_621500","VAC","result = inputs.VAC.amount","","","False","0.0","","Vacaciones","0.0","","contract.wage","0.0","0.0","","","","14","Código Python","2019-07-08 16:09:37","base.user_root"
+"__export__.hr_salary_rule_403","True","True","1.0","__export__.hr_salary_rule_category_42","0114","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_621500","VATRU","result = inputs.VATRU.amount","","","False","0.0","","Vacaciones Truncas","0.0","","contract.wage","0.0","0.0","","","","15","Código Python","2019-07-08 16:39:08","base.user_root"
+"__export__.hr_salary_rule_404","True","True","1.0","__export__.hr_salary_rule_category_42","0407","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_411400","l10n_pe.1_621400","GRA","result = inputs.GRA.amount","","","False","0.0","","Gratificaciones de fiestas patrias y navidad","0.0","","contract.wage","0.0","0.0","","","","16","Código Python","2019-07-08 16:41:12","base.user_root"
+"__export__.hr_salary_rule_405","True","True","1.0","__export__.hr_salary_rule_category_42","0312","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_411400","l10n_pe.1_621400","BON9","result = inputs.BON9.amount","","","False","0.0","","Bonificacion 9%","0.0","","contract.wage","0.0","0.0","","","","17","Código Python","2019-07-08 16:41:41","base.user_root"
+"__export__.hr_salary_rule_406","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_411400","l10n_pe.1_621400","GRA_TRU","result = inputs.GRA_TRU.amount","","","False","0.0","","Gratificación Trunca ","0.0","","contract.wage","0.0","0.0","","","","18","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_407","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_411400","l10n_pe.1_621400","BON9_TRU","result = inputs.BON9_TRU.amount","","","False","0.0","","BONIFICACION 9% TRUNCA ","0.0","","contract.wage","0.0","0.0","","","","19","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_408","True","True","1.0","__export__.hr_salary_rule_category_42","0904","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_415100","l10n_pe.1_629100","CTS","result = inputs.CTS.amount","","","False","0.0","","Compensación por tiempo de servicios","0.0","","contract.wage","0.0","0.0","","","","20","Código Python","2019-07-08 16:42:31","base.user_root"
+"__export__.hr_salary_rule_409","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_415100","l10n_pe.1_629100","CTS_TRU","result = inputs.CTS_TRU.amount","","","False","0.0","","CTS Trunca","0.0","","contract.wage","0.0","0.0","","","","21","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_410","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","TINGR","result = BAS_M+AF+HE25+HE35+HE100+BONR+COMI+SMAR+SUBE+VAC+VATRU+GRA+BON9+GRA_TRU+BON9_TRU+CTS+CTS_TRU+INDEM+MOVI+ALIM+BONPRO+DV5T","","","False","0.0","","Total Ingresos ","0.0","","contract.wage","0.0","0.0","","","","30","Código Python","2019-07-08 17:56:27","base.user_root"
+"__export__.hr_salary_rule_411","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","AONP","result = BAS_M+AF+HE25+HE35+HE100+BONR+COMI+VAC+VATRU","","","False","0.0","","Ingresos Afectos ONP","0.0","","contract.wage","0.0","0.0","","","","31","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_412","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","AAFP","result = BAS_M+AF+HE25+HE35+HE100+BONR+COMI+SMAR+SUBE+VAC+VATRU","","","False","0.0","","Ingresos Afectos AFP","0.0","","contract.wage","0.0","0.0","","","","32","Código Python","2019-07-08 17:45:30","base.user_root"
+"__export__.hr_salary_rule_413","True","True","1.0","__export__.hr_salary_rule_category_43","0607","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_403200","","ONP","if contract.afiliacion_id.entidad=='ONP':
+ result=round((contract.afiliacion_id.fondo/100)*AONP,2)
+else:
+ result=0","","","False","0.0","","ONP","0.0","","contract.wage","0.0","0.0","","","","33","Código Python","2019-07-08 16:43:09","base.user_root"
+"__export__.hr_salary_rule_414","True","True","1.0","__export__.hr_salary_rule_category_43","0608","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_407000","","A_JUB","if contract.afiliacion_id.entidad=='ONP':
+ result=0
+if contract.afiliacion_id.entidad=='AFP HABITAT':
+ result=round((contract.afiliacion_id.fondo/100)*AAFP,2)
+if contract.afiliacion_id.entidad=='AFP INTEGRA':
+ result=round((contract.afiliacion_id.fondo/100)*AAFP,2)
+if contract.afiliacion_id.entidad=='AFP PRIMA':
+ result=round((contract.afiliacion_id.fondo/100)*AAFP,2)
+if contract.afiliacion_id.entidad=='AFP PROFUTURO':
+ result=round((contract.afiliacion_id.fondo/100)*AAFP,2)
+if contract.afiliacion_id.entidad=='JUB PROFUT TRANSITO':
+ result=round((contract.afiliacion_id.fondo/100)*AAFP,2)
+if contract.afiliacion_id.entidad=='SIN REGIMEN':
+ result=0","","","False","0.0","","Aporte jubilacion AFP","0.0","","contract.wage","0.0","0.0","","","","34","Código Python","2019-07-08 17:01:17","base.user_root"
+"__export__.hr_salary_rule_415","True","True","1.0","__export__.hr_salary_rule_category_43","0601","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_407000","","COMFI","if contract.tipo_comision==1:
+ if contract.afiliacion_id.entidad=='ONP':
+  result=0
+ if contract.afiliacion_id.entidad=='AFP HABITAT':
+  result=round((contract.afiliacion_id.com_fija/100)*AAFP,2)
+ if contract.afiliacion_id.entidad=='AFP INTEGRA':
+  result=round((contract.afiliacion_id.com_fija/100)*AAFP,2)
+ if contract.afiliacion_id.entidad=='AFP PRIMA':
+  result=round((contract.afiliacion_id.com_fija/100)*AAFP,2)
+ if contract.afiliacion_id.entidad=='AFP PROFUTURO':
+  result=round((contract.afiliacion_id.com_fija/100)*AAFP,2)
+ if contract.afiliacion_id.entidad=='JUB PROFUT TRANSITO':
+  result=round((contract.afiliacion_id.com_fija/100)*AAFP,2)
+ if contract.afiliacion_id.entidad=='SIN REGIMEN':
+  result=0
+else:
+ result=0
+","","","False","0.0","","Comisión Fija","0.0","","contract.wage","0.0","0.0","","","","35","Código Python","2019-07-08 17:01:47","base.user_root"
+"__export__.hr_salary_rule_416","True","True","1.0","__export__.hr_salary_rule_category_43","0601","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_407000","","COMMIX","if contract.tipo_comision==2:
+ if contract.afiliacion_id.entidad=='ONP':
+  result=0
+ if contract.afiliacion_id.entidad=='AFP HABITAT':
+  result=round((contract.afiliacion_id.com_mix/100)*AAFP,2)
+ if contract.afiliacion_id.entidad=='AFP INTEGRA':
+  result=round((contract.afiliacion_id.com_mix/100)*AAFP,2)
+ if contract.afiliacion_id.entidad=='AFP PRIMA':
+  result=round((contract.afiliacion_id.com_mix/100)*AAFP,2)
+ if contract.afiliacion_id.entidad=='AFP PROFUTURO':
+  result=round((contract.afiliacion_id.com_mix/100)*AAFP,2)
+ if contract.afiliacion_id.entidad=='JUB PROFUT TRANSITO':
+  result=round((contract.afiliacion_id.com_mix/100)*AAFP,2)
+ if contract.afiliacion_id.entidad=='SIN REGIMEN':
+  result=0
+else:
+ result=0
+","","","False","0.0","","Comisión Mixta","0.0","","contract.wage","0.0","0.0","","","","36","Código Python","2019-07-08 17:01:58","base.user_root"
+"__export__.hr_salary_rule_417","True","True","1.0","__export__.hr_salary_rule_category_43","0606","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_407000","","SEGI","if contract.afiliacion_id.entidad=='ONP':
+ result=0
+if contract.afiliacion_id.entidad=='AFP HABITAT':
+ if AAFP < contract.afiliacion_id.rem_ase:
+  result=round((contract.afiliacion_id.prima_s/100)*AAFP,2)
+ else:
+  result=round((contract.afiliacion_id.prima_s/100)*contract.afiliacion_id.rem_ase,2)
+if contract.afiliacion_id.entidad=='AFP INTEGRA':
+ if AAFP < contract.afiliacion_id.rem_ase:
+  result=round((contract.afiliacion_id.prima_s/100)*AAFP,2)
+ else:
+  result=round((contract.afiliacion_id.prima_s/100)*contract.afiliacion_id.rem_ase,2)
+if contract.afiliacion_id.entidad=='AFP PRIMA':
+ if AAFP < contract.afiliacion_id.rem_ase:
+  result=round((contract.afiliacion_id.prima_s/100)*AAFP,2)
+ else:
+  result=round((contract.afiliacion_id.prima_s/100)*contract.afiliacion_id.rem_ase,2)
+if contract.afiliacion_id.entidad=='AFP PROFUTURO':
+ if AAFP < contract.afiliacion_id.rem_ase:
+  result=round((contract.afiliacion_id.prima_s/100)*AAFP,2)
+ else:
+  result=round((contract.afiliacion_id.prima_s/100)*contract.afiliacion_id.rem_ase,2)
+if contract.afiliacion_id.entidad=='JUB PROFUT TRANSITO':
+ result=0
+if contract.afiliacion_id.entidad=='SIN REGIMEN':
+ result=0","","","False","0.0","","Seguro de Invalidez","0.0","","contract.wage","0.0","0.0","","","","37","Código Python","2019-07-08 17:02:13","base.user_root"
+"__export__.hr_salary_rule_418","True","True","1.0","__export__.hr_salary_rule_category_43","0605","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_401730","","QUINTA","result = inputs.QUINTA.amount","","","False","0.0","","Quinta Categoría","0.0","","contract.wage","0.0","0.0","","","","38","Código Python","2019-07-08 17:02:38","base.user_root"
+"__export__.hr_salary_rule_419","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","TDES","result = ONP+A_JUB+COMFI+COMMIX+SEGI+QUINTA+SEG_RI+EPS+RET_JUD+ADE_REM","","","False","0.0","","Total descuentos","0.0","","contract.wage","0.0","0.0","","","","50","Código Python","2019-07-15 16:39:03","base.user_root"
+"__export__.hr_salary_rule_420","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","NET","result= TINGR-TDES","","","True","0.0","","Neto a pagar ","0.0","","contract.wage","0.0","0.0","","","","51","Código Python","2019-08-02 23:16:41","base.user_root"
+"__export__.hr_salary_rule_421","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","AESSALUD","result = BAS_M+AF+HE25+HE35+HE100+BONR+COMI+VAC+VATRU","","","False","0.0","","Afectos Essalud","0.0","","contract.wage","0.0","0.0","","","","52","Código Python","2019-07-16 20:20:10","base.user_root"
+"__export__.hr_salary_rule_422","True","True","1.0","__export__.hr_salary_rule_category_48","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_403100","l10n_pe.1_627100","ESSALUD","if contract.regimen_laboral_empresa != 'practicante':
+ if AESSALUD>=930:
+  result=AESSALUD*0.09
+ if AESSALUD<930:
+  result=930*0.09
+ if AESSALUD==0:
+  result=0
+else:
+ result=0","","","False","0.0","","Aportes ESSALUD","0.0","","contract.wage","0.0","0.0","","","","53","Código Python","2019-07-16 20:20:33","base.user_root"
+"__export__.hr_salary_rule_423","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","REMAFE","result = (BAS_M+AF+HE25+HE35+HE100+BONR+COMI+SMAR+SUBE)/(BAS_M+AF+HE25+HE35+HE100+BONR+COMI+SMAR+SUBE+VAC+VATRU)","","","False","0.0","","Remuneraciones Afectas","0.0","","contract.wage","0.0","0.0","","","","55","Código Python","2019-07-16 20:20:50","base.user_root"
+"__export__.hr_salary_rule_424","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","VACAFE","result= (VAC+VATRU)/(BAS_M+AF+HE25+HE35+HE100+BONR+COMI+SMAR+SUBE+VAC+VATRU)","","","False","0.0","","Vacaciones afectas","0.0","","contract.wage","0.0","0.0","","","","56","Código Python","2019-07-16 20:20:57","base.user_root"
+"__export__.hr_salary_rule_425","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_411100","","NETREMU","result = (NET-GRA-BON9-GRA_TRU-BON9_TRU-CTS-CTS_TRU)*REMAFE		","","","False","0.0","","Neto Remuneraciones","0.0","","contract.wage","0.0","0.0","","","","57","Código Python","2019-07-16 20:21:40","base.user_root"
+"__export__.hr_salary_rule_426","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_411500","","NETVACA","result = (NET-GRA-BON9-GRA_TRU-BON9_TRU-CTS-CTS_TRU)*VACAFE","","","False","0.0","","Neto Vacaciones","0.0","","contract.wage","0.0","0.0","","","","58","Código Python","2019-07-16 20:21:58","base.user_root"
+"__export__.hr_salary_rule_427","True","True","1.0","__export__.hr_salary_rule_category_44","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_469900","","SEG_RI","result = inputs.SEG_RI.amount","","","False","0.0","","Seguro Rimac","0.0","","contract.wage","0.0","0.0","","","","39","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_428","True","True","1.0","__export__.hr_salary_rule_category_44","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_141900","","EPS","result = inputs.EPS.amount","","","False","0.0","","Pacifico EPS","0.0","","contract.wage","0.0","0.0","","","","40","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_429","True","True","1.0","__export__.hr_salary_rule_category_42","0909","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_6211_06","MOVI","result = inputs.MOVI.amount","","","False","0.0","","Movilidad","0.0","","contract.wage","0.0","0.0","","","","24","Código Python","2019-07-08 16:39:59","base.user_root"
+"__export__.hr_salary_rule_430","True","True","1.0","__export__.hr_salary_rule_category_44","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","RET_JUD","result = inputs.RET_JUD.amount","","","False","0.0","","Retención Judicial","0.0","","contract.wage","0.0","0.0","","","","41","Código Python","2019-07-08 16:13:20","base.user_root"
+"__export__.hr_salary_rule_431","True","True","1.0","__export__.hr_salary_rule_category_44","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","l10n_pe.1_141200","","ADE_REM","result = inputs.ADE_REM.amount","","","False","0.0","","Adelanto de Remuneraciones","0.0","","contract.wage","0.0","0.0","","","","42","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_432","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","TOT_EXT","result=HE25+HE35+HE100","","","False","0.0","","Total Horas Extras","0.0","","contract.wage","0.0","0.0","","","","9","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_433","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_623000","INDEM","result = inputs.INDEM.amount","","","False","0.0","","Indemnizacion","0.0","","contract.wage","0.0","0.0","","","","22","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_434","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","ROAQ","result = BAS_M+AF+HE25+HE35+HE100+BONR+COMI+VAC+VATRU+GRA+BON9+GRA_TRU+BON9_TRU+MOVI					 ","","","False","0.0","","Remuneracion Ord. Afecta Quinta","0.0","","contract.wage","0.0","0.0","","","","59","Código Python","2019-07-16 20:22:13","base.user_root"
+"__export__.hr_salary_rule_435","True","True","1.0","__export__.hr_salary_rule_category_47","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","","REAQ","result = BAS_M+AF+HE25+HE35+HE100+BONR+COMI+VAC+VATRU+GRA+BON9+GRA_TRU+BON9_TRU+MOVI					 ","","","False","0.0","","Remuneracion Extra Afecta Quinta","0.0","","contract.wage","0.0","0.0","","","","60","Importe fijo","2019-07-16 20:22:25","base.user_root"
+"__export__.hr_salary_rule_437","True","True","1.0","__export__.hr_salary_rule_category_42","0914","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_621300","ALIM","result = inputs.ALIM.amount","","","False","0.0","","Alimentacion","0.0","","contract.wage","0.0","0.0","","","","25","Código Python","2019-07-08 16:40:43","base.user_root"
+"__export__.hr_salary_rule_438","True","True","1.0","__export__.hr_salary_rule_category_42","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-06-25 23:48:45","base.user_root","","","l10n_pe.1_401730","DV5T","result = inputs.DV5T.amount","","","False","0.0","","Devolucion de 5ta Categoria","0.0","","contract.wage","0.0","0.0","","","","23","Código Python","2019-06-25 23:48:45","base.user_root"
+"__export__.hr_salary_rule_100","True","True","1.0","__export__.hr_salary_rule_category_42","0902","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-07-08 16:21:32","base.user_root","","","l10n_pe.1_6211_07","BONPRO","result = inputs.BONPRO.amount","","","False","0.0","","Bono Productividad","0.0","","contract.wage","0.0","0.0","","","","26","Código Python","2019-07-08 16:39:37","base.user_root"
+"__export__.hr_salary_rule_101","True","True","1.0","__export__.hr_salary_rule_category_48","0806","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-07-08 16:30:42","base.user_root","","l10n_pe.1_403100","l10n_pe.1_627300","SCTR_SA","if contract.sctr:
+    result = AESSALUD*0.0150
+else:
+    result = 0","","","False","0.0","","SCTR Salud","0.0","","contract.wage","0.0","0.0","","","","54","Código Python","2019-07-18 16:47:37","base.user_root"
+"__export__.hr_salary_rule_102","True","True","1.0","__export__.hr_salary_rule_category_44","","base.main_company","Siempre Verdadero","
+                    # Available variables:
+                    #----------------------
+                    # payslip: object containing the payslips
+                    # employee: hr.employee object
+                    # contract: hr.contract object
+                    # rules: object containing the rules code (previously computed)
+                    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
+                    # worked_days: object containing the computed worked days
+                    # inputs: object containing the computed inputs
+
+                    # Note: returned value have to be set in the variable 'result'
+
+                    result = rules.NET > categories.NET * 0.10","2019-07-15 16:35:43","base.user_root","","l10n_pe.1_411100","l10n_pe.1_121400","DESC_BOL","result = inputs.DESC_BOL.amount","","","False","0.0","","Descuento Boleteo VENTAS","0.0","","contract.wage","0.0","0.0","","","","43","Código Python","2019-07-16 21:23:23","base.user_root"

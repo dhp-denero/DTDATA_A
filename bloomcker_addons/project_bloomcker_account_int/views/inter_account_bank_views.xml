@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_inter_bank_form" model="ir.ui.view">
+            <field name="name">inter.bank.form</field>
+            <field name="model">inter.account.banck</field>
+            <field name="arch" type="xml">
+                <form string="Cuentas Interbancarias">
+                    <group col="4">
+                        <field name="acc_number"/>
+                        <field name="partner_id"/>
+                        <field name="bank_id"/>
+                        <field name="currency_id" groups="base.group_multi_currency" options="{'no_create': True}"/>
+                        <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="view_inter_bank_tree" model="ir.ui.view">
+            <field name="name">inter.bank.tree</field>
+            <field name="model">inter.account.banck</field>
+            <field name="arch" type="xml">
+                <tree string="Cuentas Interbancarias">
+                    <field name="sequence" invisible="1"/>
+                    <field name="acc_number"/>
+                    <field name="bank_name"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="partner_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_inter_bank_search" model="ir.ui.view">
+            <field name="name">inter.bank.search</field>
+            <field name="model">inter.account.banck</field>
+            <field name="arch" type="xml">
+                <search string="Cuentas Interbancarias">
+                    <field name="bank_name" filter_domain="['|', ('bank_name','ilike',self), ('acc_number','ilike',self)]" string="Bank Name"/>
+                    <field name="company_id" invisible="context.get('company_hide', True)"/>
+                    <field name="partner_id"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_inter_account_bank" model="ir.actions.act_window">
+            <field name="name">Inter Bank Accounts</field>
+            <field name="res_model">inter.account.banck</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click para Crear una Cuenta Interbancaria.
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_inter_account_bank" name="Cuentas InterBancarias" parent="sales_team.menu_config_bank_accounts" action="action_inter_account_bank"/>
+
+    </data>
+</odoo>

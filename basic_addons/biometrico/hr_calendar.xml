@@ -1,0 +1,144 @@
+<odoo>
+	<data>
+		<record id="view_resoucer_calendar_form" model="ir.ui.view">
+			<field name="name">resource_calendar_form</field>
+			<field name="model">resource.calendar</field>
+			<field name="inherit_id" ref="resource.resource_calendar_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//form/sheet" position="before">
+					<header>
+						<button name="get_wizard" type="object" string="Generar Dias" class="oe_highlight"/>
+					</header>
+				</xpath>
+				<field name="leave_ids" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</field>
+				<field name="attendance_ids" position="attributes">
+					<attribute name="required">1</attribute>
+				</field>
+			</field>
+		</record>
+
+		<record id="view_resource_calendar_attendance_tree_inherit" model="ir.ui.view">
+			<field name="name">view_resource_calendar_attendance_tree_inherit</field>
+			<field name="model">resource.calendar.attendance</field>
+			<field name="inherit_id" ref="resource.view_resource_calendar_attendance_tree"/>
+			<field name="arch" type="xml">
+				<xpath expr="//tree" position="attributes">
+					<attribute name="delete">0</attribute>
+				</xpath>
+				<field name="date_from" position="attributes">
+					<attribute name="required">1</attribute>
+				</field>
+				<field name="date_to" position="attributes">
+					<attribute name="required">1</attribute>
+				</field>
+				<field name="date_to" position="after">
+					<button name="delete_line" type="object" icon="fa fa-trash-o" confirm="¿Esta seguro que desea borrar esta linea?"/>
+				</field>
+			</field>
+		</record>
+		
+		<record id="resource_calendar_tree_action" model="ir.actions.server">
+			<field name="name">Generar Dias</field>
+			<field name="model_id" ref="resource.model_resource_calendar"/>
+			<field name="state">code</field>
+			<field name="code">action = env['resource.calendar'].browse(context['active_ids']).get_wizard()</field>
+		</record>
+
+		<record id="resource_calendar_tree_action_values" model="ir.values">
+			<field eval="'client_action_multi'" name="key2"/>
+			<field eval="'resource.calendar'" name="model"/>
+			<field name="name">resource_calendar_tree_action_values</field>
+			<field eval="'ir.actions.server,%d'%resource_calendar_tree_action" name="value"/>
+		</record>
+		
+		<record id="resource_calendar_generate_tree_action" model="ir.actions.server">
+			<field name="name">Generar Horarios</field>
+			<field name="model_id" ref="planilla.model_hr_employee"/>
+			<field name="state">code</field>
+			<field name="code">action = env['hr.employee'].browse(context['active_ids']).get_wizard_generate()</field>
+		</record>
+
+		<record id="resource_calendar_generate_tree_action_values" model="ir.values">
+			<field eval="'client_action_multi'" name="key2"/>
+			<field eval="'hr.employee'" name="model"/>
+			<field name="name">resource_calendar_generate_tree_action_values</field>
+			<field eval="'ir.actions.server,%d'%resource_calendar_generate_tree_action" name="value"/>
+		</record>
+		
+		<record id="view_hr_employee_wizard_form" model="ir.ui.view">
+			<field name="name">hr_employee_wizard_form</field>
+			<field name="model">hr.employee.wizard</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<group>
+							<field name="referenced_calendar" required="1"/>
+							<field name="automatic_add"/>
+						</group>
+						<group>
+							<field name="reference_name" required="1"/>
+						</group>
+					</group>
+					<footer>
+						<button string="Generar" name="generate_calendars" type="object" class="oe_highlight"/>
+						o
+						<button string="Cancelar" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_resource_calendar_wizard_form" model="ir.ui.view">
+			<field name="name">resource_calendar_wizard_form</field>
+			<field name="model">resource.calendar.wizard</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<group>
+							<field name="date_from" required="1"/>
+							<field name="date_to" required="1"/>
+							<field name="unequal_calendar"/>
+						</group>
+						<group>
+							<field name="hour_from" widget="float_time" attrs="{'required':[('unequal_calendar','=',False)],'invisible':[('unequal_calendar','=',True)]}"/>
+							<field name="hour_to" widget="float_time" attrs="{'required':[('unequal_calendar','=',False)],'invisible':[('unequal_calendar','=',True)]}"/>
+						</group>
+					</group>
+					<notebook>
+						<page string="Horario Desigual" attrs="{'invisible':[('unequal_calendar','!=',True)]}">
+							<field name="day_lines">
+								<tree editable="bottom">
+									<field name="day" required="1"/>
+									<field name="hour_from" widget="float_time"/>
+									<field name="hour_to" widget="float_time"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Horario Igual" attrs="{'invisible':[('unequal_calendar','=',True)]}">
+							<group>
+								<group>
+									<field name="monday"/>
+									<field name="tuesday"/>
+									<field name="wednesday"/>
+									<field name="thursday"/>
+								</group>
+								<group>
+									<field name="friday"/>
+									<field name="saturday"/>
+									<field name="sunday"/>
+								</group>
+							</group>
+						</page>
+					</notebook>
+					<footer>
+						<button string="Generar" name="generate_days" type="object" class="oe_highlight"/>
+						o
+						<button string="Cancelar" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

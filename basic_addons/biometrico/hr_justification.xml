@@ -1,0 +1,194 @@
+<odoo>
+    <data>
+        <record id="period_line_wizard" model="ir.ui.view">
+            <field name="name">period_line_wizard_view</field>
+            <field name="model">hr.justification</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Justificacion">
+                    <header>
+                        <button name="unapprove_justification" type="object" class="oe_highlight" states="approved,canceled" string="Desaprobar" groups="biometrico.boss_users" confirm="¿Esta seguro que desea desaprovar esta justificacion?"/>
+                        <field name="state" widget="statusbar"/>
+                    </header> 
+                    <group>
+                        <field name="approver_user" attrs="{'invisible':[('state','!=','approved')]}" readonly="1"/>
+                        <field name="canceler_user" attrs="{'invisible':[('state','!=','canceled')]}" readonly="1"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="related_bool" invisible="1"/>
+                            <field name="employee_id" readonly="1" required="1"/>
+                            <field name="type_just_id" required="1" domain="[('is_permission','=',False)]" attrs="{'readonly':['|',('related_bool','=',True),('state','in',('approved','canceled'))]}"/>
+                        </group>
+                        <group>
+                            <field name="hours" widget="float_time" required="1" attrs="{'invisible':['|',('related_bool','=',True)],'readonly':[('state','in',('approved','canceled'))]}"/>
+                            <field name="date" readonly="1" required="1" attrs="{'invisible':['|',('related_bool','=',True)],'readonly':[('state','in',('approved','canceled'))]}"/>
+                            <field name="permission_from" attrs="{'readonly':['|',('related_bool','=',True),('state','in',('approved','canceled'))],'invisible':[('related_bool','=',False)]}"/>
+                            <field name="permission_to" attrs="{'readonly':['|',('related_bool','=',True),('state','in',('approved','canceled'))],'invisible':[('related_bool','=',False)]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="motivo" attrs="{'readonly':[('state','in',('approved','canceled'))]}"/>
+                    </group>
+                    <footer>
+                        <button name="add_justification" string="Justificar" type="object" class="oe_highlight" attrs="{'invisible':['|',('related_bool','=',True),('state','!=','draft')]}"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="period_line_wizard_2" model="ir.ui.view">
+            <field name="name">period_line_wizard_2_view</field>
+            <field name="model">hr.justification</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Justificacion">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button name="generate_attendances" type="object" string="Generar Asistencias" class="oe_highlight" confirm="¿Estas seguro que deseas generar asistencias para el rango de fechas de este permiso?" attrs="{'invisible':['|',('related_bool','=',False),('state','!=','approved')]}" groups="biometrico.boss_users"/>
+                        <button name="approve_justification" type="object" class="oe_highlight" states="draft" string="Aprobar" groups="biometrico.boss_users" confirm="¿Esta seguro que desea aprobar esta justificacion?, una vez aprobada no se podra modificar"/>
+                        <button name="cancel_justification" type="object" class="oe_highlight" states="draft" string="Cancelar" groups="biometrico.boss_users" confirm="¿Esta seguro que desea cancelar esta justificacion?, una vez cancelada no se podra modificar"/>
+                        <button name="unapprove_justification" type="object" class="oe_highlight" states="approved,canceled" string="Desaprobar" groups="biometrico.boss_users" confirm="¿Esta seguro que desea desaprovar esta justificacion?"/>    
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="approver_user" attrs="{'invisible':[('state','!=','approved')]}" readonly="1"/>
+                            <field name="canceler_user" attrs="{'invisible':[('state','!=','canceled')]}" readonly="1"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="related_bool" invisible="1" attrs="{'readonly':[('state','in',('approved','canceled'))]}"/>
+                                <field name="employee_id" required="1"/>
+                                <field name="type_just_id" domain="[('is_permission','=',True)]" required="1" attrs="{'readonly':[('state','in',('approved','canceled'))]}"/>
+                            </group>
+                            <group>
+                                <field name="hours" widget="float_time" attrs="{'required':[('related_bool','=',False)],'invisible':[('related_bool','=',True)],'readonly':[('state','in',('approved','canceled'))]}"/>
+                                <field name="date" attrs="{'required':[('related_bool','=',False)],'invisible':[('related_bool','=',True)],'readonly':[('state','in',('approved','canceled'))]}"/>
+                                <field name="permission_from" attrs="{'required':[('related_bool','=',True)],'invisible':[('related_bool','=',False)],'readonly':[('state','in',('approved','canceled'))]}"/>
+                                <field name="permission_to" attrs="{'required':[('related_bool','=',True)],'invisible':[('related_bool','=',False)],'readonly':[('state','in',('approved','canceled'))]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="motivo" attrs="{'readonly':[('state','in',('approved','canceled'))]}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="hr_attendance_period_wizard_tree" model="ir.ui.view">
+            <field name="name">hr.justification.tree</field>
+            <field name="model">hr.justification</field>
+            <field name="view_id" ref="period_line_wizard_2"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="hours" widget="float_time"/>
+                    <field name="date"/>
+                    <field name="type_just_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+    
+        <record id="action_attendance_period_wizard" model="ir.actions.act_window">
+            <field name="name">Justificaciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.justification</field>
+            <field name="view_id" ref="hr_attendance_period_wizard_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="oe_view_nocontent_create"> Haga click aqui para crear una nueva Justificacion.</p></field>
+        </record>
+        
+        <record id="hr_attendance_period_wizard_search" model="ir.ui.view">
+            <field name="name">hr.justification.search</field>
+            <field name="model">hr.justification</field>
+            <field name="arch" type="xml">
+                <search string="Justification Analisis">
+                    <field name="employee_id"/>
+                    <filter name="group_by_employee" string="Empleado" context="{'group_by':'employee_id'}"/>
+                    <filter name="group_by_date" string="Fecha" context="{'group_by':'date'}"/>
+                    <filter name="group_by_type" string="Tipo" context="{'group_by':'type_just_id'}"/>
+                    <filter name="group_by_state" string="Estado" context="{'group_by':'state'}"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_justification_function" model="ir.actions.server">
+            <field name="name">Justification Function</field>
+            <field name="model_id" ref="model_hr_justification"/>
+            <field name="view_id" ref="hr_attendance_period_wizard_tree"/>
+            <field name="state">code</field>
+            <field name="code">action = model.get_tree_view()</field>
+        </record>
+
+        <menuitem id ="attendance_menu_justification" name ="Justificaciones-Permisos" parent="biometrico.attendance_root_menu" sequence="3" action="action_justification_function" groups="biometrico.attendance_menu_justificaciones"/>
+
+        <record id="hr_justification_type_tree" model="ir.ui.view">
+            <field name="name">hr_justification_type_tree_view</field>
+            <field name="model">hr.justification.type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" required="1"/>
+                    <field name="is_permission"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_justification_type" model="ir.actions.act_window">
+            <field name="name">Tipo de Justificacion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.justification.type</field>
+            <field name="view_id" ref="hr_justification_type_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html"> <p class="oe_view_nocontent_create"> Haga click aqui para crear un nuevo Tipo de Justificacion.</p></field>
+        </record>
+
+        <menuitem id ="attendance_menu_type_justification" name ="Tipo de Justificacion" parent="biometrico.attendance_root_menu" sequence="7" action="action_justification_type" groups="biometrico.attendance_menu_tipo_de_justificaciones"/>
+        
+        <record id="view_hr_justification_wizard_form" model="ir.ui.view">
+            <field name="name">hr_justification_wizard_form</field>
+            <field name="model">hr.justification.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="type_just_id" domain="[('is_permission','=',False)]" required="1"/>
+                        </group>
+                        <group>
+                            <field name="hours" required="1" widget="float_time"/>
+                            <field name="date" required="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="motivo"/>
+                    </group>
+                    <footer>
+                        <button string="Generar" name="generate_justifications" type="object" class="oe_highlight" confirm="¿Estas seguro que deseas generar justificaciones para todas estas asistencias?. Las justificaciones se generaran en estado aprobado automaticamente"/>
+                        o
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+    <data noupdate="1">
+        <!--######CREATING NECESARY REIGSTERS######-->
+        <record model="hr.justification.type">
+            <field name="name">VACACIONES</field>
+            <field name="is_permission">True</field>
+        </record>
+        <record model="hr.justification.type">
+            <field name="name">LICENCIA POR MATERNIDAD</field>
+            <field name="is_permission">True</field>
+        </record>
+        <record model="hr.justification.type">
+            <field name="name">LICENCIA POR ENFERMEDAD</field>
+            <field name="is_permission">True</field>
+        </record>
+    </data>
+</odoo>

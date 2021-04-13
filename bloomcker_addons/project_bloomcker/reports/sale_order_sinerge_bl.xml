@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="sale_order_bloomcker_sinerge_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="header" align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family:Verdana, Arial,sans-serif; border-collapse:separate;">
+                            <td>
+                                <div>
+                                  <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/sinerge.png" width="250" height="120"/>
+                                </div>
+                                <div>
+                                    <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/trafo.jpg" width="50" height="25"/>
+                                    <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/siemens.png" width="50" height="25"/>
+                                    <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/abb.png" width="50" height="25"/>
+                                </div>
+                            </td>
+                            <td>
+                                <p align="right">
+                                  <strong><span t-esc="doc.company_id.name"/></strong><br/>
+                                  <strong><span t-esc="doc.company_id.street"/></strong><br/>
+                                  <strong>Telefono: <span t-esc="doc.company_id.phone"/></strong><br/>
+                                  <strong>RUC: <span t-esc="doc.company_id.company_registry"/></strong><br/>
+                                  <strong>Presupuesto: <span t-esc="doc.company_id.company_registry"/></strong><br/>
+                                  <strong>Fecha: <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y')"/></strong><br/>
+                                </p>
+                            </td>
+                        </table>
+                    </div >
+                    <div class="page">
+                        <br/>
+                        <br/>
+                        <p align="left">
+                          <strong>Señores:<span t-esc="doc.partner_id.name"/></strong><br/>
+                          <strong>Atención:<span t-esc="doc.partner_id.name"/></strong><br/>
+                          <strong>Referencia: Ojo no se que dato va aquí </strong><br/>
+                          <strong>Telefono: <span t-esc="doc.partner_id.phone"/></strong><br/>
+                          <strong>E-mail: <span t-esc="doc.partner_id.email"/></strong><br/>
+                          <br/>
+                          En atención a su solicitud le hacemos llegar nuestra mejor oferta por lo siguiente:<br/>
+                        </p>
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                                <th class="text-center" style="width: 5%">Item</th>
+                                <th class="text-center" style="width: 55%">Descripción.</th>
+                                <th class="text-center" style="width: 10%">Cant</th>
+                                <th class="text-center" style="width: 10%">UND</th>
+                                <th class="text-center" style="width: 20%">Precio</th>
+                            </thead>
+                            <tbody>
+                                <t t-set="datos" t-value="doc.data_for_order_report_bl()"/>
+                                <t t-set="category" t-value="datos[0]['category']"/>
+                                <tr>
+                                    <td><span>-</span></td>
+                                    <td><strong><t t-esc="category"/></strong></td>
+                                    <td><span>-</span></td>
+                                    <td><span>-</span></td>
+                                    <td><span>-</span></td>
+                                </tr>
+                                <t t-foreach="datos" t-as="line">
+                                    <t t-if="line['category'] != category">
+                                      <tr>
+                                          <td><span>-</span></td>
+                                          <td><strong t-esc="line['category']"/></td>
+                                          <td><span>-</span></td>
+                                          <td><span>-</span></td>
+                                          <td><span>-</span></td>
+                                      </tr>
+                                      <t t-set="category" t-value="line['category']"/>
+                                    </t>
+
+                                    <tr>
+                                        <td><span t-esc="line['item']"/></td>
+                                        <td><span t-esc="line['name']"/></td>
+                                        <td><span t-esc="line['cant']"/></td>
+                                        <td><span t-esc="line['und']"/></td>
+                                        <td><span t-esc="line['price']"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-condensed table-bordered" style="text-align:center;">
+                            <caption style="text-align:center;">TOTALES</caption>
+                            <tbody>
+                                <tr>
+                                    <td>SUB-TOTAL</td>
+                                    <td>
+                                      <span t-esc="doc.amount_untaxed"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>IMPUESTOS</td>
+                                    <td>
+                                      <span t-esc="doc.amount_tax"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>TOTAL</td>
+                                    <td>
+                                      <span t-esc="doc.amount_total"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-condensed table-bordered" style="text-align:center;">
+                            <caption style="text-align:center;">CONDICIONES COMERCIALES</caption>
+                            <tbody>
+                                <tr>
+                                    <td>Formas de Pago</td>
+                                    <td>
+                                      50% CON LA ORDEN DE COMPRA Y/O FIRMA DEL CONTRATO<br/>
+                                      20% CON LA ENTREGA DE LOS MATERIALES Y EQUIPOS EN OBRA<br/>
+                                      20% CON LA CULMINACION DEL MONTAJE ELECTROMECANICO<br/>
+                                      10% CON LA PUESTA EN SERVICIO - ENERGIZACION<br/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                  <td>TIEMPO DE IMPORTACION TRANSF.</td>
+                                  <td>13-14 SEMANAS</td>
+                                </tr>
+                                <tr>
+                                  <td>TIEMPO DE ENTREGA EQUIPOS NAC.</td>
+                                  <td>05-06 SEMANAS</td>
+                                </tr>
+                                <tr>
+                                  <td>TIEMPO DE MONTAJE ELECTROMEC.</td>
+                                  <td>01 SEMANA</td>
+                                </tr>
+                                <tr>
+                                  <td>TIEMPO DE GARANTIA</td>
+                                  <td>02 AÑOS</td>
+                                </tr>
+                                <tr>
+                                  <td>VALIDEZ DE OFERTA</td>
+                                  <td>15 DIAS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-condensed table-bordered" style="text-align:center;">
+                            <caption style="text-align:center;">CUENTAS CORRIENTES DE LA EMPRESA</caption>
+                            <tbody>
+                                <tr>
+                                    <td>BBVA SOLES</td>
+                                    <td>
+                                      0011 0396 0100018165 99
+                                    </td>
+                                </tr>
+                                <tr>
+                                  <td>BBVA DOLARES</td>
+                                  <td>0011 0396 0100018173 93</td>
+                                </tr>
+                                <tr>
+                                  <td>BCP SOLES</td>
+                                  <td>191 2524497 0 68</td>
+                                </tr>
+                                <tr>
+                                  <td>BCP DOLARES</td>
+                                  <td>191 2523131 1 81</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-condensed table-bordered" style="text-align:center;">
+                            <caption style="text-align:center;">CUENTAS INTERBANCARIAS DE LA EMPRESA</caption>
+                            <tbody>
+                                <tr>
+                                    <td>BBVA SOLES</td>
+                                    <td>
+                                      011 396 000100018165 99
+                                    </td>
+                                </tr>
+                                <tr>
+                                  <td>BBVA DOLARES</td>
+                                  <td>011 396 000100018173 93</td>
+                                </tr>
+                                <tr>
+                                  <td>BCP SOLES</td>
+                                  <td>002 191 002524497068 54</td>
+                                </tr>
+                                <tr>
+                                  <td>BCP DOLARES</td>
+                                  <td>002 191 002523131181 59</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-condensed table-bordered" style="text-align:center;">
+                            <caption style="text-align:center;">CUENTA CORRIENTE DE DETRACCIÓN</caption>
+                            <tbody>
+                                <tr>
+                                    <td>BANCO DE LA NACION SOLES</td>
+                                    <td>
+                                      00-074-082521
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <p>
+                          NOTAS:<br/>
+                          * La presente propuesta se ha elaborado de acuerdo con la información proporcionada por EL CLIENTE y la visita de campo.<br/>
+                          * Todo el suministro de los equipos y materiales se encuentra plenamente identificado y detallado en la presente propuesta, por lo que cualquier modificación es de plena responsabilidad de EL CLIENTE, y de ser el caso SINERGE S.A.C. realizará el análisis correspondiente de cualquier modificación que se realice a la propuesta original y procederá a valorizar los costos correspondientes, para ser aceptados por el cliente en un plazo máximo de 07 días.<br/>
+                          * Para la fabricación de los tableros eléctricos se enviarán los planos electromecánicos y/o vistas isométricas para que EL CLIENTE los apruebe y/o revise técnicamente con su área de ingeniería, supervisión y/o control de calidad; una vez aprobados, los planos tienen que ser enviados con el sello de conformidad de EL CLIENTE para iniciar la correspondiente fabricación.<br/>
+                          * La presente propuesta INCLUYE el servicio postventa, el cual consiste en la capacitación al personal técnico de EL CLIENTE para la correcta descarga de los registros ante un evento que propicie la actuación del ERACMF, y su correspondiente envío a OSINERGMIN, si en caso el personal técnico de EL CLIENTE no tuviera éxito en lo indicado, nuestro personal especializado brindará la asesoría correspondiente ya sea de manera virtual o presencial, dependiendo de la ubicación del equipo y la coordinación con el personal técnico de EL CLIENTE.<br/>
+                          * La presente propuesta INCLUYE el embalaje de los equipos y materiales y el traslado de los mismos a obra.<br/>
+                          * La propuesta NO INCLUYE el retiro o traslado de maquinaria, equipos, agregados, materiales, desmonte, etc. ya que EL CLIENTE es responsable de entregar libres toda el área o accesos en la zona de trabajo. <br/>
+                          * Todo nuestro personal contará con pólizas SCTR Pensión y Salud y EPP completos. <br/>
+                          * El monto final de la cotización puede variar luego de pasada la fecha de validez de la presente propuesta. <br/>
+                          * Los tiempos de entrega serán contados desde el día en que se realice el abono por el adelanto inicial, se reciba la O/C o se firme el contrato respectivo y se reciban los planos debidamente sellados y visados por EL CLIENTE.<br/>
+                        </p>
+                    </div>
+                    <!-- <div class="footer">
+                        <span>Hola!</span>
+                    </div> -->
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

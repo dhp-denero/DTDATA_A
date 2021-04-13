@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="quinta_categoria_detalle_ext_view_form" model="ir.ui.view">
+            <field name="name">quinta.view.form.ext</field>
+            <field name="model">quinta.categoria.detalle</field>
+            <field name="inherit_id" ref="planilla.oficial_quinta_categoria_detalle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='proyec_anual']" position="before">
+                    <field name="grat_compu"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

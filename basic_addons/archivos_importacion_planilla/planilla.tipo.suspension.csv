@@ -1,0 +1,18 @@
+"id","ajustes_vacaciones_id/id","codigo","create_uid/id","create_date","descripcion","descripcion_abrev","write_uid/id","write_date"
+"__export__.planilla_tipo_suspension_1","","01","base.user_root","2019-06-25 23:54:51","S.P. SANCION DISCIPLINARIA","S.P. SANCION DISCIPLINARIA","base.user_root","2019-06-25 23:54:51"
+"__export__.planilla_tipo_suspension_2","","02","base.user_root","2019-06-25 23:54:51","S.P. EJERCICIO DEL DERECHO DE HUELGA","S.P. EJERCICIO DERECHO HUELGA","base.user_root","2019-06-25 23:54:51"
+"__export__.planilla_tipo_suspension_3","","03","base.user_root","2019-06-25 23:54:51","S.P. DETENCIÓN DEL TRABAJADOR, SALVO EL CASO DE CONDENA PRIVATIVA DE LA LIBERTAD","S.P. DETENCIÓN DEL TRABAJADOR","base.user_root","2019-06-25 23:54:51"
+"__export__.planilla_tipo_suspension_4","","04","base.user_root","2019-06-25 23:54:51","S.P. INHABILITACIÓN ADMINISTRATIVA, JUDICIAL  O PENA PRIVATIVA DE LA LIBERTAD EFECTIVA POR DELITO CULPOSO, POR PERIODO NO SUPERIOR A TRES MESES","S.P. INHAB. ADMINIST., JUDICIAL O PENA PRIVATIVA","base.user_root","2019-06-25 23:54:51"
+"__export__.planilla_tipo_suspension_5","","05","base.user_root","2019-06-25 23:54:51","S.P. PERMISO, LICENCIA U OTROS MOTIVOS SIN GOCE DE HABER
+","S.P. PERMISO, LICENCIA U OTROS SIN GOCE DE HABER","base.user_root","2019-06-25 23:54:51"
+"__export__.planilla_tipo_suspension_6","","06","base.user_root","2019-06-25 23:54:51","S.P. CASO FORTUITO O FUERZA MAYOR
+","S.P. CASO FORTUITO O FUERZA MAYOR","base.user_root","2019-06-25 23:54:51"
+"__export__.planilla_tipo_suspension_7","","07","base.user_root","2019-06-25 23:54:51","S.P. FALTA NO JUSTIFICADA
+","S.P. FALTA NO JUSTIFICADA","base.user_root","2019-06-25 23:54:51"
+"__export__.planilla_tipo_suspension_8","","08","base.user_root","2019-06-25 23:54:51","S.P. POR TEMPORADA O INTERMITENTE
+","S.P. POR TEMPORADA O INTERMITENTE","base.user_root","2019-06-25 23:54:51"
+"__export__.planilla_tipo_suspension_9","","09","base.user_root","2019-06-25 23:54:51","S.P. MATERNIDAD DURANTE EL DESCANSO PRE Y POST NATAL
+","S.P. MATERNIDAD - PRE Y POST NATAL","base.user_root","2019-06-25 23:54:51"
+"__export__.planilla_tipo_suspension_21","","21","base.user_root","2019-06-27 00:15:01","S.I. INCAPACIDAD TEMPORAL (INVALIDEZ, ENFERMEDAD Y ACCIDENTES)","S.I. INCAPACIDAD TEMPORAL (INVALIDEZ, ENFERMEDAD Y ACCIDENTES)","base.user_root","2019-06-27 00:15:01"
+"__export__.planilla_tipo_suspension_22","","22","base.user_root","2019-06-27 00:15:22","S.P. MATERNIDAD DURANTE EL DESCANSO PRE Y POST NATAL","S.P. MATERNIDAD DURANTE EL DESCANSO PRE Y POST NATAL","base.user_root","2019-06-27 00:15:22"
+"__export__.planilla_tipo_suspension_23","","23","base.user_root","2019-06-27 00:15:38","S.I. DESCANSO VACACIONAL","S.I. DESCANSO VACACIONAL","base.user_root","2019-06-27 00:15:38"

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eps_base_users_public,model_eps_base,project_bloomcker_EPS.model_eps_base,base.group_public,1,1,1,1
+access_eps_line_users_public,model_eps_base_line,project_bloomcker_EPS.model_eps_base_line,base.group_public,1,1,1,1

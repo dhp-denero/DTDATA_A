@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="crm_lead_compare_sinerge_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="header" align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family:Verdana, Arial,sans-serif; border-collapse:separate;">
+                            <td>
+                                <div>
+                                  <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/sinerge.png" width="250" height="120"/>
+                                </div>
+                                <div>
+                                    <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/trafo.jpg" width="50" height="25"/>
+                                    <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/siemens.png" width="50" height="25"/>
+                                    <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/abb.png" width="50" height="25"/>
+                                </div>
+                            </td>
+                            <td>
+                                <p align="right">
+                                  <strong><span t-esc="doc.company_id.name"/></strong><br/>
+                                  <strong><span t-esc="doc.company_id.street"/></strong><br/>
+                                  <strong>Telefono: <span t-esc="doc.company_id.phone"/></strong><br/>
+                                  <strong>RUC: <span t-esc="doc.company_id.company_registry"/></strong><br/>
+                                  <strong>Presupuesto: <span t-esc="doc.company_id.company_registry"/></strong><br/>
+                                  <strong>Fecha: <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y')"/></strong><br/>
+                                </p>
+                            </td>
+                        </table>
+                    </div >
+                    <div class="page">
+                        <br/>
+                        <br/>
+                        <h2 align="center">Comparación entre Cotizaciones</h2><br/>
+                        <p align="left">
+                          <strong>Cliente:<span t-esc="doc.partner_id.name"/></strong><br/>
+                          <strong>RUC:<span t-esc="doc.partner_id.ruc_state"/></strong><br/>
+                          <strong>Proyecto:<span t-esc="doc.name"/></strong><br/>
+                        </p><br/>
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                                <th class="text-center" style="width: 50%">Codigo</th>
+                                <th class="text-center" style="width: 25%">Fecha</th>
+                                <th class="text-center" style="width: 25%">Total de Venta</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.order_ids" t-as="line">
+                                    <tr>
+                                        <td><span t-esc="line.name"/></td>
+                                        <td><span t-esc="line.date_order"/></td>
+                                        <td><span t-esc="line.amount_total"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vacations_bl_users_public,model_vacations_bl,project_bloomcker_vacations.model_vacations_bl,base.group_public,1,1,1,1
+access_vacations_line_bl_users_public,model_vacations_line_bl,project_bloomcker_vacations.model_vacations_line_bl,base.group_public,1,1,1,1
+access_breack_line_bl_users_public,model_breack_line_bl,project_bloomcker_vacations.model_breack_line_bl,base.group_public,1,1,1,1

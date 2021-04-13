@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record id="hr_reports_config_form" model="ir.ui.view">
+            <field name="name">hr_reports_config</field>
+            <field name="model">hr.reports.config</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Configuracion">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="attendance_color" required="1"/>
+                                <field name="justification_color" required="1"/>
+                                <field name="permission_color" required="1"/>
+                            </group>
+                            <group>
+                                <field name="late_color" required="1"/>
+                                <field name="lack_color" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_reports_config_tree" model="ir.ui.view">
+            <field name="name">hr_report_config_tree</field>
+            <field name="model">hr.reports.config</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="attendance_color"/>
+                    <field name="late_color"/>
+                    <field name="lack_color"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_reports_config" model="ir.actions.act_window">
+            <field name="name">Configuracion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.reports.config</field>
+            <field name="view_id" ref="hr_reports_config_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="oe_view_nocontent_create"> Haga click aqui para crear una nueva Configuracion.</p></field>
+        </record>
+
+        <menuitem id ="reports_config_menu" name ="Configuracion" parent="biometrico.attendance_root_menu" sequence="9" action="action_reports_config" groups="biometrico.attendance_menu_grupo_trabajo"/>
+    </data>
+</odoo>

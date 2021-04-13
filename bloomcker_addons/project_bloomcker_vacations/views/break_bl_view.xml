@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="breaks_bl_form" model="ir.ui.view">
+            <field name="name">breaks.bl.form.view</field>
+            <field name="model">breaks.bl</field>
+            <field name="arch" type="xml">
+                <form string="Gestión Descansos">
+                    <header>
+                        <button name="open_lines" type="object" string="Abrir Lineas" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <h1>Gestión de Descansos</h1>
+                        <group>
+                            <group>
+                                <field name="employee_id"/>
+                                <field name="state"/>
+                                <field name="date_init" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="dni" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Descansos">
+                                <field name="line_ids">
+                                    <tree>
+                                      <field name="period" required="1"/>
+                                      <field name="reason" required="1"/>
+                                      <field name="date_start" required="1"/>
+                                      <field name="date_end" required="1"/>
+                                      <field name="days_total" required="1"/>
+                                      <field name="amount" required="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="breaks_line_bl_form" model="ir.ui.view">
+            <field name="name">breaks.line.bl.form.view</field>
+            <field name="model">breaks.line.bl</field>
+            <field name="arch" type="xml">
+                <form string="Lineas de Descansos">
+                    <sheet>
+                        <h1>Lineas de Descansos</h1>
+                        <group>
+                            <group>
+                                <field name="period"/>
+                                <field name="reason"/>
+                            </group>
+                            <group>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="days_total"/>
+                                <field name="amount" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="breaks_bl_tree" model="ir.ui.view">
+            <field name="name">breaks.bl.tree.view</field>
+            <field name="model">breaks.bl</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dni"/>
+                    <field name="employee_id"/>
+                    <field name="state"/>
+                    <field name="alert_check" invisible="1"/>
+                    <button class="oe_stat_button" name="send_message" type="object" icon="fa-hand-paper-o" attrs="{'invisible':[('alert_check', '=' ,False)]}"></button>
+                </tree>
+            </field>
+        </record>
+
+        <record id="breaks_line_bl_tree" model="ir.ui.view">
+            <field name="name">breaks.line.bl.tree.view</field>
+            <field name="model">breaks.line.bl</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="period"/>
+                    <field name="reason"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="days_total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_breaks_bl" model="ir.actions.act_window">
+            <field name="name">Gestión de Descansos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">breaks.bl</field>
+            <field name="view_id" ref="breaks_bl_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="oe_view_nocontent_create"> Haga click aqui para ver y configurar los Descansos.</p></field>
+        </record>
+
+        <menuitem
+            id="menu_breaks_bl"
+            name="Descansos"
+            parent="planilla.menu_planilla_seccion_vacaciones"
+            action="action_breaks_bl"/>
+    </data>
+</odoo>

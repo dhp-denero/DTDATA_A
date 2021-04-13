@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_payslip_ext_form">
+            <field name="name">hr_payslip_ext_form</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="planilla.hr_payslip_inherit_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[5]" position="replace">
+                    <page string="Devengue Vacaciones">
+                        <field name="periodos_devengue" readonly="1">
+                            <tree editable="bottom">
+                                <field name="periodo_devengue" required="1"/>
+                                <field name="date_start" required="1"/>
+                                <field name="date_end" required="1"/>
+                                <field name="dias" required="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,8 @@
+"id","codigo","create_uid/id","create_date","descripcion","descripcion_abrev","write_uid/id","write_date"
+"__export__.planilla_tipo_trabajador_1","21","base.user_root","2019-06-25 23:54:34","EMPLEADO","EMPLEADO","base.user_root","2019-06-25 23:54:34"
+"__export__.planilla_tipo_trabajador_2","19","base.user_root","2019-06-25 23:54:34","EJECUTIVO","EJECUTIVO","base.user_root","2019-06-25 23:54:34"
+"__export__.planilla_tipo_trabajador_3","20","base.user_root","2019-06-25 23:54:34","OBRERO","OBRERO","base.user_root","2019-06-25 23:54:34"
+"__export__.planilla_tipo_trabajador_4","22","base.user_root","2019-06-25 23:54:34","TRABAJADOR PORTUARIO - LEY 27866
+","TRAB.PORTUARIO","base.user_root","2019-06-25 23:54:34"
+"__export__.planilla_tipo_trabajador_5","23","base.user_root","2019-06-25 23:54:34","PRACTICANTE SENATI - DEC. LEY 20151","PRACT. SENATI","base.user_root","2019-06-25 23:54:34"
+"__export__.planilla_tipo_trabajador_6","24","base.user_root","2019-06-25 23:54:34","PENSIONISTA O CESANTE","PENSIONISTA O CESANTE","base.user_root","2019-06-25 23:54:34"

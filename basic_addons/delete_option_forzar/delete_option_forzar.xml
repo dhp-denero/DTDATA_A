@@ -1,0 +1,4 @@
+<data noupdate="1">
+  <function model="stock.picking" name="hide_forzar_disponibilidad"/>
+</data>
+

@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="stock_view_picking_form_inherit">
+            <field name="name">stock_view_picking_form_inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="get_wizard" type="object" string="Anular Guia Remision" class="oe_highlight" attrs="{'invisible':[('state','!=','done')]}"/>
+                </xpath>
+                <field name="fecha_kardex" position="after">
+                    <field name="related_location" invisible="1"/>
+                    <field name="related_location_dest" invisible="1"/>
+                </field>
+                <field name="client_order_ref" position="after">
+                    <field name="canceled_guide" readonly="1"/>
+                </field>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Historial" attrs="{'invisible':[('numberg','=','')]}">
+                        <field name="anulation_line_ids" readonly="1">
+                            <tree create="0" delete="0">
+                                <field name="guide_number"/>
+                                <field name="cancel_reason"/>
+                                <field name="cancel_date"/>
+                                <field name="res_user_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="stock_view_picking_tree_cancel_inherit">
+            <field name="name">stock_view_picking_tree_cancel_inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="canceled_guide"/>
+                </field>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="stock_view_picking_form_wizard">
+            <field name="name">stock_view_picking_form_wizard</field>
+            <field name="model">stock.picking.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="guide_number" readonly="1"/>
+                            <field name="cancel_reason" required="1"/>
+                            <field name="cancel_date" required="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="cancel_guide" string="Anular" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

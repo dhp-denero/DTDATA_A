@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./basic_addons/:/mnt/extra-addons
+      - ./bloomcker_addons/:/mnt/extra-addons2
+  db:
+    ports:
+      - "5432:5432"
+    image: postgres:10
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data:/var/lib/postgresql/data/pgdata

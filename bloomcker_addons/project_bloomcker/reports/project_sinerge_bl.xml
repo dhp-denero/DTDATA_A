@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="project_bloomcker_sinerge_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="header" align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family:Verdana, Arial,sans-serif; border-collapse:separate;">
+                            <td>
+                                <div>
+                                  <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/sinerge.png" width="250" height="120"/>
+                                </div>
+                                <div>
+                                    <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/trafo.jpg" width="50" height="25"/>
+                                    <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/siemens.png" width="50" height="25"/>
+                                    <img class="mr4 float-left o_portal_contact_img" src="project_bloomcker/static/img/abb.png" width="50" height="25"/>
+                                </div>
+                            </td>
+                            <td>
+                                <p align="right">
+                                  <strong><span t-esc="doc.company_id.name"/></strong><br/>
+                                  <strong><span t-esc="doc.company_id.street"/></strong><br/>
+                                  <strong>Telefono: <span t-esc="doc.company_id.phone"/></strong><br/>
+                                  <strong>RUC: <span t-esc="doc.company_id.company_registry"/></strong><br/>
+                                  <strong>Presupuesto: <span t-esc="doc.company_id.company_registry"/></strong><br/>
+                                  <strong>Fecha: <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y')"/></strong><br/>
+                                </p>
+                            </td>
+                        </table>
+                    </div >
+                    <div class="page">
+                        <br/>
+                        <br/>
+                        <p align="left">
+                          <strong>Señores:<span t-esc="doc.partner_id.name"/></strong><br/>
+                          <strong>Atención:<span t-esc="doc.partner_id.name"/></strong><br/>
+                          <strong>Referencia: Suministro, interconexión, programación y pruebas de tablero con relé de protección (ERACMF) </strong><br/>
+                          <strong>Telefono: <span t-esc="doc.partner_id.phone"/></strong><br/>
+                          <strong>E-mail: <span t-esc="doc.partner_id.email"/></strong><br/>
+                          <br/>
+                          En atención a su solicitud le hacemos llegar nuestra mejor oferta por lo siguiente:<br/>
+                        </p>
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                                <th class="text-center" style="width: 5%">Item</th>
+                                <th class="text-center" style="width: 45%">Descripción.</th>
+                                <th class="text-center" style="width: 15%">Cant</th>
+                                <th class="text-center" style="width: 15%">UND</th>
+                                <th class="text-center" style="width: 20%">Precio</th>
+                            </thead>
+                            <!-- <tbody>
+                                <t t-foreach="doc.invoice_line_ids" t-as="lin">
+                                    <t  t-set = "vals"  t-value = "lin._get_amounts_format_report()" />
+                                    <tr>
+                                        <td><span t-esc="lin.sequence"/></td>
+                                        <td><span t-esc="lin.name"/></td>
+                                        <td><span t-esc="lin.quantity"/></td>
+                                        <td><span t-esc="vals['price_unit']"/></td>
+                                        <td><span t-esc="vals['price_subtotal']"/></td>
+                                        <t t-if="doc.company_id.currency_id != doc.currency_id">
+                                          <td><span t-esc="vals['price_subtotal_ext']"/></td>
+                                        </t>
+                                    </tr>
+                                </t>
+                            </tbody> -->
+                        </table>
+
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                                <th class="text-center" style="width: 100%">CUADRO RESUMEN DE TOTALES</th>
+                            </thead>
+                            <!-- <tbody>
+                                <tr>
+                                    <td class="text-center" style="width: 5%">1</td>
+                                    <td class="text-center" style="width: 65%">Esquema de Rechazo Automático de Carga por mínima Frecuencia</td>
+                                    <td class="text-center" style="width: 30%">17.192.12</td>
+                                </tr>
+                            </tbody> -->
+                        </table>
+
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                                <th class="text-center" style="width: 100%">CONDICIONES COMERCIALES</th>
+                            </thead>
+                        </table>
+
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                                <th class="text-center" style="width: 100%">CUENTAS CORRIENTES DE LA EMPRESA</th>
+                            </thead>
+                        </table>
+
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                                <th class="text-center" style="width: 100%">CUENTAS INTERBANCARIAS DE LA EMPRESA</th>
+                            </thead>
+                        </table>
+
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                                <th class="text-center" style="width: 100%">CUENTA CORRIENTE DE DETRACCIÓN</th>
+                            </thead>
+                        </table>
+                        <p>
+                          NOTAS:<br/>
+                          * La presente propuesta se ha elaborado de acuerdo con la información proporcionada por EL CLIENTE y la visita de campo.<br/>
+                          * Todo el suministro de los equipos y materiales se encuentra plenamente identificado y detallado en la presente propuesta, por lo que cualquier modificación es de plena responsabilidad de EL CLIENTE, y de ser el caso SINERGE S.A.C. realizará el análisis correspondiente de cualquier modificación que se realice a la propuesta original y procederá a valorizar los costos correspondientes, para ser aceptados por el cliente en un plazo máximo de 07 días.<br/>
+                          * Para la fabricación de los tableros eléctricos se enviarán los planos electromecánicos y/o vistas isométricas para que EL CLIENTE los apruebe y/o revise técnicamente con su área de ingeniería, supervisión y/o control de calidad; una vez aprobados, los planos tienen que ser enviados con el sello de conformidad de EL CLIENTE para iniciar la correspondiente fabricación.<br/>
+                          * La presente propuesta INCLUYE el servicio postventa, el cual consiste en la capacitación al personal técnico de EL CLIENTE para la correcta descarga de los registros ante un evento que propicie la actuación del ERACMF, y su correspondiente envío a OSINERGMIN, si en caso el personal técnico de EL CLIENTE no tuviera éxito en lo indicado, nuestro personal especializado brindará la asesoría correspondiente ya sea de manera virtual o presencial, dependiendo de la ubicación del equipo y la coordinación con el personal técnico de EL CLIENTE.<br/>
+                          * La presente propuesta INCLUYE el embalaje de los equipos y materiales y el traslado de los mismos a obra.<br/>
+                          * La propuesta NO INCLUYE el retiro o traslado de maquinaria, equipos, agregados, materiales, desmonte, etc. ya que EL CLIENTE es responsable de entregar libres toda el área o accesos en la zona de trabajo. <br/>
+                          * Todo nuestro personal contará con pólizas SCTR Pensión y Salud y EPP completos. <br/>
+                          * El monto final de la cotización puede variar luego de pasada la fecha de validez de la presente propuesta. <br/>
+                          * Los tiempos de entrega serán contados desde el día en que se realice el abono por el adelanto inicial, se reciba la O/C o se firme el contrato respectivo y se reciban los planos debidamente sellados y visados por EL CLIENTE.<br/>
+                        </p>
+                    </div>
+                    <div class="footer">
+                        <span>Hola!</span>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

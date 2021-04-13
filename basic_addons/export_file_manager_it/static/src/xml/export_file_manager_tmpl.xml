@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="templates" xml:space="preserve">
+    <t t-name="EfmSuccess" t-extend="Notification">
+        <t t-jquery=".o_notification">$(this).addClass('efm_success');</t>
+        <t t-jquery=".o_icon" t-operation="replace">
+            <span class="o_icon fa fa-3x fa-thumbs-o-up"/>
+        </t>
+        <t t-jquery=".o_close" t-operation="replace">
+        </t>
+    </t>
+</templates>

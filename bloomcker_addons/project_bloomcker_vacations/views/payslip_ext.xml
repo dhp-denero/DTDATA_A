@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="payslip_view_form_ext" model="ir.ui.view">
+            <field name="name">payslip.view.form.ext</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='afiliacion_rel']" position="after">
+                    <field name="monto_descanso"/>
+                    <field name="comi_promedio"/>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[4]" position="after">
+                    <page string="Faltas">
+                        <field name="fault_ids">
+                            <tree editable="bottom">
+                                <field name="date_start" required="1"/>
+                                <field name="date_end" required="1"/>
+                                <field name="days" required="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

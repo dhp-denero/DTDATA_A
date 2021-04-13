@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="vacations_bl_form" model="ir.ui.view">
+            <field name="name">vacations.bl.form.view</field>
+            <field name="model">vacations.bl</field>
+            <field name="arch" type="xml">
+                <form string="Gestión Vacaciones">
+                    <header>
+                        <button name="put_lines" type="object" string="Importar a Boleta" class="oe_highlight"/>
+                        <button name="open_lines" type="object" string="Abrir Lineas" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <h1>Gestión de Vacaciones</h1>
+                        <group>
+                            <group>
+                                <field name="employee_id"/>
+                                <field name="state"/>
+                                <field name="date_init"/>
+                            </group>
+                            <group>
+                                <field name="dni"/>
+                                <field name="days_totals"/>
+                                <field name="days_devs"/>
+                                <field name="days"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Vacaciones">
+                                <field name="line_ids">
+                                    <tree>
+                                      <field name="period" required="1"/>
+                                      <field name="date_start" required="1"/>
+                                      <field name="date_end" required="1"/>
+                                      <field name="days_total" required="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="vacations_line_bl_form" model="ir.ui.view">
+            <field name="name">vacations.line.bl.form.view</field>
+            <field name="model">vacations.line.bl</field>
+            <field name="arch" type="xml">
+                <form string="Lineas de Vacaciones">
+                    <sheet>
+                        <h1>Lineas de Vacaciones</h1>
+                        <group>
+                            <group>
+                                <field name="period"/>
+                            </group>
+                            <group>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="days_total" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="vacations_bl_tree" model="ir.ui.view">
+            <field name="name">vacations.bl.tree.view</field>
+            <field name="model">vacations.bl</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dni"/>
+                    <field name="employee_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vacations_line_bl_tree" model="ir.ui.view">
+            <field name="name">vacations.line.bl.tree.view</field>
+            <field name="model">vacations.line.bl</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="period"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="days_total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_vacations_bl" model="ir.actions.act_window">
+            <field name="name">Gestión de Vacaciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vacations.bl</field>
+            <field name="view_id" ref="vacations_bl_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="oe_view_nocontent_create"> Haga click aqui para ver y configurar las Vacaciones.</p></field>
+        </record>
+
+        <menuitem
+            id="menu_vacations_bl"
+            name="Vacaciones"
+            parent="planilla.menu_planilla_seccion_vacaciones"
+            action="action_vacations_bl"/>
+
+    </data>
+</odoo>

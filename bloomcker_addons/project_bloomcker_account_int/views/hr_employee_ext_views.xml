@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="employee_view_form_ext" model="ir.ui.view">
+            <field name="name">employee.view.form.ext</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[3]" position="before">
+                  <page string="Cuentas Interbancarias">
+                      <group>
+                          <field name="inter_account_bank" string="Cuentas Interbancarias">
+                              <tree>
+                                  <field name="bank_name"/>
+                                  <field name="acc_number"/>
+                                  <field name="currency_id"/>
+                              </tree>
+                          </field>
+                      </group>
+                  </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

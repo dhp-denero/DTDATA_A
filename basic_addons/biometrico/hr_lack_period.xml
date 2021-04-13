@@ -1,0 +1,88 @@
+<odoo>
+    <data>
+        <record id="hr_lack_period_employees" model="ir.ui.view">
+            <field name="name">hr_lack_period_employees</field>
+            <field name="model">hr.lack.period</field>
+            <field name="arch" type="xml">
+                <form create="false">
+                    <group>
+                        <field name="everyone"/>
+                    </group>
+                    <field name="employee_ids" attrs="{'invisible':[('everyone','=',True)]}"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_lack_period_form" model="ir.ui.view">
+            <field name="name">hr_lack_period</field>
+            <field name="model">hr.lack.period</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Faltas">
+                    <header>
+                        <button name="get_lacks" type="object" class="oe_highlight" string="Calcular Faltas"/>
+                        <button name="filter_employees" type="object" string="Filtrar Empleados" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="payslip_run_id" required="1"/>
+                            </group>
+                            <group>
+                                <field name="date_from" required="1"/>
+                                <field name="date_to" required="1"/>
+                            </group>
+                        </group>
+                        <field name="line_ids">
+                            <tree create="0" delete="0">
+                                <field name="employee_id" readonly="1"/>
+                                <field name="date" readonly="1"/>
+                                <button name="get_wizard" type="object" icon="fa-file-text-o"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_lack_period_tree" model="ir.ui.view">
+            <field name="name">hr_lack_period_tree_view</field>
+            <field name="model">hr.lack.period</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="payslip_run_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_lack_period" model="ir.actions.act_window">
+            <field name="name">Faltas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.lack.period</field>
+            <field name="view_id" ref="hr_lack_period_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="oe_view_nocontent_create"> Haga click aqui para crear un nuevo Periodo de Faltas.</p></field>
+        </record>
+        
+        <record id="hr_lack_period_line_wizard" model="ir.ui.view">
+            <field name="name">hr_lack_period_line_wizard</field>
+            <field name="model">hr.lack.period.line.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="type_just_id" required="1"/>
+                        <field name="motivo"/>
+                    </group>
+                    <footer>
+                        <button name="create_just" string="Justificar" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <menuitem id ="lack_period_menu" name ="Faltas" parent="biometrico.attendance_root_menu" sequence="4" action="action_lack_period"/>
+    </data>
+</odoo>

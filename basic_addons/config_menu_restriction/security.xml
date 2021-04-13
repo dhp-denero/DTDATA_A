@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="config_restriction" model="res.groups">
+			<field name="name">Restriccion para Configuracion</field>
+		</record>
+		<record id="stock.menu_stock_config_settings" model="ir.ui.menu">
+			<field name="groups_id" eval="[(6,0,[ref('config_restriction')])]"/>
+		</record>
+		<record id="purchase.menu_purchase_config" model="ir.ui.menu">
+			<field name="groups_id" eval="[(6,0,[ref('config_restriction')])]"/>
+		</record>
+	</data>
+</odoo>

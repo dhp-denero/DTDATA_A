@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+      <record id="account_analytic_account_form_ext" model="ir.ui.view">
+          <field name="name">account.analytic.account.form.ext</field>
+          <field name="model">account.analytic.account</field>
+          <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+          <field name="arch" type="xml">
+              <xpath  expr="//field[@name='detalle_distribucion']" position='replace'>
+		              <field name="detalle_distribucion" attrs="{'required': [('distribucion_analitica','=',True)]}">
+		                  <tree string="Distribución Analítica" editable="bottom">
+		                      <field name="analytic_line_id" domain="[('distribucion_analitica','=',False)]" required="1" />
+		                      <field name="cuenta_contable"/>
+		                      <field name="porcentaje" required="1"/>
+		                  </tree>
+		              </field>
+              </xpath>
+          </field>
+      </record>
+	</data>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report
+                string="Proyecto SINERGE"
+                id="action_report_project_sinerge_bl"
+                model="project.project"
+                name="project_bloomcker.project_bloomcker_sinerge_report"
+                file="project_bloomcker.project_bloomcker_sinerge_report"
+                report_type="qweb-pdf"
+        />
+
+        <report
+                string="Cotización SINERGE"
+                id="action_report_sale_order_sinerge_bl"
+                model="sale.order"
+                name="project_bloomcker.sale_order_bloomcker_sinerge_report"
+                file="project_bloomcker.sale_order_bloomcker_sinerge_report"
+                report_type="qweb-pdf"
+        />
+
+        <report
+                string="Compara Presupuesto"
+                id="action_report_crm_lead_compare_bl"
+                model="crm.lead"
+                name="project_bloomcker.crm_lead_compare_sinerge_report"
+                file="project_bloomcker.crm_lead_compare_sinerge_report"
+                report_type="qweb-pdf"
+        />
+
+        <report
+                string="Presupuesto SINERGE"
+                id="action_report_crossovered_budget_bl"
+                model="crossovered.budget"
+                name="project_bloomcker.crossovered_budget_sinerge_report"
+                file="project_bloomcker.crossovered_budget_sinerge_report"
+                report_type="qweb-pdf"
+        />
+
+    </data>
+</openerp>

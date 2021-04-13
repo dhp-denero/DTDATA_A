@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_inter_account_bank_users_public,model_inter_account_banck,project_bloomcker_account_int.model_inter_account_banck,base.group_public,1,1,1,1

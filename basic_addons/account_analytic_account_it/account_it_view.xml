@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+
+
+        <record id="view_account_analytic_account_form" model="ir.ui.view">
+            <field name="name">account.analytic.account.form</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="account_account_moorage_id" domain="[('user_type_id.type','!=','view')]"/>
+                    <field name="account_account_moorage_credit_id" domain="[('user_type_id.type','!=','view')]"/>
+                    <field name="distribucion_analitica" />
+                </xpath>
+                <xpath expr="//field[@name='tag_ids']" position="before">
+                    <field name="parent_id" />
+                    <field name="type" />
+                </xpath>
+
+                <xpath  expr="//group[@name='main']" position='after'>
+                    <notebook attrs="{'invisible': [('distribucion_analitica', '=', False)]}" >
+                        <page string="Distribución Analítica">
+                                <field name="detalle_distribucion" attrs="{'required': [('distribucion_analitica','=',True)]}">
+                                    <tree string="Distribución Analítica" editable="bottom">
+                                        <field name="analytic_line_id" domain="[('distribucion_analitica','=',False)]" required="1" />
+                                        <field name="porcentaje" required="1"/>
+                                    </tree>
+                                </field>
+                        </page>
+                    </notebook>
+                </xpath>
+
+            </field>
+        </record>
+
+
+	</data>
+</openerp>

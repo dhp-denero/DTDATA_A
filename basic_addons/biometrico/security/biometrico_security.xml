@@ -1,0 +1,116 @@
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_category_hr_attendance_it">
+            <field name="name">Asistencias</field>
+            <field name="sequence">14</field>
+        </record>
+        <record model="res.groups" id="attendance_menu_principal">
+            <field name="name">Menu Principal</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="attendance_menu_biometrico">
+            <field name="name">Menu Biometrico</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="attendance_menu_mis_asistencias">
+            <field name="name">Menu Mis Asistencias</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="attendance_menu_asistencias_por_periodo">
+            <field name="name">Menu Asistencias por Periodo</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="attendance_menu_horarios">
+            <field name="name">Menu Horarios</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="attendance_menu_justificaciones">
+            <field name="name">Menu Justificaciones</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="attendance_menu_tipo_de_justificaciones">
+            <field name="name">Menu Tipo de Justificaciones</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="attendance_menu_grupo_trabajo">
+            <field name="name">Menu Grupo de Trabajo</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="lack_period_group">
+            <field name="name">Menu de Faltas</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="boss_users">
+            <field name="name">Usuario Jefe</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="help_desk_users">
+            <field name="name">Usuario RRHH</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+
+        <!--Solo Lectura-->
+        <record model="res.groups" id="attendance_menu_asistencias_por_periodo_read">
+            <field name="name">Menu Asistencias por Periodo (Solo Lectura)</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="attendance_menu_justificaciones_read">
+            <field name="name">Menu Justificaciones (Solo Lectura)</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <record model="res.groups" id="attendance_menu_tipo_de_justificaciones_read">
+            <field name="name">Menu Tipo de Justificaciones (Solo Lectura)</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+
+        <record model="res.groups" id="attendance_menu_grupo_trabajo_read">
+            <field name="name">Menu Grupo de Trabajo (Solo Lectura)</field>
+            <field name="category_id" ref="biometrico.module_category_hr_attendance_it"/>
+        </record>
+        <!-- Restricciones para los Menus-->
+        <record model="ir.ui.menu" id="biometrico.attendance_root_menu">
+            <field name="name">1</field>
+            <field name="groups_id" eval="[(6,0,[ref('biometrico.attendance_menu_principal')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="biometrico.menu_planilla_seccion_biometrico">
+            <field name="name">2</field>
+            <field name="groups_id" eval="[(6,0,[ref('biometrico.attendance_menu_biometrico')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="biometrico.attendance_menu">
+            <field name="name">3</field>
+            <field name="groups_id" eval="[(6,0,[ref('biometrico.attendance_menu_mis_asistencias')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="biometrico.menu_planilla_seccion_attendance_period">
+            <field name="name">4</field>
+            <field name="groups_id" eval="[(6,0,[ref('biometrico.attendance_menu_asistencias_por_periodo'),
+                                                ref('biometrico.attendance_menu_asistencias_por_periodo_read')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="biometrico.resource_calendar_menu">
+            <field name="name">5</field>
+            <field name="groups_id" eval="[(6,0,[ref('biometrico.attendance_menu_horarios')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="biometrico.attendance_menu_justification">
+            <field name="name">6</field>
+            <field name="groups_id" eval="[(6,0,[ref('biometrico.attendance_menu_justificaciones'),
+                                                ref('biometrico.attendance_menu_justificaciones_read')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="biometrico.attendance_menu_type_justification">
+            <field name="name">7</field>
+            <field name="groups_id" eval="[(6,0,[ref('biometrico.attendance_menu_tipo_de_justificaciones'),
+                                                ref('biometrico.attendance_menu_tipo_de_justificaciones_read')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="biometrico.attendance_menu_job_group">
+            <field name="name">8</field>
+            <field name="groups_id" eval="[(6,0,[ref('biometrico.attendance_menu_grupo_trabajo'),
+                                                ref('biometrico.attendance_menu_grupo_trabajo_read')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="biometrico.lack_period_menu">
+            <field name="name">9</field>
+            <field name="groups_id" eval="[(6,0,[ref('biometrico.lack_period_group')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="biometrico.reports_config_menu">
+            <field name="name">10</field>
+            <field name="groups_id" eval="[(6,0,[ref('biometrico.attendance_menu_asistencias_por_periodo')])]"/>
+        </record>
+    </data>
+</odoo>

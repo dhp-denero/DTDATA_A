@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <record id="hr_job_group_form" model="ir.ui.view">
+            <field name="name">hr_job_group_form_view</field>
+            <field name="model">hr.job.group</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Grupo de Trabajo">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+                            <group>
+                                <field name="boss_id" required="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="employee_ids" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_job_group_tree" model="ir.ui.view">
+            <field name="name">hr_job_group_tree_view</field>
+            <field name="model">hr.job.group</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="boss_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_job_group" model="ir.actions.act_window">
+            <field name="name">Grupo de Trabajo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.job.group</field>
+            <field name="view_id" ref="hr_job_group_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="oe_view_nocontent_create"> Haga click aqui para crear un nuevo Grupo de Trabajo.</p></field>
+        </record>
+
+        <menuitem id ="attendance_menu_job_group" name ="Grupo de Trabajo" parent="biometrico.attendance_root_menu" sequence="8" action="action_job_group" groups="biometrico.attendance_menu_grupo_trabajo"/>
+    </data>
+</odoo>

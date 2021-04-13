@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.1-beta" last-position="0,0" last-zoom="1"
+	 default-schema="public" default-owner="postgres">
+<role name="openpg"
+      superuser="true"
+      createdb="true"
+      replication="true"
+      createrole="true"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<database name="odoo10planillaiter4" encoding="UTF8" lc-collate="es_PE.UTF-8" lc-ctype="es_PE.UTF-8">
+	<role name="openpg"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="hr_payroll_structure">
+	<schema name="public"/>
+	<role name="openpg"/>
+	<comment><![CDATA[Salary Structure]]></comment>
+	<position x="1180" y="660"/>
+	<column name="id" not-null="true" default-value="nextval('hr_payroll_structure_id_seq'::regclass)">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="create_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Created by]]></comment>
+	</column>
+	<column name="code" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Reference]]></comment>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Name]]></comment>
+	</column>
+	<column name="company_id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Company]]></comment>
+	</column>
+	<column name="write_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Last Updated by]]></comment>
+	</column>
+	<column name="note">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Description]]></comment>
+	</column>
+	<column name="parent_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Parent]]></comment>
+	</column>
+	<column name="write_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Last Updated on]]></comment>
+	</column>
+	<column name="create_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Created on]]></comment>
+	</column>
+	<constraint name="hr_payroll_structure_pkey" type="pk-constr" table="public.hr_payroll_structure">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="hr_structure_salary_rule_rel">
+	<schema name="public"/>
+	<role name="openpg"/>
+	<comment><![CDATA[RELATION BETWEEN hr_payroll_structure AND hr_salary_rule]]></comment>
+	<position x="1960" y="440"/>
+	<column name="struct_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="rule_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="hr_structure_salary_rule_rel_struct_id_rule_id_key" type="uq-constr" table="public.hr_structure_salary_rule_rel">
+		<columns names="struct_id,rule_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="hr_structure_salary_rule_rel_struct_id_idx" table="public.hr_structure_salary_rule_rel"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="struct_id"/>
+		</idxelement>
+</index>
+
+<index name="hr_structure_salary_rule_rel_rule_id_idx" table="public.hr_structure_salary_rule_rel"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="rule_id"/>
+		</idxelement>
+</index>
+
+<table name="hr_salary_rule_category">
+	<schema name="public"/>
+	<role name="openpg"/>
+	<comment><![CDATA[Salary Rule Category]]></comment>
+	<position x="1940" y="40"/>
+	<column name="id" not-null="true" default-value="nextval('hr_salary_rule_category_id_seq'::regclass)">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="create_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Created by]]></comment>
+	</column>
+	<column name="code" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Code]]></comment>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Name]]></comment>
+	</column>
+	<column name="company_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Company]]></comment>
+	</column>
+	<column name="write_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Last Updated by]]></comment>
+	</column>
+	<column name="note">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Description]]></comment>
+	</column>
+	<column name="parent_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Parent]]></comment>
+	</column>
+	<column name="write_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Last Updated on]]></comment>
+	</column>
+	<column name="create_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Created on]]></comment>
+	</column>
+	<constraint name="hr_salary_rule_category_pkey" type="pk-constr" table="public.hr_salary_rule_category">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="hr_salary_rule">
+	<schema name="public"/>
+	<role name="openpg"/>
+	<comment><![CDATA[hr.salary.rule]]></comment>
+	<position x="2760" y="80"/>
+	<column name="id" not-null="true" default-value="nextval('hr_salary_rule_id_seq'::regclass)">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="code" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Code]]></comment>
+	</column>
+	<column name="create_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Created on]]></comment>
+	</column>
+	<column name="write_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Last Updated on]]></comment>
+	</column>
+	<column name="sequence" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Sequence]]></comment>
+	</column>
+	<column name="write_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Last Updated by]]></comment>
+	</column>
+	<column name="appears_on_payslip">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Appears on Payslip]]></comment>
+	</column>
+	<column name="condition_range">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Range Based on]]></comment>
+	</column>
+	<column name="amount_fix">
+		<type name="numeric" length="0"/>
+		<comment><![CDATA[Fixed Amount]]></comment>
+	</column>
+	<column name="create_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Created by]]></comment>
+	</column>
+	<column name="parent_rule_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Parent Salary Rule]]></comment>
+	</column>
+	<column name="company_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Company]]></comment>
+	</column>
+	<column name="note">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Description]]></comment>
+	</column>
+	<column name="amount_percentage">
+		<type name="numeric" length="0"/>
+		<comment><![CDATA[Percentage (%)]]></comment>
+	</column>
+	<column name="condition_range_min">
+		<type name="double precision" length="0"/>
+		<comment><![CDATA[Minimum Range]]></comment>
+	</column>
+	<column name="condition_select" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Condition Based on]]></comment>
+	</column>
+	<column name="amount_percentage_base">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Percentage based on]]></comment>
+	</column>
+	<column name="register_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Contribution Register]]></comment>
+	</column>
+	<column name="amount_select" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Amount Type]]></comment>
+	</column>
+	<column name="active">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Active]]></comment>
+	</column>
+	<column name="condition_range_max">
+		<type name="double precision" length="0"/>
+		<comment><![CDATA[Maximum Range]]></comment>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Name]]></comment>
+	</column>
+	<column name="condition_python" not-null="true">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Python Condition]]></comment>
+	</column>
+	<column name="amount_python_compute">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Python Code]]></comment>
+	</column>
+	<column name="category_id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Category]]></comment>
+	</column>
+	<column name="quantity">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Quantity]]></comment>
+	</column>
+	<column name="analytic_account_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Analytic Account]]></comment>
+	</column>
+	<column name="account_credit">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Credit Account]]></comment>
+	</column>
+	<column name="account_tax_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Tax]]></comment>
+	</column>
+	<column name="account_debit">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Debit Account]]></comment>
+	</column>
+	<column name="cod_sunat">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Codigo Sunat]]></comment>
+	</column>
+	<column name="is_subtotal">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Es un Subtotal]]></comment>
+	</column>
+	<constraint name="hr_salary_rule_pkey" type="pk-constr" table="public.hr_salary_rule">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="hr_salary_rule_sequence_index" table="public.hr_salary_rule"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="sequence"/>
+		</idxelement>
+</index>
+
+<index name="hr_salary_rule_parent_rule_id_index" table="public.hr_salary_rule"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="parent_rule_id"/>
+		</idxelement>
+</index>
+
+<index name="hr_salary_rule_amount_select_index" table="public.hr_salary_rule"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="amount_select"/>
+		</idxelement>
+</index>
+
+<table name="res_company">
+	<schema name="public"/>
+	<role name="openpg"/>
+	<position x="480" y="480"/>
+	<column name="id" not-null="true" default-value="nextval('res_company_id_seq'::regclass)">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="partner_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="currency_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="rml_footer">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Custom Report Footer]]></comment>
+	</column>
+	<column name="create_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Created on]]></comment>
+	</column>
+	<column name="rml_header" not-null="true">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Rml header]]></comment>
+	</column>
+	<column name="sequence">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Sequence]]></comment>
+	</column>
+	<column name="rml_paper_format" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Paper Format]]></comment>
+	</column>
+	<column name="write_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Last Updated by]]></comment>
+	</column>
+	<column name="logo_web">
+		<type name="bytea" length="0"/>
+		<comment><![CDATA[Logo web]]></comment>
+	</column>
+	<column name="font">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Font]]></comment>
+	</column>
+	<column name="account_no">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Account No.]]></comment>
+	</column>
+	<column name="parent_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Parent Company]]></comment>
+	</column>
+	<column name="email">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Email]]></comment>
+	</column>
+	<column name="create_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Created by]]></comment>
+	</column>
+	<column name="custom_footer">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Custom footer]]></comment>
+	</column>
+	<column name="phone">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Phone]]></comment>
+	</column>
+	<column name="rml_header2" not-null="true">
+		<type name="text" length="0"/>
+		<comment><![CDATA[RML Internal Header]]></comment>
+	</column>
+	<column name="rml_header3" not-null="true">
+		<type name="text" length="0"/>
+		<comment><![CDATA[RML Internal Header for Landscape Reports]]></comment>
+	</column>
+	<column name="write_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Last Updated on]]></comment>
+	</column>
+	<column name="rml_header1">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Company Tagline]]></comment>
+	</column>
+	<column name="company_registry">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Company registry]]></comment>
+	</column>
+	<column name="paperformat_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Paper format]]></comment>
+	</column>
+	<column name="fiscalyear_lock_date">
+		<type name="date" length="0"/>
+		<comment><![CDATA[Lock Date]]></comment>
+	</column>
+	<column name="bank_account_code_prefix">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Prefix of the bank accounts]]></comment>
+	</column>
+	<column name="cash_account_code_prefix">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Prefix of the cash accounts]]></comment>
+	</column>
+	<column name="anglo_saxon_accounting">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Use anglo-saxon accounting]]></comment>
+	</column>
+	<column name="fiscalyear_last_day" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Fiscalyear last day]]></comment>
+	</column>
+	<column name="currency_exchange_journal_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Exchange Gain or Loss Journal]]></comment>
+	</column>
+	<column name="property_stock_valuation_account_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Account Template for Stock Valuation]]></comment>
+	</column>
+	<column name="transfer_account_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Inter-Banks Transfer Account]]></comment>
+	</column>
+	<column name="expects_chart_of_accounts">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Expects a Chart of Accounts]]></comment>
+	</column>
+	<column name="property_stock_account_output_categ_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Output Account for Stock Valuation]]></comment>
+	</column>
+	<column name="accounts_code_digits">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Number of digits in an account code]]></comment>
+	</column>
+	<column name="chart_template_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Chart template id]]></comment>
+	</column>
+	<column name="overdue_msg">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Overdue Payments Message]]></comment>
+	</column>
+	<column name="property_stock_account_input_categ_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Input Account for Stock Valuation]]></comment>
+	</column>
+	<column name="period_lock_date">
+		<type name="date" length="0"/>
+		<comment><![CDATA[Lock Date for Non-Advisers]]></comment>
+	</column>
+	<column name="fiscalyear_last_month" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Fiscalyear last month]]></comment>
+	</column>
+	<column name="tax_calculation_rounding_method">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Tax Calculation Rounding Method]]></comment>
+	</column>
+</table>
+
+<table name="res_users">
+	<schema name="public"/>
+	<role name="openpg"/>
+	<position x="1580" y="1080"/>
+	<column name="id" not-null="true" default-value="nextval('res_users_id_seq'::regclass)">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="active" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="login" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="password" default-value="NULL">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="company_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="partner_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="create_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Created on]]></comment>
+	</column>
+	<column name="share">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Share User]]></comment>
+	</column>
+	<column name="write_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Last Updated by]]></comment>
+	</column>
+	<column name="create_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Created by]]></comment>
+	</column>
+	<column name="action_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Home Action]]></comment>
+	</column>
+	<column name="write_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Last Updated on]]></comment>
+	</column>
+	<column name="signature">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Signature]]></comment>
+	</column>
+	<column name="password_crypt">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Encrypted Password]]></comment>
+	</column>
+	<column name="alias_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Alias]]></comment>
+	</column>
+</table>
+
+<table name="hr_contribution_register">
+	<schema name="public"/>
+	<role name="openpg"/>
+	<comment><![CDATA[Contribution Register]]></comment>
+	<position x="1880" y="1080"/>
+	<column name="id" not-null="true" default-value="nextval('hr_contribution_register_id_seq'::regclass)">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="create_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Created by]]></comment>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Name]]></comment>
+	</column>
+	<column name="company_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Company]]></comment>
+	</column>
+	<column name="write_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Last Updated by]]></comment>
+	</column>
+	<column name="note">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Description]]></comment>
+	</column>
+	<column name="write_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Last Updated on]]></comment>
+	</column>
+	<column name="create_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Created on]]></comment>
+	</column>
+	<column name="partner_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Partner]]></comment>
+	</column>
+</table>
+
+<table name="account_account">
+	<schema name="public"/>
+	<role name="openpg"/>
+	<comment><![CDATA[Account]]></comment>
+	<position x="2180" y="1080"/>
+	<column name="id" not-null="true" default-value="nextval('account_account_id_seq'::regclass)">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="create_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Created by]]></comment>
+	</column>
+	<column name="code" not-null="true">
+		<type name="character varying" length="64"/>
+		<comment><![CDATA[Code]]></comment>
+	</column>
+	<column name="create_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Created on]]></comment>
+	</column>
+	<column name="reconcile">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Allow Reconciliation]]></comment>
+	</column>
+	<column name="deprecated">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Deprecated]]></comment>
+	</column>
+	<column name="company_id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Company]]></comment>
+	</column>
+	<column name="write_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Last Updated by]]></comment>
+	</column>
+	<column name="currency_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Account Currency]]></comment>
+	</column>
+	<column name="note">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Internal Notes]]></comment>
+	</column>
+	<column name="internal_type">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Internal Type]]></comment>
+	</column>
+	<column name="write_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Last Updated on]]></comment>
+	</column>
+	<column name="user_type_id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Type]]></comment>
+	</column>
+	<column name="last_time_entries_checked">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Latest Invoices & Payments Matching Date]]></comment>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Name]]></comment>
+	</column>
+</table>
+
+<table name="account_analytic_account">
+	<schema name="public"/>
+	<role name="openpg"/>
+	<comment><![CDATA[Analytic Account]]></comment>
+	<position x="2580" y="1080"/>
+	<column name="id" not-null="true" default-value="nextval('account_analytic_account_id_seq'::regclass)">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="code">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Reference]]></comment>
+	</column>
+	<column name="create_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Created on]]></comment>
+	</column>
+	<column name="write_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Last Updated by]]></comment>
+	</column>
+	<column name="partner_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Customer]]></comment>
+	</column>
+	<column name="create_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Created by]]></comment>
+	</column>
+	<column name="message_last_post">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Last Message Date]]></comment>
+	</column>
+	<column name="company_id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Company]]></comment>
+	</column>
+	<column name="write_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Last Updated on]]></comment>
+	</column>
+	<column name="active">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Active]]></comment>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Analytic Account]]></comment>
+	</column>
+</table>
+
+<table name="account_tax">
+	<schema name="public"/>
+	<role name="openpg"/>
+	<comment><![CDATA[Tax]]></comment>
+	<position x="2920" y="1080"/>
+	<column name="id" not-null="true" default-value="nextval('account_tax_id_seq'::regclass)">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="create_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Created on]]></comment>
+	</column>
+	<column name="sequence" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Sequence]]></comment>
+	</column>
+	<column name="write_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Last Updated by]]></comment>
+	</column>
+	<column name="include_base_amount">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Affect Base of Subsequent Taxes]]></comment>
+	</column>
+	<column name="account_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Tax Account]]></comment>
+	</column>
+	<column name="create_uid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Created by]]></comment>
+	</column>
+	<column name="company_id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Company]]></comment>
+	</column>
+	<column name="analytic">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Include in Analytic Cost]]></comment>
+	</column>
+	<column name="description">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Label on Invoices]]></comment>
+	</column>
+	<column name="tax_adjustment">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Tax adjustment]]></comment>
+	</column>
+	<column name="type_tax_use" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Tax Scope]]></comment>
+	</column>
+	<column name="refund_account_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Tax Account on Refunds]]></comment>
+	</column>
+	<column name="write_date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[Last Updated on]]></comment>
+	</column>
+	<column name="active">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Active]]></comment>
+	</column>
+	<column name="amount_type" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Tax Computation]]></comment>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Tax Name]]></comment>
+	</column>
+	<column name="tax_group_id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Tax Group]]></comment>
+	</column>
+	<column name="amount" not-null="true">
+		<type name="numeric" length="0"/>
+		<comment><![CDATA[Amount]]></comment>
+	</column>
+	<column name="price_include">
+		<type name="boolean" length="0"/>
+		<comment><![CDATA[Included in Price]]></comment>
+	</column>
+</table>
+
+<constraint name="hr_payroll_structure_company_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.res_company" table="public.hr_payroll_structure">
+	<columns names="company_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_payroll_structure_parent_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.hr_payroll_structure" table="public.hr_payroll_structure">
+	<columns names="parent_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_payroll_structure_write_uid_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.res_users" table="public.hr_payroll_structure">
+	<columns names="write_uid" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_payroll_structure_create_uid_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.res_users" table="public.hr_payroll_structure">
+	<columns names="create_uid" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_structure_salary_rule_rel_rule_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="public.hr_salary_rule" table="public.hr_structure_salary_rule_rel">
+	<columns names="rule_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_structure_salary_rule_rel_struct_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="public.hr_payroll_structure" table="public.hr_structure_salary_rule_rel">
+	<columns names="struct_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_category_parent_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.hr_salary_rule_category" table="public.hr_salary_rule_category">
+	<columns names="parent_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_category_create_uid_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.res_users" table="public.hr_salary_rule_category">
+	<columns names="create_uid" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_category_company_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.res_company" table="public.hr_salary_rule_category">
+	<columns names="company_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_category_write_uid_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.res_users" table="public.hr_salary_rule_category">
+	<columns names="write_uid" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_parent_rule_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.hr_salary_rule" table="public.hr_salary_rule">
+	<columns names="parent_rule_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_company_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.res_company" table="public.hr_salary_rule">
+	<columns names="company_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_category_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.hr_salary_rule_category" table="public.hr_salary_rule">
+	<columns names="category_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_write_uid_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.res_users" table="public.hr_salary_rule">
+	<columns names="write_uid" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_register_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.hr_contribution_register" table="public.hr_salary_rule">
+	<columns names="register_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_create_uid_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.res_users" table="public.hr_salary_rule">
+	<columns names="create_uid" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_account_credit_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.account_account" table="public.hr_salary_rule">
+	<columns names="account_credit" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_account_debit_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.account_account" table="public.hr_salary_rule">
+	<columns names="account_debit" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_analytic_account_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.account_analytic_account" table="public.hr_salary_rule">
+	<columns names="analytic_account_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="hr_salary_rule_account_tax_id_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="SET NULL" ref-table="public.account_tax" table="public.hr_salary_rule">
+	<columns names="account_tax_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_hr_payroll_structure_res_company" type="relfk"
+	 custom-color="#e4438d"
+	 src-table="public.hr_payroll_structure"
+	 dst-table="public.res_company"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_payroll_structure_hr_payroll_structure" type="relfk"
+	 custom-color="#552b41"
+	 src-table="public.hr_payroll_structure"
+	 dst-table="public.hr_payroll_structure"
+	 src-required="false" dst-required="false">
+	<line>
+		<position x="1532.88" y="778.9"/>
+	<position x="1532.88" y="649"/>
+	<position x="1407.92" y="649"/>
+	</line>
+</relationship>
+
+<relationship name="rel_hr_payroll_structure_res_users" type="relfk"
+	 custom-color="#8a417f"
+	 src-table="public.hr_payroll_structure"
+	 dst-table="public.res_users"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_structure_salary_rule_rel_hr_salary_rule" type="relfk"
+	 custom-color="#7224d4"
+	 src-table="public.hr_structure_salary_rule_rel"
+	 dst-table="public.hr_salary_rule"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_structure_salary_rule_rel_hr_payroll_structure" type="relfk"
+	 custom-color="#153e36"
+	 src-table="public.hr_structure_salary_rule_rel"
+	 dst-table="public.hr_payroll_structure"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_salary_rule_category_hr_salary_rule_category" type="relfk"
+	 custom-color="#c2f965"
+	 src-table="public.hr_salary_rule_category"
+	 dst-table="public.hr_salary_rule_category"
+	 src-required="false" dst-required="false">
+	<line>
+		<position x="2312.38" y="158.9"/>
+	<position x="2312.38" y="29"/>
+	<position x="2180.92" y="29"/>
+	</line>
+</relationship>
+
+<relationship name="rel_hr_salary_rule_category_res_users" type="relfk"
+	 custom-color="#13970c"
+	 src-table="public.hr_salary_rule_category"
+	 dst-table="public.res_users"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_salary_rule_category_res_company" type="relfk"
+	 custom-color="#260149"
+	 src-table="public.hr_salary_rule_category"
+	 dst-table="public.res_company"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_salary_rule_hr_salary_rule" type="relfk"
+	 custom-color="#c5bd31"
+	 src-table="public.hr_salary_rule"
+	 dst-table="public.hr_salary_rule"
+	 src-required="false" dst-required="false">
+	<line>
+		<position x="3121.18" y="409.7"/>
+	<position x="3121.18" y="69"/>
+	<position x="2993.45" y="69"/>
+	</line>
+</relationship>
+
+<relationship name="rel_hr_salary_rule_res_company" type="relfk"
+	 custom-color="#738262"
+	 src-table="public.hr_salary_rule"
+	 dst-table="public.res_company"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_salary_rule_hr_salary_rule_category" type="relfk"
+	 custom-color="#a9dc18"
+	 src-table="public.hr_salary_rule"
+	 dst-table="public.hr_salary_rule_category"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_salary_rule_res_users" type="relfk"
+	 custom-color="#a9a022"
+	 src-table="public.hr_salary_rule"
+	 dst-table="public.res_users"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_salary_rule_hr_contribution_register" type="relfk"
+	 custom-color="#ea971a"
+	 src-table="public.hr_salary_rule"
+	 dst-table="public.hr_contribution_register"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_salary_rule_account_account" type="relfk"
+	 custom-color="#441ff1"
+	 src-table="public.hr_salary_rule"
+	 dst-table="public.account_account"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_salary_rule_account_analytic_account" type="relfk"
+	 custom-color="#6a8448"
+	 src-table="public.hr_salary_rule"
+	 dst-table="public.account_analytic_account"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_hr_salary_rule_account_tax" type="relfk"
+	 custom-color="#969777"
+	 src-table="public.hr_salary_rule"
+	 dst-table="public.account_tax"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
