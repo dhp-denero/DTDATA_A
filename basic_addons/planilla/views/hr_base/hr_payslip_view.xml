@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_payslip_inherit_form">
+            <field name="name">hr_payslip_inherit_form</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">0</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/group/field[@name='credit_note']" position="after">
+                    <field name="dias_calendarios"/>
+                    <field name="afiliacion_rel" readonly="1"/>
+                    <field name="feriados" />
+                </xpath>
+
+
+
+                <button name="action_payslip_done" position ="after">
+                    <button string="Cargar entradas y tareos" name="load_entradas_tareos" type="object" states="draft" class="oe_highlight" help="Cargar Parametos tareos y ingresos predeterminados"/>
+                </button>
+
+
+
+                <!-- <field name="date_from" position="before">
+                    <field name="periodo_id"/>
+
+                    
+                    <separator/>
+                </field>
+                <xpath expr="//form/sheet/group/label" position="attributes">
+                    <attribute name="string">Periodo</attribute>
+                </xpath>
+                <field name="date_from" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="date_from" position="after">
+                    <field name="date_start"/>
+ - 
+                </field>
+                <field name="date_to" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="date_to" position="after">
+                    <field name="date_stop"/>
+                </field> -->
+                <xpath expr="//form/header/button[@name='compute_sheet']" position="after">
+                    <button string="Imprimir Boleta" name="imprimir_boleta" type="object" class="oe_highlight"/>
+                    <button string="ReAbrir" name="reabrir" type="object" states="confirm,done" class="oe_highlight"/>
+                </xpath>
+                <!-- <xpath expr="//form/sheet/notebook/page[1]/separator[2]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath> -->
+                <!-- <xpath expr="//form/sheet/notebook/page[1]/field[@name='input_line_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath> -->
+                <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree/field[@name='quantity']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree/field[@name='rate']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree/field[@name='rate']" position="after">
+                    <field name="is_subtotal_ref" invisible="1" />
+                    <field name="appears_on_payslip" invisible="1"/>
+                </xpath>
+                <!-- Ocultando campos  -->
+                <!-- <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree/field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('appears_on_payslip', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree/field[@name='code']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('appears_on_payslip', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree/field[@name='category_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('appears_on_payslip', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree/field[@name='salary_rule_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('appears_on_payslip', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree/field[@name='amount']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('appears_on_payslip', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree/field[@name='total']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('appears_on_payslip', '=', False)]}</attribute>
+                </xpath> -->
+
+                <!-- <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree" position="replace">
+                    <tree>
+                        <field name="is_subtotal_ref" invisible="1" />
+                        <field name="appears_on_payslip" invisible="1"/>
+                        <field name="name" attrs="{'invisible': [('appears_on_payslip', '=', False)]}"/>
+                        <field name="code" attrs="{'invisible': [('appears_on_payslip', '=', False)]}" />
+                        <field name="category_id" attrs="{'invisible': [('appears_on_payslip', '=', False)]}" />
+                        <field name="sequence" invisible="1"/>
+                        <field name="quantity" attrs="{'invisible': [('appears_on_payslip', '=', False)]}"/>
+                        <field name="rate" attrs="{'invisible': [('appears_on_payslip', '=', False)]}"/>
+                        <field name="salary_rule_id" attrs="{'invisible': [('appears_on_payslip', '=', False)]}"/>
+                        <field name="amount" attrs="{'invisible': [('appears_on_payslip', '=', False)]}"/>
+                        <field name="total" attrs="{'invisible': [('appears_on_payslip', '=', False)]}"/>
+                    </tree>
+                </xpath> -->
+
+
+                <!-- <xpath expr="//form/sheet/notebook/page[3]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[4]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath> -->
+                <xpath expr="//form/sheet/notebook/page[2]/field[@name='line_ids']/tree" position="attributes">
+                    <attribute name="colors"> red:is_subtotal_ref==True</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[4]" position="after">
+                    <page string="Devengue Vacaciones">
+                        <field name="periodos_devengue">
+                            <tree editable="bottom">
+                                <field name="periodo_devengue" required="1"/>
+                                <field name="dias" required="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hr_payslip_inherit_tree">
+            <field name="name">hr_payslip_inherit_tree</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">0</attribute>
+                </xpath>
+            </field>
+
+        </record>
+    </data>
+
+
+
+</odoo>
+
+

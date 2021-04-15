@@ -1,0 +1,308 @@
+<odoo>
+
+	<report
+		id="report_file"
+		model="hr.file"
+		string="File Report"
+		name="planilla.report_file_view"
+		file="hr.report_file_view"
+		report_type="qweb-pdf"/>
+
+	<template id="report_file_view">
+		<t t-call="report.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<t t-call="report.external_layout">
+					<div class="page">
+						<h1>FICHA DE DATOS DEL TRABAJADOR</h1>
+						<table class="table">
+							<thead>
+								<tr colspan="2">
+									<th><h3>DATOS PERSONALES:</h3></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<label>Apellido Paterno:</label> <span t-field="doc.a_paterno"/>
+									</td>
+									<td>
+										<label>Apeliido Materno:</label> <span t-field="doc.a_materno"/>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<label>Nombres:</label> <span t-field="doc.nombres"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Fecha de Nacimiento:</label> <span t-field="doc.fec_nac"/>
+									</td>
+									<td>
+										<label>Pais o Departamento:</label> <span t-field="doc.pais"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Provincia o Estado:</label> <span t-field="doc.provincia"/>
+									</td>
+									<td>
+										<label>Distrito:</label> <span t-field="doc.distrito"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Documento de Identidad:</label> <span t-field="doc.dni"/>
+									</td>
+									<td>
+										<label>N° de Documento:</label> <span t-field="doc.num_doc"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>N° Telefono Domicilio:</label> <span t-field="doc.telefono"/>
+									</td>
+									<td>
+										<label>N° Telefono Celular:</label> <span t-field="doc.celular"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Correo Electronico Personal:</label> <span t-field="doc.correo"/>
+									</td>
+									<td>
+										<label>N° Carné de ESSALUD:</label> <span t-field="doc.carne_essalud"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Grupo Sanguineo:</label> <span t-field="doc.grupo_sanguineo"/>
+									</td>
+									<td>
+										<label>Domicilio Actual:</label> <span t-field="doc.direccion"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Referencia:</label> <span t-field="doc.referencia"/>
+									</td>
+									<td>
+										<label>Talla de Camisa:</label> <span t-field="doc.talla_camisa"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Talla de Pantalon:</label> <span t-field="doc.talla_pantalon"/>
+									</td>
+									<td>
+										<label>Talla de Polo:</label> <span t-field="doc.talla_polo"/>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table">
+							<thead>
+								<tr colspan="2">
+									<th><h3>DATOS FAMILIARES:</h3></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr colspan="2">
+									<th>
+										<h4>Datos del Conyuge del Trabajador:</h4>
+									</th>
+								</tr>
+								<tr>
+									<td>
+										<label>1er Apellido:</label> <span t-field="doc.c_a_paterno"/>
+									</td>
+									<td>
+										<label>2do Apellido:</label> <span t-field="doc.c_a_materno"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Nombres:</label> <span t-field="doc.c_nombres"/>
+									</td>
+									<td>
+										<label>Fecha de Nacimiento:</label> <span t-field="doc.c_fec_nac"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Lugar donde labora el Conyuge:</label> <span t-field="doc.c_trabajo"/>
+									</td>
+									<td>
+										<label>DNI/Carnet de Extranjeria/Pasaporte:</label> <span t-field="doc.c_dni"/>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table">
+							<thead>
+								<tr>
+									<th colspan="6"><h4>Datos Referentes a los Padres e Hijos del Trabajador:</h4></th>
+								</tr>
+								<tr>
+									<th>Apellidos y Nombres</th>
+									<th>Parentesco</th>
+									<th>Fecha de Nacimiento</th>
+									<th>Ocupacion</th>
+									<th>Estado Civil</th>
+									<th>¿Vive?</th>
+								</tr>
+							</thead>
+							<tbody>
+								<t t-foreach="doc.familiares" t-as="familiar">
+									<tr>
+										<td><span t-field="familiar.ape_nom"/></td>
+										<td><span t-field="familiar.parentesco"/></td>
+										<td><span t-field="familiar.fec_nac"/></td>
+										<td><span t-field="familiar.ocupacion"/></td>
+										<td><span t-field="familiar.estado_civil"/></td>
+										<td><span t-field="familiar.vive"/></td>
+									</tr>
+								</t>
+							</tbody>
+						</table>
+						<p style="page-break-before:always;"> </p>
+						<table class="table">
+							<thead>
+								<tr>
+									<th colspan="3"><h4>Datos de dos Familiares a quienes notificar en una situacion de emergencia:</h4></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<label>Apellidos y Nombres:</label> <span t-field="doc.e_ape_nom_1"/>
+									</td>
+									<td>
+										<label>Parentesco:</label> <span t-field="doc.e_parentesco_1"/>
+									</td>
+									<td>
+										<label>Direccion y/o Telefono:</label> <span t-field="doc.e_direccion_1"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Apellidos y Nombres:</label> <span t-field="doc.e_ape_nom_2"/>
+									</td>
+									<td>
+										<label>Parentesco:</label> <span t-field="doc.e_parentesco_2"/>
+									</td>
+									<td>
+										<label>Direccion y/o Telefono:</label> <span t-field="doc.e_direccion_2"/>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table">
+							<thead>
+								<tr>
+									<th colspan="3"><h3>INFORMACION LABORAL:</h3></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<label>Fecha de Ingreso:</label> <span t-field="doc.fec_ing"/>
+									</td>
+									<td>
+										<label>Cargo a desempeñar:</label> <span t-field="doc.cargo"/>
+									</td>
+									<td>
+										<label>N° Horas Semanales de Trabajo:</label> <span t-field="doc.horas"/>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<label>Nombre de Entidad Financiera:</label> <span t-field="doc.entidad_finan_sueldo"/>
+									</td>
+									<td colspan="1">
+										<label>N° CTA. SUELDO:</label> <span t-field="doc.cta_sueldo"/>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<label>Nombre de Entidad Financiera:</label> <span t-field="doc.entidad_finan_cts"/>
+									</td>
+									<td colspan="1">
+										<label>N° CTA. CTS.:</label> <span t-field="doc.cta_cts"/>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<label>Regimen Pensionario:</label> <span t-field="doc.regimen"/>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<label>N° (CUSPP-AFP):</label> <span t-field="doc.cuspp_afp"/>
+									</td>
+									<td colspan="1">
+										<label>Fecha de Afiliacion:</label> <span t-field="doc.fec_afiliacion"/>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table">
+							<thead>
+								<tr>
+									<th colspan="8"><h3>DATOS DE ESTUDIOS:</h3></th>
+								</tr>
+								<tr>
+									<th>Educacion</th>
+									<th>Carrera o Especialidad</th>
+									<th>Centro de Estudios</th>
+									<th>Inicio</th>
+									<th>Fin</th>
+									<th>Estado</th>
+									<th>Grado Academico</th>
+									<th>Pais o Departamento del Centro de Estudios</th>
+								</tr>
+							</thead>
+							<tbody>
+								<t t-foreach="doc.estudios" t-as="estudio">
+									<tr>
+										<td><span t-field="estudio.educacion"/></td>
+										<td><span t-field="estudio.nom_carrera"/></td>
+										<td><span t-field="estudio.centro_estudios"/></td>
+										<td><span t-field="estudio.anio_inicio"/></td>
+										<td><span t-field="estudio.anio_fin"/></td>
+										<td><span t-field="estudio.completa"/></td>
+										<td><span t-field="estudio.grado"/></td>
+										<td><span t-field="estudio.pais"/></td>
+									</tr>
+								</t>
+							</tbody>
+						</table>
+						<table class="table">
+							<thead>
+								<tr>
+									<th colspan="4"><h4>Conocimiento de Idiomas:</h4></th>
+								</tr>
+								<tr>
+									<th>Idioma</th>
+									<th>Nivel</th>
+									<th>Centro de Estudio</th>
+									<th>Datos de Certificacion</th>
+								</tr>
+							</thead>
+							<tbody>
+								<t t-foreach="doc.idiomas" t-as="idioma">
+									<tr>
+										<td><span t-field="idioma.nombre"/></td>
+										<td><span t-field="idioma.nivel"/></td>
+										<td><span t-field="idioma.lugar"/></td>
+										<td><span t-field="idioma.certificacion"/></td>
+									</tr>
+								</t>
+							</tbody>
+						</table>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+</odoo>

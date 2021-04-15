@@ -1,0 +1,14 @@
+<odoo>
+    <data noupdate="0">
+        <record id="maintenance_type6" model="maintenance.type">
+            <field name="name">Lift</field>
+            <field name="main_cost">True</field>
+            <field name="cost">250</field>
+        </record>
+        <record id="maintenance_type7" model="maintenance.type">
+            <field name="name">Pest Control</field>
+            <field name="main_cost">True</field>
+            <field name="cost">250</field>
+        </record>
+    </data>
+</odoo>

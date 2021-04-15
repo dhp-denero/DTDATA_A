@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+
+		<record model="ir.ui.view" id="view_ple_caja_wizard_form">
+			<field name="name">ple.caja.wizard.form</field>
+			<field name="model">ple.caja.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Ple Caja" version="7.0">
+						<group>
+							<field name="period" required="1" />
+						</group>
+						<footer>
+							<button string="Generar" name="do_rebuild" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+		<record id="ple_caja_wizard_action" model="ir.actions.act_window">
+			<field name="name">Ple Caja</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">ple.caja.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem name="Ple Caja" id="ple_caja_wizard_menu"  parent="ple_diario_sunat_it.libro_electronico_wizard_menu" action="ple_caja_wizard_action" sequence="5" />
+
+
+		<record model="ir.ui.view" id="view_ple_banco_wizard_form">
+			<field name="name">ple.banco.wizard.form</field>
+			<field name="model">ple.banco.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Ple Banco" version="7.0">
+						<group>
+							<field name="period" required="1" />
+						</group>
+						<footer>
+							<button string="Generar" name="do_rebuild" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+		<record id="ple_banco_wizard_action" model="ir.actions.act_window">
+			<field name="name">Ple Banco</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">ple.banco.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem name="Ple Banco" id="ple_banco_wizard_menu"  parent="ple_diario_sunat_it.libro_electronico_wizard_menu" action="ple_banco_wizard_action" sequence="5" />
+
+	</data>
+</openerp>

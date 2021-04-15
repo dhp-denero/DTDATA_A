@@ -1,0 +1,20 @@
+
+<odoo>
+    <record model="ir.ui.view" id="view_planilla_planilla_tabular_wizard">
+        <field name="name">Planilla Wizard Tabular</field>
+        <field name="model">planilla.planilla.tabular.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Rangos de fechas">
+                    <field name="fecha_ini"/>
+                    <field name="fecha_fin"/>
+                </group>
+                <footer>
+                    <button name="do_rebuild" string="Actualizar" type="object" class="oe_highlight"/>
+                        or
+                    <button string="Cancelar" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

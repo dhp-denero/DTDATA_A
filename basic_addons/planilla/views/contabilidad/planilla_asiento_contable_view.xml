@@ -1,0 +1,23 @@
+
+<odoo>
+    <record id="planilla_asiento_contable_form_view" model="ir.ui.view">
+        <field name="name">planilla_asiento_contable_form_view</field>
+        <field name="model">planilla.asiento.contable</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="total_debe" readonly="1" />
+                    <field name="total_haber" readonly="1"/>
+                    <field name="diferencia" readonly="1"/>
+                    <field name="diario"/>
+                    <field name="cuenta_ajuste"/>
+                </group>
+                <footer>
+                    <button name="do_rebuild" string="Generar" type="object" class="oe_highlight"/>
+                        or
+                    <button string="Cancelar" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

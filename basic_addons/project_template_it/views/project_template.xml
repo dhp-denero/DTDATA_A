@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+        <record id="project_template_tree" model="ir.ui.view">
+            <field name="name">project.template.tree</field>
+            <field name="model">project.template</field>
+            <field name="arch" type="xml">
+                <tree string="Plantillas de proyecto">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="project_template_form" model="ir.ui.view">
+            <field name="name">project.template.form</field>
+            <field name="model">project.template</field>
+            <field name="arch" type="xml">
+                <form string="Plantilla de proyecto">
+                    <sheet>
+                        <group string="Datos de plantilla">
+                            <field name="name" />
+                        </group>
+                        <notebook>
+                            <page string="Detalle de plantilla">
+                                <field name="template_line_ids" nolabel="1" widget="one2many_list" mode="tree"
+                                       context="{'default_template_id': id}">
+                                    <tree editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="template_id" invisible="1" />
+                                        <field name="stage_id" domain="[('template_id','=',template_id)]" />
+                                        <field name="task_id" domain="[('template_id','=',template_id)]" attrs="{'readonly': [('stage_id','=',False)]}" />
+                                        <field name="planned_hours" widget="float_time" attrs="{'readonly': ['|',('task_id','=',False),('stage_id','=',False)]}" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_project_template" model="ir.actions.act_window">
+            <field name="name">Plantillas de proyecto</field>
+            <field name="res_model">project.template</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Cree una plantilla de proyecto
+                </p>
+                <p>
+                    Este formulario le permitirá crear una plantilla de proyecto que le permita generar rápidamente
+                    nuevos proyectos con una estructura definida
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Plantillas"
+                  id="mnu_project_template_root"
+                  parent="project.menu_project_config"
+                  sequence="0"/>
+
+        <menuitem name="Proyecto"
+                  id="mnu_project_template"
+                  action="action_project_template"
+                  parent="mnu_project_template_root"
+                  sequence="0"/>
+    </data>
+</odoo>

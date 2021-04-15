@@ -1,0 +1,30 @@
+
+<odoo>
+    <record model="ir.ui.view" id="planilla_importar_empleados_view_form">
+        <field name="name">planilla_importar_empleados_view_form</field>
+        <field name="model">planilla.importar.empleados</field>
+        <field name="arch" type="xml">
+            <form string="Importacion Empleados">
+                <header>
+                    <button string="Procesar" name="procesa_empleados" type="object" class="oe_highlight"/>
+                    <button string="Procesar2" name="corregir" type="object" class="oe_highlight"/>
+                </header>
+                <group>
+                    <field name="archivo_text" invisible="1"/>
+                    <field name="archivo" string="Importador Empleados" filename="archivo_text"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="planilla_importar_empleados_tree_form" model="ir.ui.view">
+        <field name="name">planilla_importar_empleados_tree_form</field>
+        <field name="model">planilla.importar.empleados</field>
+        <field name="arch" type="xml">
+            <tree string="Importacion compras">
+                <field name="archivo_text" />
+                <field name="archivo" />
+            </tree>
+        </field>
+    </record>
+</odoo>

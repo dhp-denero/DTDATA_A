@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="hr_salary_rule_form_inherit" model="ir.ui.view">
+            <field name="model">hr.salary.rule</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form" />
+            <field name="priority" eval="17" />
+            <field name="arch" type="xml">
+                <field name="active" position="after">
+                    <field name="cod_sunat"/>
+                </field>
+                <field name="analytic_account_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="category_id" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="appears_on_payslip" position="after">
+                    <field name="is_subtotal" required="1"/>
+                </field>
+                <xpath expr="//form/notebook/page[1]/group/separator" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <!-- <xpath expr="//form/notebook/page[1]/group/field[@name='condition_select']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath> -->
+                <xpath expr="//form/notebook/page[1]/group/separator[3]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//form/notebook/page[1]/group/field[@name='register_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <page name="rules" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </page>
+
+                <!-- <xpath expr="//form/notebook/page[3]" position="attributes">
+                     <attribute name="invisible">1</attribute>
+                 </xpath> -->
+            </field>
+        </record>
+        <record id="hr_salary_rule_form_inherit2" model="ir.ui.view">
+            <field name="model">hr.salary.rule</field>
+            <field name="inherit_id" ref="hr_payroll_account.hr_salary_rule_form_inherit" />
+            <field name="arch" type="xml">
+                <field name="account_tax_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <xpath expr="//form/notebook/page[4]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="hr_salary_rule_salary_rule_list_inherit" model="ir.ui.view">
+            <field name="name">hr_salary_rule_salary_rule_list_inherit</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_rule_list" />
+            <field name="arch" type="xml">
+                <field name="sequence" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

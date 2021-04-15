@@ -1,0 +1,17 @@
+<odoo>
+    <record id="planilla_view_tree" model="ir.ui.view">
+        <field name="name">Afiliacion</field>
+        <field name="model">planilla.afiliacion</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="entidad" />
+                <field name="com_fija" />
+                <field name="com_mix" />
+                <field name="prima_s" />
+                <field name="fondo" />
+                <field name="rem_ase" />
+                <field name="account_id"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

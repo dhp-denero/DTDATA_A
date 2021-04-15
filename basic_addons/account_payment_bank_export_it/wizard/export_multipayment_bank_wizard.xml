@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_export_multipayment_bank_wizard_form" model="ir.ui.view">
+			<field name="name">export.multipayment.bank.wizard.form</field>
+			<field name="model">export.multipayment.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Exportar Pagos">
+						<group>
+							<group>
+								<field name="report_type"/>
+								<field name="date_pay"/>
+								<field name="bank_acc"/>
+								
+							</group>
+							<group>
+								<field name="amount_total"/>
+								<field name="qty_abonos"/>
+								<field name="ref"/>
+								<field name="type_acc"/>
+							</group>
+						</group>
+
+						<footer>
+							<button string="Mostrar" name="do_rebuild" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+
+	</data>
+</openerp>

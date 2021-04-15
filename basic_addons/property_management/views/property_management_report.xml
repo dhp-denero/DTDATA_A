@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+        <!--Report for Property Per Location -->
+        <report id="property_per_location_12" 
+                model="account.asset.asset" 
+                string="Property Per Location" 
+                name="property_management.report_property_per_location1"
+                report_type="qweb-pdf"
+                menu="False"/>
+
+        <!--Report for Contract Expiry -->
+        <report id="report_contract_expiry_init"
+	            model="account.asset.asset"
+	            string="Contract Expiry"
+	            report_type="qweb-pdf"
+	            file="property_management.report_contract_expiry" 
+	            name="property_management.report_contract_expiry"
+	            menu="False" />
+
+        <!--Report for Income Expenditure -->
+        <report id="report_income_expenditure_init"
+	            model="account.asset.asset"
+	            string="Income Expenditure"
+	            report_type="qweb-pdf"
+	            file="property_management.report_income_expenditure" 
+	            name="property_management.report_income_expenditure"
+	            menu="False" />
+
+        <!--Report for Safety Certificate Expiry -->
+        <report id="report_safety_certificate_init"
+	            model="account.asset.asset"
+	            string="Safety Certificate Expiry"
+	            report_type="qweb-pdf"
+	            file="property_management.report_safety_certificate" 
+	            name="property_management.report_safety_certificate"
+	            menu="False" />
+
+        <!--Report for Document Expiry -->
+        <report id="report_document_expiry_init"
+	            model="account.asset.asset"
+	            string="Document Expiry"
+	            report_type="qweb-pdf"
+	            file="property_management.report_document_expiry" 
+	            name="property_management.report_document_expiry"
+	            menu="False" />
+
+        <!--Report for Tenancy Detail By Tenant -->
+        <report id="report_tenancy_by_tenant_init"
+	            model="tenant.partner"
+	            string="Tenancy Detail By Tenant"
+	            report_type="qweb-pdf"
+	            file="property_management.report_tenancy_by_tenant" 
+	            name="property_management.report_tenancy_by_tenant"
+	            menu="False" />
+
+        <!--Report for Tenancy Detail By Tenant -->
+        <report id="report_tenancy_by_property_init"
+	            model="account.asset.asset"
+	            string="Tenancy Detail By Property"
+	            report_type="qweb-pdf"
+	            file="property_management.report_tenancy_by_property"
+	            name="property_management.report_tenancy_by_property"
+	            menu="False" />
+        
+</odoo>

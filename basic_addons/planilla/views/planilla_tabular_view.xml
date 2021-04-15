@@ -1,0 +1,12 @@
+
+<odoo>
+    <record id="view_planilla_tabular_tree" model="ir.ui.view">
+        <field name="name">Planilla dinamica de reglas salariales</field>
+        <field name="model">planilla.tabular</field>
+        <!-- <field name="inherit_id" ref="planilla.view_planilla_tabular_tree"/> -->
+        <field name="arch" type="xml">
+            <tree>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,39 @@
+
+<odoo>
+
+    <record model="ir.ui.view" id="planilla_liquidacion_vacaciones_line_tree_view">
+        <field name="name">planilla_liquidacion_vacaciones_line_tree_view</field>
+        <field name="model">planilla.liquidacion.vacaciones.line</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0" editable="bottom">
+                <field name="orden" string="Orden" readonly="1"/>
+                <field name="identification_number" readonly="1"/>
+                <field name="last_name_father" readonly="1"/>
+                <field name="last_name_mother" readonly="1"/>
+                <field name="names" readonly="1"/>
+                <field name="fecha_ingreso" readonly="1" string="Fecha computo"/>
+                <!-- <field name="fecha_computable" /> -->
+                <field name="fecha_cese" readonly="1"/>
+                <field name="faltas" sum="faltas" readonly="1"/>
+                <field name="basico" sum="basico" readonly="1"/>
+                <field name="comision" sum="comision" readonly="1"/>
+                <field name="bonificacion" sum="bonificacion" readonly="1"/>
+                <field name="horas_extras_mean" sum="horas_extras_mean" readonly="1"/>
+                <field name="remuneracion_computable" sum="remuneracion_computable" readonly="1"/>
+                <field name="meses" sum="meses" readonly="1"/>
+                <field name="dias" sum="dias" readonly="1"/>
+                <field name="monto_x_mes" sum="monto_x_mes" readonly="1"/>
+                <field name="monto_x_dia" sum="monto_x_dia" readonly="1"/>
+                <field name="vacaciones_devengadas" sum="vacaciones_devengadas"/>
+                <field name="vacaciones_truncas" sum="vacaciones_truncas" readonly="1"/>
+                <field name="total_vacaciones" sum="total_vacaciones" readonly="1"/>
+                <field name="onp" sum="onp" readonly="1"/>
+                <field name="afp_jub" sum="afp_jub" readonly="1"/>
+                <field name="afp_si" sum="afp_si" />
+                <field name="afp_com" sum="afp_com"/>
+                <field name="neto_total" sum="neto_total" readonly="1"/>
+                <field name="contract_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

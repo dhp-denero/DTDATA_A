@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="project_template_stage_tree" model="ir.ui.view">
+            <field name="name">project.template.stage.tree</field>
+            <field name="model">project.template.stage</field>
+            <field name="arch" type="xml">
+                <tree string="Etapas para plantilla" editable="top">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_project_template_stage" model="ir.actions.act_window">
+            <field name="name">Etapas para plantilla</field>
+            <field name="res_model">project.template.stage</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="project_template_stage_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Etapas para plantilla
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Etapas"
+                  id="mnu_project_template_stage"
+                  action="action_project_template_stage"
+                  parent="mnu_project_template_root"
+                  sequence="10"/>
+    </data>
+</odoo>

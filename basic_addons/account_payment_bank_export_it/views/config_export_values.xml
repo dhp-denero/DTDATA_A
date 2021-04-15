@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<menuitem id="menu_multipayment_export_config"
+			parent="payment.root_payment_menu"
+			name="Exportar Pagos"
+			/>
+
+		<record id="view_export_bank_acctype_form" model="ir.ui.view">
+			<field name="name">export.bank.acctype.form</field>
+			<field name="model">export.bank.acctype</field>
+			<field name="arch" type="xml">
+				<form name="exportbankacctypeform">
+					<sheet>
+						<group>
+							<group>
+								<field name="bank_id"/>
+								<field name="type_acc"/>
+								<field name="cod_type_acc"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_export_bank_acctype_tree" model="ir.ui.view">
+			<field name="name">export.bank.acctype.tree</field>
+			<field name="model">export.bank.acctype</field>
+			<field name="arch" type="xml">
+				<tree name="exportbankacctypetree">
+					<field name="bank_id"/>
+					<field name="type_acc"/>
+					<field name="cod_type_acc"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_export_bank_acctype" model="ir.actions.act_window">
+			<field name="name">Tipo de Cuenta</field>
+			<field name="res_model">export.bank.acctype</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <menuitem
+			action="action_export_bank_acctype" 
+			id="menu_export_bank_acctype" 
+			parent="menu_multipayment_export_config"/>
+
+
+		<record id="view_export_typedoc_partner_form" model="ir.ui.view">
+			<field name="name">export.typedoc.partner.form</field>
+			<field name="model">export.typedoc.partner</field>
+			<field name="arch" type="xml">
+				<form name="tipodocpartnerform">
+					<sheet>
+						<group>
+							<group>
+								<field name="bank_id"/>
+								<field name="type_doc_partner_id"/>
+								<field name="code_type_doc"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_export_typedoc_partner_tree" model="ir.ui.view">
+			<field name="name">export.typedoc.partner.tree</field>
+			<field name="model">export.typedoc.partner</field>
+			<field name="arch" type="xml">
+				<tree name="tipodocpartnertree">
+					<field name="bank_id"/>
+					<field name="type_doc_partner_id"/>
+					<field name="code_type_doc"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_export_typedoc_partner" model="ir.actions.act_window">
+			<field name="name">Documento de Identidad</field>
+			<field name="res_model">export.typedoc.partner</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <menuitem
+			action="action_export_typedoc_partner" 
+			id="menu_export_typedoc_partner" 
+			parent="menu_multipayment_export_config"/>
+
+		<record id="view_export_typedoc_invoice_form" model="ir.ui.view">
+			<field name="name">export.typedoc.invoice.form</field>
+			<field name="model">export.typedoc.invoice</field>
+			<field name="arch" type="xml">
+				<form name="exporttypedocinvoiceform">
+					<sheet>
+						<group>
+							<group>
+								<field name="bank_id"/>
+								<field name="type_doc_invoice_id"/>
+								<field name="code_type_doc"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_export_typedoc_invoice_tree" model="ir.ui.view">
+			<field name="name">export.typedoc.invoice.tree</field>
+			<field name="model">export.typedoc.invoice</field>
+			<field name="arch" type="xml">
+				<tree name="exporttypedocinvoicetree">
+					<field name="bank_id"/>
+					<field name="type_doc_invoice_id"/>
+					<field name="code_type_doc"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_export_typedoc_invoice" model="ir.actions.act_window">
+			<field name="name">Tipo de comprobante</field>
+			<field name="res_model">export.typedoc.invoice</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <menuitem
+			action="action_export_typedoc_invoice" 
+			id="menu_export_typedoc_invoice" 
+			parent="menu_multipayment_export_config"/>
+
+		<record id="view_export_currency_form" model="ir.ui.view">
+			<field name="name">export.currency.form</field>
+			<field name="model">export.currency</field>
+			<field name="arch" type="xml">
+				<form name="exportcurrencyform">
+					<sheet>
+						<group>
+							<group>
+								<field name="bank_id"/>
+								<field name="currency_id"/>
+								<field name="code_currency"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_export_currency_tree" model="ir.ui.view">
+			<field name="name">export.currency.tree</field>
+			<field name="model">export.currency</field>
+			<field name="arch" type="xml">
+				<tree name="exportcurrencytree">
+					<field name="bank_id"/>
+					<field name="currency_id"/>
+					<field name="code_currency"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_export_currency" model="ir.actions.act_window">
+			<field name="name">Equivalente Monedas</field>
+			<field name="res_model">export.currency</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <menuitem
+			action="action_export_currency" 
+			id="menu_export_currency" 
+			parent="menu_multipayment_export_config"/>		
+
+
+
+
+		<record id="view_export_field_usable_form" model="ir.ui.view">
+			<field name="name">export.field.usable.form</field>
+			<field name="model">export.field.usable</field>
+			<field name="arch" type="xml">
+				<form name="exportfieldusableform">
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="module_id"/>
+								<field name="field_id" domain="[('model_id','=',module_id)]"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_export_field_usable_tree" model="ir.ui.view">
+			<field name="name">export.field.usable.tree</field>
+			<field name="model">export.field.usable</field>
+			<field name="arch" type="xml">
+				<tree name="exportfieldusabletree">
+					<field name="name"/>
+					<field name="module_id"/>
+					<field name="field_id"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_export_field_usable" model="ir.actions.act_window">
+			<field name="name">Campos disponibles para el reporte</field>
+			<field name="res_model">export.field.usable</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <menuitem
+			action="action_export_field_usable" 
+			id="menu_export_field_usable" 
+			parent="menu_multipayment_export_config"/>					
+
+
+
+
+		<record id="view_export_report_head_form" model="ir.ui.view">
+			<field name="name">export.report.head.form</field>
+			<field name="model">export.report.head</field>
+			<field name="arch" type="xml">
+				<form name="exportreportheadform">
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="bank_id"/>
+								<field name="group_4_partner"/>
+							</group>
+						</group>
+						<notebook>
+							<page string="Campos">
+								<field name="field_ids">
+									<tree string="campos" id="campos" editable="button">
+										<field name="name"/>
+										<field name="position"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_export_report_head_tree" model="ir.ui.view">
+			<field name="name">export.report.head.tree</field>
+			<field name="model">export.report.head</field>
+			<field name="arch" type="xml">
+				<tree name="exportreportheadtree">
+					<field name="name"/>
+					<field name="bank_id"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_export_report_head" model="ir.actions.act_window">
+			<field name="name">Configuración del reporte</field>
+			<field name="res_model">export.report.head</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <menuitem
+			action="action_export_report_head" 
+			id="menu_export_report_head" 
+			parent="menu_multipayment_export_config"/>					
+
+
+
+	</data>
+</odoo>
+

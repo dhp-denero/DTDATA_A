@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!--Eliminadno datos de prueba de nomina original  -->
+        <delete model="hr.contract" id="hr_payroll.hr_contract_firstcontract1"></delete>
+        <delete model="hr.contract" id="hr_payroll.hr_contract_gilles_gravie"></delete>
+        <delete model="hr.employee" id="hr_payroll.hr_employee_payroll"></delete>
+        <!-- <delete model="hr.employee" id="hr.employee_root"></delete> -->
+        <delete model="hr.employee" id="hr.employee_al"></delete>
+        <delete model="hr.employee" id="hr.employee_mit"></delete>
+        <delete model="hr.employee" id="hr.employee_niv"></delete>
+        <delete model="hr.employee" id="hr.employee_stw"></delete>
+        <delete model="hr.employee" id="hr.employee_chs"></delete>
+        <delete model="hr.employee" id="hr.employee_qdp"></delete>
+        <delete model="hr.employee" id="hr.employee_fme"></delete>
+        <delete model="hr.employee" id="hr.employee_fpi"></delete>
+        <delete model="hr.employee" id="hr.employee_jth"></delete>
+        <delete model="hr.employee" id="hr.employee_ngh"></delete>
+        <delete model="hr.employee" id="hr.employee_vad"></delete>
+        <delete model="hr.employee" id="hr.employee_han"></delete>
+        <delete model="hr.employee" id="hr.employee_jve"></delete>
+        <delete model="hr.employee" id="hr.employee_jep"></delete>
+        <delete model="hr.employee" id="hr.employee_jod"></delete>
+        <delete model="hr.employee" id="hr.employee_jog"></delete>
+        <delete model="hr.employee" id="hr.employee_jgo"></delete>
+        <delete model="hr.employee" id="hr.employee_lur"></delete>
+        <delete model="hr.employee" id="hr.employee_hne"></delete>
+        <delete model="hr.employee" id="hr.employee_djj"></delete>
+        <delete model="hr.employee" id="hr.employee_dzc"></delete>
+        <!-- <delete model="hr.employee" id="hr_payroll_account.hr_payroll.hr_employee_payroll"></delete> -->
+
+        <delete model="hr.payroll.structure" id="hr_payroll.structure_base"></delete>
+        <delete model="hr.payroll.structure" id="hr_payroll.structure_001"></delete>
+        <delete model="hr.payroll.structure" id="hr_payroll.structure_002"></delete>
+
+        <delete model="hr.rule.input" id="hr_payroll.hr_rule_input_sale_b"></delete>
+        <delete model="hr.rule.input" id="hr_payroll.hr_rule_input_sale_a"></delete>
+
+        <delete model="hr.salary.rule" id="hr_payroll.hr_salary_rule_sales_commission"></delete>
+        <delete model="hr.salary.rule" id="hr_payroll.hr_salary_rule_meal_voucher"></delete>
+        <delete model="hr.salary.rule" id="hr_payroll.hr_salary_rule_ca_gravie"></delete>
+        <delete model="hr.salary.rule" id="hr_payroll.hr_salary_rule_providentfund1"></delete>
+        <delete model="hr.salary.rule" id="hr_payroll.hr_salary_rule_professionaltax1"></delete>
+        <delete model="hr.salary.rule" id="hr_payroll.hr_salary_rule_convanceallowance1"></delete>
+        <delete model="hr.salary.rule" id="hr_payroll.hr_salary_rule_houserentallowance1"></delete>
+        <delete model="hr.salary.rule" id="hr_payroll.hr_rule_net"></delete>
+        <delete model="hr.salary.rule" id="hr_payroll.hr_rule_taxable"></delete>
+        <delete model="hr.salary.rule" id="hr_payroll.hr_rule_basic"></delete>
+
+
+        <delete model="hr.contribution.register" id="hr_payroll.hr_houserent_register"></delete>
+        <delete model="hr.contribution.register" id="hr_payroll.hr_provident_fund_register"></delete>
+        <delete model="hr.contribution.register" id="hr_payroll.hr_professional_tax_register"></delete>
+        <delete model="hr.contribution.register" id="hr_payroll.hr_meal_voucher_register"></delete>
+
+        <delete model="hr.salary.rule.category" id="hr_payroll.BASIC"></delete>
+        <delete model="hr.salary.rule.category" id="hr_payroll.ALW"></delete>
+        <delete model="hr.salary.rule.category" id="hr_payroll.GROSS"></delete>
+        <delete model="hr.salary.rule.category" id="hr_payroll.DED"></delete>
+        <delete model="hr.salary.rule.category" id="hr_payroll.NET"></delete>
+        <delete model="hr.salary.rule.category" id="hr_payroll.COMP"></delete>
+
+    </data>
+    <data  noupdate="1">
+
+        <!-- categorias -->
+        <record id="planilla.INGRESOS" model="hr.salary.rule.category">
+            <field name="name">INGRESOS</field>
+            <field name="code">ING</field>
+            <field name="secuencia">1</field>
+            <field name="is_ing_or_desc">ingreso</field>
+            <field name="aparece_en_nomina">True</field>
+        </record>
+        <record id="planilla.APORTES_TRABAJADOR" model="hr.salary.rule.category">
+            <field name="name">APORTES TRABAJADOR</field>
+            <field name="code">APOR_TRA</field>
+            <field name="secuencia">2</field>
+            <field name="is_ing_or_desc">descuento</field>
+            <field name="aparece_en_nomina">True</field>
+        </record>
+        <record id="planilla.DESCUENTOS_NETO" model="hr.salary.rule.category">
+            <field name="name">DESCUENTOS AL NETO</field>
+            <field name="code">DES_NET</field>
+            <field name="secuencia">3</field>
+            <field name="is_ing_or_desc">descuento</field>
+            <field name="aparece_en_nomina">False</field>
+        </record>
+        <record id="planilla.DESCUENTOS_AFECTOS" model="hr.salary.rule.category">
+            <field name="name">DESCUENTOS AFECTOS</field>
+            <field name="code">DES_AFE</field>
+            <field name="secuencia">4</field>
+            <field name="is_ing_or_desc">descuento</field>
+            <field name="aparece_en_nomina">False</field>
+        </record>
+        <record id="planilla.PORCENTAJES" model="hr.salary.rule.category">
+            <field name="name">PORCENTAJES</field>
+            <field name="code">POR</field>
+            <field name="secuencia">5</field>
+            <field name="is_ing_or_desc">descuento</field>
+            <field name="aparece_en_nomina">False</field>
+        </record>
+        <record id="planilla.SUBTOTALES" model="hr.salary.rule.category">
+            <field name="name">SUBTOTALES</field>
+            <field name="code">SUB</field>
+            <field name="secuencia">6</field>
+            <field name="is_ing_or_desc">descuento</field>
+            <field name="aparece_en_nomina">False</field>
+        </record>
+        <record id="planilla.APORTES_EMPLEADOR" model="hr.salary.rule.category">
+            <field name="name">APORTES EMPLEADOR</field>
+            <field name="code">APOR_EMP</field>
+            <field name="secuencia">7</field>
+            <field name="is_ing_or_desc">descuento</field>
+            <field name="aparece_en_nomina">True</field>
+        </record>
+
+
+        <!-- distribucion analitica -->
+
+        <record id="planilla.DISTRIBUCION_ANALITICA_1" model="planilla.distribucion.analitica">
+            <field name="codigo">DISTRIBUCION 1</field>
+            <field name="descripcion">DISTRIBUCION1</field>
+        </record>
+        <!-- fin distribucion analitica -->
+    </data>
+
+
+
+    <!-- REGLAS SALARIALES PERUANAS -->
+    <data noupdate="1">
+        <record id="hr_rule_BAS" model="hr.salary.rule">
+            <field name="name">BASICO</field>
+            <field name="sequence" eval="1"/>
+            <field name="code">BAS</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0121</field>
+            <field name="appears_on_payslip">True</field>
+            <field name="amount_python_compute">result = contract.wage</field>
+        </record>
+
+
+
+        <record id="hr_salary_rule_asignacion_familiar" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0" name="amount_fix"/>
+            <field name="name">ASIGNACION FAMILIAR</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">AFAM</field>
+            <field name="sequence" eval="2"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0201</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+
+        <record id="hr_salary_rule_tardanzas" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = ((contract.wage / 30) * worked_days.TAR.number_of_days) + ((contract.wage / 30/8) * worked_days.TAR.number_of_hours)+((contract.wage / 30/8/60) * worked_days.TAR.minutos)
+            </field>
+            <field name="name">TARDANZAS</field>
+            <field name="category_id" ref="planilla.DESCUENTOS_AFECTOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">TAR</field>
+            <field name="sequence" eval="3"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0704</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_inasistencis" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = 1.0
+            </field>
+            <field name="name">INASISTENCIAS</field>
+            <field name="category_id" ref="planilla.DESCUENTOS_AFECTOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">INA</field>
+            <field name="sequence" eval="4"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0705</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_basico_del_mes" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result=BAS+AFAM-INA-TAR</field>
+            <field name="name">BASICO DEL MES</field>
+            <field name="category_id" ref="planilla.SUBTOTALES"/>
+            <field name="condition_select">none</field>
+            <field name="code">SUEL</field>
+            <field name="sequence" eval="5"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">1</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_vacaciones" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.VAC.amount</field>
+            <field name="name">VACACIONES</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">VAC</field>
+            <field name="sequence" eval="6"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0118</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_gratificacion" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.GRA.amount</field>
+            <field name="name">GRATIFICACION</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">GRA</field>
+            <field name="sequence" eval="7"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0406</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+
+        <record id="hr_salary_rule_bonificacion" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0" name="amount_fix"/>
+            <field name="name">BONIFICACION 9%</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">BO9</field>
+            <field name="sequence" eval="8"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0312</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_cts" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.CTS.amount</field>
+            <field name="name">CTS</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">CTS</field>
+            <field name="sequence" eval="9"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0904</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_total_otros_ingresos" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = VAC+GRA+BO9+CTS</field>
+            <field name="name">TOTAL OTROS INGRESOS</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">TOTROS</field>
+            <field name="sequence" eval="10"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">1</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_vac_tru" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.VAC_TRU.amount</field>
+            <field name="name">VACACIONES TRUNCAS</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">VAC_TRU</field>
+            <field name="sequence" eval="11"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0114</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+
+
+        <record id="hr_salary_rule_gratificacion_trunca" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0" name="amount_fix"/>
+            <field name="name">GRATIFICACION TRUNCA</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">GRA_TRU</field>
+            <field name="sequence" eval="12"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0407</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_bonificacion_trunca" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0" name="amount_fix"/>
+            <field name="name">BONIFICACION 9% TRUNCA</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">BON9_TRU</field>
+            <field name="sequence" eval="13"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0313</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_cts_trunca" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0" name="amount_fix"/>
+            <field name="name">CTS TRUNCA</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">CTS_TRU</field>
+            <field name="sequence" eval="14"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">01001</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_liquidacion" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result =VAC_TRU+GRA_TRU+BON9_TRU+CTS_TRU</field>
+            <field name="name">LIQUIDACION</field>
+            <field name="category_id" ref="planilla.INGRESOS"/>
+            <field name="condition_select">none</field>
+            <field name="code">LIQ</field>
+            <field name="sequence" eval="15"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">1</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_total_ingresos" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = SUEL+TOTROS+LIQ</field>
+            <field name="name">TOTAL INGRESOS</field>
+            <field name="category_id" ref="planilla.SUBTOTALES"/>
+            <field name="condition_select">none</field>
+            <field name="code">TING</field>
+            <field name="sequence" eval="16"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">1</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+
+        <record id="hr_salary_rule_fondo_jubilacion_prima" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="10" name="amount_fix"/>
+            <field name="name">%  Fondo de jubilación AFP PRIMA</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">PRIMA_fondo</field>
+            <field name="sequence" eval="17"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_comision_fija_afp_prima" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="1.60" name="amount_fix"/>
+            <field name="name">% Comision fija AFP PRIMA</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">PRIMA_comf</field>
+            <field name="sequence" eval="18"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_comision_mixta_afp_prima" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0.18" name="amount_fix"/>
+            <field name="name">% Comision Mixta AFP PRIMA</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">PRIMA_comm</field>
+            <field name="sequence" eval="19"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_seguro_invalidez_prima" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="1.36" name="amount_fix"/>
+            <field name="name">% Seguro de Invalidez Prima</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">PRIMA_segi</field>
+            <field name="sequence" eval="20"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_porcentaje_onp" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="13" name="amount_fix"/>
+            <field name="name">% ONP</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">ONP_fondo</field>
+            <field name="sequence" eval="21"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_jubilacion_afp_integra" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="10" name="amount_fix"/>
+            <field name="name">%  Fondo de jubilación AFP INTEGRA</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">INTEGRA_fondo</field>
+            <field name="sequence" eval="22"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_comision_fija_afp_integra" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="1.55" name="amount_fix"/>
+            <field name="name">% Comision fija AFP INTEGRA</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">INTEGRA_comf</field>
+            <field name="sequence" eval="23"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_comision_mixta_afp_integra" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0.90" name="amount_fix"/>
+            <field name="name">% Comision Mixta AFP INTEGRA</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">INTEGRA_comm</field>
+            <field name="sequence" eval="24"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_seguro_invalidez_integra" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="1.36" name="amount_fix"/>
+            <field name="name">% Comision Mixta AFP INTEGRA</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">INTEGRA_segi</field>
+            <field name="sequence" eval="25"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+
+        <record id="hr_salary_rule_jubilacion_afp_profuturo" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="10" name="amount_fix"/>
+            <field name="name">%  Fondo de jubilación AFP PROFUTURO</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">PROFUTURO_fondo</field>
+            <field name="sequence" eval="26"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_comision_fija_afp_profuturo" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="1.55" name="amount_fix"/>
+            <field name="name">% Comision fija AFP PROFUTURO</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">PROFUTURO_comf</field>
+            <field name="sequence" eval="27"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_comision_mixta_afp_profuturo" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="1.07" name="amount_fix"/>
+            <field name="name">% Comision Mixta AFP PROFUTURO</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">PROFUTURO_comm</field>
+            <field name="sequence" eval="28"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_seguro_invalidez_profuturo" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="1.36" name="amount_fix"/>
+            <field name="name">% Seguro de Invalidez PROFUTURO</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">PROFUTURO_segi</field>
+            <field name="sequence" eval="29"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+
+
+        <record id="hr_salary_rule_jubilacion_afp_habitad" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="10" name="amount_fix"/>
+            <field name="name">%  Fondo de jubilación AFP HABITAD</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">HABITAD_fondo</field>
+            <field name="sequence" eval="30"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_comision_fija_afp_habitat" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="1.0" name="amount_fix"/>
+            <field name="name">% Comision fija AFP HABITAD</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">HABITAD_comf</field>
+            <field name="sequence" eval="31"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_comision_mixta_afp_habitad" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0.38" name="amount_fix"/>
+            <field name="name">% Comision Mixta AFP HABITAD</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">HABITAD_comm</field>
+            <field name="sequence" eval="32"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_seguro_invalidez_habitad" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="1.36" name="amount_fix"/>
+            <field name="name">% Seguro de Invalidez HABITAD</field>
+            <field name="category_id" ref="planilla.PORCENTAJES"/>
+            <field name="condition_select">none</field>
+            <field name="code">HABITAD_segi</field>
+            <field name="sequence" eval="33"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_fondo_jubilacion" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.afiliacion_id.entidad == 'ONP': result = round(BAS*(ONP_fondo/100),2)
+if contract.afiliacion_id.entidad == 'PRIMA': result = round(BAS*(PRIMA_fondo/100),2)
+if contract.afiliacion_id.entidad == 'INTEGRA': result = round(BAS*(INTEGRA_fondo/100),2)
+if contract.afiliacion_id.entidad == 'PROFUTURO': result = round(BAS*(PROFUTURO_fondo/100),2)
+if contract.afiliacion_id.entidad == 'HABITAD': result = round(BAS*(HABITAD_fondo/100),2)
+if contract.afiliacion_id.entidad == 'JUBILADO': result = 0
+if contract.afiliacion_id.entidad == 'SIN REGIMEN': result = 0</field>
+            <field name="name">FONDO DE JUBILACION </field>
+            <field name="category_id" ref="planilla.APORTES_TRABAJADOR"/>
+            <field name="condition_select">none</field>
+            <field name="code">FON</field>
+            <field name="sequence" eval="34"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0608</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_prima_seguro" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.afiliacion_id.entidad == 'ONP': result = 0
+if contract.afiliacion_id.entidad == 'PRIMA': result = BAS*(PRIMA_segi/100)
+if contract.afiliacion_id.entidad == 'INTEGRA': result = BAS*(INTEGRA_segi/100)
+if contract.afiliacion_id.entidad == 'PROFUTURO': result = BAS*(PROFUTURO_segi/100)
+if contract.afiliacion_id.entidad == 'HABITAD': result = BAS*(HABITAD_segi/100)
+if contract.afiliacion_id.entidad == 'JUBILADO': result = 0
+if contract.afiliacion_id.entidad == 'SIN REGIMEN': result = 0</field>
+            <field name="name">PRIMA DE SEGURO </field>
+            <field name="category_id" ref="planilla.APORTES_TRABAJADOR"/>
+            <field name="condition_select">none</field>
+            <field name="code">PRIM</field>
+            <field name="sequence" eval="35"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0606</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_comision_flujo" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.tipo_comision==1 and contract.afiliacion_id.entidad=='PRIMA': result=BAS*(PRIMA_comf/100) 
+else:
+ if contract.tipo_comision==1 and contract.afiliacion_id.entidad=='INTEGRA': result=BAS*(INTEGRA_comf/100)
+ else:
+  if contract.tipo_comision==1 and contract.afiliacion_id.entidad=='PROFUTURO': result=BAS*(PROFUTURO_comf/100)
+  else:
+   if contract.tipo_comision==1 and contract.afiliacion_id.entidad=='HABITAD': result=BAS*(PROFUTURO_comf/100)
+   else: result=0</field>
+            <field name="name">COMISION FLUJO</field>
+            <field name="category_id" ref="planilla.APORTES_TRABAJADOR"/>
+            <field name="condition_select">none</field>
+            <field name="code">COMFLUJO</field>
+            <field name="sequence" eval="36"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0601</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+
+        <record id="hr_salary_rule_comision_mixta" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if contract.tipo_comision==2 and contract.afiliacion_id.entidad=='PRIMA': result=BAS*(PRIMA_comm/100) 
+else:
+ if contract.tipo_comision==2 and contract.afiliacion_id.entidad=='INTEGRA': result=BAS*(INTEGRA_comm/100)
+ else:
+  if contract.tipo_comision==2 and contract.afiliacion_id.entidad=='PROFUTURO': result=BAS*(PROFUTURO_comm/100)
+  else:
+   if contract.tipo_comision==2 and contract.afiliacion_id.entidad=='HABITAD': result=BAS*(HABITAD_comm/100)
+   else: result=0 </field>
+            <field name="name">COMISION MIXTA</field>
+            <field name="category_id" ref="planilla.APORTES_TRABAJADOR"/>
+            <field name="condition_select">none</field>
+            <field name="code">COMMIX</field>
+            <field name="sequence" eval="37"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0601</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_total_descuentos" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = FON+PRIM+COMMIX+COMFLUJO</field>
+            <field name="name">TOTAL DESCUENTOS</field>
+            <field name="category_id" ref="planilla.SUBTOTALES"/>
+            <field name="condition_select">none</field>
+            <field name="code">TDES</field>
+            <field name="sequence" eval="38"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">1</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_neto" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = TING-TDES</field>
+            <field name="name">NETO</field>
+            <field name="category_id" ref="planilla.SUBTOTALES"/>
+            <field name="condition_select">none</field>
+            <field name="code">NET</field>
+            <field name="sequence" eval="39"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">1</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_adelantos" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = inputs.ADELANTO.amount</field>
+            <field name="name">ADELANTOS</field>
+            <field name="category_id" ref="planilla.DESCUENTOS_NETO"/>
+            <field name="condition_select">none</field>
+            <field name="code">ADEL</field>
+            <field name="sequence" eval="40"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0701</field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+
+
+        <record id="hr_salary_rule_prestamos" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0.38" name="amount_fix"/>
+            <field name="name">PRESTAMOS</field>
+            <field name="category_id" ref="planilla.DESCUENTOS_NETO"/>
+            <field name="condition_select">none</field>
+            <field name="code">PREST</field>
+            <field name="sequence" eval="41"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0706</field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_otros_descuentos_neto" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0.38" name="amount_fix"/>
+            <field name="name">OTROS DSCTOS AL NETO</field>
+            <field name="category_id" ref="planilla.DESCUENTOS_NETO"/>
+            <field name="condition_select">none</field>
+            <field name="code">OTROSN</field>
+            <field name="sequence" eval="42"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat">0706</field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_total_descuentos_neto" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = ADEL+PREST+OTROSN</field>
+            <field name="name">TOTAL DESCUENTOS AL NETO</field>
+            <field name="category_id" ref="planilla.SUBTOTALES"/>
+            <field name="condition_select">none</field>
+            <field name="code">OTRN</field>
+            <field name="sequence" eval="43"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">1</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_neto_pagar" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = NET-OTRN</field>
+            <field name="name">NETO A PAGAR</field>
+            <field name="category_id" ref="planilla.SUBTOTALES"/>
+            <field name="condition_select">none</field>
+            <field name="code">NETP</field>
+            <field name="sequence" eval="44"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">1</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+        <record id="hr_salary_rule_aportes_essalud" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+if (SUEL+VAC+VAC_TRU)>=930: result=round((SUEL+VAC+VAC_TRU)*(0.09),2)
+else: result=round(930*0.09,2)</field>
+            <field name="name">ESSALUD</field>
+            <field name="category_id" ref="planilla.APORTES_EMPLEADOR"/>
+            <field name="condition_select">none</field>
+            <field name="code">ESSALUD</field>
+            <field name="sequence" eval="45"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+
+        <record id="hr_salary_rule_sentati" model="hr.salary.rule">
+            <field name="amount_select">fix</field>
+            <field eval="0.38" name="amount_fix"/>
+            <field name="name">SENATI</field>
+            <field name="category_id" ref="planilla.APORTES_EMPLEADOR"/>
+            <field name="condition_select">none</field>
+            <field name="code">SENATI</field>
+            <field name="sequence" eval="46"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">0</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">False</field>
+        </record>
+        <record id="hr_salary_rule_total_aportes" model="hr.salary.rule">
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = ESSALUD+SENATI</field>
+            <field name="name">TOTAL APORTES</field>
+            <field name="category_id" ref="planilla.SUBTOTALES"/>
+            <field name="condition_select">none</field>
+            <field name="code">APORTES</field>
+            <field name="sequence" eval="47"/>
+            <field name="active">1</field>
+            <field name="is_subtotal">1</field>
+            <field name="cod_sunat"></field>
+            <field name="appears_on_payslip">True</field>
+        </record>
+    </data>
+
+    <data noupdate="0">
+        <record id="structure_nomina_habitat" model="hr.payroll.structure">
+            <field name="code">PLANILLA</field>
+            <field name="name">Planilla de sueldos y salarios</field>
+            <field eval="[(6, 0, [
+            ref('hr_rule_BAS'), 
+            ref('hr_salary_rule_asignacion_familiar'),
+            ref('hr_salary_rule_tardanzas'),
+            ref('hr_salary_rule_inasistencis'),
+            ref('hr_salary_rule_basico_del_mes'),
+            ref('hr_salary_rule_vacaciones'),
+            ref('hr_salary_rule_gratificacion'),
+            ref('hr_salary_rule_bonificacion'),
+            ref('hr_salary_rule_cts'),
+            ref('hr_salary_rule_total_otros_ingresos'),
+            ref('hr_salary_rule_vac_tru'),
+            ref('hr_salary_rule_gratificacion_trunca'),
+            ref('hr_salary_rule_bonificacion_trunca'),
+            ref('hr_salary_rule_cts_trunca'),
+            ref('hr_salary_rule_liquidacion'),
+            ref('hr_salary_rule_total_ingresos'),
+            ref('hr_salary_rule_fondo_jubilacion'),
+            ref('hr_salary_rule_fondo_jubilacion_prima'),
+
+
+
+            ref('hr_salary_rule_comision_fija_afp_prima'),
+            ref('hr_salary_rule_comision_mixta_afp_prima'),
+            ref('hr_salary_rule_seguro_invalidez_prima'),
+            ref('hr_salary_rule_porcentaje_onp'),
+            ref('hr_salary_rule_jubilacion_afp_integra'),
+            ref('hr_salary_rule_comision_fija_afp_integra'),
+            ref('hr_salary_rule_comision_mixta_afp_integra'),
+            ref('hr_salary_rule_seguro_invalidez_integra'),
+            ref('hr_salary_rule_jubilacion_afp_profuturo'),
+            ref('hr_salary_rule_comision_fija_afp_profuturo'),
+            ref('hr_salary_rule_comision_mixta_afp_profuturo'),
+            ref('hr_salary_rule_seguro_invalidez_profuturo'),
+            ref('hr_salary_rule_jubilacion_afp_habitad'),
+            ref('hr_salary_rule_comision_fija_afp_habitat'),
+            ref('hr_salary_rule_comision_mixta_afp_habitad'),
+            ref('hr_salary_rule_seguro_invalidez_habitad'),
+            ref('hr_salary_rule_prima_seguro'),
+            ref('hr_salary_rule_comision_flujo'),
+            ref('hr_salary_rule_comision_mixta'),
+            ref('hr_salary_rule_total_descuentos'),
+            ref('hr_salary_rule_neto'),
+            ref('hr_salary_rule_adelantos'),
+            ref('hr_salary_rule_prestamos'),
+            ref('hr_salary_rule_otros_descuentos_neto'),
+            ref('hr_salary_rule_total_descuentos_neto'),
+            ref('hr_salary_rule_neto_pagar'),
+            ref('hr_salary_rule_aportes_essalud'),
+            ref('hr_salary_rule_sentati'),
+            ref('hr_salary_rule_total_aportes'),
+            ])]" name="rule_ids"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+    </data>
+</odoo>

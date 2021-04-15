@@ -1,0 +1,25 @@
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="planila_liquidacion_pdf_wizard_view">
+            <field name="name">planila_liquidacion_pdf_wizard_view</field>
+            <field name="model">planilla.liquidacion.pdf.wizard</field>
+            <field name="arch" type="xml">
+                <form string="trabajador">
+                    <group>
+                        <group>
+                            <field name="forma"/>
+                            <field name="employee_id" domain="[('id','in',context['employees'])]" attrs="{'invisible':[('forma','=','1')]}"/>
+                        </group>
+                        <group></group>
+                    </group>
+                    <footer>
+                        <button string="Generar" name="do_rebuild" type="object" class="oe_highlight"/>
+                        o
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

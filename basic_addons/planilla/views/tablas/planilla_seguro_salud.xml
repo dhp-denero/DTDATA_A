@@ -1,0 +1,24 @@
+<odoo>
+    <record id="planilla_seguro_salud_view_form" model="ir.ui.view">
+        <field name="name">planilla_seguro_salud_view_form</field>
+        <field name="model">planilla.seguro.salud</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Seguro de salud">
+                    <field name="seguro" />
+                    <field name="porcentaje" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="planilla_seguro_salud_view_tree" model="ir.ui.view">
+        <field name="name">planilla_seguro_salud_view_tree</field>
+        <field name="model">planilla.seguro.salud</field>
+        <field name="arch" type="xml">
+            <tree string="Seguro de salud">
+                <field name="seguro" />
+                <field name="porcentaje" />
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+
+        <record model="ir.ui.view" id="view_reporte_flujo_caja">
+            <field name="name">reporte.flujo.caja.wizard.form</field>
+            <field name="model">reporte.flujo.caja.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Reporte Flujo Caja" version="7.0">
+                        <group>
+                            <field name="anio_fiscal" required="1" />
+                            <field name="cuentas" required="1" />
+                        </group>
+                        <footer>
+                            <button string="Generar" name="do_rebuild" type="object" class="oe_highlight"/>
+                            or
+                            <button string="Cancel" class="oe_link" special="cancel"/>
+                        </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="re_action_flujocaja" model="ir.actions.act_window">      
+            <field name="name">Reporte Flujo Caja</field>
+              <field name="type">ir.actions.act_window</field>
+              <field name="res_model">reporte.flujo.caja.wizard</field>
+              <field name="view_type">form</field>
+              <field name="view_mode">form</field>
+              <field name="target">new</field>
+        </record>
+        
+        <menuitem name="Reporte Flujo Caja" id="reporteflujocaja_menu_t"  parent="account_sheet_work.account_finance_state_it" action="re_action_flujocaja" sequence="7" />
+            
+
+
+
+        <record id="view_flujo_caja_it_tree" model="ir.ui.view">
+            <field name="name">flujo.caja.it.tree</field>
+            <field name="model">flujo.caja.it</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Flujo de Caja" editable="bottom">
+                    <field name="codigo" required="1" />
+                    <field name="rubro" required="1" />
+                    <field name="grupo" required="1" />
+                    <field name="orden" required="1" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="flujo_caja_it_action" model="ir.actions.act_window">
+            <field name="name">Flujo de Caja</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">flujo.caja.it</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem name="Flujo de Caja"
+            action="flujo_caja_it_action"
+            id="menu_flujo_caja_it"
+            parent="account.account_account_menu"
+            sequence="13"
+        />
+
+
+
+
+        <record id="view_move_form" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+
+                <field name="date_maturity" position="after">
+                    <field name="flujo_caja_id" />
+                </field>               
+
+            </field>
+        </record>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <record id="view_account_payment_form" model="ir.ui.view">
+            <field name="name">account.payment.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <field name="payment_date" position="after" >
+                    <field name="flujo_caja_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                </field>
+            </field>
+        </record>
+
+
+
+        <record id="view_account_payment_invoice_form" model="ir.ui.view">
+            <field name="name">account.payment.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="payment_date" position="after" >
+                    <field name="flujo_caja_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>        
+                </field>
+            </field>
+        </record>
+
+
+
+
+        <record id="multipayment_invoice_form_view" model="ir.ui.view">
+            <field name="name">multipayment.invoice.form</field>
+            <field name="model">multipayment.invoice</field>
+            <field name="inherit_id" ref="account_multipayment_invoices_it.multipayment_invoice_form_view"/>
+            <field name="arch" type="xml">
+                        <field name="exchange_type" position="after" >
+                            <field name="flujo_caja_id" attrs="{'readonly':[('state','=','done')]}"/>
+                        </field>                       
+            </field>
+        </record>
+
+
+
+
+
+        <record id="multipaymentadvance_invoice_form_view" model="ir.ui.view">
+            <field name="name">multipayment.advance.invoice.form</field>
+            <field name="model">multipayment.advance.invoice</field>
+            <field name="inherit_id" ref="account_multipayment_invoices_it_advance.multipaymentadvance_invoice_form_view"/>
+            <field name="arch" type="xml">
+                        <field name="exchange_type" position="after" >
+                            <field name="flujo_caja_id" attrs="{'readonly':[('state','=','done')]}"/>
+                        </field>              
+            </field>
+        </record>
+
+
+        <record id="view_bank_statement_form" model="ir.ui.view">
+            <field name="name">account.bank.statement.form</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form"/>
+            <field name="arch" type="xml">
+                <field name="ref" position="after">
+                  <field name="flujo_caja_id" attrs="{'readonly': [('journal_entry_ids', '!=', [])]}" />
+                </field>
+
+
+            </field>
+        </record>
+
+
+
+    </data>
+</openerp>

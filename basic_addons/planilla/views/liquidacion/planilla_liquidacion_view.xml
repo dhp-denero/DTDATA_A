@@ -1,0 +1,64 @@
+<odoo>
+    <record model="ir.ui.view" id="planilla_liquidacion_form_view">
+        <field name="name">planilla_liquidacion_form_view</field>
+        <field name="model">planilla.liquidacion</field>
+        <field name="arch" type="xml">
+            <form string="Liquidaciones">
+                <header>
+                    <button string="Calcular" type="object" name="calcular_liquidacion" class="oe_highlight"/>
+                    <button string="Exportar Excel" type="object" name="get_excel"/>
+                    <button string="Exportar PDF" type="object" name="get_liquidacion_wizard"/>
+                    <button string="Certificado PDF" type="object" name="get_certificado_wizard"/>
+                    <!--<button string="Generar Boleta" type="object" name="get_pdf" invisible="1"/>
+                    <button string="Agregar/Reemplazar Empleado" type="object" name="open_wizard"/>
+                    <button string="Adelantos" type="object" name="get_adelantos"/>
+                    <button string="Resumen Pago" type="object" name="resumen_pago"/> -->
+                </header>
+                <group string="Liquidaciones" col="2" colspan="2">
+                    <group>
+                        <field name="year"/>
+                        <field name="plus_9"/>
+                        <field name="calcular_meses_dias"/>
+                    </group>
+                    <group>
+                        <field name="month"/>
+                        <label for="date_start" string="Periodo"/>
+                        <div>
+                            <field name="date_start" class="oe_inline" readonly="1"/>
+-                            <field name="date_end" class="oe_inline" readonly="1"/>
+                        </div>
+                        <field name="tipo_cambio"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="CTS">
+                        <field name="planilla_cts_lines"/>
+                    </page>
+                    <page string="Gratificaciones">
+                        <field name="planilla_gratificacion_lines"/>
+                    </page>
+                    <page string="Vacaciones">
+                        <field name="planilla_vacaciones_lines"/>
+                    </page>
+                    <page string="indemnizacion">
+                        <field name="planilla_indemnizacion_lines"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="planilla_liduidacion_tree">
+        <field name="name">planilla_liduidacion_tree</field>
+        <field name="model">planilla.liquidacion</field>
+        <field name="arch" type="xml">
+            <tree string="Liquidaciones">
+                <field name="year" required="1" string="Año"/>
+                <field name="month" required="1" string="Mes"/>
+                <!-- <field name="tipo" string="Tipo de Liquidacion"/> -->
+                <field name="plus_9"/>
+                <field name="calcular_meses_dias" />
+
+            </tree>
+        </field>
+    </record>
+</odoo>

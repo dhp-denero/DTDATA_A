@@ -1,0 +1,55 @@
+<odoo>
+
+    <record id="inherited_maintenance_type_form_id" model="ir.ui.view">
+        <field name="name">inherited.maintenance.type.form</field>
+        <field name="model">maintenance.type</field>
+        <field name="inherit_id" ref="property_management.maintenance_type_form" />
+        <field name="arch" type="xml">
+                <field name='name' position='after'>
+                      <field name="main_cost"/>
+                      <field name="cost" attrs="{'invisible': [('main_cost','!=',True)]}" required="1"/>
+                </field>
+        </field>
+    </record>
+    <record id="analytic_form_inherited_view_id" model="ir.ui.view">
+        <field name="name">inherited.view.analytic.form</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="property_management.property_analytic_view_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//page[@name='rent_schedule']" position="after">
+                <page name="maint_rent" string="Maintenance">
+			     <separator colspan="4" string="Maintenance" />
+				    <field name="cost_id">
+				        <tree editable="bottom">
+				            <field name="maint_type" domain="[('main_cost','=','true')]" />
+				            <field name="cost" />
+				        </tree>
+				    </field>
+			 </page>
+            </xpath>
+            <field name="main_cost" position="replace">
+                <field name="main_cost" />
+            </field>
+            <field name="main_cost" position='after'>
+                <!-- <field name="main_cost"/> -->
+                <field name="recurring" invisible="1"/>
+            </field>
+
+         </field>
+   </record>
+
+    <!--Inherited account asset asset form view to add label -->
+<!--  <record id="property_tenancy_penalty_view_inherit_1" model="ir.ui.view">
+        <field name="name">property.tenancy.penalty.view.inherit</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="property_management.property_analytic_view_form" />
+        <field name="arch" type="xml">
+           <xpath
+               expr="//form/sheet/notebook/page[@name='rent_schedule']/field[@name='rent_schedule_ids']/tree/button[@name='create_invoice']"
+               position="attributes">
+              <attribute name="context">{'asset':1,'is_tenancy':1,'amount_val': 2, 'recuring': 0, 'comm': 1}</attribute>
+           </xpath>
+        </field>
+    </record>  -->
+
+</odoo>

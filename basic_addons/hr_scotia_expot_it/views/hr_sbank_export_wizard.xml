@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_hr_sbank_export_wizard_form" model="ir.ui.view">
+            <field name="name">hr.sbank.export.wizard.form</field>
+            <field name="model">hr.sbank.export.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Exportar Planilla">
+                    <group>
+                        <field name="name"/>
+                        <field name="pay_date"/>
+                        <field name="type_export"/>
+                        <field name="payslip_run_id"/>
+                    </group>
+                    <footer>
+                        <button name="make_excel_pla_export" string="Generar excel" type="object" class="oe_highlight" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="hr_payslip_run_inherit_form" model="ir.ui.view">
+            <field name="name">hr_payslip_run_inherit_form</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header" position="inside">
+                    <button name="make_excel_sbank" string="Exportar a ScotiaBank" type="object" class="oe_highlight fa fa-desktop"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,24 @@
+<odoo>
+
+    <record id="planilla_inputs_nomina_tree" model="ir.ui.view">
+        <field name="name">Parametros tareo</field>
+        <field name="model">planilla.inputs.nomina</field>
+        <field name="arch" type="xml">
+            <tree string="Parametros tareo" create="1" delete="1" edit="1" editable="bottom">
+                <field name="codigo" />
+                <field name="descripcion" />
+            </tree>
+
+        </field>
+    </record>
+    <record id="planilla_inputs_nomina_form" model="ir.ui.view">
+        <field name="name">Parametros tareo</field>
+        <field name="model">planilla.inputs.nomina</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="codigo" />
+                <field name="descripcion" />
+            </form>
+        </field>
+    </record>
+</odoo>

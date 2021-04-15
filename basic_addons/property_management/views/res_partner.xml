@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>	
+
+		<!--Inherited res partner form view-->
+		<record id="inherited_view_partner_form" model="ir.ui.view">
+			<field name="name">inherited.view.partner.form</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='website']" position="after">
+					<field name="occupation"/>
+				</xpath>
+				<xpath expr="//page[@name='sales_purchases']//field[@name='supplier']" position="after">
+                    <field name="agent" string="Agent" />
+                </xpath>
+				<xpath expr="//page[@name='sales_purchases']/group/group/field[@name='customer']" position="after">
+					<field name="tenant"/>
+					<field name="is_worker"/>
+					<field name="worker_maintenance_ids" widget="many2many_tags"
+					 attrs="{'required':[('is_worker','=',True)], 'invisible':[('is_worker','=',False)]}"/>
+				</xpath>
+				
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                    <page string="Work History" attrs="{'invisible':[('is_worker','=',False)]}">
+                        <separator string="Work History"/>
+                        <field name="prop_manintenance_ids" readonly='1'>
+                            <tree create="false">
+                                <field name="date"/>
+                                <field name="property_id"/>
+                                <field name="type"/>
+                                <field name="name"/>
+                                <field name="cost"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <!--
+																				<page name="main" string="Maintenance" attrs="{'invisible':[('is_worker','=',True)]}">
+                            <separator string="Maintenance"/>
+                             <field name="maint_ids" nolabel='1' readonly="1">
+                                 <tree craete='false'>
+                                        <field name="date"/>
+                                        <field name="property_id"/>
+                                        <field name="type"/>
+                                        <field name="name"/>
+                                        <field name="cost"/>
+                                        <field name="state"/>
+                                    </tree>
+                             </field>
+                     </page>
+																				-->
+                </xpath>
+			</field>
+		</record>
+
+		<!--Inherited res user form view to add tenant id-->
+		<record id="inherited_view_user_form" model="ir.ui.view">
+			<field name="name">inherited.view.user.form</field>
+			<field name="model">res.users</field>
+			<field name="inherit_id" ref="base.view_users_form"/>
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="tenant_id"/>
+                    <field name="tenant_ids" widget="many2many_tags"/>
+				</field>
+			</field>
+		</record>
+		
+
+        <!-- Res Company -->
+        <record id ="res_company_view_id" model="ir.ui.view">
+            <field name="name">res.company.view</field>
+            <field name="model">res.company</field>
+            <field name ="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type ="xml">
+                <field name="website" position="after">
+                    <field name="default_password" password="True" required="1"/>
+                </field>
+            </field>
+       </record>
+
+</odoo>

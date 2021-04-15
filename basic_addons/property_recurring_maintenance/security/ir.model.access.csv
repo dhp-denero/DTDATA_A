@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_maintenance_cost_id","access_maintenance_cost_user","model_maintenance_cost","property_management.group_property_user",1,1,1,0
+"access_maint_cost_id","access_maintenance_cost_agent","model_maintenance_cost","property_management.group_property_agent",1,1,1,1
+"access_maintenance_cost_manager","access_maintenance_cost_manager","model_maintenance_cost","property_management.group_property_manager",1,1,1,1

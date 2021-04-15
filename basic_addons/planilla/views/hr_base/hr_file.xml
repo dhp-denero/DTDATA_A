@@ -1,0 +1,184 @@
+<odoo>
+	<data>
+		<record model="ir.actions.act_window" id="hr_file_action">
+			<field name="name">Ficha de Datos del Trabajador</field>
+			<field name="res_model">hr.file</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Crea tu primera ficha</p>
+			</field>
+		</record>
+		
+		<act_window id="export_data_wizard"
+			name="Exportar Empleados"
+			src_model="hr.file"
+			res_model="hr.wizard"
+			view_mode="form"
+			target="new"
+			key2="client_action_multi"/>
+
+		<record model="ir.ui.view" id="wizard_form_view">
+			<field name="name">wizard.form</field>
+			<field name="model">hr.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Export Data">
+					Seleccione los empleados a exportar
+					<group>
+						<field name="files" widget="many2many_list"/>
+					</group>
+					<footer>
+						<button name="export_employee" type="object"
+							string="Exportar" class="oe_highlight"/>
+						o
+						<button special="cancel" string="Cancelar"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_file_tree_view">
+			<field name="name">hr.file.tree</field>
+			<field name="model">hr.file</field>
+			<field name="arch" type="xml">
+				<tree string="File Tree">
+					<field name="nombres"/>
+					<field name="a_paterno"/>
+					<field name="dni"/>
+					<field name="correo"/>
+					<field name="celular"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_file_form_view">
+			<field name="name">file.form</field>
+			<field name="model">hr.file</field>
+			<field name="arch" type="xml">
+				<form string="Course Form">
+					<sheet>
+						<notebook>
+							<page string="Datos Personales">
+								<group string="Datos Personales">
+									<group>
+										<field name="a_paterno"/>
+										<field name="a_materno"/>
+										<field name="nombres"/>
+										<field name="fec_nac"/>
+										<field name="sexo"/>
+										<field name="pais"/>
+										<field name="provincia"/>
+										<field name="distrito"/>
+										<field name="dni"/>
+										<field name="num_doc"/>
+									</group>
+									<group>
+										<field name="telefono"/>
+										<field name="celular"/>
+										<field name="correo"/>
+										<field name="carne_essalud"/>
+										<field name="grupo_sanguineo"/>
+										<field name="direccion"/>
+										<field name="referencia"/>
+										<field name="estado_civil"/>
+										<field name="nro_hijos"/>
+									</group>
+									<group string="Tallas">
+										<field name="talla_camisa"/>
+										<field name="talla_pantalon"/>
+										<field name="talla_polo"/>
+									</group>
+								</group>
+							</page>
+							<page string="Datos Familiares">
+								<group string="Datos del Conyuge del Trabajador">
+									<group>
+										<field name="c_a_paterno"/>
+										<field name="c_a_materno"/>
+										<field name="c_nombres"/>
+									</group>
+									<group>
+										<field name="c_fec_nac"/>
+										<field name="c_trabajo"/>
+										<field name="c_dni"/>
+									</group>
+								</group>
+								<group string="Datos referentes a los Padres e Hijos del Trabajador">
+									<field name="familiares">
+										<tree editable="bottom">
+											<field name='ape_nom'/>
+											<field name='parentesco'/>
+											<field name='fec_nac'/>
+											<field name='ocupacion'/>
+											<field name='estado_civil'/>
+											<field name='vive'/>
+											<field name='worker_id' invisible="True"/>
+										</tree>
+									</field>
+								</group>
+								<group string="Indique datos de dos familiares a quienes notificar en una situacion de emergencia">
+									<group>
+										<field name='e_ape_nom_1'/>
+										<field name='e_parentesco_1'/>
+										<field name='e_direccion_1'/>
+									</group>
+									<group>
+										<field name='e_ape_nom_2'/>
+										<field name='e_parentesco_2'/>
+										<field name='e_direccion_2'/>
+									</group>
+								</group>
+							</page>
+							<page string="Informacion Laboral">
+								<group string="Informacion Laboral">
+									<group>
+										<field name='fec_ing'/>
+										<field name='cargo'/>
+										<field name='horas'/>
+										<field name='regimen'/>
+										<field name='cuspp_afp'/>
+									</group>
+									<group>
+										<field name='entidad_finan_sueldo'/>
+										<field name='cta_sueldo'/>
+										<field name='entidad_finan_cts'/>
+										<field name='cta_cts'/>
+										<field name='fec_afiliacion'/>
+									</group>
+								</group>
+							</page>
+							<page string="Datos de Estudios">
+								<group string="Datos de Estudios">
+									<field name="estudios">
+										<tree editable="bottom">
+											<field name='educacion'/>
+											<field name='nom_carrera'/>
+											<field name='centro_estudios'/>
+											<field name='anio_inicio'/>
+											<field name='anio_fin'/>
+											<field name='completa'/>
+											<field name='grado'/>
+											<field name='pais'/>
+											<field name='e_worker_id' invisible="True"/>
+										</tree>
+									</field>
+								</group>
+								<group string="Conocimiento de Idiomas">
+									<field name="idiomas">
+										<tree editable="bottom">
+											<field name='nombre'/>
+											<field name='nivel'/>
+											<field name='lugar'/>
+											<field name='certificacion'/>
+											<field name='i_worker_id' invisible="True"/>
+										</tree>
+									</field>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+	</data>
+</odoo>

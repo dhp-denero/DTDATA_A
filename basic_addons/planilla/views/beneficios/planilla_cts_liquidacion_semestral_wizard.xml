@@ -1,0 +1,31 @@
+<odoo>
+    <record model="ir.ui.view" id="planilla_cts_liquidacion_semestral_wizard">
+        <field name="name">planilla_cts_liquidacion_semestral_wizard</field>
+        <field name="model">planilla.cts.liquidacion.semestral.wizard</field>
+        <field name="arch" type="xml">
+            <form string="CTS" version="8.0">
+                <group>
+                    <group>
+                        <field name="encargado"/>
+                    </group>
+                    <group>
+                        <field name="fecha_deposito"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Generar Reporte" type="object" name="get_pdf" class="oe_highlight"/>
+                        or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- <record id="action_cts_liquidacion_semestral_wizard" model="ir.actions.act_window">
+        <field name="name">Reporte CTS</field>
+        <field name="res_model">planilla.cts.liquidacion.semestral.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record> -->
+</odoo>

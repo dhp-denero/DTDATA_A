@@ -1,0 +1,218 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_control_vacaciones_form_view">
+            <field name="name">hr_control_vacaciones_form_view</field>
+            <field name="model">hr.control.vacaciones</field>
+            <field name="arch" type="xml">
+                <form string="Control Vacaciones">
+                    <header>
+                        <button name="calcular_vacaciones" type="object" string="Actualizar" class="oe_highlight"/>
+                        <!--<button name="cerrar" type="object" string="Cerrar" class="oe_highlight" states="generated"/>-->
+                        <!--<button name="reabrir" type="object" string="Reabrir" class="oe_highlight" states="closed"/>-->
+                        <button name="get_vacaciones_excel" type="object" string="Generar Excel" class="oe_highlight"/>
+                        <!--<field name="state" widget="statusbar" readonly="1"/>-->
+                    </header>
+                    <sheet>
+                        <h1>Control de Vacaciones</h1>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Vacaciones">
+                                <field name="vacaciones_line" readonly="1">
+                                    <tree>
+                                        <field name="fiscalyear_id"/>
+                                        <field name="dni"/>
+                                        <field name="employee_id"/>
+                                        <field name="periodo_planilla"/>
+                                        <field name="periodo_devengue"/>
+                                        <field name="saldo_vacaciones"/>
+                                        <field name="dias_gozados"/>
+                                        <field name="total"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_control_vacaciones_tree" model="ir.ui.view">
+            <field name="name">hr_control_vacaciones_tree_view</field>
+            <field name="model">hr.control.vacaciones</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_planilla_control_vacaciones" model="ir.actions.act_window">
+            <field name="name">Control de Vacaciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.control.vacaciones</field>
+            <field name="view_id" ref="hr_control_vacaciones_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="oe_view_nocontent_create"> Haga click aqui para crear un Control de Vacaciones.</p></field>
+        </record>
+
+
+        <menuitem id ="menu_planilla_seccion_vacaciones" name ="Vacaciones" parent="hr_payroll.menu_hr_payroll_root" sequence="33" groups="group_planilla_recursos_humanos"/>
+
+        <menuitem id="menu_planilla_control_vacaciones" name="Control de Vacaciones" parent="planilla.menu_planilla_seccion_vacaciones" action="action_planilla_control_vacaciones" groups="group_planilla_recursos_humanos"/>
+        
+        <record model="ir.ui.view" id="hr_rol_vacaciones_form_view">
+            <field name="name">hr_rol_vacaciones_form_view</field>
+            <field name="model">hr.rol.vacaciones</field>
+            <field name="arch" type="xml">
+                <form string="Rol Vacaciones">
+                    <header>
+                        <button name="calcular_rol_vacaciones" type="object" string="Generar" class="oe_highlight" confirm="¿Esta seguro que desea volver a generar el rol de vacaciones?"/>
+                        <!--<button name="actualizar_dias_laborados" type="object" string="Actualizar Dias Laborados" class="oe_highlight"/>
+                        <button name="get_wizard" type="object" string="Importar Diferencias" class="oe_highlight"/>
+                        <button name="csv_export" type="object" string="Exportar Diferencias" class="oe_highlight"/>-->
+                        <button name="add_employee" type="object" string="Añadir Empleado" class="oe_highlight"/>
+                        <button name="get_rol_vacaciones_excel" type="object" string="Generar Excel" class="oe_highlight"/>
+                        <!--<button name="cerrar" type="object" string="Cerrar" class="oe_highlight" states="generated"/>-->
+                        <!--<button name="reabrir" type="object" string="Reabrir" class="oe_highlight" states="closed"/>-->
+                        <!--<field name="state" widget="statusbar" readonly="1"/>-->
+                    </header>
+                    <sheet>
+                        <h1>Rol de Vacaciones</h1>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+                            <group>
+                                <field name="fiscalyear_id" required="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Vacaciones">
+                                <field name="rol_line">
+                                    <tree editable="bottom" create="0">
+                                        <!--<field name="fiscalyear_id" readonly="1"/>-->
+                                        <field name="employee_id" readonly="1"/>
+                                        <field name="dni" readonly="1"/>
+                                        <!--<field name="jornada" string="JS" readonly="1"/>-->
+                                        <field name="fecha_ing" readonly="1"/>
+                                        <field name="fecha_ult_vac"/>
+                                        <field name="fecha_vac" readonly="1"/>
+                                        <!--<field name="faltas" readonly="1"/>
+                                        <field name="dias_efect" readonly="1"/>
+                                        <field name="aux_dias_efect" invisible="1"/>
+                                        <field name="fecha_real" readonly="1"/>
+                                        <field name="diferencia"/>
+                                        <button name="detalle_faltas" type="object" icon="fa-file-text-o"/>-->
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_rol_vacaciones_tree" model="ir.ui.view">
+            <field name="name">hr_rol_vacaciones_tree_view</field>
+            <field name="model">hr.rol.vacaciones</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="fiscalyear_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="action_planilla_rol_vacaciones" model="ir.actions.act_window">
+            <field name="name">Rol de Vacaciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.rol.vacaciones</field>
+            <field name="view_id" ref="hr_rol_vacaciones_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html"> <p class="oe_view_nocontent_create">Haga click aqui para crear un nuevo Rol de Vacaciones.</p></field>
+        </record>
+
+        <menuitem id="menu_planilla_rol_vacaciones" name="Rol de Vacaciones" parent="planilla.menu_planilla_seccion_vacaciones" action="action_planilla_rol_vacaciones" groups="group_planilla_recursos_humanos"/>
+
+        <record model="ir.ui.view" id="view_ultima_vacacion_wizard_form">
+            <field name="name">hr.ultima.vacacion.form</field>
+            <field name="model">hr.ultima.vacacion</field>
+            <field name="arch" type="xml">
+                <form string="Asignar Ultima Vacacion">
+                        <group>
+                            <group>
+                                <field name="employee_ids" invisible="1"/>
+                                <field name="ultima_vacacion"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button string="Asignar" name="set_date" type="object" class="oe_highlight"/>
+                            or
+                            <button string="Cancel" class="oe_link" special="cancel"/>
+                        </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="detalle_faltas_wizard" model="ir.ui.view">
+            <field name="name">detalle_faltas_wizard_tree</field>
+            <field name="model">detalle.faltas</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="payslip_run_id" readonly="1"/>
+                    <field name="faltas" readonly="1"/>
+                </tree>
+             </field>
+        </record>
+
+        <record id="wizard_difference_view" model="ir.ui.view">
+            <field name="name">wizard_difference_view</field>
+            <field name="model">import.difference</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Importacion de Diferencias">
+                    <group>
+                        <field name="file_name" invisible="1"/>
+                        <field widget="binary" name="file_fees" filename="file_name"/>
+                        <field name="separator" style="width:5%%"/>
+                    </group>
+                    <footer>
+                        <button name="csv_import" string="Importar CSV" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                 </form>
+             </field>
+        </record>
+        
+        <record id="wizard_add_employee" model="ir.ui.view">
+            <field name="name">wizard_add_employee</field>
+            <field name="model">add.employee</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Añadir Empleado">
+                    <group>
+                        <field name="fiscalyear_id" invisible="1"/>
+                        <field name="employee_ids">
+                            <tree create="0" edit="0">
+                                <field name="name_related"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="add_employee" string="Añadir" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                 </form>
+             </field>
+        </record>
+    </data>
+</odoo>

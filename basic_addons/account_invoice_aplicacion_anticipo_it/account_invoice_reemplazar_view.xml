@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="action_account_aplicacion_anticipo" model="ir.actions.server">
+            <field name="name">Aplicación de Anticipo</field>
+            <field name="condition">True</field>
+            <field name="model_id" ref="model_account_invoice"/>
+            <field name="state">code</field>
+            <field name="code">action = env['account.invoice'].browse(context['active_ids']).aplicacion_anticipo()</field>
+        </record>
+
+        <record model="ir.values" id="value_account_invoice_aplica_aanticipo">
+            <field eval="'client_action_multi'" name="key2"/>
+            <field eval="'account.invoice'" name="model"/>
+            <field name="name">Aplica. Anticipo</field>
+            <field name="value" eval="'ir.actions.server,%d'%action_account_aplicacion_anticipo"/>
+            <field name="object" eval="True"/>
+        </record>
+
+        <record id="account_invoice_nf1_form_view" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="ebill_nf.account_invoice_nf1_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='advance_payment_ids']/tree/field[@name='serial']" position="before">
+                    <field name="td" required="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="invoice_supplier_form" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">                
+                <xpath expr="//notebook" position="inside">
+                    <page string="Adelantos">
+                        <field name="advance_payment_ids" attrs="{'readonly':[('state','not in',('draft','cancel'))]}">
+                            <tree string="Adelantos" editable="botton">
+                                <field name="td" required="1"/>
+                                <field name="serial" required="1"/>
+                                <field name="number" required="1"/>
+                                <field name="name" required="1"/>
+                                <field name="amount" required="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="planilla.afp_onp" model="planilla.afiliacion">
+            <field name="entidad">ONP</field>
+        </record>
+        <record id="planilla.afp_prima" model="planilla.afiliacion">
+            <field name="entidad">PRIMA</field>
+        </record>
+        <record id="planilla.afp_integra" model="planilla.afiliacion">
+            <field name="entidad">INTEGRA</field>
+        </record>
+        <record id="planilla.afp_profuturo" model="planilla.afiliacion">
+            <field name="entidad">PROFUTURO</field>
+        </record>
+        <record id="planilla.afp_habitat" model="planilla.afiliacion">
+            <field name="entidad">HABITAT</field>
+        </record>
+        <record id="planilla.afp_jubilado" model="planilla.afiliacion">
+            <field name="entidad">JUBILADO</field>
+        </record>
+        <record id="planilla.afp_sin_regimen" model="planilla.afiliacion">
+            <field name="entidad">SIN REGIMEN</field>
+        </record>
+    </data>
+
+    <data noupdate="1">
+        <record id="planilla.inficadores_afiliacion_habitat" model="planilla.afiliacion.line">
+            <field name="fecha_ini">2018-08-01</field>
+            <field name="fecha_fin">2018-08-31</field>
+            <field name="planilla_afiliacion_id" ref="planilla.afp_habitat"/>
+            <field name="fondo">10</field>
+            <field name="comf">1.55</field>
+            <field name="comm">1.8</field>
+            <field name="segi">1.36</field>
+            <field name="remmax">99</field>
+        </record>
+        <record id="planilla.inficadores_afiliacion_integra" model="planilla.afiliacion.line">
+            <field name="fecha_ini">2018-08-01</field>
+            <field name="fecha_fin">2018-08-31</field>
+            <field name="planilla_afiliacion_id" ref="planilla.afp_integra"/>
+            <field name="fondo">11</field>
+            <field name="comf">1.95</field>
+            <field name="comm">1.22</field>
+            <field name="segi">1.76</field>
+            <field name="remmax">199</field>
+        </record>
+
+        <record id="planilla.inficadores_afiliacion_prima" model="planilla.afiliacion.line">
+            <field name="fecha_ini">2018-08-01</field>
+            <field name="fecha_fin">2018-08-31</field>
+            <field name="planilla_afiliacion_id" ref="planilla.afp_prima"/>
+            <field name="fondo">12</field>
+            <field name="comf">1.3</field>
+            <field name="comm">1.2</field>
+            <field name="segi">1.46</field>
+            <field name="remmax">29</field>
+        </record>
+        <record id="planilla.inficadores_afiliacion_profuturo" model="planilla.afiliacion.line">
+            <field name="fecha_ini">2018-08-01</field>
+            <field name="fecha_fin">2018-08-31</field>
+            <field name="planilla_afiliacion_id" ref="planilla.afp_profuturo"/>
+            <field name="fondo">13</field>
+            <field name="comf">1.25</field>
+            <field name="comm">1.3</field>
+            <field name="segi">1.96</field>
+            <field name="remmax">19</field>
+        </record>
+    </data>
+
+    <!-- worked days  -->
+    <data  noupdate="1">
+        <record id="planilla_worked_days_TAR" model="planilla.worked.days">
+            <field name="codigo">TAR</field>
+            <field name="descripcion">TARDANZAS DEL PERIODO</field>
+            <field name="tasa_monto">0</field>
+        </record>
+        <record id="planilla_worked_days_FAL" model="planilla.worked.days">
+            <field name="codigo">FAL</field>
+            <field name="descripcion">FALTAS DEL PERIODO</field>
+            <field name="tasa_monto">0</field>
+        </record>
+        <record id="planilla_worked_days_HE25" model="planilla.worked.days">
+            <field name="codigo">HE25</field>
+            <field name="descripcion">HORAS EXTRAS 2 PRIMERAS HORAS</field>
+            <field name="tasa_monto">25</field>
+        </record>
+        <record id="planilla_worked_days_HE35" model="planilla.worked.days">
+            <field name="codigo">HE35</field>
+            <field name="descripcion">HORAS EXTRAS 35%</field>
+            <field name="tasa_monto">35</field>
+        </record>
+        <record id="planilla_worked_days_HE100" model="planilla.worked.days">
+            <field name="codigo">HE100</field>
+            <field name="descripcion">HORAS EXTRAS DOMINGOS Y FERIADOS</field>
+            <field name="tasa_monto">100</field>
+        </record>
+        <record id="planilla_worked_days_DSUB" model="planilla.worked.days">
+            <field name="codigo">DSUB</field>
+            <field name="descripcion">DIAS SUBSIDIADOS</field>
+            <field name="tasa_monto">10</field>
+        </record>
+    </data>
+
+    <!-- parametros tareos -->
+    <data  noupdate="1">
+        <record id="planilla_inputs_nomina_5TA" model="planilla.inputs.nomina">
+            <field name="codigo">5TA</field>
+            <field name="descripcion">DESCUENTO POR QUINTA CATEGORIA</field>
+        </record>
+        <record id="planilla_inputs_nomina_GRA" model="planilla.inputs.nomina">
+            <field name="codigo">GRA</field>
+            <field name="descripcion">GRATIFICACION ORDINARIA JULIO/DICIEMBRE</field>
+        </record>
+        <record id="planilla_inputs_nomina_VAC" model="planilla.inputs.nomina">
+            <field name="codigo">VAC</field>
+            <field name="descripcion">VACACIONES</field>
+        </record>
+        <record id="planilla_inputs_nomina_CTS" model="planilla.inputs.nomina">
+            <field name="codigo">CTS</field>
+            <field name="descripcion">COMPENSACION POR TIEMPOS DE SERVICIO</field>
+        </record>
+        <record id="planilla_inputs_nomina_GRA_TRU" model="planilla.inputs.nomina">
+            <field name="codigo">GRA_TRU</field>
+            <field name="descripcion">GRATIFICACION TRUNCA</field>
+        </record>
+        <record id="planilla_inputs_nomina_VAC_TRU" model="planilla.inputs.nomina">
+            <field name="codigo">VAC_TRU</field>
+            <field name="descripcion">VACACIONES TRUNCA</field>
+        </record>
+        <record id="planilla_inputs_nomina_CTS_TRU" model="planilla.inputs.nomina">
+            <field name="codigo">CTS_TRU</field>
+            <field name="descripcion">COMPENSACION POR TIEMPO DE SERVICIOS TRUNCO</field>
+        </record>
+        <record id="planilla_inputs_nomina_ADELANTO" model="planilla.inputs.nomina">
+            <field name="codigo">ADELANTO</field>
+            <field name="descripcion">ADELANTOS OTORGADOS</field>
+        </record>
+        <record id="planilla_inputs_days_BONI" model="planilla.inputs.nomina">
+            <field name="codigo">BON</field>
+            <field name="descripcion">BONIFICACION</field>
+        </record>
+        <record id="planilla_inputs_days_COMM" model="planilla.inputs.nomina">
+            <field name="codigo">COMM</field>
+            <field name="descripcion">COMISIONES</field>
+        </record>
+    </data>
+</odoo>

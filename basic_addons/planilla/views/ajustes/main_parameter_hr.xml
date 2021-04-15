@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <record id="main_parameter_hr_form" model="ir.ui.view">
+            <field name="name">main_parameter_hr_form</field>
+            <field name="model">main.parameter.hr</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="dir_create_file" required="1"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="main_parameter_hr_tree" model="ir.ui.view">
+            <field name="name">main_parameter_hr_tree</field>
+            <field name="model">main.parameter.hr</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dir_create_file"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

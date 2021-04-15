@@ -1,0 +1,203 @@
+<odoo>
+
+    <!-- Commission Search view -->
+    <record id="property_commission_invoice_search" model="ir.ui.view">
+        <field name="name">commission.invoice.search</field>
+        <field name="model">commission.invoice</field>
+        <field name="arch" type="xml">
+            <search string="Commission Invoice Search">
+                <field name="number"/>
+                <field name="patner_id"/>
+                <field name="date"/>
+                <field name="property_id"/>
+                <field name="tenancy"/>
+                <field name="company_id"/>
+                <group  expand='0' string='Group by...'>
+                    <filter string='Partner' context="{'group_by': 'patner_id'}"/>
+                    <filter string='Date' context="{'group_by' : 'date'}"/>
+                    <filter string='Property' context="{'group_by' : 'property_id'}"/>
+                    <filter string='Tenancy' context="{'group_by': 'tenancy'}"/>
+                    <filter string='Company' context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="commission_invoice_form" model="ir.ui.view">
+        <field name="name">Commissions Invoice form</field>
+        <field name="model">commission.invoice</field>
+        <field name="arch" type="xml">
+            <form string="Commission Invoice">
+                <header>
+                    <button confirm="Are you sure you want to Close" name="button_close"
+                        state="draft" string="Cancel" type="object" class="oe_highlight"
+                        attrs="{'invisible': [['state', 'not in', ['draft']]]}" />
+                    <button name="create_invoice" state="draft" string="Create Invoice" type="object" class="oe_highlight"
+                        attrs="{'invisible': [['state', 'not in', ['draft','cancel']]]}" />
+                    <button name="open_invoice" state="draft" string="Open Invoice" type="object" class="oe_highlight"
+                        attrs="{'invisible': [['state', 'in', ['draft','cancel']]]}" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,cancel,invoice"
+                        readonly='1' />
+                </header>
+                <sheet>
+                    <div class="oe_left" style="width: 300px;">
+                        <div class="oe_title">
+                            <label string="Commission#" class="oe_edit_only" />
+                            <h1>
+                                <field name="number" readonly='1'/>
+                            </h1>
+                        </div>
+                    </div>
+                    <group col='4' colspan='4'>
+                        <field name="patner_id" required="1" default_focus="1"  string="Tenant"
+                            options="{'always_reload':1}" context="{'show_address':1}" attrs="{'readonly': [['state', 'in', ['invoice','cancel']]]}"/>
+                        <field name='date' attrs="{'readonly': [['state', 'in', ['invoice','cancel']]]}"/>
+                        <field name='property_id' attrs="{'readonly': [['state', 'in', ['invoice','cancel']]]}" required="1"/>
+                        <field name='agent' attrs="{'readonly': [['state', 'in', ['invoice','cancel']]]}" required="1"/>
+                        <field name='tenancy' domain="[('is_property','=','True')]" required="1" attrs="{'readonly': [['state', 'in', ['invoice','cancel']]]}"/>
+                        <field name='company_id' attrs="{'readonly': [['state', 'in', ['invoice','cancel']]]}"/>
+                        <field name='currency_id' attrs="{'readonly': [['state', 'in', ['invoice','cancel']]]}"/>
+                <!--         <field name="invoiced" invisible="1"/>
+                        <field name="not_invoice" invisible="1"/> -->
+                        <field name='inv' invisible="1" />
+                        <field name='invc_id' invisible="1" />
+                    </group>
+                    <notebook>
+                        <page string='Commission Information' name='commission_information'>
+                            <field name="commission_line" mode="tree"
+                                options="{'reload_whole_on_button': true}" attrs="{'readonly': [['state', 'in', ['invoice','cancel']]]}">
+                                <tree string="Commission Line" editable='top'>
+                                    <field name='name' string='Discription' />
+                                    <field name='commission_type' string='Commission Type' required="1"/>
+                                    <field name='date' />
+                                    <field name="end_date"/>
+                                    <field name='rent_amt' string="Total Rent"/>
+                                    <field name='amount' />
+                                </tree>
+                            </field>
+                             <group class="oe_subtotal_footer oe_right" colspan="2"
+                        name="sale_total">
+                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                            <label for="amount_total" />
+                        </div>
+                        <field name="amount_total" nolabel="1"
+                            class="oe_subtotal_footer_separator" widget="monetary"
+                            options="{'currency_field': 'currency_id'}" />
+                    </group>
+                    <div class="oe_clear"/>
+                        </page>
+                  
+                        <page string='Description'>
+                           <separator string="Description"/>
+                              <field name='description' colspan='4' placeholder='Other Information'/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="commission_invoice_tree" model="ir.ui.view">
+        <field name="name">Commissions Invoice tree</field>
+        <field name="model">commission.invoice</field>
+        <field name="arch" type="xml">
+            <tree string="Commissions Invoice">
+                <field name="number" />
+                <field name="patner_id" />
+                <field name="date" />
+                <field name="property_id" />
+                <field name='tenancy' />
+                <field name="state" />
+                 <field name="amount_total"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_commission_invoice" model="ir.actions.act_window">
+        <field name="name">Commission Invoice</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">commission.invoice</field>
+        <field name="search_view_id" ref="property_commission_invoice_search"/>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create commission record.
+            </p>
+        </field>
+    </record>
+
+    <menuitem 
+       id="menu_commissions"
+       name="Commissions"
+       parent="property_management.menu_property_main"
+       sequence="1"
+       groups='property_commission.groups_commission_pay_manager'/>
+
+    <menuitem 
+       id="menu_invoice_commissions"
+       name="Commission Inovice"
+       parent="menu_commissions"
+       action="action_commission_invoice" />
+
+    <record id="inherited_view_analytic_form_id" model="ir.ui.view">
+        <field name="name">inherited.view.analytic.form</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="property_management.property_analytic_view_form" />
+        <field name="arch" type="xml">
+            <button name="button_receive" position="after">
+                <button name="create_commission" string="Commission" type="object"
+                            icon="fa-ticket" colspan="2" class="oe_inline oe_stat_button"
+                            attrs="{'invisible': ['|', ('commission', '=', False),('commission_create', '=', True)]}" />
+            </button>
+            <field name="rent_entry_chck" position="after">
+                <field name="commission_create" invisible="1" />
+            </field>
+
+            <xpath expr="//group" position="inside">
+	            <group colspan='4' col='4' name="commission_information">
+	                   <separator string="Commission Information" colspan="4" />
+                        <group colspan='4' col='4'>
+		                   <field name="commission" />
+		                   <field name="agent" attrs="{'invisible': [('commission', '=', False)], 'required': [('commission', '=', True)]}" context="{'agent':True}"/>
+		                   <field name="commission_type"
+		                   attrs="{'invisible': [('commission', '=', False)], 'required': [('commission', '=', True)]}"/>
+		                   <field name="total_commission" attrs="{'invisible': [('commission', '=', False)]}"/>
+		                   <field name="fix_qty"
+		                   attrs="{'invisible': ['|',('commission_type', '!=', 'fixed'),('commission', '=', False)], 'required': [('commission_type', '=', 'fixed')]}" />
+		                   <newline />
+		                   <field name="fix_cost"
+		                   attrs="{'invisible': ['|',('commission_type', '!=', 'fixedcost'),('commission', '=', False)], 'required': [('commission_type', '=', 'fixedcost')]}" />
+		                 </group>
+	            </group>
+	        </xpath>
+        </field>
+    </record>
+
+   <record id="view_res_partner_filter" model="ir.ui.view">
+      <field name="name">res.partner.select</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_res_partner_filter"/>
+      <field name="arch" type="xml">
+          <filter name="supplier" position="after">
+              <filter string="Agents" name="agent" domain="[('agent', '=', 1)]" help="Agent Partners"/>
+          </filter>
+       </field>
+   </record>
+
+        <record id="action_agent_form" model="ir.actions.act_window">
+            <field name="name">Agents</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{"search_default_agent": 1, 'default_agent': 1, 'default_customer': 0, 'default_supplier': 1}</field>
+            <field name="search_view_id" ref="view_res_partner_filter"/>
+        </record>
+
+        <menuitem id="menu_agent_form"
+                  parent="sales_team.menu_sales"
+                  action="action_agent_form"
+                  sequence="2"/>
+
+</odoo>

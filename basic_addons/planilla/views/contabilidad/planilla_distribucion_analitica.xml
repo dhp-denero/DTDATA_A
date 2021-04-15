@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="planilla_distribucion_analitica_form" model="ir.ui.view">
+        <field name="name">Distribucion Analítica</field>
+        <field name="model">planilla.distribucion.analitica</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="codigo" />
+                    <field name="descripcion" />
+                </group>
+                <field name="cuenta_analitica_lines">
+                    <tree editable="bottom">
+                        <field name="cuenta_analitica_id" />
+                        <field name="porcentaje" sum="Total"/>
+                    </tree>
+                </field>
+            </form>
+        </field>
+    </record>
+    <record id="planilla_distribucion_analitica_tree" model="ir.ui.view">
+        <field name="name">Distribucion Analítica</field>
+        <field name="model">planilla.distribucion.analitica</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="codigo" />
+                <field name="descripcion" />
+                <field name="cuenta_analitica_lines" />
+            </tree>
+        </field>
+    </record>
+</odoo>

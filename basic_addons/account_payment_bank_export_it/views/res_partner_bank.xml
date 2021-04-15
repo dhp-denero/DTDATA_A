@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_partner_bank_form_icc" model="ir.ui.view">
+			<field name="name">res.partner.bank.form.icc</field>
+			<field name="model">res.partner.bank</field>
+			<field name="inherit_id" ref="base.view_partner_bank_form"/>
+			<field name="arch" type="xml">
+				<field name="acc_number" position="after">
+					<field name="acc_icc_number"/>
+				</field>
+				<xpath expr="//form/group" position="after">
+					<notebook>
+						<page string="Tipo de Cuenta">
+							<field name="export_type_acc"/>
+						</page>
+					</notebook>
+				</xpath>
+			</field>
+		</record>
+		<record id="view_partner_bank_tree_icc" model="ir.ui.view">
+			<field name="name">res.partner.bank.tree.icc</field>
+			<field name="model">res.partner.bank</field>
+			<field name="inherit_id" ref="base.view_partner_bank_tree"/>
+			<field name="arch" type="xml">
+				<field name="acc_number" position="after">
+					<field name="acc_icc_number"/>
+				</field>
+			</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,22 @@
+
+<odoo>
+    <record model="ir.ui.view" id="view_planilla_actualizar_afps_wizard">
+        <field name="name">planilla_actualizar_afps_wizard</field>
+        <field name="model">planilla.actualizar.afps</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Rangos de fechas ">
+                    <field name="fecha_ini"/>
+                    <field name="fecha_fin"/>
+                </group>
+                <footer>
+                    <button name="do_rebuild" string="Actualizar" type="object" class="oe_highlight"/>
+                        or
+                    <button string="Cancelar" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <!-- <act_window id="planilla.action_todo_wizard" name="To-Do Tasks Wizard" src_model="planilla.afiliacion.line" res_model="planilla.afiliacion.line.wizard" view_mode="form" target="new" /> -->
+
+</odoo>

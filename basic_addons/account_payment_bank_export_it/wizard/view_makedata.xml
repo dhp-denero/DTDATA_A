@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_export_makedata_wizard_form" model="ir.ui.view">
+			<field name="name">export.makedata.wizard.form</field>
+			<field name="model">export.makedata.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Crear datos">
+						<group>
+							<group>
+								<field name="bank_bcp"/>
+								<field name="bank_bbva"/>
+								<field name="bank_scotia"/>
+							</group>
+						</group>
+
+						<footer>
+							<button string="Llenar datos" name="create_data" type="object" class="oe_highlight"/>
+							or
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_export_makedata_wizard" model="ir.actions.act_window">
+			<field name="name">Llenar Datos</field>
+			<field name="res_model">export.makedata.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		 <menuitem
+			action="action_export_makedata_wizard" 
+			id="menu_export_makedata_wizard" 
+			parent="menu_multipayment_export_config"/>
+	</data>
+</openerp>

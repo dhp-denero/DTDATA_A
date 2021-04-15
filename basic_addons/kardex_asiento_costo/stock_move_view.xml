@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+        <record id="view_detalle_costo_produccion_tree" model="ir.ui.view">
+            <field name="name">detalle.costo.produccion.tree</field>
+            <field name="model">detalle.costo.produccion</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Costo de Consumo" create="false" delete="false">
+                    <field name="almacen" />
+                    <field name="producto" />
+                    <field name="cta_analitica" />
+                    <field name="debe" />
+                    <field name="haber" />
+                    <field name="costo_consumo" />
+                    <field name="cuenta_salida"  />
+                    <field name="cuenta_valuacion"  />
+                </tree>
+            </field>
+        </record>
+
+
+
+
+        <record model="ir.ui.view" id="asiento_costo_produccion_form">
+            <field name="name">asiento.costo.produccion.form</field>
+            <field name="model">asiento.costo.produccion</field>
+            <field name="arch" type="xml">
+                <form string="Consumo Produccion" version="8.0">
+                    <group>
+                        <group>
+                            <field name="period_id" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Mostrar" name="ver_informe" type="object" class="oe_highlight"/>
+                        <!-- <button string="Actualizar" name="actualizarsaldoinicial" type="object" class="oe_highlight"/> -->
+                        or
+                        <button string="Generar Asiento" name="crear_asiento" type="object" class="oe_highlight"/>
+                        <!-- <button string="Actualizar" name="actualizarsaldoinicial" type="object" class="oe_highlight"/> -->
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    
+        <record id="asiento_costo_produccion_action" model="ir.actions.act_window">
+            <field name="name">Consumo Produccion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">asiento.costo.produccion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem name="Consumo Produccion"
+            action="asiento_costo_produccion_action"
+            id="menu_asiento_costo_produccion_action"
+            parent="kardex_it.kardex_main_menu"
+            sequence="11"
+        />
+
+
+    <record id="view_main_parameter_form" model="ir.ui.view">
+            <field name="name">main.parameter.form</field>
+            <field name="model">main.parameter</field>
+            <field name="inherit_id" ref="kardex_it.view_main_parameter_form"/>
+            <field name="arch" type="xml">
+
+               <field name="etiqueta_analitica" position="after">
+                    <field name="operacion_salida_prod" />
+                    <field name="operacion_devolucion_prod" />
+               </field>
+
+
+            </field>
+    </record>   
+
+
+
+	</data>
+</openerp>

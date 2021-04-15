@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+        <record model="ir.ui.view" id="guardado_kardex_form">
+            <field name="name">guardado.kardex.form</field>
+            <field name="model">guardado.kardex</field>
+            <field name="arch" type="xml">
+                <form string="Guardado Kardex" version="8.0">
+                    <group>
+                        <group>
+                            <field name="period_id" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Guardar" name="ver_informe" type="object" class="oe_highlight"/>
+                        <!-- <button string="Actualizar" name="actualizarsaldoinicial" type="object" class="oe_highlight"/> -->
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    
+        <record id="guardado_kardex_action" model="ir.actions.act_window">
+            <field name="name">Guardado Kardex</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">guardado.kardex</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem name="Guardado Kardex"
+            action="guardado_kardex_action"
+            id="menu_guardado_kardex"
+            parent="kardex_it.kardex_main_menu"
+            sequence="11"
+        />
+
+
+
+
+	</data>
+</openerp>

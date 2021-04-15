@@ -1,0 +1,25 @@
+<odoo>
+	<!-- inherited property form view -->
+	<record id="inherited_view_analytic_form_id" model="ir.ui.view">
+		<field name="name">inherited.view.analytic.form</field>
+		<field name="model">account.analytic.account</field>
+		<field name="inherit_id" ref="property_management.property_analytic_view_form" />
+		<field name="arch" type="xml">
+			<field name='multi_prop' position="attributes">
+                <attribute name="invisible">False</attribute>
+            </field>
+			<xpath expr="//page[@name='rent_schedule']" position="before">
+				<page name="recurring_expense" string="Properties" attrs="{'invisible':[('multi_prop','=',False)]}">
+					<field name="prop_id">
+						<separator string="Property Details" colspan="4" />
+						<tree editable="bottom">
+							<field name="property_ids" string="Property" />
+							<field name="ground" />
+						</tree>
+					</field>
+				</page>
+			</xpath>
+		</field>
+	</record>
+
+</odoo>

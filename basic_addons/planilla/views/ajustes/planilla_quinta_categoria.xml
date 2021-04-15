@@ -1,0 +1,228 @@
+
+<odoo>
+    <record id="planilla_quinta_categoria_view_form" model="ir.ui.view">
+        <field name="name">planilla.quinta.categoria.form</field>
+        <field name="model">planilla.quinta.categoria</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Parametros de Quinta Categoria">
+                    <notebook>
+                        <page string="Valor UIT">
+                            <field name="uits">
+                                <tree editable="bottom">
+                                    <field name="anio" required="1" />
+                                    <field name="valor" required="1" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Limites">
+                            <field name="limites">
+                                <tree editable="bottom">
+                                    <field name="limite" required="1" />
+                                    <field name="monto" required="1" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Tasas">
+                            <field name="tasas">
+                                <tree editable="bottom">
+                                    <field name="limite" required="1" />
+                                    <field name="tasa" required="1" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Reglas Asociadas">
+                            <group>
+                                <group>
+                                    <field name="remuneracion_ordinaria_afecta" required="1"/>
+                                    <field name="remuneracion_basica_quinta" required="1"/>
+                                    <field name="remuneracion_extraordinaria_afecta" required="1"/>
+                                    <field name="gratificacion_fiesta_navidad" required="1"/>
+                                </group>
+                                <group>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Inputs Asociadas">
+                            <group>
+                                <group>
+                                    <field name="ingreso_predeterminado" required="1"/>
+                                </group>
+                                <group>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="oficial_quinta_categoria_detalle_view_form" model="ir.ui.view">
+        <field name="name">quinta.categoria.detalle.form</field>
+        <field name="model">quinta.categoria.detalle</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Quinta Categoria">
+                    <notebook>
+                        <!-- <page string="Resumen">
+                            <group>
+                                <group>
+                                    <field name="periodo" readonly="1" />
+                                    <field name="retencion" readonly="1" />
+                                </group>
+                                <group>
+                                    <field name="ingresos_ord_afe" readonly="1" />
+                                    <field name="ingresos_extra_afe" readonly="1" />
+                                </group>
+                            </group>
+                        </page> -->
+                        <page string="Detallado">
+                            <group>
+                                <field name="renum_comp" readonly="1"/>
+                                <field name="res_mes" readonly="1"/>
+                                <field name="proyec_anual" readonly="1"/>
+                                <field name="grat_julio" readonly="1"/>
+                                <field name="grat_diciem" readonly="1"/>
+                                <field name="renum_ant" readonly="1"/>
+                                <field name="renum_ant_irre" readonly="1"/>
+                                <field name="renum_anual_proy" readonly="1"/>
+                                <field name="_7uits" readonly="1"/>
+                                <field name="renta_neta_proy" readonly="1"/>
+                                <field name="tramo1" readonly="1"/>
+                                <field name="tramo2" readonly="1"/>
+                                <field name="tramo3" readonly="1"/>
+                                <field name="tramo4" readonly="1"/>
+                                <field name="tramo5" readonly="1"/>
+                                <field name="impuesto1" readonly="1"/>
+                                <field name="impuesto2" readonly="1"/>
+                                <field name="impuesto3" readonly="1"/>
+                                <field name="impuesto4" readonly="1"/>
+                                <field name="impuesto5" readonly="1"/>
+                                <field name="retenciones_ant" readonly="1"/>
+                                <field name="renta_anual_proy" readonly="1"/>
+                                <field name="factor" readonly="1"/>
+                                <field name="renta_mensual" readonly="1"/>
+                                <field name="remun_extra_periodo" readonly="1"/>
+                                <field name="total_renta_neta_extra" readonly="1"/>
+                                <field name="etramo1" readonly="1"/>
+                                <field name="etramo2" readonly="1"/>
+                                <field name="etramo3" readonly="1"/>
+                                <field name="etramo4" readonly="1"/>
+                                <field name="etramo5" readonly="1"/>
+                                <field name="eimpuesto1" readonly="1"/>
+                                <field name="eimpuesto2" readonly="1"/>
+                                <field name="eimpuesto3" readonly="1"/>
+                                <field name="eimpuesto4" readonly="1"/>
+                                <field name="eimpuesto5" readonly="1"/>
+                                <field name="renta_extraor" readonly="1"/>
+                                <field name="renta_total" readonly="1"/>
+                            </group>
+                        </page>
+                        <page string="Informacion meses anteriores">
+                            <group>
+                                <field name="remuneracion_m_anterior" />
+                                <field name="retencion_m_anterior" />
+                            </group>
+                        </page>
+                        <page string="Remuneracion otros empleadores">
+                            <group>
+                                <field name="rem_ord_otra_empresa" />
+                                <field name="rem_ext_otra_empresa" />
+                            </group>
+                        </page>
+                    </notebook>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="oficial_quinta_categoria_view_form" model="ir.ui.view">
+        <field name="name">quinta.categoria.form</field>
+        <field name="model">quinta.categoria</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Generar Quinta" name="generar_data" type="object" class="oe_highlight"/>
+                    <button string="Actualizar datos Otra empresa" name="actualizar_data" type="object" class="oe_highlight"/>
+                    <button string="Exportar Quinta a Excel" name="excel_export" type="object" class="oe_highlight"/>
+                    <button string="Agregar Empleado" name="add_employee" type="object" class="oe_highlight" confirm="¿Seguro que desea agragar una linea al detalle de Quinta Categoria con este empleado?"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="periodo" required="1" readonly="0"/>
+                            <field name="retencion" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="ingresos_ord_afe" readonly="1"/>
+                            <field name="ingresos_extra_afe" readonly="1"/>
+                            <field name="new_employee_id"/>
+                        </group>
+                    </group>
+
+                    <field name="detalle">
+                        <tree create="0">
+                            <field name="periodo" />
+                            <field name="dni" />
+                            <field name="empleado" />
+                            <field name="ingresos_ord_afe" />
+                            <field name="ingresos_extra_afe" />
+                            <field name="retencion" />
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="oficial_quinta_categoria_view_tree" model="ir.ui.view">
+        <field name="name">quinta.categoria.tree</field>
+        <field name="model">quinta.categoria</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="periodo" readonly="1" />
+                <field name="retencion" readonly="1" />
+                <field name="ingresos_ord_afe" readonly="1" />
+                <field name="ingresos_extra_afe" readonly="1" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="oficial_quinta_categoria_action" model="ir.actions.act_window">
+        <field name="name">Quinta Categoria</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">quinta.categoria</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <menuitem id="menu_quinta_categoria" name="Quinta" parent="hr_payroll.menu_hr_payroll_root" sequence="32"/>
+    <menuitem id="menu_quinta_categoria_menu" name="Quinta Categoria" parent="menu_quinta_categoria" action="oficial_quinta_categoria_action" sequence="1"/>
+
+
+
+
+    <record id="planilla_oficial_quinta_categoria_action" model="ir.actions.act_window">
+        <field name="name">Quinta Categoria</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">planilla.quinta.categoria</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="configuracion_menu_quinta_categoria_menu" name="Quinta Categoria" parent="menu_planilla_parametros_generales" action="planilla_oficial_quinta_categoria_action" sequence="1"/>
+
+</odoo>
+

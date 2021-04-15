@@ -1,0 +1,41 @@
+
+<odoo>
+    <record id="planilla_parametros_cts_view_form" model="ir.ui.view">
+        <field name="name">planilla_parametros_cts_view_form</field>
+        <field name="model">planilla.parametros.cts</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Parametros de CTS">
+                    <group>
+                        <field name="cod_cts"/>
+                        <field name="cod_bonificaciones" widget="many2many_tags"/>
+                        <field name="cod_comisiones" widget="many2many_tags"/>
+                        <field name="cod_sobretiempos" />
+                    </group>
+                    <group>
+                        <field name="cod_basico" />
+                        <field name="cod_asignacion_familiar" />
+                        <!-- <field name="cod_bonificacion_9" /> -->
+                        <field name="cod_dias_faltas" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="planilla_parametros_cts_view_tree" model="ir.ui.view">
+        <field name="name">planilla_parametros_cts_view_tree</field>
+        <field name="model">planilla.parametros.cts</field>
+        <field name="arch" type="xml">
+            <tree string="Parametros de CTS">
+                <field name="cod_cts" />
+                <!-- <field name="cod_bonificaciones" /> -->
+                <!-- <field name="cod_comisiones" /> -->
+                <field name="cod_sobretiempos" />
+                <field name="cod_basico" />
+                <field name="cod_asignacion_familiar" />
+                <!-- <field name="cod_bonificacion_9" /> -->
+                <field name="cod_dias_faltas" />
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,44 @@
+
+<odoo>
+    <record id="planilla_ajustes_view_form" model="ir.ui.view">
+        <field name="name">planilla_ajustes</field>
+        <field name="model">planilla.ajustes</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Parametros de Boleta de Pago">
+                    <group>
+                        <field name="cod_neto_pagar" />
+                        <field name="cod_remuneracion_asegurable" />
+                        <field name="diario_provisiones" />
+                        <field name="cod_dias_laborados" />
+                        <field name="cod_dias_no_laborados" />
+                    </group>
+                    <group>
+                        <field name="cod_dias_subsidiados" options="{'no_create': True}" widget="many2many_tags"/>
+                        <field name="afiliacion_sin_regimen_id" />
+                        <field name="ruc" />
+                    </group>
+                    <group cols="2">
+                        <field name="planilla_tabular_columnas"/>
+                        <field name="essalud_rules" widget="many2many_tags"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="planilla_ajustes_view_tree" model="ir.ui.view">
+        <field name="name">planilla_ajustes_view_tree</field>
+        <field name="model">planilla.ajustes</field>
+        <field name="arch" type="xml">
+            <tree string="Parametros de Boleta de Pago">
+                <field name="cod_neto_pagar" />
+                <field name="cod_remuneracion_asegurable" />
+                <!--<field name="cod_dias_laborados" />-->
+                <field name="cod_dias_no_laborados" />
+                <field name="cod_dias_subsidiados" />
+                <field name="afiliacion_sin_regimen_id" />
+                <field name="ruc" />
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_hr_sbank_export_config_form" model="ir.ui.view">
+            <field name="name">hr.sbank.export.config.form</field>
+            <field name="model">hr.sbank.export.config</field>
+            <field name="arch" type="xml">
+                <form string="Configuración para exportar planillas">
+                    <group>
+                        <field name="name"/>
+                        <field name="bank_id"/>
+                        <field name="text_concep"/>
+                        <field name="cod_ofi_pos"/>
+                        <field name="cod_cta_pos"/>
+                        <field name="salary_rule_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_hr_sbank_export_config_tree" model="ir.ui.view">
+            <field name="name">hr.sbank.export.config.tree</field>
+            <field name="model">hr.sbank.export.config</field>
+            <field name="arch" type="xml">
+                <tree string="Configuración para exportar planillas">
+                    <field name="name"/>
+                    <field name="bank_id"/>
+                    <field name="text_concep"/>
+                    <field name="cod_ofi_pos"/>
+                    <field name="cod_cta_pos"/>
+                    <field name="salary_rule_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_hr_sbank_export_config_it" model="ir.actions.act_window">
+            <field name="name">Configuración para exportar planillas</field>
+            <field name="res_model">hr.sbank.export.config</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_hr_sbank_export_config"
+            parent="hr_payroll.menu_hr_payroll_configuration"
+            action="action_hr_sbank_export_config_it"/>
+
+
+
+    </data>
+</openerp>

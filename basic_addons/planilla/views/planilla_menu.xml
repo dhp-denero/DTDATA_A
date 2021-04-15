@@ -1,0 +1,171 @@
+<data>
+    <act_window id="action_planilla_afiliacion" name="Afiliación" res_model="planilla.afiliacion" view_mode="tree,form" />
+    <menuitem id="menu_planilla_afiliacion" name="Afiliación" parent="hr_payroll.menu_hr_payroll_configuration" action ="action_planilla_afiliacion" sequence="3" />
+
+
+    <!-- FIXME deprecado(8/11/2018) -->
+    <!-- <act_window id="action_planilla_afiliacion_line" name="Periodo de Afiliación" res_model="planilla.afiliacion.line" context='{"search_default_periodo_mes_actual":1}' view_mode="tree,form" />
+    <menuitem id="menu_planilla_afiliacion_line" name="Periodo de Afiliación" parent="hr_payroll.menu_hr_payroll_configuration" action ="action_planilla_afiliacion_line" sequence="4" />
+ -->
+
+
+    <!-- parametros -->
+    <menuitem id="menu_planilla_parametros_generales" name="Parametros" parent="hr_payroll.menu_hr_payroll_configuration" sequence="32"/>
+    
+    <act_window id="action_main_parameter_hr" name="Directorio de Descarga" res_model="main.parameter.hr" view_mode="tree,form" />
+    <menuitem id="menu_main_parameter_hr" name="Directorio de Descarga" parent="menu_planilla_parametros_generales" action ="action_main_parameter_hr" sequence="4" />
+    <act_window id="action_planilla_parametros_ajustes" name="Parametros Boleta de Pago" res_model="planilla.ajustes" view_mode="tree,form" />
+    <menuitem id="menu_planilla_parametros_ajustes" name="Parametros Boleta de pago" parent="menu_planilla_parametros_generales" action ="action_planilla_parametros_ajustes" sequence="5" />
+
+    <act_window id="action_planilla_parametros_cts" name="Parametros CTS" res_model="planilla.parametros.cts" view_mode="tree,form" />
+    <menuitem id="menu_planilla_parametros_cts" name="Parametros CTS" parent="menu_planilla_parametros_generales" action ="action_planilla_parametros_cts" sequence="6" />
+
+
+    <act_window id="action_planilla_parametros_gratificacion" name="Parametros Gratificacion" res_model="planilla.parametros.gratificacion" view_mode="tree,form" />
+    <menuitem id="menu_planilla_parametros_gratificcion" name="Parametros Gratificacion" parent="menu_planilla_parametros_generales" action ="action_planilla_parametros_gratificacion" sequence="7" />
+
+    <act_window id="action_planilla_parametros_liquidacion" name="Parametros Liquidacion" res_model="planilla.parametros.liquidacion" view_mode="tree,form" />
+    <menuitem id="menu_planilla_parametros_liquidacion" name="Parametros liquidacion" parent="menu_planilla_parametros_generales" action ="action_planilla_parametros_liquidacion" sequence="7" />
+
+    <!-- <act_window id="action_planilla_parametros_essalud" name="Parametros EsSalud/Eps" res_model="planilla.parametros.essalud.eps" view_mode="tree,form" />
+    <menuitem id="menu_planilla_parametros_essalud_eps" name="Parametros EsSalud/Eps" parent="menu_planilla_parametros_generales" action ="action_planilla_parametros_essalud" sequence="8" /> -->
+
+
+
+<!-- fin parametros -->
+    <!-- creando seccion empleados -->
+    <menuitem id ="menu_planilla_seccion_empleados" name ="Empleados" parent="hr_payroll.menu_hr_payroll_root" sequence="1"/>
+
+    <act_window id="action_planilla_seccion_empleados" name="Empleados" res_model="hr.employee" view_mode="tree,form"/>
+    <menuitem id ="menu_planilla_subseccion_empleados" name="Empleados" parent="menu_planilla_seccion_empleados" action="action_planilla_seccion_empleados"/>
+    <act_window id="action_planilla_seccion_contratos" name="Contratos" res_model="hr.contract" view_mode="tree,form"/>
+    <menuitem id ="menu_planilla_subseccion_contratos" name="Contratos" parent="menu_planilla_seccion_empleados" action="action_planilla_seccion_contratos"/>
+    <act_window id="action_planilla_seccion_departamentos" name="Departamentos" res_model="hr.department" view_mode="tree,form"/>
+    <menuitem id ="menu_planilla_subseccion_departamentos" name="Departamentos" parent="menu_planilla_seccion_empleados" action="action_planilla_seccion_departamentos"/>
+
+
+    <!-- creando seccion contabilidad -->
+    <menuitem id ="menu_planilla_seccion_contabilidad" name="Contabilidad" parent="hr_payroll.menu_hr_payroll_root" sequence="10"/>
+
+    <act_window id="action_planilla_subseccion_detalles_linea_nomina" name="Detalles linea nomina" res_model="planilla.detalle.linea.nomina.wizard" view_mode="form,tree" target="new"/>
+    <menuitem id ="menu_planilla_subseccion_detalles_linea_nomina" name="Detalles linea nomina" parent="menu_planilla_seccion_contabilidad" action="action_planilla_subseccion_detalles_linea_nomina"/>
+
+    <act_window id="action_planilla_subseccion_asiento_resumen" name="Asiento Resumen" res_model="planilla.asiento.resumen.wizard" view_mode="form,tree" target="new"/>
+    <menuitem id ="menu_planilla_subseccion_asiento_resumen" name="Asiento Resumen" parent="menu_planilla_seccion_contabilidad" action="action_planilla_subseccion_asiento_resumen"/>
+    
+    <act_window id="action_planilla_subseccion_detalle_asiento_distribuido" name="Detalles Asiento Distribuido" res_model="planilla.detalle.asiento.distribuido.wizard" view_mode="form,tree" target="new"/>
+    <menuitem id ="menu_planilla_subseccion_detalle_asiento_distribuido" name="Detalles Asiento Distribuido" parent="menu_planilla_seccion_contabilidad" action="action_planilla_subseccion_detalle_asiento_distribuido"/>
+    
+    <act_window id="action_planilla_subseccion_asiento_distribuido" name="Asiento Distribuido" res_model="planilla.asiento.distribuido.wizard" view_mode="form,tree" target="new"/>
+    <menuitem id ="menu_planilla_subseccion_asiento_distribuido" name="Asiento Distribuido" parent="menu_planilla_seccion_contabilidad" action="action_planilla_subseccion_asiento_distribuido"/>
+    
+
+    <record id="group_hide_menus" model="res.groups">
+        <field name="name">Restricted Menus Group</field>
+        <field name="comment">Restricted Menus Group</field>
+    </record>
+
+    <!-- ocultando gastos -->
+    <record id="hr_expense.menu_hr_expense_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('group_hide_menus')])]"/>
+    </record>
+    <!-- ocultando employees -->
+    <record id="hr.menu_hr_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('group_hide_menus')])]"/>
+    </record>
+    <!-- ocultando ausencias 
+    <record id="hr_holidays.menu_hr_holidays_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('group_hide_menus')])]"/>
+    </record>-->
+    <record id="hr_payroll.menu_action_hr_contribution_register_form" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('group_hide_menus')])]"/>
+    </record>
+
+
+    <!-- <delete model="ir.ui.menu" id="hr.menu_hr_root"></delete> -->
+
+    <act_window id="action_planilla_worked_days_tareos_nomina" name="Parametros tareos" res_model="planilla.worked.days" view_mode="tree,form"/>
+    <menuitem id ="menu_planilla_subseccion_worked_days_tareos_nomina" name="Parametros tareos" parent="hr_payroll.menu_hr_payroll_configuration" action="action_planilla_worked_days_tareos_nomina"/>
+
+    <act_window id="action_planilla_inputs_nomina" name="Ingresos predeterminados" res_model="planilla.inputs.nomina" view_mode="tree,form"/>
+    <menuitem id ="menu_planilla_subseccion_inputs_nomina" name="Ingresos predeterminados" parent="hr_payroll.menu_hr_payroll_configuration" action="action_planilla_inputs_nomina"/>
+
+    <!-- menu categorias -->
+    <act_window id="action_planilla_configuracion_categorias" name="Categorias de reglas salariales" res_model="hr.salary.rule.category" view_mode="tree,form" />
+    
+    <menuitem id="hr_payroll.menu_hr_salary_rule_category_tree_view"
+            parent="hr_payroll.menu_hr_payroll_configuration"
+            groups="dummy_group"/>
+    <menuitem
+            id="hr_payroll.menu_hr_salary_rule_category"
+            parent="hr_payroll.menu_hr_payroll_configuration"
+            groups="dummy_group"/>
+    <menuitem id="menu_planilla_configuracion_categorias" name="Categorias" parent="hr_payroll.menu_hr_payroll_configuration" action="action_planilla_configuracion_categorias" sequence="3" />
+
+
+    <!-- menu distribucion analitica -->
+    <act_window id="action_planilla_configuracion_distribucion_analitica" name="Distribucion Analítica" res_model="planilla.distribucion.analitica" view_mode="tree,form" />
+    <menuitem id="menu_planilla_configuracion_distribucion_analitica" name="Distribucion Analítica" parent="hr_payroll.menu_hr_payroll_configuration" action ="action_planilla_configuracion_distribucion_analitica" sequence="3" />
+
+    <!-- menu tablas -->
+    <menuitem id="menu_planilla_configuracion_tablas" name="Tablas" parent="hr_payroll.menu_hr_payroll_configuration" sequence="3" />
+
+    <act_window id="action_planilla_configuracion_tablas_tipo_doc" name="Tipo documento identidad" res_model="planilla.tipo.documento" view_mode="tree,form" />
+    <menuitem id="menu_planilla_configuracion_tablas_tipo_doc" name="Tipo documento identidad" parent="menu_planilla_configuracion_tablas" action ="action_planilla_configuracion_tablas_tipo_doc" sequence="3" />
+
+    <act_window id="action_planilla_configuracion_tablas_situacion" name="Situacion" res_model="planilla.situacion" view_mode="tree,form" />
+    <menuitem id="menu_planilla_configuracion_tablas_situacion" name="Situacion" parent="menu_planilla_configuracion_tablas" action ="action_planilla_configuracion_tablas_situacion" sequence="3" />
+
+
+    <act_window id="action_planilla_configuracion_tipo_trabajador" name="Tipo Trabajador" res_model="planilla.tipo.trabajador" view_mode="tree,form" />
+    <menuitem id="menu_planilla_configuracion_tipo_trabajador" name="Tipo Trabajador" parent="menu_planilla_configuracion_tablas" action ="action_planilla_configuracion_tipo_trabajador" sequence="3" />
+
+    <act_window id="action_planilla_configuracion_tipo_suspension" name="Tipo Suspension" res_model="planilla.tipo.suspension" view_mode="tree,form" />
+    <menuitem id="menu_planilla_configuracion_tipo_suspension" name="Tipo Suspension" parent="menu_planilla_configuracion_tablas" action ="action_planilla_configuracion_tipo_suspension" sequence="3" />
+    
+    <act_window id="action_planilla_seguro_salud" name="Seguro Social" res_model="planilla.seguro.salud" view_mode="tree,form" />
+    <menuitem id="menu_planilla_seguro_salud" name="Seguro Social" parent="menu_planilla_configuracion_tablas" action ="action_planilla_seguro_salud" sequence="3" />
+    
+    <act_window id="action_planilla_sctr" name="SCTR" res_model="planilla.sctr" view_mode="tree,form" />
+    <menuitem id="menu_planilla_sctr" name="SCTR" parent="menu_planilla_configuracion_tablas" action ="action_planilla_sctr" sequence="4" />
+
+    <!-- menu planilla tabular -->
+    <!-- <act_window id="action_planilla_configuracion_planilla_tabular" name="Planilla tabular" res_model="planilla.planilla.tabular.wizard" view_mode="form" target="new" />
+    <menuitem id="menu_hr_payroll_planilla_tabular_replace" name="Procesar Nómina" action="hr_payroll.action_hr_payslip_run_tree" parent="hr_payroll.menu_hr_payslip_run" sequence="30" />
+
+    <menuitem id="menu_planilla_configuracion_planilla_tabular" action="action_planilla_configuracion_planilla_tabular" parent="hr_payroll.menu_hr_payslip_run" sequence="30" /> -->
+
+
+    <!-- beneficios sociales-->
+    <menuitem id="menu_planilla_beneficios_sociales" name="Beneficios Sociales" parent="hr_payroll.menu_hr_payroll_root" sequence="31"/>
+
+    <!-- cts -->
+    <act_window id="action_planilla_cts" name="CTS" res_model="planilla.cts" view_mode="tree,form" />
+    <menuitem id="menu_planilla_cts" name="CTS" parent="menu_planilla_beneficios_sociales" action="action_planilla_cts" sequence="29"/>
+
+
+    <!-- gratificacion -->
+    <act_window id="action_planilla_gratificacion" name="Gratificacion" res_model="planilla.gratificacion" view_mode="tree,form" />
+    <menuitem id="menu_planilla_gratificacion" name="Gratificacion" parent="menu_planilla_beneficios_sociales" action="action_planilla_gratificacion" sequence="30"/>
+
+    <!-- liquidacion -->
+    <act_window id="action_planilla_liquidacion" name="Liquidacion" res_model="planilla.liquidacion" view_mode="tree,form" />
+    <menuitem id="menu_planilla_liquidacion" name="Liquidacion" parent="menu_planilla_beneficios_sociales" action="action_planilla_liquidacion" sequence="31"/>
+
+
+
+
+    <!-- importacion -->
+    <menuitem id="menu_planilla_importacion" name="Importacion" parent="hr_payroll.menu_hr_payroll_root" sequence="32"/>
+
+
+    <!-- menu worked_days -->
+    <act_window id="action_planilla_import_worked_days" name="Importar Dias de Trabajo" res_model="planilla.import.worked.days" view_mode="tree,form" />
+    <menuitem id="menu_planilla_import_worked_days" name="Importar Dias de Trabajo" action="action_planilla_import_worked_days" parent="menu_planilla_importacion" sequence="30" />
+    
+    <act_window id="action_generate_worked_days" name="Generar Plantilla Dias de Trabajo" res_model="planilla.import.worked.days.wizard" view_mode="form" target="new"/>
+    <menuitem id="menu_planilla_import_worked_days_wizard" name="Generar Plantilla Dias de Trabajo" action="action_generate_worked_days" parent="menu_planilla_importacion" sequence="31"/>
+
+    <act_window id="action_generate_inputs" name="Generar Plantilla Inputs" res_model="planilla.import.inputs.wizard" view_mode="form" target="new"/>
+    <menuitem id="menu_planilla_import_inputs_wizard" name="Generar Plantilla Inputs" action="action_generate_inputs" parent="menu_planilla_importacion" sequence="32"/>
+</data>

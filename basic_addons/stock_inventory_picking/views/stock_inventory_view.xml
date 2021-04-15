@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_inventory_form_inherit" model="ir.ui.view">
+		<field name="name">stock.inventory.form</field>
+		<field name="model">stock.inventory</field>
+		<field name="inherit_id" ref="stock_account.view_inventory_form_inherit"/>
+		<field name="arch" type="xml">
+			<field name="exhausted" position="after">
+				<field name="picking_type_id" required = "1"/>                  
+				<field name="picking_type_in_id" required = "1"/>                  
+			</field>
+			<field name="accounting_date" position="after">
+				<!--<field name="picking_id" readonly="1"/>
+				<field name="picking_in_id" readonly="1"/>-->
+				<field name="fiscalyear_id"/>
+				<field name="picking_motive_id"/>
+			</field>
+			<xpath expr="//form/sheet/notebook" position="inside">
+				<page string="Albaranes de Entrada">
+					<field name="picking_in_ids">
+						<tree>
+							<field name="picking_id" string="Albarán"/>
+						</tree>
+					</field>
+				</page>
+				<page string="Albaranes de Salida">
+					<field name="picking_out_ids">
+						<tree>
+							<field name="picking_id"  string="Albarán"/>
+						</tree>
+					</field>
+				</page>
+			</xpath>
+		</field>
+	</record>
+	<record id="stock_inventory_config_tree" model="ir.ui.view">
+        <field name="name">stock.inventory.config.tree</field>
+        <field name="model">stock.inventory.config</field>
+        <field name="arch" type="xml">
+            <tree string="Stock Inventory Config">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+	
+	<record id="stock_inventory_config_form" model="ir.ui.view">
+        <field name="name">stock.inventory.config.form</field>
+        <field name="model">stock.inventory.config</field>
+        <field name="arch" type="xml">
+            <form string="Stock Inventory Config">
+				<group>
+					<field name="name"/>
+					
+					<field name="picking_type_id"/>
+					<field name="picking_type_in_id"/>
+					<field name="picking_motive_id"/>
+					<field name="limit_detail_picking"/>
+				</group>
+            </form>
+        </field>
+    </record>
+	
+	<record id="action_inventory_config" model="ir.actions.act_window">
+        <field name="name">Inventory Adjustments Config</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.inventory.config</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+	
+	
+	<menuitem id="menu_stock_config_invetory_settings" name="Ajustes de Inventario" parent="stock.menu_stock_config_settings"
+        sequence="100" groups="stock.group_stock_manager"
+		action="action_inventory_config"/>
+	
+
+
+	<record id="view_stock_inventory_pickinglink_form" model="ir.ui.view">
+		<field name="name">stock.inventory.picking.in.link.form</field>
+		<field name="model">stock.inventory.picking.in.link</field>
+		<field name="arch" type="xml">
+			<form string="Movimiento de Ingreso" >
+				<sheet>
+					<group>
+						<field name = "picking_id"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	
+	<record id="view_stock_inventory_pickinglinkout_form" model="ir.ui.view">
+		<field name="name">stock.inventory.picking.out.link.form</field>
+		<field name="model">stock.inventory.picking.out.link</field>
+		<field name="arch" type="xml">
+			<form string="Movimiento de Salida" >
+				<sheet>
+					<group>
+						<field name = "picking_id"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+		
+	
+</odoo>

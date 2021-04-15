@@ -1,0 +1,225 @@
+
+<odoo>
+    <record id="hr_payslip_run_inherit_form" model="ir.ui.view">
+        <field name="name">hr_payslip_run_inherit_form</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+            <!-- <field name="date_start" position="after">
+                <div class="alert alert-success alert-dismissible" invisible="not context.get('show_message', False)">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
+                    <strong>Success!</strong> Indicates a successful or positive action.
+                </div>
+            </field> -->
+
+            <button name="draft_payslip_run" position="attributes">
+                <attribute name="states">close,generado</attribute>
+            </button>
+
+            <button name="close_payslip_run" position="attributes">
+                <attribute name="states">draft,generado</attribute>
+            </button>
+
+            <xpath expr="//form/header/button[@name='%(hr_payroll.action_hr_payslip_by_employees)d']" position="after">
+                <button name="calcular_reglas_salariales" string="Calcular Reglas Salariales" type="object" class="oe_highlight fa fa-desktop" states="draft"/>
+                <field name="flag" invisible="1"/>
+                <button name="importar_quinta_categoria" string="Importar quinta categoria" type="object" class="oe_highlight fa fa-desktop" attrs="{'invisible':[('flag', '!=', True)]}"/>
+                <field name="cts_flag" invisible="1"/>
+                <field name="grati_flag" invisible="1"/>
+                <field name="liqui_flag" invisible="1"/>
+                <button name="importar_beneficios_sociales" string="Importar beneficios sociales" type="object" class="oe_highlight fa fa-desktop" attrs="{'invisible':[('cts_flag','!=',True),('grati_flag','!=',True),('liqui_flag','!=',True)]}"/>
+                <button name="generar_planilla_tabular" string="Planilla en pantalla" type="object" class="fa fa-file-text-o" states="draft"/>
+                <!-- <button name="ver_pantalla_planilla_tabular" string="Ver en pantalla" type="object" class="fa fa-file-text-o" states="draft"/> -->
+                <button name="exportar_planilla_tabular_xlsx" string="Exportar excel" type="object" class="fa fa-file-text-o" states="draft"/>
+                <button name="exportar_plame" string="Exportar Plame" type="object" class="fa fa-file-text-o" states="draft"/>
+                <button name="exportar_plame_horas" string="Exportar Plame Horas" type="object" class="fa fa-file-text-o" states="draft"/>
+                <button name="exportar_plame_subsidios" string="Exportar Plame Subsidios" type="object" class="fa fa-file-text-o" states="draft"/>
+                <button name="exportar_plame_tasas" string="Exportar Plame Tasas" type="object" class="fa fa-file-text-o" states="draft"/>
+                <button name="recalcular_inputs" string="Generar Inputs" type="object" class="fa fa-file-text-o" states="draft"/>
+                <button name="import_advances" string="Importar Adelantos" type="object" class="oe_highlight fa fa-desktop"/>
+                <button name="import_loans" string="Importar Prestamos" type="object" class="oe_highlight fa fa-desktop"/>
+            </xpath>
+            <xpath expr="//form/header/button[@name='%(hr_payroll.action_hr_payslip_by_employees)d']" position="after">
+                <button name="generar_planillas_lotes" string="Generar planillas" confirm="Esta seguro que quiere generar nominas? (esto eliminara las nominas existentes de si los hubiera)" type="object" class="oe_highlight fa fa-chevron-circle-right" states="draft" attrs="{'invisible': [('bool_field', '=', True)]}"/>
+                <button name="regulariza_dias_laborados" string="Dias Laborados" type="object" class="oe_highlight fa fa-chevron-circle-right" states="draft"/>
+            </xpath>
+            <xpath expr="//form/header/button[@name='%(hr_payroll.action_hr_payslip_by_employees)d']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <field name="credit_note" position="after">
+                <field name="dias_calendarios"/>
+                <field name="feriados"/>
+                <field name="bool_field" invisible="1"/>
+                <field name="asiento_contable_id" readonly="1"/>
+
+
+            </field>
+
+
+        </field>
+    </record>
+
+
+    <record id="planilla_generar_boletas_pdf" model="ir.actions.server">
+        <field name="name">Generar Boletas PDF</field>
+        <field name="model_id" ref="model_hr_payslip_run"/>
+        <field name="state">code</field>
+        <field name="code"> action= env['hr.payslip.run'].browse(context['active_ids']).generar_boletas()</field>
+    </record>
+
+
+    <record id="test_more_item_generar_boletas_pdf" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'hr.payslip.run'" name="model"/>
+        <field name="name">Generar Boletas PDF</field>
+        <field eval="'ir.actions.server,%d'%planilla_generar_boletas_pdf" name="value"/>
+    </record>
+
+    <!-- export excel -->
+    <record id="planilla_generar_planilla_afp_net" model="ir.actions.server">
+        <field name="name">Generar Afp Net</field>
+        <field name="model_id" ref="model_hr_payslip_run"/>
+        <field name="state">code</field>
+        <field name="code"> action= env['hr.payslip.run'].browse(context['active_ids']).genera_planilla_afp_net()</field>
+    </record>
+
+
+    <record id="more_button_planilla_generar_planilla_afp_net" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'hr.payslip.run'" name="model"/>
+        <field name="name">Generar Afp Net</field>
+        <field eval="'ir.actions.server,%d'%planilla_generar_planilla_afp_net" name="value"/>
+    </record>
+
+
+    <!-- generar_planilla_tabular -->
+    <record id="planilla_generar_planilla_tabularl" model="ir.actions.server">
+        <field name="name">Planilla en pantalla</field>
+        <field name="model_id" ref="model_hr_payslip_run"/>
+        <field name="state">code</field>
+        <field name="code"> action= env['hr.payslip.run'].browse(context['active_ids']).generar_planilla_tabular()</field>
+    </record>
+
+
+    <record id="more_button_generar_planilla_tabularl" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'hr.payslip.run'" name="model"/>
+        <field name="name">Planilla en pantalla</field>
+        <field eval="'ir.actions.server,%d'%planilla_generar_planilla_tabularl" name="value"/>
+    </record>
+
+
+    <!-- ver en pantalla -->
+    <!-- <record id="planilla_ver_en_pantalla" model="ir.actions.server">
+        <field name="name">Ver en pantalla</field>
+        <field name="model_id" ref="model_hr_payslip_run"/>
+        <field name="state">code</field>
+        <field name="code"> action= env['hr.payslip.run'].browse(context['active_ids']).generar_planilla_tabular()</field>
+    </record>
+
+
+    <record id="more_button_planilla_ver_en_pantalla" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'hr.payslip.run'" name="model"/>
+        <field name="name">Ver en pantalla</field>
+        <field eval="'ir.actions.server,%d'%planilla_ver_en_pantalla" name="value"/>
+    </record> -->
+
+
+    <!-- ver en pantalla -->
+    <record id="planilla_exportar_nomina_excel" model="ir.actions.server">
+        <field name="name">Exportar Nómina Excel</field>
+        <field name="model_id" ref="model_hr_payslip_run"/>
+        <field name="state">code</field>
+        <field name="code"> action= env['hr.payslip.run'].browse(context['active_ids']).exportar_planilla_tabular_xlsx()</field>
+    </record>
+
+
+    <record id="more_button_exportar_nomina_excel" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'hr.payslip.run'" name="model"/>
+        <field name="name">Exportar Nómina Excel</field>
+        <field eval="'ir.actions.server,%d'%planilla_exportar_nomina_excel" name="value"/>
+    </record>
+
+
+    <!-- ver en pantalla -->
+    <record id="planilla_exportar_nomina_plame" model="ir.actions.server">
+        <field name="name">Exportar Plame</field>
+        <field name="model_id" ref="model_hr_payslip_run"/>
+        <field name="state">code</field>
+        <field name="code"> action= env['hr.payslip.run'].browse(context['active_ids']).exportar_plame()</field>
+    </record>
+
+    <record id="more_button_exportar_nomina_plame" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'hr.payslip.run'" name="model"/>
+        <field name="name">Exportar Plame</field>
+        <field eval="'ir.actions.server,%d'%planilla_exportar_nomina_plame" name="value"/>
+    </record>
+
+
+
+
+
+    <!-- exportar nomina plame horas -->
+    <record id="planilla_exportar_nomina_plame_horas" model="ir.actions.server">
+        <field name="name">Exportar Plame Horas</field>
+        <field name="model_id" ref="model_hr_payslip_run"/>
+        <field name="state">code</field>
+        <field name="code"> action= env['hr.payslip.run'].browse(context['active_ids']).exportar_plame_horas()</field>
+    </record>
+
+    <record id="more_button_exportar_nomina_plame_horas" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'hr.payslip.run'" name="model"/>
+        <field name="name">Exportar Plame Horas</field>
+        <field eval="'ir.actions.server,%d'%planilla_exportar_nomina_plame_horas" name="value"/>
+    </record>
+
+    <record id="planilla_exportar_nomina_plame_subsidios" model="ir.actions.server">
+        <field name="name">Exportar Plame Subsidios</field>
+        <field name="model_id" ref="model_hr_payslip_run"/>
+        <field name="state">code</field>
+        <field name="code"> action= env['hr.payslip.run'].browse(context['active_ids']).exportar_plame_subsidios()</field>
+    </record>
+
+    <record id="more_button_exportar_nomina_plame_sudsidios" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'hr.payslip.run'" name="model"/>
+        <field name="name">Exportar Plame Subsidios</field>
+        <field eval="'ir.actions.server,%d'%planilla_exportar_nomina_plame_subsidios" name="value"/>
+    </record>
+
+    <record id="planilla_exportar_nomina_plame_tasas" model="ir.actions.server">
+        <field name="name">Exportar Plame SCTR</field>
+        <field name="model_id" ref="model_hr_payslip_run"/>
+        <field name="state">code</field>
+        <field name="code"> action= env['hr.payslip.run'].browse(context['active_ids']).exportar_plame_tasas()</field>
+    </record>
+
+    <record id="more_button_exportar_nomina_plame_tasas" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'hr.payslip.run'" name="model"/>
+        <field name="name">Exportar Plame SCTR</field>
+        <field eval="'ir.actions.server,%d'%planilla_exportar_nomina_plame_tasas" name="value"/>
+    </record>
+
+    <!-- generar asiento contable -->
+    <record id="planilla_generar_asiento_contable" model="ir.actions.server">
+        <field name="name">Generar Asiento Contable</field>
+        <field name="model_id" ref="model_hr_payslip_run"/>
+        <field name="state">code</field>
+        <field name="code"> action= env['hr.payslip.run'].browse(context['active_ids'])._wizard_generar_asiento_contable()</field>
+    </record>
+
+    <record id="more_button_generar_asiento_contable" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'hr.payslip.run'" name="model"/>
+        <field name="name">Generar Asiento Contable</field>
+        <field eval="'ir.actions.server,%d'%planilla_generar_asiento_contable" name="value" />
+    </record>
+    
+    
+</odoo>

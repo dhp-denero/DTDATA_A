@@ -1,0 +1,1414 @@
+20190131|011100|Bienes y valores entregados - Bienes en préstamo, custodia y no capitalizables - bienes en préstamo|01|-|||1|
+20190131|011200|Bienes y valores entregados - Bienes en préstamo, custodia y no capitalizables -  bienes en custodi|01|-|||1|
+20190131|012100|Bienes y valores entregados - Valores y bienes entregados en garantía - cartas fianza |01|-|||1|
+20190131|012200|Bienes y valores entregados - Valores y bienes entregados en garantía - cuentas por cobrar   |01|-|||1|
+20190131|012300|Bienes y valores entregados - Valores y bienes entregados en garantía - existencias|01|-|||1|
+20190131|012400|Bienes y valores entregados - Valores y bienes entregados en garantía - inversión mobiliaria |01|-|||1|
+20190131|012500|Bienes y valores entregados - Valores y bienes entregados en garantía - inversión inmobiliaria |01|-|||1|
+20190131|012600|Bienes y valores entregados - Valores y bienes entregados en garantía - inmuebles, maquinaria y equ|01|-|||1|
+20190131|012700|Bienes y valores entregados - Valores y bienes entregados en garantía - intangibles |01|-|||1|
+20190131|012800|Bienes y valores entregados - Valores y bienes entregados en garantía - activos biológicos |01|-|||1|
+20190131|013000|Bienes y valores entregados - Activos realizables entregados en consignación |01|-|||1|
+20190131|014100|Bienes y valores entregados - Letras o efectos descontados y responsabilidad - LT-.o efectos descon|01|-|||1|
+20190131|014200|Bienes y valores entregados - Letras o efectos descontados y responsabilidad - reponsb. por LT o ef|01|-|||1|
+20190131|021000|Derechos sobre instrumentos financieros derivados - Contratos a futuro |01|-|||1|
+20190131|022000|Derechos sobre instrumentos financieros derivados - Contratos a término (forward)|01|-|||1|
+20190131|023000|Derechos sobre instrumentos financieros derivados - Permutas financieras (swap) |01|-|||1|
+20190131|024000|Derechos sobre instrumentos financieros derivados - Contratos de opción |01|-|||1|
+20190131|031100|Otras cuentas de orden deudoras - Contratos aprobados - contratos en ejecución|01|-|||1|
+20190131|031200|Otras cuentas de orden deudoras - Contratos aprobados - contratos en trámite |01|-|||1|
+20190131|032100|Otras cuentas de orden deudoras - Bienes dados de baja - suministros |01|-|||1|
+20190131|032200|Otras cuentas de orden deudoras - Bienes dados de baja - inmuebles, maquinaria y equipo|01|-|||1|
+20190131|039000|Otras cuentas de orden deudoras - Diversas|01|-|||1|
+20190131|040000|Deudoras por contra |01|-|||1|
+20190131|050000|Cuentas de orden acreedoras |01|-|||1|
+20190131|061100|Bienes y valores ...- Bienes recibidos en préstamo y custodia - bienes recibidos en préstamo |01|-|||1|
+20190131|061200|Bienes y valores ...- Bienes recibidos en préstamo y custodia - bienes recibidos en custodia |01|-|||1|
+20190131|062100|Bienes y valores ...- Valores y bienes recibidos en garantía - cartas fianza|01|-|||1|
+20190131|062200|Bienes y valores ...- Valores y bienes recibidos en garantía - cuentas por cobrar |01|-|||1|
+20190131|062300|Bienes y valores ...- Valores y bienes recibidos en garantía - existencias|01|-|||1|
+20190131|062400|Bienes y valores ...- Valores y bienes recibidos en garantía - inversión mobiliaria |01|-|||1|
+20190131|062500|Bienes y valores ...- Valores y bienes recibidos en garantía - inversión inmobiliaria |01|-|||1|
+20190131|062600|Bienes y valores ...- Valores y bienes recibidos en garantía - inmuebles, maquinaria y equipo |01|-|||1|
+20190131|062700|Bienes y valores ...- Valores y bienes recibidos en garantía - intangibles|01|-|||1|
+20190131|062800|Bienes y valores ...- Valores y bienes recibidos en garantía - activos biológicos |01|-|||1|
+20190131|063000|Bienes y valores recibidos - Activos realizables recibidos en consignación |01|-|||1|
+20190131|064110|Bienes y valores ...- Bienes de uso - inventario de bienes de uso, muebles y enseres, 00.3.001|01|-|||1|
+20190131|064120|Bienes y valores ...- Bienes de uso - inventario de bienes de uso, equipos diversos, 00.3.002|01|-|||1|
+20190131|064210|Bienes y valores ...- Bienes de uso - respons. control bienes de uso, bienes de uso muebles enseres|01|-|||1|
+20190131|064220|Bienes y valores ...- Bienes de uso - respons. control bienes de uso, bienes de uso equipos diverso|01|-|||1|
+20190131|064300|Bienes y valores ...- Bienes de uso - bienes recibidos por embargos, 00.5.001|01|-|||1|
+20190131|064400|Bienes y valores ...- Bienes de uso - respons. por bienes recib. p, 00.6.001|01|-|||1|
+20190131|071000|Compromisos sobre instrumentos financieros derivados - Contratos a futuro|01|-|||1|
+20190131|072000|Compromisos sobre instrumentos financieros derivados - Contratos a término (forward) |01|-|||1|
+20190131|073000|Compromisos sobre instrumentos financieros derivados - Permutas financieras (swap)|01|-|||1|
+20190131|074000|Compromisos sobre instrumentos financieros derivados - Contratos de opción |01|-|||1|
+20190131|089000|Otras cuentas de orden acreedoras - Diversas|01|-|||1|
+20190131|090000|Acreedoras por el contrario|01|-|||1|
+20190131|101001|Efectivo MN|01|-|||1|
+20190131|101002|Efectivo ME|01|-|||1|
+20190131|102001|Caja y ...- Fondos fijos - caja chica 01 PEN (S-.)|01|-|||1|
+20190131|103000|Caja y bancos - Efectivo en tránsito |01|-|||1|
+20190131|104001|BCP MN|01|-|||1|
+20190131|104002|BCP ME|01|-|||1|
+20190131|105100|Caja y ...- Certificados bancarios - certificados bancarios ** otros equivalentes de efectivos |01|-|||1|
+20190131|105200|Caja y ...- Certificados bancarios - otros|01|-|||1|
+20190131|106100|Caja y ...- Depósitos en instituciones financieras - depósitos de ahorro|01|-|||1|
+20190131|106200|Caja y ...- Depósitos en instituciones financieras - depósitos a plazo|01|-|||1|
+20190131|107101|Caja y ...- Fondos sujetos a restricción - BN CTA DETRACCIONES PEN (S-.)|01|-|||1|
+20190131|111110|Inversiones al valor ...- Inversiones al valor razonable - valores emitidos o garantizados por el E|01|-|||1|
+20190131|111120|Inversiones al valor ...- Inversiones al valor razonable - valores emitidos o garantizados por el E|01|-|||1|
+20190131|111210|Inversiones al valor ...- Inversiones al valor razonable - valores emitidos por el sistema financie|01|-|||1|
+20190131|111220|Inversiones al valor ...- Inversiones al valor razonable - valores emitidos por el sistema financie|01|-|||1|
+20190131|111310|Inversiones al valor ...- Inversiones al valor razonable - valores emitidos por empresas - costo|01|-|||1|
+20190131|111320|Inversiones al valor ...- Inversiones al valor razonable - valores emitidos por empresas - valor ra|01|-|||1|
+20190131|111410|Inversiones al valor ...- Inversiones al valor razonable - otros títulos representativos de deuda -|01|-|||1|
+20190131|111420|Inversiones al valor ...- Inversiones al valor razonable - otros títulos representativos de deuda -|01|-|||1|
+20190131|111510|Inversiones al valor ...- Inversiones al valor razonable - participaciones en entidades - costo|01|-|||1|
+20190131|111520|Inversiones al valor ...- Inversiones al valor razonable - participaciones en entidades - valor raz|01|-|||1|
+20190131|112110|Inversiones al valor ...- Inversiones disponibles para la venta - valores emitidos o garantizados p|01|-|||1|
+20190131|112120|Inversiones al valor ...- Inversiones disponibles para la venta - valores emitidos o garantizados p|01|-|||1|
+20190131|112210|Inversiones al valor ...- Inversiones disponibles para la venta - valores emitidos por el sistema f|01|-|||1|
+20190131|112220|Inversiones al valor ...- Inversiones disponibles para la venta - valores emitidos por el sistema f|01|-|||1|
+20190131|112310|Inversiones al valor ...- Inversiones disponibles para la venta - valores emitidos por empresas - c|01|-|||1|
+20190131|112320|Inversiones al valor ...- Inversiones disponibles para la venta - valores emitidos por empresas - v|01|-|||1|
+20190131|112410|Inversiones al valor ...- Inversiones disponibles para la venta - otros títulos representativos de |01|-|||1|
+20190131|112420|Inversiones al valor ...- Inversiones disponibles para la venta - otros títulos representativos de |01|-|||1|
+20190131|113110|Inversiones al valor ...- Activos financieros - compromiso de compra - inversiones mantenidas para |01|-|||1|
+20190131|113120|Inversiones al valor ...- Activos financieros - compromiso de compra - inversiones mantenidas para |01|-|||1|
+20190131|113210|Inversiones al valor ...- Activos financieros - compromiso de compra - inversiones disponibles para|01|-|||1|
+20190131|113220|Inversiones al valor ...- Activos financieros - compromiso de compra - inversiones disponibles para|01|-|||1|
+20190131|121100|Cuentas por cobrar ...- Facturas, boletas y otros comprobantes por cobrar - no emitidas|01|-|||1|
+20190131|121201|Cuentas por cobrar  Facturas boletas y otros comprobantes por cobrar - emitidas en cartera MN|01|-|||1|
+20190131|121202|Cuentas por cobrar  Facturas boletas y otros comprobantes por cobrar - emitidas en cartera ME|01|-|||1|
+20190131|121300|Cuentas por cobrar ...- Facturas, boletas y otros comprobantes por cobrar - en cobranza|01|-|||1|
+20190131|121400|Cuentas por cobrar ...- Facturas, boletas y otros comprobantes por cobrar - en descuento|01|-|||1|
+20190131|121501|Detracciones por cobrar|01|-|||1|
+20190131|12201|Cuentas por cobrar ..., terceros - Anticipos de clientes MN|01|-|||1|
+20190131|12202|Cuentas por cobrar ..., terceros - Anticipos de clientes ME|01|-|||1|
+20190131|123101|Cuentas por cobrar ...- Letras por cobrar - en cartera MN|01|-|||1|
+20190131|123102|Cuentas por cobrar ...- Letras por cobrar - en cartera ME|01|-|||1|
+20190131|123200|Cuentas por cobrar ...- Letras por cobrar - en cobranza |01|-|||1|
+20190131|123300|Cuentas por cobrar ...- Letras por cobrar - en descuento|01|-|||1|
+20190131|129100|Cuentas por cobrar ...- Cobranza dudosa - facturas, boletas y otros comprobantes por cobrar |01|-|||1|
+20190131|129300|Cuentas por cobrar ...- Cobranza dudosa - letras por cobrar  |01|-|||1|
+20190131|131110|Cuentas por ...- Facturas, boletas y otros ... - no emitidas, matriz |01|-|||1|
+20190131|131120|Cuentas por... - Facturas, boletas y otros ...- no emitidas, subsidiarias |01|-|||1|
+20190131|131130|Cuentas por ...- Facturas, boletas y otros ...- no emitidas, asociadas |01|-|||1|
+20190131|131140|Cuentas por ...- Facturas, boletas y otros ...- no emitidas, sucursal |01|-|||1|
+20190131|131150|Cuentas por ...- Facturas, boletas y otros ...- no emitidas, otros|01|-|||1|
+20190131|131210|Cuentas por ...- Facturas, boletas y otros ...- emitidas en cartera, matriz|01|-|||1|
+20190131|131220|Cuentas por ...- Facturas, boletas y otros ...- emitidas en cartera, subsidiarias|01|-|||1|
+20190131|131230|Cuentas por ...- Facturas, boletas y otros ...- emitidas en cartera, asociadas|01|-|||1|
+20190131|131240|Cuentas por ...- Facturas, boletas y otros ...- emitidas en cartera, sucursal|01|-|||1|
+20190131|131250|Cuentas por ...- Facturas, boletas y otros ...- emitidas en cartera, otros|01|-|||1|
+20190131|131310|Cuentas por ...- Facturas, boletas y otros ...- en cobranza, matriz|01|-|||1|
+20190131|131320|Cuentas por ...- Facturas, boletas y otros ...- en cobranza, subsidiarias|01|-|||1|
+20190131|131330|Cuentas por ...- Facturas, boletas y otros ...- en cobranza, asociadas|01|-|||1|
+20190131|131340|Cuentas por ...- Facturas, boletas y otros ...- en cobranza, sucursal|01|-|||1|
+20190131|131350|Cuentas por ...- Facturas, boletas y otros ...- en cobranza, otros|01|-|||1|
+20190131|131410|Cuentas por ...- Facturas, boletas y otros ...- en descuento, matriz|01|-|||1|
+20190131|131420|Cuentas por ...- Facturas, boletas y otros ...- en descuento, subsidiarias|01|-|||1|
+20190131|131430|Cuentas por ...- Facturas, boletas y otros ...- en descuento, asociadas|01|-|||1|
+20190131|131440|Cuentas por ...- Facturas, boletas y otros ...- en descuento, sucursal|01|-|||1|
+20190131|131450|Cuentas por ...- Facturas, boletas y otros ...- en descuento, otros|01|-|||1|
+20190131|132110|Cuentas por cobrar comerciales ...- Anticipos recibidos - anticipos recibidos - matriz |01|-|||1|
+20190131|132120|Cuentas por cobrar comerciales ...- Anticipos recibidos - anticipos recibidos - subsidiarias|01|-|||1|
+20190131|132130|Cuentas por cobrar comerciales ...- Anticipos recibidos - anticipos recibidos - asociadas|01|-|||1|
+20190131|132140|Cuentas por cobrar comerciales ...- Anticipos recibidos - anticipos recibidos - sucursales|01|-|||1|
+20190131|132150|Cuentas por cobrar comerciales ...- Anticipos recibidos - anticipos recibidos - otros|01|-|||1|
+20190131|133110|Cuentas por ...- Letras por cobrar - en cartera, matriz|01|-|||1|
+20190131|133120|Cuentas por ...- Letras por cobrar - en cartera, subsidiarias|01|-|||1|
+20190131|133130|Cuentas por ...- Letras por cobrar - en cartera, asociadas|01|-|||1|
+20190131|133140|Cuentas por ...- Letras por cobrar - en cartera, sucursal|01|-|||1|
+20190131|133150|Cuentas por ...- Letras por cobrar - en cartera, otros|01|-|||1|
+20190131|133210|Cuentas por ...- Letras por cobrar - en cobranza, matriz|01|-|||1|
+20190131|133220|Cuentas por ...- Letras por cobrar - en cobranza, subsidiarias|01|-|||1|
+20190131|133230|Cuentas por ...- Letras por cobrar - en cobranza, asociadas|01|-|||1|
+20190131|133240|Cuentas por ...- Letras por cobrar - en cobranza, sucursal|01|-|||1|
+20190131|133250|Cuentas por ...- Letras por cobrar - en cobranza, otros|01|-|||1|
+20190131|133310|Cuentas por ...- Letras por cobrar - en descuento, matriz |01|-|||1|
+20190131|133320|Cuentas por ...- Letras por cobrar - en descuento, subsidiarias|01|-|||1|
+20190131|133330|Cuentas por ...- Letras por cobrar - en descuento, asociadas |01|-|||1|
+20190131|133340|Cuentas por ...- Letras por cobrar - en descuento, sucursal|01|-|||1|
+20190131|133350|Cuentas por ...- Letras por cobrar - en descuento, otros|01|-|||1|
+20190131|139100|Cuentas por cobrar ...- Cobranza dudosa - facturas, boletas y otros comprobantes por cobrar   |01|-|||1|
+20190131|139300|Cuentas por cobrar ...- Cobranza dudosa - letras por cobrar   |01|-|||1|
+20190131|141100|Cuentas por cobrar ...- Personal - préstamos|01|-|||1|
+20190131|141200|Cuentas por cobrar ...- Personal - adelanto de remuneraciones|01|-|||1|
+20190131|141301|Cuentas por cobrar ...- Personal - entregas a rendir cuenta MN|01|-|||1|
+20190131|141302|Cuentas por cobrar ...- Personal - entregas a rendir cuenta ME|01|-|||1|
+20190131|141900|Cuentas por cobrar ...- Personal - otras cuentas por cobrar al personal|01|-|||1|
+20190131|142100|Cuentas por cobrar ...- Accionistas (o socios) - suscripciones por cobrar a socios o accionistas |01|-|||1|
+20190131|142200|Cuentas por cobrar ...- Accionistas (o socios) - préstamos |01|-|||1|
+20190131|143100|Cuentas por cobrar al personal, a los accionistas ... - Directores - préstamos|01|-|||1|
+20190131|143200|Cuentas por cobrar al personal, a los accionistas ... - Directores - adelanto de dietas|01|-|||1|
+20190131|143300|Cuentas por cobrar al personal, a los accionistas ... - Directores - entregas a rendir cuentas|01|-|||1|
+20190131|144100|Cuentas por cobrar al personal, a los accionistas ...- Gerentes - préstamos|01|-|||1|
+20190131|144200|Cuentas por cobrar al personal, a los accionistas ...- Gerentes - adelanto de remuneraciones|01|-|||1|
+20190131|144300|Cuentas por cobrar al personal, a los accionistas ...- Gerentes - entregas a rendir cuentas|01|-|||1|
+20190131|148000|Cuentas por cobrar al personal, a los accionistas ...- Diversas |01|-|||1|
+20190131|149100|Cuentas por cobrar ...- Cobranza dudosa - personal |01|-|||1|
+20190131|149200|Cuentas por cobrar ...- Cobranza dudosa - accionistas (o socios) |01|-|||1|
+20190131|149300|Cuentas por cobrar ...- Cobranza dudosa - directores |01|-|||1|
+20190131|149400|Cuentas por cobrar ...- Cobranza dudosa - gerentes|01|-|||1|
+20190131|149800|Cuentas por cobrar ...- Cobranza dudosa - diversas |01|-|||1|
+20190131|161100|Cuentas por cobrar ...- Préstamos - con garantía|01|-|||1|
+20190131|161200|Cuentas por cobrar ...- Préstamos - sin garantía  |01|-|||1|
+20190131|162100|Cuentas por cobrar ...- Reclamaciones a terceros - Compañías aseguradoras|01|-|||1|
+20190131|162200|Cuentas por cobrar ...- Reclamaciones a terceros - transportadoras|01|-|||1|
+20190131|162300|Cuentas por cobrar ...- Reclamaciones a terceros - servicios públicos|01|-|||1|
+20190131|162400|Cuentas por cobrar ...- Reclamaciones a terceros - tributos|01|-|||1|
+20190131|162900|Cuentas por cobrar ...- Reclamaciones a terceros - otras|01|-|||1|
+20190131|163100|Cuentas por cobrar ...- Intereses, regalías y dividendos - intereses|01|-|||1|
+20190131|163200|Cuentas por cobrar ...- Intereses, regalías y dividendos - regalías|01|-|||1|
+20190131|163300|Cuentas por cobrar ...- Intereses, regalías y dividendos - dividendos |01|-|||1|
+20190131|164100|Cuentas por cobrar ...- Depósitos otorgados en garantía - préstamos de instituciones financieras  |01|-|||1|
+20190131|164200|Cuentas por cobrar ...- Depósitos otorgados en garantía - préstamos de instituciones no financieras|01|-|||1|
+20190131|164400|Cuentas por cobrar ...- Depósitos otorgados en garantía - depósitos en garantía por alquileres|01|-|||1|
+20190131|164900|Cuentas por cobrar ...- Depósitos otorgados en garantía - otros depósitos en garantía |01|-|||1|
+20190131|165100|Cuentas por cobrar ...- Venta de activo inmovilizado - inversión mobiliaria|01|-|||1|
+20190131|165200|Cuentas por cobrar ...- Venta de activo inmovilizado - inversión inmobiliaria|01|-|||1|
+20190131|165300|Cuentas por cobrar ...- Venta de activo inmovilizado - inmuebles, maquinaria y equipo|01|-|||1|
+20190131|165400|Cuentas por cobrar ...- Venta de activo inmovilizado - intangibles|01|-|||1|
+20190131|165500|Cuentas por cobrar ...- Venta de activo inmovilizado - activos biológicos    |01|-|||1|
+20190131|166100|Cuentas por cobrar ...- Activos por instrumentos financieros - instrumentos financieros primarios  |01|-|||1|
+20190131|166210|Cuentas por cobrar ...- Activos por instrumentos financieros - instrumentos finacieros derivados - |01|-|||1|
+20190131|166220|Cuentas por cobrar ...- Activos por instrumentos financieros - instrumentos finacieros derivados - |01|-|||1|
+20190131|168100|Cuentas por cobrar diversas - Otras cuentas por cobrar diversas - entregas a rendir cuenta a tercer|01|-|||1|
+20190131|168210|Cuentas por cobrar diversas - Otras cuentas por cobrar diversas - otras cuentas por cobrar diversas|01|-|||1|
+20190131|168220|Cuentas por cobrar diversas - Otras cuentas por cobrar diversas - otras cuentas por cobrar diversas|01|-|||1|
+20190131|169100|Cuentas por cobrar ...- Cobranza dudosa - préstamos|01|-|||1|
+20190131|169200|Cuentas por cobrar ...- Cobranza dudosa - reclamaciones a terceros |01|-|||1|
+20190131|169300|Cuentas por cobrar ...- Cobranza dudosa - intereses, regalías y dividendos |01|-|||1|
+20190131|169400|Cuentas por cobrar ...- Cobranza dudosa - depósitos otorgados en garantía|01|-|||1|
+20190131|169500|Cuentas por cobrar ...- Cobranza dudosa - venta de activos inmovilizados|01|-|||1|
+20190131|169800|Cuentas por cobrar ...- Cobranza dudosa - otras cuentas por cobrar diversas |01|-|||1|
+20190131|171110|Cuentas por cobrar ...- Préstamos - con garantía, matriz |01|-|||1|
+20190131|171120|Cuentas por cobrar ...- Préstamos - con garantía, subsidiarias|01|-|||1|
+20190131|171130|Cuentas por cobrar ...- Préstamos - con garantía, asociadas |01|-|||1|
+20190131|171140|Cuentas por cobrar ...- Préstamos - con garantía, sucursal|01|-|||1|
+20190131|171150|Cuentas por cobrar ...- Préstamos - con garantía, otros|01|-|||1|
+20190131|171210|Cuentas por cobrar ...- Préstamos - sin garantía, matriz|01|-|||1|
+20190131|171220|Cuentas por cobrar ...- Préstamos - sin garantía, subsidiarias|01|-|||1|
+20190131|171230|Cuentas por cobrar ...- Préstamos - sin garantía, asociadas|01|-|||1|
+20190131|171240|Cuentas por cobrar ...- Préstamos - sin garantía, sucursal|01|-|||1|
+20190131|171250|Cuentas por cobrar ...- Préstamos - sin garantía, otros|01|-|||1|
+20190131|173110|Cuentas por cobrar ...- Intereses, regalías y dividendos - intereses, matriz|01|-|||1|
+20190131|173120|Cuentas por cobrar ...- Intereses, regalías y dividendos - intereses, subsidiarias |01|-|||1|
+20190131|173130|Cuentas por cobrar ...- Intereses, regalías y dividendos - intereses , asociadas |01|-|||1|
+20190131|173140|Cuentas por cobrar ...- Intereses, regalías y dividendos - intereses, sucursal |01|-|||1|
+20190131|173150|Cuentas por cobrar ...- Intereses, regalías y dividendos - intereses, otros|01|-|||1|
+20190131|173210|Cuentas por cobrar ...- Intereses, regalías y dividendos - regalías, matriz|01|-|||1|
+20190131|173220|Cuentas por cobrar ...- Intereses, regalías y dividendos - regalías, subsidiarias |01|-|||1|
+20190131|173230|Cuentas por cobrar ...- Intereses, regalías y dividendos - regalías, asociadas |01|-|||1|
+20190131|173240|Cuentas por cobrar ...- Intereses, regalías y dividendos - regalías, sucursal |01|-|||1|
+20190131|173250|Cuentas por cobrar ...- Intereses, regalías y dividendos - regalías, otros|01|-|||1|
+20190131|173310|Cuentas por cobrar ...- Intereses, regalías y dividendos - dividendos, matriz |01|-|||1|
+20190131|173320|Cuentas por cobrar ...- Intereses, regalías y dividendos - dividendos, subsidiarias |01|-|||1|
+20190131|173330|Cuentas por cobrar ...- Intereses, regalías y dividendos - dividendos, asociadas |01|-|||1|
+20190131|173340|Cuentas por cobrar ...- Intereses, regalías y dividendos - dividendos, otros|01|-|||1|
+20190131|174000|Cuentas por cobrar diversas, relacionadas - Depósitos otorgados en garantía|01|-|||1|
+20190131|175100|Cuentas por cobrar ...- Venta de activo inmovilizado - inversión mobiliaria |01|-|||1|
+20190131|175200|Cuentas por cobrar ...- Venta de activo inmovilizado - inversión inmobiliaria |01|-|||1|
+20190131|175300|Cuentas por cobrar ...- Venta de activo inmovilizado - inmuebles, maquinaria y  equipo|01|-|||1|
+20190131|175400|Cuentas por cobrar ...- Venta de activo inmovilizado - intangibles |01|-|||1|
+20190131|175500|Cuentas por cobrar ...- Venta de activo inmovilizado - activos biológicos |01|-|||1|
+20190131|176000|Cuentas por cobrar diversas, relacionadas - Activos por instrumentos financieros derivados|01|-|||1|
+20190131|178100|Cuentas por cobrar diversas, relacionadas - Otras cuentas por cobrar diversas |01|-|||1|
+20190131|178200|Cuentas por cobrar diversas, relacionadas - Otras cuentas por cobrar diversas a Largo Plazo|01|-|||1|
+20190131|179100|Cuentas por cobrar ...- Cobranza dudosa - préstamos |01|-|||1|
+20190131|179200|Cuentas por cobrar ...- Cobranza dudosa - intereses, regalías y dividendos    |01|-|||1|
+20190131|179300|Cuentas por cobrar ...- Cobranza dudosa - depósitos otorgados en garantía |01|-|||1|
+20190131|179400|Cuentas por cobrar ...- Cobranza dudosa - venta de activos inmovilizados |01|-|||1|
+20190131|179800|Cuentas por cobrar ...- Cobranza dudosa - otras cuentas por cobrar diversas    |01|-|||1|
+20190131|181000|Servicios y otros contratados por anticipado - Interesés ** Costos financieros|01|-|||1|
+20190131|182000|Servicios y otros contratados por anticipado - Seguros |01|-|||1|
+20190131|183000|Servicios y otros contratados por anticipado - Alquileres |01|-|||1|
+20190131|184000|Servicios y otros contratados por anticipado - Primas pagadas por opciones |01|-|||1|
+20190131|185000|Servicios y otros contratados por anticipado - Mantenimiento de activos inmovilizados |01|-|||1|
+20190131|189000|Servicios y otros contratados por anticipado - Otros gastos contratados por anticipado |01|-|||1|
+20190131|191100|Estimación de ...- Cuentas por cobrar comerciales, terceros - facturas, boletas y otros comprobante|01|-|||1|
+20190131|191300|Estimación de ...- Cuentas por cobrar comerciales, terceros - letras por cobrar |01|-|||1|
+20190131|192100|Estimación de ...- Cuentas por cobrar comerciales, relacionadas - facturas, boletas y otros comprob|01|-|||1|
+20190131|192200|Estimación de ...- Cuentas por cobrar comerciales, relacionadas - letras por cobrar |01|-|||1|
+20190131|193100|Estimación de ...- Cuentas por cobrar al personal, a los accionistas (socios)...- personal|01|-|||1|
+20190131|193200|Estimación de ...- Cuentas por cobrar al personal, a los accionistas (socios)...- accionistas (o so|01|-|||1|
+20190131|193300|Estimación de ...- Cuentas por cobrar al personal, a los accionistas (socios)...- directores|01|-|||1|
+20190131|193400|Estimación de ...- Cuentas por cobrar al personal, a los accionistas (socios)...- gerentes|01|-|||1|
+20190131|193800|Estimación de ...- Cuentas por cobrar al personal, a los accionistas (socios)...- diversas|01|-|||1|
+20190131|194100|Estimación de cuentas de cobranza dudosa - Cuentas por cobrar diversas, terceros - préstamos|01|-|||1|
+20190131|194200|Estimación de cuentas de cobranza dudosa - Cuentas por cobrar diversas, terceros - reclamaciones a |01|-|||1|
+20190131|194300|Estimación de cuentas de cobranza dudosa - Cuentas por cobrar diversas, terceros - intereses, régal|01|-|||1|
+20190131|194400|Estimación de cuentas de cobranza dudosa - Cuentas por cobrar diversas, terceros - depósitos otorga|01|-|||1|
+20190131|194500|Estimación de cuentas de cobranza dudosa - Cuentas por cobrar diversas, terceros - venta de activo |01|-|||1|
+20190131|194600|Estimación de cuentas de cobranza dudosa - Cuentas por cobrar diversas, terceros - activos por inst|01|-|||1|
+20190131|194900|Estimación de cuentas de cobranza dudosa - Cuentas por cobrar diversas, terceros - otras cuentas po|01|-|||1|
+20190131|195100|Estimación de ...- Cuentas por cobrar diversas, relacionadas - préstamos |01|-|||1|
+20190131|195300|Estimación de ...- Cuentas por cobrar diversas, terceros - intereses, regalías y dividendos |01|-|||1|
+20190131|195400|Estimación de ...- Cuentas por cobrar diversas, terceros - depósitos otorgados en garantía |01|-|||1|
+20190131|195500|Estimación de ...- Cuentas por cobrar diversas, terceros - venta de activos inmovilizados |01|-|||1|
+20190131|195600|Estimación de ...- Cuentas por cobrar diversas, terceros - activos por instrumentos financieros|01|-|||1|
+20190131|195800|Estimación de ...- Cuentas por cobrar diversas, terceros - otras cuentas por cobrar diversas |01|-|||1|
+20190131|2011101|Mercade...- Mercaderías ...- mercaderías manufacturadas, costo - Categoria de productos 01|01|-|||1|
+20190131|201120|Mercade...- Mercaderías ...- mercaderías manufacturadas, valor razonable|01|-|||1|
+20190131|202000|Mercaderías - Mercaderías de extracción |01|-|||1|
+20190131|203100|Mercaderías - Mercaderías agropecuarias y piscícolas - de origen animal|01|-|||1|
+20190131|203200|Mercaderías - Mercaderías agropecuarias y piscícolas - de origen vegetal |01|-|||1|
+20190131|204000|Mercaderías - Mercaderías inmuebles |01|-|||1|
+20190131|208000|Mercaderías - Otras mercaderías|01|-|||1|
+20190131|209100|Mercade...- Mercaderías desvalorizadas - mercaderías manufacturadas|01|-|||1|
+20190131|209200|Mercade...- Mercaderías desvalorizadas - recursos extraídos |01|-|||1|
+20190131|209300|Mercade...- Mercaderías desvalorizadas - productos agropecuarios y piscícolas |01|-|||1|
+20190131|209400|Mercade...- Mercaderías desvalorizadas - inmuebles |01|-|||1|
+20190131|209800|Mercade...- Mercaderías desvalorizadas - otras mercaderías|01|-|||1|
+20190131|211000|Productos terminados - Productos manufacturados |01|-|||1|
+20190131|212000|Productos terminados - Productos de extracción terminados|01|-|||1|
+20190131|213110|Productos ...- Productos agropecuarios y piscícolas ...- de origen animal, costo |01|-|||1|
+20190131|213120|Productos ...- Productos agropecuarios y piscícolas ...- de origen animal, valor razonable |01|-|||1|
+20190131|213210|Productos ...- Productos agropecuarios y piscícolas ...- de origen vegetal, costo |01|-|||1|
+20190131|213220|Productos ...- Productos agropecuarios y piscícolas ...- de origen vegetal, valor razonable |01|-|||1|
+20190131|214000|Productos terminados - Productos inmuebles|01|-|||1|
+20190131|215000|Productos terminados - Existencias de servicios terminados |01|-|||1|
+20190131|217000|Productos terminados - Otros productos terminados |01|-|||1|
+20190131|218000|Productos terminados - Costos de financiación, productos terminados|01|-|||1|
+20190131|219100|Productos ...- Productos terminados desvalorizados - productos manufacturados |01|-|||1|
+20190131|219200|Productos ...- Productos terminados desvalorizados - productos de extracción terminados |01|-|||1|
+20190131|219300|Productos ...- Productos terminados desvalorizados - productos agropecuarios y piscícolas terminado|01|-|||1|
+20190131|219400|Productos ...- Productos terminados desvalorizados - productos inmuebles|01|-|||1|
+20190131|219500|Productos ...- Productos terminados desvalorizados - existencias de servicios terminados |01|-|||1|
+20190131|219700|Productos ...- Productos terminados desvalorizados - otros productos terminados |01|-|||1|
+20190131|219800|Productos ...- Productos terminados desvalorizados - costos de financiación, productos terminados|01|-|||1|
+20190131|221000|Subproductos, desechos y desperdicios - Subproductos |01|-|||1|
+20190131|222000|Subproductos, desechos y desperdicios - Desechos y desperdicios|01|-|||1|
+20190131|229100|Subproductos ...- Subproductos, desechos y desperdicios desvalorizados - subproductos|01|-|||1|
+20190131|229200|Subproductos ...- Subproductos, desechos y desperdicios desvalorizados - desechos y desperdicios|01|-|||1|
+20190131|231000|Productos en proceso - Productos en proceso de manufactura|01|-|||1|
+20190131|232000|Productos en proceso - Productos extraídos en proceso de transformación|01|-|||1|
+20190131|233110|Productos ...- Productos agropecuarios y piscícolas ...- de origen animal, costo    |01|-|||1|
+20190131|233120|Productos ...- Productos agropecuarios y piscícolas ...- de origen animal, valor razonable   |01|-|||1|
+20190131|233210|Productos ...- Productos agropecuarios y piscícolas ...- de origen vegetal, costo   |01|-|||1|
+20190131|233220|Productos ...- Productos agropecuarios y piscícolas ...- de origen vegetal, valor razonable  |01|-|||1|
+20190131|234000|Productos en proceso - Productos inmuebles en proceso |01|-|||1|
+20190131|235000|Productos en proceso - Existencias de servicios en proceso|01|-|||1|
+20190131|237000|Productos en proceso - Otros productos en proceso |01|-|||1|
+20190131|238000|Productos en proceso - Costos de financiación, productos en proceso|01|-|||1|
+20190131|239100|Productos ...- Productos en proceso desvalorizados - productos en proceso de manufactura |01|-|||1|
+20190131|239200|Productos ...- Productos en proceso desvalorizados - productos extraídos en proceso de transformaci|01|-|||1|
+20190131|239300|Productos ...- Productos en proceso desvalorizados - productos agropecuarios y piscícolas en proces|01|-|||1|
+20190131|239400|Productos ...- Productos en proceso desvalorizados - productos inmuebles en proceso |01|-|||1|
+20190131|239500|Productos ...- Productos en proceso desvalorizados - existencias de servicios en proceso|01|-|||1|
+20190131|239700|Productos ...- Productos en proceso desvalorizados - otros productos en proceso |01|-|||1|
+20190131|239800|Productos ...- Productos en proceso desvalorizados - costos de financiación, productos en proceso|01|-|||1|
+20190131|241000|Materias primas - Materias primas para productos manufacturados|01|-|||1|
+20190131|242000|Materias primas - Materias primas para productos de extracción |01|-|||1|
+20190131|243000|Materias primas - Materias primas para productos agropecuarios y piscícolas|01|-|||1|
+20190131|244000|Materias primas - Materias primas para productos inmuebles |01|-|||1|
+20190131|249100|Materias ...- Materias primas desvalorizadas - materias primas para productos manufacturados|01|-|||1|
+20190131|249200|Materias ...- Materias primas desvalorizadas - materias primas para productos de extracción|01|-|||1|
+20190131|249300|Materias ...- Materias primas desvalorizadas - materias primas para productos agropecuarios y piscí|01|-|||1|
+20190131|249400|Materias ...- Materias primas desvalorizadas - materias primas para productos inmuebles |01|-|||1|
+20190131|251000|Materiales auxiliares, suministros y repuestos - Materiales auxiliares |01|-|||1|
+20190131|252100|Materiales auxiliares, suministros ...- Suministros - combustibles |01|-|||1|
+20190131|252200|Materiales auxiliares, suministros ...- Suministros - lubricantes |01|-|||1|
+20190131|252300|Materiales auxiliares, suministros ...- Suministros - energía |01|-|||1|
+20190131|252400|Materiales auxiliares, suministros ...- Suministros - otros suministros |01|-|||1|
+20190131|253000|Materiales auxiliares, suministros y repuestos - Repuestos |01|-|||1|
+20190131|259100|Materiales auxiliares, ...- Materiales auxiliares, suministros y repuestos desvalorizados - materia|01|-|||1|
+20190131|259200|Materiales auxiliares, ...- Materiales auxiliares, suministros y repuestos desvalorizados - suminis|01|-|||1|
+20190131|259300|Materiales auxiliares, ...- Materiales auxiliares, suministros y repuestos desvalorizados - repuest|01|-|||1|
+20190131|261000|Envases y embalajes - Envases|01|-|||1|
+20190131|262000|Envases y embalajes - Embalajes|01|-|||1|
+20190131|269100|Envases y ...- Envases y embalajes desvalorizados - envases|01|-|||1|
+20190131|269200|Envases y ...- Envases y embalajes desvalorizados - embalajes|01|-|||1|
+20190131|271110|Activos no corrientes ...- Inversiones inmoviliarias - terrenos, valor razonable|01|-|||1|
+20190131|271120|Activos no corrientes ...- Inversiones inmoviliarias - terrenos, costo|01|-|||1|
+20190131|271130|Activos no corrientes ...- Inversiones inmoviliarias - terrenos, revaluación|01|-|||1|
+20190131|271210|Activos no corrientes ...- Inversiones inmoviliarias - edificaciones, valor razonable|01|-|||1|
+20190131|271220|Activos no corrientes ...- Inversiones inmoviliarias - edificaciones, costo|01|-|||1|
+20190131|271230|Activos no corrientes ...- Inversiones inmoviliarias - edificaciones, revaluación|01|-|||1|
+20190131|271240|Activos no corrientes ...- Inversiones inmoviliarias - edificaciones, costos de financiación|01|-|||1|
+20190131|272110|Activos no corrientes ...- Inmuebles, maquinaria y equipo - terrenos, valor razonable|01|-|||1|
+20190131|272120|Activos no corrientes ...- Inmuebles, maquinaria y equipo - terrenos, costo|01|-|||1|
+20190131|272130|Activos no corrientes ...- Inmuebles, maquinaria y equipo - terrenos, revaluación|01|-|||1|
+20190131|272210|Activos no corrientes ...- Inmuebles, maquinaria y equipo - edificaciones, costo de adquisición o c|01|-|||1|
+20190131|272220|Activos no corrientes ...- Inmuebles, maquinaria y equipo - edificaciones, revaluación|01|-|||1|
+20190131|272230|Activos no corrientes ...- Inmuebles, maquinaria y equipo - edificaciones, costo de financiación|01|-|||1|
+20190131|272310|Activos no corrientes ...- Inmuebles, maquinaria ...- maquinarias y equipos de explotación, costo d|01|-|||1|
+20190131|272320|Activos no corrientes ...- Inmuebles, maquinaria ...- maquinarias y equipos de explotación, revalua|01|-|||1|
+20190131|272330|Activos no corrientes ...- Inmuebles, maquinaria ...- maquinarias y equipos de explotación, costo d|01|-|||1|
+20190131|272410|Activos no corrientes ...- Inmuebles, maquinaria y equipo - equipo de transporte, costo|01|-|||1|
+20190131|272420|Activos no corrientes ...- Inmuebles, maquinaria y equipo - equipo de transporte, revaluación|01|-|||1|
+20190131|272510|Activos no corrientes ...- Inmuebles, maquinaria y equipo - muebles y enseres, costo|01|-|||1|
+20190131|272520|Activos no corrientes ...- Inmuebles, maquinaria y equipo - muebles y enseres, revaluación|01|-|||1|
+20190131|272610|Activos no corrientes ...- Inmuebles, maquinaria y equipo - equipos diversos, costo|01|-|||1|
+20190131|272620|Activos no corrientes ...- Inmuebles, maquinaria y equipo - equipos diversos, revaluación|01|-|||1|
+20190131|272710|Activos no corrientes ...- Inmuebles, maquinaria y equipo - herramientas y unidades de reemplazo, c|01|-|||1|
+20190131|272720|Activos no corrientes ...- Inmuebles, maquinaria y equipo - herramientas y unidades de reemplazo, r|01|-|||1|
+20190131|273110|Activos no corrientes ...- Intangibles - concesiones, licencias y derechos, costo |01|-|||1|
+20190131|273120|Activos no corrientes ...- Intangibles - concesiones, licencias y derechos, revaluación|01|-|||1|
+20190131|273210|Activos no corrientes ...- Intangibles - patentes y propiedad industrial, costo|01|-|||1|
+20190131|273220|Activos no corrientes ...- Intangibles - patentes y propiedad industrial, revaluación|01|-|||1|
+20190131|273310|Activos no corrientes ...- Intangibles - programas de computadora (software), costo|01|-|||1|
+20190131|273320|Activos no corrientes ...- Intangibles - programas de computadora (software), revaluación|01|-|||1|
+20190131|273410|Activos no corrientes ...- Intangibles - costos de exploración y desarrollo, costo|01|-|||1|
+20190131|273420|Activos no corrientes ...- Intangibles - costos de exploración y desarrollo, revaluación|01|-|||1|
+20190131|273510|Activos no corrientes ...- Intangibles - fórmulas, diseños y prototipos, costo|01|-|||1|
+20190131|273520|Activos no corrientes ...- Intangibles - fórmulas, diseños y prototipos, revaluación|01|-|||1|
+20190131|273610|Activos no corrientes ...- Intangibles - reservas de recursos extraíbles, costo|01|-|||1|
+20190131|273620|Activos no corrientes ...- Intangibles - reservas de recursos extraíbles, revaluación|01|-|||1|
+20190131|273910|Activos no corrientes ...- Intangibles - otros activos intangibles, costo|01|-|||1|
+20190131|273920|Activos no corrientes ...- Intangibles - otros activos intangibles, revaluación|01|-|||1|
+20190131|274110|Activos no corrientes ...- Activos biológicos - activos biológicos en producción, valor razonable|01|-|||1|
+20190131|274120|Activos no corrientes ...- Activos biológicos - activos biológicos en producción, costo|01|-|||1|
+20190131|274130|Activos no corrientes ...- Activos biológicos - activos biológicos en producción, costos de financi|01|-|||1|
+20190131|274210|Activos no corrientes ...- Activos biológicos - activos biológicos en desarrollo, valor razonable|01|-|||1|
+20190131|274220|Activos no corrientes ...- Activos biológicos - activos biológicos en desarrollo, costo|01|-|||1|
+20190131|274230|Activos no corrientes ...- Activos biológicos - activos biológicos en desarrollo, costos de financi|01|-|||1|
+20190131|275210|Activos no corrientes ...- Depreciación acumulada...- edificaciones, valor razonable|01|-|||1|
+20190131|275220|Activos no corrientes ...- Depreciación acumulada...- edificaciones, costo|01|-|||1|
+20190131|275230|Activos no corrientes ...- Depreciación acumulada...- edificaciones, revaluación|01|-|||1|
+20190131|276210|Activos no corrientes ...- Depreciación acumulada...- edificaciones, costo de adquisición o constru|01|-|||1|
+20190131|276220|Activos no corrientes ...- Depreciación acumulada...- edificaciones, revaluación  |01|-|||1|
+20190131|276230|Activos no corrientes ...- Depreciación acumulada...- edificaciones, costo de financiación|01|-|||1|
+20190131|276310|Activos no corrientes ...- Depreciación acumulada...- maquinarias y equipos de explotación, costo d|01|-|||1|
+20190131|276320|Activos no corrientes ...- Depreciación acumulada...- maquinarias y equipos de explotación, revalua|01|-|||1|
+20190131|276330|Activos no corrientes ...- Depreciación acumulada...- maquinarias y equipos de explotación, costo d|01|-|||1|
+20190131|276410|Activos no corrientes ...- Depreciación acumulada...- equipo de transporte, costo|01|-|||1|
+20190131|276420|Activos no corrientes ...- Depreciación acumulada...- equipo de transporte, revaluación |01|-|||1|
+20190131|276510|Activos no corrientes ...- Depreciación acumulada...- muebles y enseres, costo|01|-|||1|
+20190131|276520|Activos no corrientes ...- Depreciación acumulada...- muebles y enseres, revaluación|01|-|||1|
+20190131|276610|Activos no corrientes ...- Depreciación acumulada...- equipos diversos, costo|01|-|||1|
+20190131|276620|Activos no corrientes ...- Depreciación acumulada...- equipos diversos, revaluación|01|-|||1|
+20190131|276710|Activos no corrientes ...- Depreciación acumulada...- herramientas y unidades de reemplazo, costo|01|-|||1|
+20190131|276720|Activos no corrientes ...- Depreciación acumulada...- herramientas y unidades de reemplazo, revalua|01|-|||1|
+20190131|277110|Activos no corrientes mantenidos ...- Amortización acumulada, intangibles, concesiones, licencias y|01|-|||1|
+20190131|277120|Activos no corrientes mantenidos ...- Amortización acumulada, intangibles, concesiones, licencias y|01|-|||1|
+20190131|277210|Activos no corrientes mantenidos ...- Amortización acumulada, intangibles, patentes y propiedad ind|01|-|||1|
+20190131|277220|Activos no corrientes mantenidos ...- Amortización acumulada, intangibles, patentes y propiedad ind|01|-|||1|
+20190131|277310|Activos no corrientes mantenidos ... - Amortización acumulada, intangibles, programas de computador|01|-|||1|
+20190131|277320|Activos no corrientes mantenidos ... - Amortización acumulada, intangibles, programas de computador|01|-|||1|
+20190131|277410|Activos no corrientes mantenidos ... - Amortización acumulada, intangibles, costos de exploración y|01|-|||1|
+20190131|277420|Activos no corrientes mantenidos ... - Amortización acumulada, intangibles, costos de exploración y|01|-|||1|
+20190131|277510|Activos no corrientes mantenidos ... - Amortización acumulada, intangibles, fórmulas, diseños y pro|01|-|||1|
+20190131|277520|Activos no corrientes mantenidos ... - Amortización acumulada, intangibles, fórmulas, diseños y pro|01|-|||1|
+20190131|277610|Activos no corrientes mantenidos ... - Amortización acumulada, intangibles, reservas de recursos ex|01|-|||1|
+20190131|277620|Activos no corrientes mantenidos ... - Amortización acumulada, intangibles, reservas de recursos ex|01|-|||1|
+20190131|277910|Activos no corrientes mantenidos ... - Amortización acumulada, intangibles, otros activos intangibl|01|-|||1|
+20190131|277920|Activos no corrientes mantenidos ... - Amortización acumulada, intangibles, otros activos intangibl|01|-|||1|
+20190131|278120|Activos no corrientes mantenidos ...- Depreciación acumulada, activos biológicos, activos biológico|01|-|||1|
+20190131|278220|Activos no corrientes mantenidos ...- Depreciación acumulada, activos biológicos, activos biológico|01|-|||1|
+20190131|279110|Activos no corrientes mantenidos para la venta - Desvalorización acumulada - inversión inmobiliaria|01|-|||1|
+20190131|279120|Activos no corrientes mantenidos para la venta - Desvalorización acumulada - inversión inmobiliaria|01|-|||1|
+20190131|279310|Activos no corrientes mantenidos ...- Desvalorización acumulada - inmuebles, maquinaria y equipo, t|01|-|||1|
+20190131|279320|Activos no corrientes mantenidos ...- Desvalorización acumulada - inmuebles, maquinaria y equipo, e|01|-|||1|
+20190131|279330|Activos no corrientes mantenidos ...- Desvalorización ...- inmuebles, maquinaria y equipo, maquinar|01|-|||1|
+20190131|279340|Activos no corrientes mantenidos ...- Desvalorización acumulada - inmuebles, maquinaria y equipo, e|01|-|||1|
+20190131|279350|Activos no corrientes mantenidos ...- Desvalorización acumulada - inmuebles, maquinaria y equipo, m|01|-|||1|
+20190131|279360|Activos no corrientes mantenidos ...- Desvalorización acumulada - inmuebles, maquinaria y equipo, e|01|-|||1|
+20190131|279370|Activos no corrientes mantenidos ...- Desvalorización ...- inmuebles, maquinaria y equipo, herramie|01|-|||1|
+20190131|279410|Activos no corrientes mantenidos ...- Desvalorización acumulada - intangibles, concesiones, licenci|01|-|||1|
+20190131|279420|Activos no corrientes mantenidos ...- Desvalorización acumulada - intangibles, patentes y propiedad|01|-|||1|
+20190131|279430|Activos no corrientes mantenidos ...- Desvalorización acumulada - intangibles, programas de computa|01|-|||1|
+20190131|279440|Activos no corrientes mantenidos ...- Desvalorización acumulada - intangibles, costos de exploració|01|-|||1|
+20190131|279450|Activos no corrientes mantenidos ...- Desvalorización acumulada - intangibles, fórmulas, diseños y |01|-|||1|
+20190131|279460|Activos no corrientes mantenidos ...- Desvalorización acumulada - intangibles, reservas de recursos|01|-|||1|
+20190131|279510|Activos no corrientes mantenidos ...- Desvalorización acumulada - activos biológicos, activos bioló|01|-|||1|
+20190131|279520|Activos no corrientes mantenidos ...- Desvalorización acumulada - activos biológicos, activos bioló|01|-|||1|
+20190131|28101|Existencias por recibir - Mercaderías - Categoria de productos 01|01|-|||1|
+20190131|284000|Existencias por recibir - Materias primas |01|-|||1|
+20190131|285000|Existencias por recibir - Materiales auxiliares, suministros y repuestos |01|-|||1|
+20190131|286000|Existencias por recibir - Envases y embalajes|01|-|||1|
+20190131|289100|Existencias por ...- Existencias por recibir desvalorizadas - mercaderías |01|-|||1|
+20190131|289200|Existencias por ...- Existencias por recibir desvalorizadas - materias primas |01|-|||1|
+20190131|289300|Existencias por ...- Existencias por recibir desvalorizadas - materiales auxiliares, suministros y |01|-|||1|
+20190131|289400|Existencias por ...- Existencias por recibir desvalorizadas - envases y embalajes |01|-|||1|
+20190131|291100|Desvalorización ...- Mercaderías - mercaderías manufacturadas   |01|-|||1|
+20190131|291200|Desvalorización ...- Mercaderías - mercaderías de extracción |01|-|||1|
+20190131|291300|Desvalorización ...- Mercaderías - mercaderías agropecuarias y piscícolas |01|-|||1|
+20190131|291400|Desvalorización ...- Mercaderías - mercaderías inmuebles |01|-|||1|
+20190131|291800|Desvalorización ...- Mercaderías - otras mercaderías|01|-|||1|
+20190131|292100|Desvalorización ...- Productos terminados - productos manufacturados |01|-|||1|
+20190131|292200|Desvalorización ...- Productos terminados - productos de extracción terminados |01|-|||1|
+20190131|292300|Desvalorización ...- Productos terminados - productos agropecuarios y piscícolas terminados |01|-|||1|
+20190131|292400|Desvalorización ...- Productos terminados - productos inmuebles |01|-|||1|
+20190131|292500|Desvalorización ...- Productos terminados - existencias de servicios terminados |01|-|||1|
+20190131|292700|Desvalorización ...- Productos terminados - otros productos terminados|01|-|||1|
+20190131|292800|Desvalorización ...- Productos terminados - costos de financiación, productos terminados |01|-|||1|
+20190131|293100|Desvalorización ...- Subproductos, desechos y desperdicios - subproductos |01|-|||1|
+20190131|293200|Desvalorización ...- Subproductos, desechos y desperdicios - desechos y desperdicios|01|-|||1|
+20190131|294100|Desvalorización ...- Productos en proceso - productos en proceso de manufactura |01|-|||1|
+20190131|294200|Desvalorización ...- Productos en proceso - productos extraídos en proceso de transformación |01|-|||1|
+20190131|294300|Desvalorización ...- Productos en proceso - productos agropecuarios y piscícolas en proceso |01|-|||1|
+20190131|294400|Desvalorización ...- Productos en proceso - productos inmuebles en proceso |01|-|||1|
+20190131|294500|Desvalorización ...- Productos en proceso - existencias de servicios en proceso |01|-|||1|
+20190131|294700|Desvalorización ...- Productos en proceso - otros productos en proceso |01|-|||1|
+20190131|294800|Desvalorización ...- Productos en proceso - costos de financiación, productos en proceso |01|-|||1|
+20190131|295100|Desvalorización ...- Materias primas - materias primas para productos manufacturados    |01|-|||1|
+20190131|295200|Desvalorización ...- Materias primas - materias primas para productos de extracción |01|-|||1|
+20190131|295300|Desvalorización ...- Materias primas - materias primas para productos agropecuarios y piscícolas |01|-|||1|
+20190131|295400|Desvalorización ...- Materias primas - materias primas para productos inmuebles |01|-|||1|
+20190131|296100|Desvalorización ...- Materiales auxiliares, suministros y repuestos - materiales auxiliares |01|-|||1|
+20190131|296200|Desvalorización ...- Materiales auxiliares, suministros y repuestos - suministros|01|-|||1|
+20190131|296300|Desvalorización ...- Materiales auxiliares, suministros y repuestos - repuestos|01|-|||1|
+20190131|297100|Desvalorización ...- Envases y embalajes - envases|01|-|||1|
+20190131|297200|Desvalorización ...- Envases y embalajes - embalajes|01|-|||1|
+20190131|298100|Desvalorización ...- Existencias por recibir - mercaderías |01|-|||1|
+20190131|298200|Desvalorización ...- Existencias por recibir - materias primas |01|-|||1|
+20190131|298300|Desvalorización ...- Existencias por recibir - materiales auxiliares, suministros y repuestos |01|-|||1|
+20190131|298400|Desvalorización ...- Existencias por recibir - envases y embalajes |01|-|||1|
+20190131|301110|Inversiones ...- Inversiones a ...- instrumentos financieros ...de deuda, valores emitidos o garant|01|-|||1|
+20190131|301120|Inversiones ...- Inversiones a ...- instrumentos financieros ...de deuda, valores emitidos por el s|01|-|||1|
+20190131|301130|Inversiones ...- Inversiones a ...- instrumentos financieros ...de deuda, valores emitidos por las |01|-|||1|
+20190131|301140|Inversiones ...- Inversiones a ..- instrumentos ., otros títulos representativos de deuda **valores|01|-|||1|
+20190131|302210|Inversiones ...- Instrumentos financieros ...- acciones representativas de capital social, comunes,|01|-|||1|
+20190131|302220|Inversiones ...- Instrumentos financieros ...- acciones representativas de capital social, comunes,|01|-|||1|
+20190131|302230|Inversiones ...- Instrumentos financieros ...- acciones representativas de capital social, comunes,|01|-|||1|
+20190131|302310|Inversiones ...- Instrumentos financieros ...- acciones representativas de capital social, preferen|01|-|||1|
+20190131|302320|Inversiones ...- Instrumentos financieros ...- acciones representativas de capital social, preferen|01|-|||1|
+20190131|302330|Inversiones ...- Instrumentos ...- acciones representativas de capital social, preferentes, partici|01|-|||1|
+20190131|302410|Inversiones ...- Instrumentos financieros ...- acciones de inversión, costo |01|-|||1|
+20190131|302420|Inversiones ...- Instrumentos financieros ...- acciones de inversión, valor razonable|01|-|||1|
+20190131|302430|Inversiones ...- Instrumentos financieros ...- acciones de inversión, participación patrimonial |01|-|||1|
+20190131|302510|Inversiones ...- Instrumentos financieros ...- certificados de participación de fondos de inversión|01|-|||1|
+20190131|302520|Inversiones ...- Instrumentos financieros ...- certificados de participación de fondos de inversión|01|-|||1|
+20190131|302610|Inversiones ...- Instrumentos financieros ...- certificados de participación de fondos mutuos, cost|01|-|||1|
+20190131|302620|Inversiones ...- Instrumentos financieros ...- certificados de participación de fondos mutuos, valo|01|-|||1|
+20190131|302710|Inversiones ...- Instrumentos financieros  ...- participaciones en asociaciones en participación y |01|-|||1|
+20190131|302720|Inversiones ...- Instrumentos financieros  ...- participaciones en asociaciones en participación y |01|-|||1|
+20190131|302730|Inversiones ...- Instrumentos financieros  ...- participaciones en asociaciones en participación ..|01|-|||1|
+20190131|302810|Inversiones ...- Instrumentos financieros representativos de derecho ...- otros títulos representat|01|-|||1|
+20190131|302820|Inversiones ...- Instrumentos financieros representativos de ...- otros títulos representativos de |01|-|||1|
+20190131|308200|Inversiones ...- Desvalorización de inversiones ...- instrumentos financieros representativos de de|01|-|||1|
+20190131|311110|Inversiones ...- Terrenos - urbanos, valor razonable |01|-|||1|
+20190131|311120|Inversiones ...- Terrenos - urbanos, costo|01|-|||1|
+20190131|311130|Inversiones ...- Terrenos - urbanos, revaluación|01|-|||1|
+20190131|311210|Inversiones ...- Terrenos - rurales, valor razonable |01|-|||1|
+20190131|311220|Inversiones ...- Terrenos - rurales, costo|01|-|||1|
+20190131|311230|Inversiones ...- Terrenos - rurales, revaluación|01|-|||1|
+20190131|312110|Inversiones ...- Edificaciones - edificaciones, valor razonable|01|-|||1|
+20190131|312120|Inversiones ...- Edificaciones - edificaciones, costo|01|-|||1|
+20190131|312130|Inversiones ...- Edificaciones - edificaciones, revaluación|01|-|||1|
+20190131|312140|Inversiones ...- Edificaciones - edificaciones, costos de financiación, inversiones inmobliarias|01|-|||1|
+20190131|321100|Activos adquiridos ...- Inversiones inmobiliarias - terrenos |01|-|||1|
+20190131|321200|Activos adquiridos ...- Inversiones inmobiliarias - edificaciones|01|-|||1|
+20190131|322100|Activos adquiridos ...- Inmuebles, maquinaria y equipo - terrenos|01|-|||1|
+20190131|322200|Activos adquiridos ...- Inmuebles, maquinaria y equipo - edificaciones |01|-|||1|
+20190131|322300|Activos adquiridos ...- Inmuebles, maquinaria y equipo - maquinarias y equipos de explotación |01|-|||1|
+20190131|322400|Activos adquiridos ...- Inmuebles, maquinaria y equipo - equipo de transporte|01|-|||1|
+20190131|322500|Activos adquiridos ...- Inmuebles, maquinaria y equipo - muebles y enseres|01|-|||1|
+20190131|322600|Activos adquiridos ...- Inmuebles, maquinaria y equipo - equipos diversos |01|-|||1|
+20190131|322700|Activos adquiridos ...- Inmuebles, maquinaria y equipo - herramientas y unidades de reemplazo |01|-|||1|
+20190131|331110|Inmuebles, maquinaria ...- Terrenos - terrenos, costo|01|-|||1|
+20190131|331120|Inmuebles, maquinaria ...- Terrenos - terrenos, revaluación|01|-|||1|
+20190131|332110|Inmuebles, maquinaria ...- Edificaciones - edificaciones administrativas, costo de adquisición o co|01|-|||1|
+20190131|332120|Inmuebles, maquinaria ...- Edificaciones - edificaciones administrativas, revaluación|01|-|||1|
+20190131|332130|Inmuebles, maquinaria ...- Edificaciones - edificaciones administrativas, costo de financiación, ed|01|-|||1|
+20190131|332210|Inmuebles, maquinaria ...- Edificaciones - almacenes, costo de adquisición o construcción|01|-|||1|
+20190131|332220|Inmuebles, maquinaria ...- Edificaciones - almacenes, revaluación|01|-|||1|
+20190131|332230|Inmuebles, maquinaria ...- Edificaciones - almacenes, costo de financiación, almacenes|01|-|||1|
+20190131|332310|Inmuebles, maquinaria ...- Edificaciones - edificaciones para producción, costo de adquisición o co|01|-|||1|
+20190131|332320|Inmuebles, maquinaria ...- Edificaciones - edificaciones para producción, revaluación|01|-|||1|
+20190131|332330|Inmuebles, maquinaria ...- Edificaciones - edificaciones para producción, costo de financiación, ed|01|-|||1|
+20190131|332410|Inmuebles, maquinaria ...- Edificaciones - instalaciones, costo de adquisición o construcción|01|-|||1|
+20190131|332420|Inmuebles, maquinaria ...- Edificaciones - instalaciones, revaluación |01|-|||1|
+20190131|332430|Inmuebles, maquinaria ...- Edificaciones - instalaciones, costo de financiación, instalaciones|01|-|||1|
+20190131|333110|Inmuebles, ...- Maquinarias y equipos ...- maquinarias y equipos de explotación, costo de adquisici|01|-|||1|
+20190131|333120|Inmuebles, ...- Maquinarias y equipos ...- maquinarias y equipos de explotación, revaluación|01|-|||1|
+20190131|333130|Inmuebles, ...- Maquinarias y equipos ...- maquinarias y equipos .., costo de financiación, maquina|01|-|||1|
+20190131|334110|Inmuebles, ...- Unidades de transporte - vehículos motorizados, costo|01|-|||1|
+20190131|334120|Inmuebles, ...- Unidades de transporte - vehículos motorizados, revaluación|01|-|||1|
+20190131|334210|Inmuebles, ...- Unidades de transporte - vehículos no motorizados, costo|01|-|||1|
+20190131|334220|Inmuebles, ...- Unidades de transporte - vehículos no motorizados, revaluación|01|-|||1|
+20190131|335110|Inmuebles, ...- Muebles y enseres - muebles, costo |01|-|||1|
+20190131|335120|Inmuebles, ...- Muebles y enseres - muebles, revaluación|01|-|||1|
+20190131|335210|Inmuebles, ...- Muebles y enseres - enseres, costo|01|-|||1|
+20190131|335220|Inmuebles, ...- Muebles y enseres - enseres, revaluación|01|-|||1|
+20190131|336110|Inmuebles, ...- Equipos diversos - equipo para procesamiento de información, costo|01|-|||1|
+20190131|336120|Inmuebles, ...- Equipos diversos - equipo para procesamiento de información, revaluación|01|-|||1|
+20190131|336210|Inmuebles, ...- Equipos diversos - equipo de comunicación, costo|01|-|||1|
+20190131|336220|Inmuebles, ...- Equipos diversos - equipo de comunicación, revaluación|01|-|||1|
+20190131|336310|Inmuebles, ...- Equipos diversos - equipo de seguridad, costo|01|-|||1|
+20190131|336320|Inmuebles, ...- Equipos diversos - equipo de seguridad, revaluación|01|-|||1|
+20190131|336910|Inmuebles, ...- Equipos diversos - otros equipos, costo|01|-|||1|
+20190131|336920|Inmuebles, ...- Equipos diversos - otros equipos, revaluación |01|-|||1|
+20190131|337110|Inmuebles, ...- Herramientas y unidades de reemplazo - herramientas, costo |01|-|||1|
+20190131|337120|Inmuebles, ...- Herramientas y unidades de reemplazo - herramientas, revaluación|01|-|||1|
+20190131|337210|Inmuebles, ...- Herramientas y unidades de reemplazo - unidades de reemplazo, costo|01|-|||1|
+20190131|337220|Inmuebles, ...- Herramientas y unidades de reemplazo - unidades de reemplazo, revaluación|01|-|||1|
+20190131|338100|Inmuebles, maquinaria y equipo - Unidades por recibir - maquinarias y equipos de explotación |01|-|||1|
+20190131|338200|Inmuebles, maquinaria y equipo - Unidades por recibir - equipo de transporte|01|-|||1|
+20190131|338300|Inmuebles, maquinaria y equipo - Unidades por recibir - muebles y enseres|01|-|||1|
+20190131|338600|Inmuebles, maquinaria y equipo - Unidades por recibir - equipos diversos|01|-|||1|
+20190131|338700|Inmuebles, maquinaria y equipo - Unidades por recibir - herramientas y unidades de reemplazo|01|-|||1|
+20190131|339100|Inmuebles, maquinaria y equipo - Construcciones y obras en curso - adaptación de terrenos |01|-|||1|
+20190131|339200|Inmuebles, maquinaria y equipo - Construcciones y obras en curso - construcciones en curso |01|-|||1|
+20190131|339300|Inmuebles, maquinaria y equipo - Construcciones y obras en curso - maquinaria en montaje|01|-|||1|
+20190131|339400|Inmuebles, maquinaria y equipo - Construcciones y obras en curso - inversión inmobiliaria en curso |01|-|||1|
+20190131|339710|Inmuebles, ...- Construcciones y ...- costo de financiación, inversiones inmobiliarias, costo de fi|01|-|||1|
+20190131|339810|Inmuebles, ...- Construcciones y ...- costo de financiación, inmuebles, maquinaria y equipo, costo |01|-|||1|
+20190131|339820|Inmue...- Constru...- costo de financiación, inmuebles, maquinaria y ..., C de F, maquinarias y equ|01|-|||1|
+20190131|339900|Inmuebles, maquinaria y equipo - Construcciones y obras en curso - otros activos en curso |01|-|||1|
+20190131|341110|Intangibles - Concesiones, licencias ...- concesiones, costo|01|-|||1|
+20190131|341120|Intangibles - Concesiones, licencias ...- concesiones, revaluación |01|-|||1|
+20190131|341210|Intangibles - Concesiones, licencias ...- licencias, costo |01|-|||1|
+20190131|341220|Intangibles - Concesiones, licencias ...- licencias, revaluación |01|-|||1|
+20190131|341910|Intangibles - Concesiones, licencias ...- otros derechos, costo|01|-|||1|
+20190131|341920|Intangibles - Concesiones, licencias ...- otros derechos, revaluación|01|-|||1|
+20190131|342110|Intangibles - Patentes y propiedad industrial - patentes, costo|01|-|||1|
+20190131|342120|Intangibles - Patentes y propiedad industrial - patentes, revaluación|01|-|||1|
+20190131|342210|Intangibles - Patentes y propiedad industrial - marcas, costo|01|-|||1|
+20190131|342220|Intangibles - Patentes y propiedad industrial - marcas, revaluación|01|-|||1|
+20190131|343110|Intangibles - Programas de computadora - aplicaciones informáticas, costo |01|-|||1|
+20190131|343120|Intangibles - Programas de computadora - aplicaciones informáticas, revaluación |01|-|||1|
+20190131|344110|Intangibles - Costos de exploración y desarrollo - costos de exploración, costo|01|-|||1|
+20190131|344120|Intangibles - Costos de exploración y desarrollo - costos de exploración, revaluación|01|-|||1|
+20190131|344130|Intangibles - Costos de exploración y desarrollo - costos de exploración, costo de financiación|01|-|||1|
+20190131|344210|Intangibles - Costos de exploración y desarrollo - costos de desarrollo, costo|01|-|||1|
+20190131|344220|Intangibles - Costos de exploración y desarrollo - costos de desarrollo, revaluación|01|-|||1|
+20190131|344230|Intangibles - Costos de exploración y desarrollo - costos de desarrollo, costo de financiación|01|-|||1|
+20190131|345110|Intangibles - Fórmulas, diseños y prototipos - fórmulas, costo|01|-|||1|
+20190131|345120|Intangibles - Fórmulas, diseños y prototipos - fórmulas, revaluación|01|-|||1|
+20190131|345210|Intangibles - Fórmulas, diseños y prototipos - diseños y prototipos, costo|01|-|||1|
+20190131|345220|Intangibles - Fórmulas, diseños y prototipos - diseños y prototipos, revaluación |01|-|||1|
+20190131|346110|Intangibles - Reservas de recursos extraíbles- minerales, costo|01|-|||1|
+20190131|346120|Intangibles - Reservas de recursos extraíbles- minerales, revaluación|01|-|||1|
+20190131|346210|Intangibles - Reservas de recursos extraíbles - petróleo y gas, costo|01|-|||1|
+20190131|346220|Intangibles - Reservas de recursos extraíbles - petróleo y gas, revaluación|01|-|||1|
+20190131|346310|Intangibles - Reservas de recursos extraíbles - madera, costo|01|-|||1|
+20190131|346320|Intangibles - Reservas de recursos extraíbles - madera, revaluación|01|-|||1|
+20190131|346910|Intangibles - Reservas de recursos extraíbles - otros recursos extraíbles, costo|01|-|||1|
+20190131|346920|Intangibles - Reservas de recursos extraíbles - otros recursos extraíbles, revaluación|01|-|||1|
+20190131|347100|Intangibles - Plusvalía mercantil - plusvalía mercantil |01|-|||1|
+20190131|349110|Intangibles - Otros activos intangibles - otros activos intangibles, costo |01|-|||1|
+20190131|349120|Intangibles - Otros activos intangibles - otros activos intangibles, revaluación|01|-|||1|
+20190131|351110|Activos ...- Activos biológicos en producción - de origen animal, valor razonable |01|-|||1|
+20190131|351120|Activos ...- Activos biológicos en producción - de origen animal, costo|01|-|||1|
+20190131|351130|Activos ...- Activos biológicos en producción - de origen animal, costo de financiación|01|-|||1|
+20190131|351210|Activos ...- Activos biológicos en producción - de origen vegetal, valor razonable |01|-|||1|
+20190131|351220|Activos ...- Activos biológicos en producción - de origen vegetal, costo|01|-|||1|
+20190131|351230|Activos ...- Activos biológicos en producción - de origen vegetal, costo de financiación |01|-|||1|
+20190131|352110|Activos ...- Activos biológicos en desarrollo - de origen animal, valor razonable  |01|-|||1|
+20190131|352120|Activos ...- Activos biológicos en desarrollo - de origen animal, costo|01|-|||1|
+20190131|352130|Activos ...- Activos biológicos en desarrollo - de origen animal, costo de financiación  |01|-|||1|
+20190131|352210|Activos ...- Activos biológicos en desarrollo - de origen vegetal, valor razonable|01|-|||1|
+20190131|352220|Activos ...- Activos biológicos en desarrollo - de origen vegetal, costo|01|-|||1|
+20190131|352230|Activos ...- Activos biológicos en desarrollo - de origen vegetal, costo de financiación  |01|-|||1|
+20190131|361100|Desvalorización ...- Inversiones inmobiliarias - terrenos |01|-|||1|
+20190131|361210|Desvalorización ...- Inversiones inmobiliarias - edificaciones, edificaciones, costo de adquisición|01|-|||1|
+20190131|361220|Desvalorización ...- Inversiones inmobiliarias - edificaciones, edificaciones, costo de financiació|01|-|||1|
+20190131|363100|Desvalorización ...- Inmuebles, maquinaria y equipo - terrenos |01|-|||1|
+20190131|363210|Desvalorización ...- Inmuebles, maquinaria y equipo - edificaciones, edificaciones, costo de adquis|01|-|||1|
+20190131|363220|Desvalorización ...- Inmuebles, maquinaria y equipo - edificaciones, edificaciones, costo de financ|01|-|||1|
+20190131|363310|Desvalorización ...- Inmuebles, maquinaria y equipo - maquinarias y equipos de explotación, costo d|01|-|||1|
+20190131|363320|Desvalorización ...- Inmuebles, maquinaria y equipo - maquinarias y equipos de explotación, costo d|01|-|||1|
+20190131|363400|Desvalorización ...- Inmuebles, maquinaria y equipo - equipo de transporte|01|-|||1|
+20190131|363500|Desvalorización ...- Inmuebles, maquinaria y equipo - muebles y enseres|01|-|||1|
+20190131|363600|Desvalorización ...- Inmuebles, maquinaria y equipo - equipos diversos |01|-|||1|
+20190131|363700|Desvalorización ...- Inmuebles, maquinaria y equipo - herramientas y unidades de reemplazo |01|-|||1|
+20190131|364100|Desvalorización ...- Intangibles - concesiones, licencias y otros derechos |01|-|||1|
+20190131|364200|Desvalorización ...- Intangibles - patentes y propiedad industrial|01|-|||1|
+20190131|364300|Desvalorización ...- Intangibles - programas de computadora (software) |01|-|||1|
+20190131|364410|Desvalorización ...- Intangibles - costos de exploración y desarrollo, costo|01|-|||1|
+20190131|364420|Desvalorización ...- Intangibles - costos de exploración y desarrollo, costo de financiación|01|-|||1|
+20190131|364500|Desvalorización ...- Intangibles - fórmulas, diseños y prototipos |01|-|||1|
+20190131|364700|Desvalorización ...- Intangibles - plusvalía mercantil |01|-|||1|
+20190131|364900|Desvalorización ...- Intangibles - otros activos intangibles|01|-|||1|
+20190131|365110|Desvalorización ...- Activos biológicos - activos biológicos en producción, costo|01|-|||1|
+20190131|365120|Desvalorización ...- Activos biológicos - activos biológicos en producción, costo de financiación|01|-|||1|
+20190131|365210|Desvalorización ...- Activos biológicos - activos biológicos en desarrollo, costo|01|-|||1|
+20190131|365220|Desvalorización ...- Activos biológicos - activos biológicos en desarrollo, costo de financiación |01|-|||1|
+20190131|366100|Desvalorización de activo ...- Desvalorización de inversiones .., inversiones a ser mantenidas hast|01|-|||1|
+20190131|366200|Desvalorización de activo ...- Desvalorización de inversiones .., inversiones financieras represent|01|-|||1|
+20190131|371100|Activo diferido - Impuesto a la renta diferido, impuesto a la renta diferido, patrimonio |01|-|||1|
+20190131|371200|Activo diferido - Impuesto a la renta diferido, impuesto a la renta diferido, resultados |01|-|||1|
+20190131|372100|Activo diferido - Participaciones de los trabajadores ...- participaciones de los trabajadores dife|01|-|||1|
+20190131|372200|Activo diferido - Participaciones de los trabajadores ...- participaciones de los trabajadores dife|01|-|||1|
+20190131|373100|Activo diferido - Intereses diferidos - intereses no devengados en transacciones con terceros |01|-|||1|
+20190131|373200|Activo diferido - Intereses diferidos - intereses no devengados en medición a valor descontado|01|-|||1|
+20190131|381100|Otros activos - Bienes de arte y cultura - obras de arte |01|-|||1|
+20190131|381200|Otros activos - Bienes de arte y cultura - biblioteca|01|-|||1|
+20190131|381300|Otros activos - Bienes de arte y cultura - otros |01|-|||1|
+20190131|382100|Otros activos - Diversos - monedas y joyas |01|-|||1|
+20190131|382200|Otros activos - Diversos - bienes entregados en comodato |01|-|||1|
+20190131|382300|Otros activos - Diversos - bienes recibidos en pago (adjudicados y realizables) |01|-|||1|
+20190131|382900|Otros activos - Diversos - otros|01|-|||1|
+20190131|391110|Depreciación ...- Depreciación acumulada - inversiones inmobiliarias, edificaciones, costo de adqui|01|-|||1|
+20190131|391120|Depreciación ...- Depreciación acumulada - inversiones inmobiliarias, edificaciones, revaluación |01|-|||1|
+20190131|391130|Depreciación ...- Depreciación acumulada - inversiones inmobiliarias, edificaciones, costo de finan|01|-|||1|
+20190131|391210|Depreciación ...- Depreciación ...- activos adquiridos en arrendamiento financiero, inversiones inm|01|-|||1|
+20190131|391220|Depreciación ...- Depreciación ..- activos adquiridos en arrendamiento financiero, inmuebles, maqui|01|-|||1|
+20190131|391230|Depreciación ...- Depreciación ...- activos adquiridos en arrendamiento ..., inmuebles, maquinaria |01|-|||1|
+20190131|391240|Depreciación ...- Depreciación ..- activos adquiridos en arrendamiento financiero, inmuebles, maqui|01|-|||1|
+20190131|391260|Depreciación ...- Depreciación ..- activos adquiridos en arrendamiento financiero, inmuebles, maqui|01|-|||1|
+20190131|391310|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, costo, edificaciones|01|-|||1|
+20190131|391320|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, costo, maquinarias y equipos de|01|-|||1|
+20190131|391330|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, costo, equipo de transporte|01|-|||1|
+20190131|391340|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, costo, muebles y enseres|01|-|||1|
+20190131|391350|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, costo, equipos diversos |01|-|||1|
+20190131|391360|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, costo, herramientas y unidades |01|-|||1|
+20190131|391410|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, revaluación, edificaciones |01|-|||1|
+20190131|391420|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, revaluación, maquinarias y equi|01|-|||1|
+20190131|391430|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, revaluación, equipo de transpor|01|-|||1|
+20190131|391440|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, revaluación, muebles y enseres|01|-|||1|
+20190131|391450|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, revaluación, equipos diversos |01|-|||1|
+20190131|391460|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, revaluación, herramientas y uni|01|-|||1|
+20190131|391510|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, costo de financiación, edificac|01|-|||1|
+20190131|391520|Depreciación ...- Depreciación ...- inmuebles, maquinaria y equipo, costo de financiación, maquinar|01|-|||1|
+20190131|391610|Depreciación ...- Depreciación ...- activos biológicos en producción, costo, activos biológicos de |01|-|||1|
+20190131|391620|Depreciación ...- Depreciación ...- activos biológicos en producción, costo, activos biológicos de |01|-|||1|
+20190131|391710|Depreciación ...- Depreciación ..- activos biológicos en producción, costo de financiación, activos|01|-|||1|
+20190131|391720|Depreciación ...- Depreciación ..- activos biológicos en producción,costo de financiacion, activos |01|-|||1|
+20190131|392110|Depreciación ...- Amortización acumulada - intangibles, costo, concesiones, licencias y otros derec|01|-|||1|
+20190131|392120|Depreciación ...- Amortización acumulada - intangibles, costo, patentes y propiedad industrial|01|-|||1|
+20190131|392130|Depreciación ...- Amortización acumulada - intangibles, costo, programas de computadora (software)|01|-|||1|
+20190131|392140|Depreciación ...- Amortización acumulada - intangibles, costo, costos de exploración y desarrollo|01|-|||1|
+20190131|392150|Depreciación ...- Amortización acumulada - intangibles, costo, fórmulas, diseños y prototipos |01|-|||1|
+20190131|392190|Depreciación ...- Amortización acumulada - intangibles, costo, otros activos intangibles |01|-|||1|
+20190131|392210|Depreciación ...- Amortización acumulada - intangibles, revaluación, concesiones, licencias y otros|01|-|||1|
+20190131|392220|Depreciación ...- Amortización acumulada - intangibles, revaluación, patentes y propiedad industria|01|-|||1|
+20190131|392230|Depreciación ...- Amortización acumulada - intangibles, revaluación, programas de computadora (soft|01|-|||1|
+20190131|392250|Depreciación ...- Amortización acumulada - intangibles, revaluación, fórmulas, diseños y prototipos|01|-|||1|
+20190131|392290|Depreciación ...- Amortización acumulada - intangibles, revaluación, otros activos intangibles |01|-|||1|
+20190131|392340|Depreciación, ...- Amortización acumulada - intangibles, costos de financiación, costos de explorac|01|-|||1|
+20190131|393100|Depreciación, amortización ...- Agotamiento acumulado - agotamiento de reservas de recursos extraíb|01|-|||1|
+20190131|401110|Tributos y aportes ...- Gobierno central - impuesto general a las ventas, IGV - cuenta propia |01|-|||1|
+20190131|401120|Tributos y aportes ...- Gobierno central - impuesto general a las ventas, IGV - servicios prestados|01|-|||1|
+20190131|401130|Tributos y aportes ...- Gobierno central - impuesto general a las ventas, IGV - régimen de percepci|01|-|||1|
+20190131|401140|Tributos y aportes ...- Gobierno central - impuesto general a las ventas, IGV - régimen de retencio|01|-|||1|
+20190131|401200|Tributos y aportes ...- Gobierno central - impuesto selectivo al consumo |01|-|||1|
+20190131|401310|Tributos y aportes ...- Gobierno central - canon, canon petroleo |01|-|||1|
+20190131|401320|Tributos y aportes ...- Gobierno central - canon, canon minero  |01|-|||1|
+20190131|401330|Tributos y aportes ...- Gobierno central - canon, canon gasífero |01|-|||1|
+20190131|401340|Tributos y aportes ...- Gobierno central - canon, canon pesquero |01|-|||1|
+20190131|401350|Tributos y aportes ...- Gobierno central - canon, canon hidroenergético |01|-|||1|
+20190131|401360|Tributos y aportes ...- Gobierno central - canon, canon forestal |01|-|||1|
+20190131|401510|Tributos y aportes ...- Gobierno central - derechos aduaneros, derechos arancelarios |01|-|||1|
+20190131|401520|Tributos y aportes ...- Gobierno central - derechos aduaneros, derechos aduaneros por ventas |01|-|||1|
+20190131|401710|Tributos y aportes ...- Gobierno central - impuesto a la renta, renta de tercera categoría |01|-|||1|
+20190131|401720|Tributos y aportes ...- Gobierno central - impuesto a la renta, renta de cuarta categoría |01|-|||1|
+20190131|401730|Tributos y aportes ...- Gobierno central - impuesto a la renta, renta de quinta categoría |01|-|||1|
+20190131|401740|Tributos y aportes ...- Gobierno central - impuesto a la renta, renta de no domiciliados |01|-|||1|
+20190131|401750|Tributos y aportes ...- Gobierno central - impuesto a la renta, otras retenciones |01|-|||1|
+20190131|401810|Tributos y aportes ...- Gobierno central - otros impuestos, impuesto a las transacciones financiera|01|-|||1|
+20190131|401820|Tributos y aportes ...- Gobierno central - otros impuestos, impuesto a los juegos de casino y traga|01|-|||1|
+20190131|401830|Tributos y aportes ...- Gobierno central - otros impuestos, tasas por la prestación de servicios pú|01|-|||1|
+20190131|401840|Tributos y aportes ...- Gobierno central - otros impuestos, regalías |01|-|||1|
+20190131|401850|Tributos y aportes ...- Gobierno central - otros impuestos, impuesto a los dividendos |01|-|||1|
+20190131|401860|Tributos y aportes ...- Gobierno central - otros impuestos, impuesto temporal a los activos netos |01|-|||1|
+20190131|401890|Tributos y aportes ...- Gobierno central - otros impuestos, otros impuestos |01|-|||1|
+20190131|402000|Tributos y aportes al sistema de pensiones y de salud por pagar - Certificados tributarios |01|-|||1|
+20190131|403100|Tributos y aportes ...- Instituciones públicas - ESSALUD|01|-|||1|
+20190131|403200|Tributos y aportes ...- Instituciones públicas - ONP|01|-|||1|
+20190131|403300|Tributos y aportes ...- Instituciones públicas - contribución al SENATI|01|-|||1|
+20190131|403400|Tributos y aportes ...- Instituciones públicas - contribución al SENCICO |01|-|||1|
+20190131|403900|Tributos y aportes ...- Instituciones públicas - otras instituciones |01|-|||1|
+20190131|405000|Tributos y aportes al sistema de pensiones y de salud por pagar - Gobiernos regionales |01|-|||1|
+20190131|406110|Tributos y aportes ...- Gobiernos locales - impuestos, impuesto al patrimonio vehicular |01|-|||1|
+20190131|406120|Tributos y aportes ...- Gobiernos locales - impuestos, impuesto a las apuestas |01|-|||1|
+20190131|406130|Tributos y aportes ...- Gobiernos locales - impuestos, impuesto a los juegos |01|-|||1|
+20190131|406140|Tributos y aportes ...- Gobiernos locales - impuestos, impuesto de alcabala |01|-|||1|
+20190131|406150|Tributos y aportes ...- Gobiernos locales - impuestos, impuesto predial |01|-|||1|
+20190131|406160|Tributos y aportes ...- Gobiernos locales - impuestos, impuesto a los espectáculos públicos no depo|01|-|||1|
+20190131|406170|Tributos y aportes ...- Gobiernos locales - impuestos, impuesto al rodaje|01|-|||1|
+20190131|406200|Tributos y aportes ...- Gobiernos locales - contribuciones |01|-|||1|
+20190131|406310|Tributos y aportes ...- Gobiernos locales - tasas, licencia de apertura de establecimientos |01|-|||1|
+20190131|406320|Tributos y aportes ...- Gobiernos locales - tasas, transporte público |01|-|||1|
+20190131|406330|Tributos y aportes ...- Gobiernos locales - tasas, estacionamiento de vehículos |01|-|||1|
+20190131|406340|Tributos y aportes ...- Gobiernos locales - tasas, servicios públicos o arbitrios |01|-|||1|
+20190131|406350|Tributos y aportes ...- Gobiernos locales - tasas, servicios administrativos o derechos |01|-|||1|
+20190131|407000|Tributos y aportes al sistema de pensiones y de salud por pagar - Administradoras de fondos de pens|01|-|||1|
+20190131|408100|Tributos y aportes ...- Empresas prestadoras de servicios de salud - cuenta propia |01|-|||1|
+20190131|408200|Tributos y aportes ...- Empresas prestadoras de servicios de salud - cuenta de terceros |01|-|||1|
+20190131|409000|Tributos y aportes al sistema de pensiones y de salud por pagar - Otros costos administrativos e in|01|-|||1|
+20190131|411100|Remuneraciones ...- Remuneraciones por pagar - sueldos y salarios por pagar   |01|-|||1|
+20190131|411200|Remuneraciones ...- Remuneraciones por pagar - comisiones por pagar |01|-|||1|
+20190131|411300|Remuneraciones ...- Remuneraciones por pagar - remuneraciones en especie por pagar |01|-|||1|
+20190131|411400|Remuneraciones ...- Remuneraciones por pagar - gratificaciones por pagar |01|-|||1|
+20190131|411500|Remuneraciones ...- Remuneraciones por pagar - vacaciones por pagar |01|-|||1|
+20190131|413000|Remuneraciones y participaciones por pagar - Participación de los trabajadores por pagar |01|-|||1|
+20190131|415100|Remuneraciones ...- Beneficios sociales de los trabajadores por pagar - compensación por tiempo de |01|-|||1|
+20190131|415200|Remuneraciones ...- Beneficios sociales de los trabajadores por pagar - adelanto de compensación po|01|-|||1|
+20190131|415300|Remuneraciones ...- Beneficios sociales de los trabajodores por pagar - pensiones y jubilaciones |01|-|||1|
+20190131|419000|Remuneraciones y participaciones por pagar - Otras remuneraciones y participaciones por pagar |01|-|||1|
+20190131|421100|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - no emitidas  |01|-|||1|
+20190131|421201|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - emitidas MN|01|-|||1|
+20190131|421202|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - emitidas ME|01|-|||1|
+20190131|421500|Detracciones por pagar|01|-|||1|
+20190131|42201|Cuentas por pagar comerciales  terceros - Anticipos a Proveedores MN|01|-|||1|
+20190131|42202|Cuentas por pagar comerciales  terceros - Anticipos a Proveedores ME|01|-|||1|
+20190131|423001|Cuentas por pagar comerciales, terceros - Letras por pagar |01|-|||1|
+20190131|423002|Cuentas por pagar comerciales, terceros - Letras por pagar |01|-|||1|
+20190131|424000|Cuentas por pagar comerciales, terceros - Honorarios por pagar |01|-|||1|
+20190131|431110|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - no emitidas, matriz  |01|-|||1|
+20190131|431120|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - no emitidas, subsidiarias|01|-|||1|
+20190131|431130|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - no emitidas, asociadas |01|-|||1|
+20190131|431140|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - no emitidas, sucursales |01|-|||1|
+20190131|431150|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - no emitidas, otros |01|-|||1|
+20190131|431210|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - emitidas, matriz|01|-|||1|
+20190131|431220|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - emitidas, subsidiarias|01|-|||1|
+20190131|431230|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - emitidas, asociadas|01|-|||1|
+20190131|431240|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - emitidas, sucursales |01|-|||1|
+20190131|431250|Cuentas por pagar ...- Facturas, boletas y otros comprobantes por pagar - emitidas, otros |01|-|||1|
+20190131|432110|Cuentas por pagar comerciales, relacionadas - Anticipos otorgados - anticipos otorgados, matriz |01|-|||1|
+20190131|432120|Cuentas por pagar comerciales, relacionadas - Anticipos otorgados - anticipos otorgados, subsidiari|01|-|||1|
+20190131|432130|Cuentas por pagar comerciales, relacionadas - Anticipos otorgados - anticipos otorgados, asociadas |01|-|||1|
+20190131|432140|Cuentas por pagar comerciales, relacionadas - Anticipos otorgados - anticipos otorgados, sucursales|01|-|||1|
+20190131|432150|Cuentas por pagar comerciales, relacionadas - Anticipos otorgados - anticipos otorgados, otros |01|-|||1|
+20190131|433110|Cuentas por pagar comerciales, relacionadas - Letras por pagar - letras por pagar, matriz |01|-|||1|
+20190131|433120|Cuentas por pagar comerciales, relacionadas - Letras por pagar - letras por pagar, subsidiarias |01|-|||1|
+20190131|433130|Cuentas por pagar comerciales, relacionadas - Letras por pagar - letras por pagar, asociadas |01|-|||1|
+20190131|433140|Cuentas por pagar comerciales, relacionadas - Letras por pagar - letras por pagar, sucursales |01|-|||1|
+20190131|433150|Cuentas por pagar comerciales, relacionadas - Letras por pagar - letras por pagar, otros|01|-|||1|
+20190131|434110|Cuentas por pagar comerciales, relacionadas - Honorarios por pagar - honorarios por pagar, matriz  |01|-|||1|
+20190131|434120|Cuentas por pagar comerciales, relacionadas - Honorarios por pagar - honorarios por pagar, subsidia|01|-|||1|
+20190131|434130|Cuentas por pagar comerciales, relacionadas - Honorarios por pagar - honorarios por pagar, asociada|01|-|||1|
+20190131|434140|Cuentas por pagar comerciales, relacionadas - Honorarios por pagar - honorarios por pagar, sucursal|01|-|||1|
+20190131|434150|Cuentas por pagar comerciales, relacionadas - Honorarios por pagar - honorarios por pagar, otros|01|-|||1|
+20190131|441110|Cuentas por pagar ...- Accionistas - préstamos a Corto Plazo|01|-|||1|
+20190131|441120|Cuentas por pagar ...- Accionistas - préstamos a Largo Plazo|01|-|||1|
+20190131|441200|Cuentas por pagar ...- Accionistas - dividendos |01|-|||1|
+20190131|441900|Cuentas por pagar ...- Accionistas - otras cuentas por pagar |01|-|||1|
+20190131|442100|Cuentas por pagar ...- Directores - dietas|01|-|||1|
+20190131|442900|Cuentas por pagar ...- Directores - otras cuentas por pagar |01|-|||1|
+20190131|443000|Cuentas por pagar a los accionistas, directores y gerentes - Gerentes |01|-|||1|
+20190131|451100|Obligaciones ...- Préstamos de instituciones financieras y otras entidades - instituciones financie|01|-|||1|
+20190131|451200|Obligaciones ...- Préstamos de instituciones financieras y otras entidades - otras entidades |01|-|||1|
+20190131|452100|Obligaciones financieras - Contratos de arrendamientos financiero parte Corriente|01|-|||1|
+20190131|452200|Obligaciones financieras - Contratos de arrendamientos financiero a Largo Plazo|01|-|||1|
+20190131|453100|Obligaciones financieras - Obligaciones emitidas - bonos emitidos  |01|-|||1|
+20190131|453200|Obligaciones financieras - Obligaciones emitidas - bonos titulizados |01|-|||1|
+20190131|453300|Obligaciones financieras - Obligaciones emitidas - papeles comerciales |01|-|||1|
+20190131|453900|Obligaciones financieras - Obligaciones emitidas - otras obligaciones|01|-|||1|
+20190131|454100|Obligaciones financieras - Otros instrumentos financieros por pagar - letras |01|-|||1|
+20190131|454200|Obligaciones financieras - Otros instrumentos financieros por pagar - papeles comerciales |01|-|||1|
+20190131|454300|Obligaciones financieras - Otros instrumentos financieros por pagar - bonos |01|-|||1|
+20190131|454400|Obligaciones financieras - Otros instrumentos financieros por pagar - pagarés |01|-|||1|
+20190131|454500|Obligaciones financieras - Otros instrumentos financieros por pagar - facturas conformadas |01|-|||1|
+20190131|454900|Obligaciones financieras - Otros instrumentos financieros por pagar - otras obligaciones financiera|01|-|||1|
+20190131|455110|Obligaciones ...- Costos de ...- préstamos de instituciones financieras y otras entidades, instituc|01|-|||1|
+20190131|455120|Obligaciones ...- Costos de ...- préstamos de instituciones financieras y otras entidades, otras en|01|-|||1|
+20190131|455200|Obligaciones financieras - Costos de financiación por pagar - contratos de arrendamiento financiero|01|-|||1|
+20190131|455310|Obligaciones financieras - Costos de financiación por pagar - obligaciones emitidas, bonos emitidos|01|-|||1|
+20190131|455320|Obligaciones financieras - Costos de financiación por pagar - obligaciones emitidas, bonos tituliza|01|-|||1|
+20190131|455330|Obligaciones financieras - Costos de financiación por pagar - obligaciones emitidas, papeles comerc|01|-|||1|
+20190131|455390|Obligaciones financieras - Costos de financiación por pagar - obligaciones emitidas, otras obligaci|01|-|||1|
+20190131|455410|Obligaciones ...- Costos de ...- otros instrumentos financieros por pagar, letras |01|-|||1|
+20190131|455420|Obligaciones ...- Costos de ...- otros instrumentos financieros por pagar, papeles comerciales |01|-|||1|
+20190131|455430|Obligaciones ...- Costos de ...- otros instrumentos financieros por pagar, bonos |01|-|||1|
+20190131|455440|Obligaciones ...- Costos de ...- otros instrumentos financieros por pagar, pagarés|01|-|||1|
+20190131|455450|Obligaciones ...- Costos de ...- otros instrumentos financieros por pagar, facturas conformadas |01|-|||1|
+20190131|455490|Obligaciones ...- Costos de ...- otros instrumentos financieros por pagar, otras obligaciones finan|01|-|||1|
+20190131|456000|Obligaciones financieras - Préstamos con compromisos de recompra |01|-|||1|
+20190131|461000|Cuentas por pagar diversas, terceros - Reclamaciones de terceros |01|-|||1|
+20190131|464100|Cuentas por pagar ...- Pasivos por instrumentos financieros - instrumentos financieros primarios  |01|-|||1|
+20190131|464210|Cuentas por pagar ...- Pasivos por instrumentos financieros ...- instrumentos financieros derivados|01|-|||1|
+20190131|464220|Cuentas por pagar ...- Pasivos por instrumentos financieros ...- instrumentos financieros derivados|01|-|||1|
+20190131|465100|Cuentas por pagar ...- Pasivos por compra de activo inmovilizado - inversiones mobiliarias |01|-|||1|
+20190131|465200|Cuentas por pagar ...- Pasivos por compra de activo inmovilizado - inversiones inmoviliarias |01|-|||1|
+20190131|465300|Cuentas por pagar ...- Pasivos por compra de activo inmovilizado - activos adquiridos en arrendamie|01|-|||1|
+20190131|465400|Cuentas por pagar ...- Pasivos por compra de activo inmovilizado - inmuebles, maquinaria y equipo|01|-|||1|
+20190131|465500|Cuentas por pagar ...- Pasivos por compra de activo inmovilizado - intangibles |01|-|||1|
+20190131|465600|Cuentas por pagar ...- Pasivos por compra de activo inmovilizado - activos biológicos|01|-|||1|
+20190131|466000|Cuentas por pagar diversas, terceros - Pasivos financieros, compromiso de venta |01|-|||1|
+20190131|467000|Cuentas por pagar diversas, terceros - Dépositos recibidos en garantía |01|-|||1|
+20190131|469100|Cuentas por pagar ...- Otras cuentas por pagar diversas - subsidios gubernamentales  |01|-|||1|
+20190131|469200|Cuentas por pagar ...- Otras cuentas por pagar diversas - donaciones condicionadas  |01|-|||1|
+20190131|469900|Cuentas por pagar ...- Otras cuentas por pagar diversas - otras cuentas por pagar|01|-|||1|
+20190131|471100|Cuentas por pagar diversas, relacionadas - Préstamos - matriz |01|-|||1|
+20190131|471200|Cuentas por pagar diversas, relacionadas - Préstamos - subsidiarias |01|-|||1|
+20190131|471300|Cuentas por pagar diversas, relacionadas - Préstamos - asociadas  |01|-|||1|
+20190131|471400|Cuentas por pagar diversas, relacianadas - Préstamos - sucursales |01|-|||1|
+20190131|471500|Cuentas por pagar diversas, relacianadas - Préstamos - otras |01|-|||1|
+20190131|472100|Cuentas por pagar diversas, relacionadas - Costos de financiación - matriz|01|-|||1|
+20190131|472200|Cuentas por pagar diversas, relacionadas - Costos de financiación  - subsidiarias |01|-|||1|
+20190131|472300|Cuentas por pagar diversas, relacionadas - Costos de financiación - asociadas  |01|-|||1|
+20190131|472400|Cuentas por pagar diversas, relacianadas - Costos de financiación  - sucursales |01|-|||1|
+20190131|472500|Cuentas por pagar diversas, relacianadas - Costos de financiación  - otras |01|-|||1|
+20190131|473100|Cuentas por pagar diversas, relacionadas - Anticipos recibidos - matriz |01|-|||1|
+20190131|473200|Cuentas por pagar diversas, relacionadas - Anticipos recibidos - subsidiarias |01|-|||1|
+20190131|473300|Cuentas por pagar diversas, relacionadas - Anticipos recibidos - asociadas |01|-|||1|
+20190131|473400|Cuentas por pagar diversas, relacionadas - Anticipos recibidos - sucursales  |01|-|||1|
+20190131|473500|Cuentas por pagar diversas, relacionadas - Anticipos recibidos - otras |01|-|||1|
+20190131|474100|Cuentas por pagar diversas, relacionadas - Regalías - matriz |01|-|||1|
+20190131|474200|Cuentas por pagar diversas, relacionadas - Regalías - subsidiarias |01|-|||1|
+20190131|474300|Cuentas por pagar diversas, relacionadas - Regalías - asociadas |01|-|||1|
+20190131|474400|Cuentas por pagar diversas, relacionadas - Regalías - sucursales  |01|-|||1|
+20190131|474500|Cuentas por pagar diversas, relacionadas - Regalías - otras |01|-|||1|
+20190131|475100|Cuentas por pagar diversas, relacionadas - Dividendos - matriz |01|-|||1|
+20190131|475200|Cuentas por pagar diversas, relacionadas - Dividendos  - subsidiarias |01|-|||1|
+20190131|475300|Cuentas por pagar diversas, relacionadas - Dividendos - asociadas |01|-|||1|
+20190131|475400|Cuentas por pagar diversas, relacionadas - Dividendos - sucursales  |01|-|||1|
+20190131|475500|Cuentas por pagar diversas, relacionadas - Dividendos - otras |01|-|||1|
+20190131|477110|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inversiones mobiliarias, matriz |01|-|||1|
+20190131|477120|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inversiones mobiliarias, subsidiar|01|-|||1|
+20190131|477130|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inversiones mobiliarias, asociadas|01|-|||1|
+20190131|477140|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inversiones mobiliarias, sucursale|01|-|||1|
+20190131|477150|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inversiones mobiliarias, otras |01|-|||1|
+20190131|477210|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inversiones inmobiliarias, matriz|01|-|||1|
+20190131|477220|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inversiones inmobiliarias, subsidi|01|-|||1|
+20190131|477230|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inversiones inmobiliarias, asociad|01|-|||1|
+20190131|477240|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inversiones inmobiliarias, sucursa|01|-|||1|
+20190131|477250|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inversiones inmobiliarias, otras|01|-|||1|
+20190131|477310|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- activos adquiridos en arrendamient|01|-|||1|
+20190131|477320|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- activos adquiridos en arrendamient|01|-|||1|
+20190131|477330|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- activos adquiridos en arrendamient|01|-|||1|
+20190131|477340|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- activos adquiridos en arrendamient|01|-|||1|
+20190131|477350|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- activos adquiridos en arrendamient|01|-|||1|
+20190131|477410|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inmuebles, maquinaria y equipo, ma|01|-|||1|
+20190131|477420|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inmuebles, maquinaria y equipo, su|01|-|||1|
+20190131|477430|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inmuebles, maquinaria y equipo, as|01|-|||1|
+20190131|477440|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inmuebles, maquinaria y equipo, su|01|-|||1|
+20190131|477450|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- inmuebles, maquinaria y equipo, ot|01|-|||1|
+20190131|477510|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- intangibles, matriz |01|-|||1|
+20190131|477520|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- intangibles, subsidiarias |01|-|||1|
+20190131|477530|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- intangibles, asociadas |01|-|||1|
+20190131|477540|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- intangibles, sucursales |01|-|||1|
+20190131|477550|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- intangibles, otras |01|-|||1|
+20190131|477610|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- activos biológicos, matriz |01|-|||1|
+20190131|477620|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- activos biológicos, subsidiarias |01|-|||1|
+20190131|477630|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- activos biológicos, asociadas |01|-|||1|
+20190131|477640|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- activos biológicos, sucursales |01|-|||1|
+20190131|477650|Cuentas por pagar diversas ...- Pasivo por compra de activo ...- activos biológicos, otras |01|-|||1|
+20190131|479110|Cuentas por pagar diversas, relacionadas - Otras cuentas por ...- otras cuentas por pagar diversas,|01|-|||1|
+20190131|479120|Cuentas por pagar diversas, relacionadas - Otras cuentas por ...- otras cuentas por pagar diversas,|01|-|||1|
+20190131|479130|Cuentas por pagar diversas, relacionadas - Otras cuentas por ...- otras cuentas por pagar diversas,|01|-|||1|
+20190131|479140|Cuentas por pagar diversas, relacionadas - Otras cuentas por ...- otras cuentas por pagar diversas,|01|-|||1|
+20190131|479150|Cuentas por pagar diversas, relacionadas - Otras cuentas por ...- otras cuentas por pagar diversas,|01|-|||1|
+20190131|481000|Provisiones - Provisión para litigios   |01|-|||1|
+20190131|482000|Provisiones - Provisión por desmantelamiento, retiro o rehabilitación del inmovilizado |01|-|||1|
+20190131|483000|Provisiones - Provisión para reestructuraciones |01|-|||1|
+20190131|484000|Provisiones - Provisión para protección y remediación del medio ambiente |01|-|||1|
+20190131|485000|Provisiones - Provisión para gastos de responsabilidad social |01|-|||1|
+20190131|486000|Provisiones - Provisión para garantías |01|-|||1|
+20190131|489000|Provisiones - Otras provisiones |01|-|||1|
+20190131|491100|Pasivo diferido - Impuesto a la renta diferido - impuesto a la renta diferido, patrimonio |01|-|||1|
+20190131|491200|Pasivo diferido - Impuesto a la renta diferido - impuesto a la renta diferido, resultados  |01|-|||1|
+20190131|492100|Pasivo diferido - Participaciones de los trabajadores diferidas - patrimonio |01|-|||1|
+20190131|492200|Pasivo diferido - Participaciones de los trabajadores diferidas - resultados |01|-|||1|
+20190131|493100|Pasivo diferido - Intereses diferidos - intereses no devengados en transacciones con terceros  |01|-|||1|
+20190131|493200|Pasivo diferido - Intereses diferidos - intereses no devengados en medición a valor descontado |01|-|||1|
+20190131|494000|Pasivo diferido - Ganancia en venta con arrendamiento financiero paralelo |01|-|||1|
+20190131|495000|Pasivo diferido - Subsidios recibidos diferidos |01|-|||1|
+20190131|49601|Pasivo diferido - Ingresos diferidos - Categoria de productos 01|01|-|||1|
+20190131|49701|Pasivo diferido - Costos diferidos - Categoria de productos 01|01|-|||1|
+20190131|501100|Capital - Capital social - acciones |01|-|||1|
+20190131|501200|Capital - Capital social - participaciones |01|-|||1|
+20190131|502000|Capital - Acciones en tesorería |01|-|||1|
+20190131|511000|Acciones de inversión - Acciones de inversión |01|-|||1|
+20190131|512000|Acciones de inversión - Acciones de inversión en tesorería |01|-|||1|
+20190131|521000|Capital adicional - Primas (descuento) de acciones  |01|-|||1|
+20190131|522100|Capital adicional - Capitalizaciones en trámite - aportes |01|-|||1|
+20190131|522200|Capital adicional - Capitalizaciones en trámite - reservas |01|-|||1|
+20190131|522300|Capital adicional - Capitalizaciones en trámite - acreencias |01|-|||1|
+20190131|522400|Capital adicional - Capitalizaciones en trámite - utilidades |01|-|||1|
+20190131|523000|Capital adicional - Reducciones de capital pendientes de formalización |01|-|||1|
+20190131|561000|Resultados no realizados - Diferencia en cambio de inversiones permanentes en entidades extranjeras|01|-|||1|
+20190131|562000|Resultados no realizados - Instrumentos financieros, cobertura de flujo de efectivo |01|-|||1|
+20190131|563100|Resultados ...- Ganancia o pérdida en activos o pasivos financieros disponibles para la venta - gan|01|-|||1|
+20190131|563200|Resultados ...- Ganancia o pérdida en activos o pasivos financieros disponibles para la venta - pér|01|-|||1|
+20190131|564100|Resu...- Ganancia o pérdida en activos o pasivos financieros disponibles para la venta, compra o ve|01|-|||1|
+20190131|564200|Resu...- Ganancia o pérdida en activos o pasivos financieros disponibles para la venta, compra o ve|01|-|||1|
+20190131|571100|Excedente de ...- Exdecente de revaluación - inversiones inmobiliarias  |01|-|||1|
+20190131|571200|Excedente de ...- Excedente de revaluación - inmuebles, maquinaria y equipos |01|-|||1|
+20190131|571300|Excedente de ...- Excedente de revaluación - intangibles |01|-|||1|
+20190131|572000|Excedente de revaluación - Excedente de revaluación, acciones liberadas recibidas  |01|-|||1|
+20190131|573000|Excedente de revaluación - Participación en excedente de revaluación, inversiones en entidades rela|01|-|||1|
+20190131|581000|Reserva legal - Reinversión |01|-|||1|
+20190131|582000|Reserva legal - Legal |01|-|||1|
+20190131|583000|Reserva legal - Contractuales |01|-|||1|
+20190131|584000|Reserva legal - Estatutarias |01|-|||1|
+20190131|585000|Reserva legal - Facultativas |01|-|||1|
+20190131|589000|Reserva legal - Otras reservas |01|-|||1|
+20190131|591100|Resultados acumulados - Utilidades no distribuidas - utilidades acumuladas  |01|-|||1|
+20190131|591200|Resultados acumulados - Utilidades no distribuidas - ingresos de años anteriores |01|-|||1|
+20190131|592100|Resultados acumulados - Pérdidas acumuladas - pérdidas acumuladas |01|-|||1|
+20190131|592200|Resultados acumulados - Pérdidas acumuladas - gastos de años anteriores |01|-|||1|
+20190131|601101|Compras - Mercaderías manufacturadas - Categoria de productos 01|01|-|||1|
+20190131|601200|Compras - Mercaderías de extracción|01|-|||1|
+20190131|601300|Compras - Mercaderias - mercaderías agropecuarias y piscícolas|01|-|||1|
+20190131|601400|Compras - Mercaderías - mercaderías inmuebles|01|-|||1|
+20190131|601800|Compras - Mercaderías - otras mercaderías|01|-|||1|
+20190131|602100|Compras - Materias ...- materias primas para productos manufacturados|01|-|||1|
+20190131|602200|Compras - Materias ...- materias primas para productos de extraccíon |01|-|||1|
+20190131|602300|Compras - Materias ...- materias primas para productos agropecuarios y piscícolas|01|-|||1|
+20190131|602400|Compras - Materias ...- materias primas para productos inmuebles|01|-|||1|
+20190131|603100|Compras - Materiales ...- materiales auxiliares|01|-|||1|
+20190131|603200|Compras - Materiales ...- suministros|01|-|||1|
+20190131|603300|Compras - Materiales ...- repuestos|01|-|||1|
+20190131|604100|Compras - Envases y embalajes - envases |01|-|||1|
+20190131|604200|Compras - Envases y embalajes - embalajes |01|-|||1|
+20190131|609110|Compras - Costos ...- Costos vinculados con las compras ...- transporte|01|-|||1|
+20190131|609120|Compras - Costos ...- Costos vinculados con las compras ...- seguros|01|-|||1|
+20190131|609130|Compras - Costos ...- Costos vinculados con las compras ...- derechos aduaneros|01|-|||1|
+20190131|609140|Compras - Costos ...- Costos vinculados con las compras ...- comisiones    |01|-|||1|
+20190131|609190|Compras - Costos ...- Costos vinculados con las compras ...- otros costos vinculados con las compra|01|-|||1|
+20190131|609210|Compras  - Costos ...- Costos vinculados con las compras ...- transporte|01|-|||1|
+20190131|609220|Compras  - Costos ...- Costos vinculados con las compras ...- seguros|01|-|||1|
+20190131|609230|Compras  - Costos ...- Costos vinculados con las compras ...- derechos aduaneros|01|-|||1|
+20190131|609240|Compras  - Costos ...- Costos vinculados con las compras ...- comisiones|01|-|||1|
+20190131|609250|Compras  - Costos ...- Costos ...- otros costos vinculados con las compras de materias primas |01|-|||1|
+20190131|609310|Compras  - Costos ...- costos vinculados con las compras de materiales, suministros y repuestos, tr|01|-|||1|
+20190131|609320|Compras  - Costos ...- costos vinculados con las compras de materiales, suministros y repuestos, se|01|-|||1|
+20190131|609330|Compras  - Costos ...- costos vinculados con las compras de materiales, suministros y repuestos, de|01|-|||1|
+20190131|609340|Compras  - Costos ...- costos vinculados con las compras de materiales, suministros y repuestos, co|01|-|||1|
+20190131|609350|Compras  - Costos ...- costos vincu...,otros costos vinculados con las compras de materiales, sumin|01|-|||1|
+20190131|609410|Compras  - Costos ...- costos vinculados con las compras de envases y embalajes, transporte  |01|-|||1|
+20190131|609420|Compras  - Costos ...- costos vinculados con las compras de envases y embalajes, seguros |01|-|||1|
+20190131|609430|Compras  - Costos ...- costos vinculados con las compras de envases y embalajes, derechos aduaneros|01|-|||1|
+20190131|609440|Compras  - Costos ...- costos vinculados con las compras de envases y embalajes, comisiones |01|-|||1|
+20190131|609450|Compras  - Costos ..- costos vinculados con las compras de envases y .., otrs costos vinculados con|01|-|||1|
+20190131|611101|Variación ...- Mercaderías - mercaderías manufacturadas - Categoria de productos 01|01|-|||1|
+20190131|611200|Variación de existencias - Mercaderías - mercaderías de extracción|01|-|||1|
+20190131|611300|Variación de existencias - Mercaderías - mercaderías agropecuarias y piscícolas|01|-|||1|
+20190131|611400|Variación de existencias - Mercaderías - mercaderías iinmuebles|01|-|||1|
+20190131|611500|Variación de existencias - Mercaderías - otras mercaderías|01|-|||1|
+20190131|612100|Variación ...- Materias ...- materias primas para productos manufacturados|01|-|||1|
+20190131|612200|Variación ...- Materias ...- materias primas para productos de extracción|01|-|||1|
+20190131|612300|Variación ...- Materias ...- materias primas para productos agropecuarios y piscícolas|01|-|||1|
+20190131|612400|Variación ...- Materias ...- materias primas para productos inmuebles|01|-|||1|
+20190131|613100|Variación ...- Materiales ...- materiales auxiliares|01|-|||1|
+20190131|613200|Variación ...- Materiales ...- suministros|01|-|||1|
+20190131|613300|Variación ...- Materiales ...- repuestos|01|-|||1|
+20190131|614100|Variación de existencias - Envases ...- envases|01|-|||1|
+20190131|614200|Variación de existencias - Envases ...- embalajes|01|-|||1|
+20190131|621101|Gastos ...- Remuneraciones - Sueldos y Salarios - sueldos|01|-|||1|
+20190131|621102|Gastos ...- Remuneraciones - Sueldos y Salarios - horas Extras|01|-|||1|
+20190131|621103|Gastos ...- Remuneraciones - Sueldos y Salarios - asignación familiar|01|-|||1|
+20190131|621104|Gastos ...- Remuneraciones - Sueldos y Salarios - bonificaciones extraordinarias|01|-|||1|
+20190131|621105|Gastos ...- Remuneraciones - Sueldos y Salarios - subsidios por enfermedad|01|-|||1|
+20190131|621106|Gastos ...- Remuneraciones - Sueldos y Salarios - beneficio de movilidad al trabajador|01|-|||1|
+20190131|621107|Gastos ...- Remuneraciones - Sueldos y Salarios - bonificación por riesgo de caja|01|-|||1|
+20190131|621200|Gastos de personal ...- Remuneraciones - comisiones|01|-|||1|
+20190131|621300|Gastos de personal ...- Remuneraciones - remuneraciones en especie|01|-|||1|
+20190131|621400|Gastos de personal ...- Remuneraciones - gratificaciones|01|-|||1|
+20190131|621500|Gastos de personal ...- Remuneraciones - vacaciones|01|-|||1|
+20190131|62201|Gastos de personal  ...- Otras Remuneraciones - planilla de movilidad|01|-|||1|
+20190131|623000|Gastos de personal, directores y gerentes - Indemnizaciones al personal|01|-|||1|
+20190131|624000|Gastos de personal, directores y gerentes - Capacitación |01|-|||1|
+20190131|625000|Gastos de personal, directores y gerentes - Atención al personal  |01|-|||1|
+20190131|626000|Gastos de personal, directores y gerentes - Gerentes|01|-|||1|
+20190131|627100|Gastos de personal ...- Seguridad y ...- régimen de prestaciones de salud|01|-|||1|
+20190131|627200|Gastos de personal ...- Seguridad y ...- régimen de pensiones|01|-|||1|
+20190131|627300|Gastos de ...- Seguridad ...- seguro complementario de trabajo de riesgo, accidentes de trabajo y e|01|-|||1|
+20190131|627400|Gastos de personal ...- Seguridad y ...- seguro de vida|01|-|||1|
+20190131|627500|Gastos de personal ...- Seguridad y ...- seguros particulares de prestaciones de salud - EPS y otro|01|-|||1|
+20190131|627600|Gastos de personal ...- Seguridad y ...- caja de beneficios de seguridad social del pescador|01|-|||1|
+20190131|627700|Gastos de personal ...- Seguridad y ...- contribuciones al SENCICO y el SENATI |01|-|||1|
+20190131|628000|Gastos de personal, directores y gerentes - Retribuciones al directorio|01|-|||1|
+20190131|629100|Gastos de personal ...- Beneficios sociales ...- Compensación por tiempo de servicio|01|-|||1|
+20190131|629200|Gastos de personal ...- Beneficios sociales ...- pensiones y jubilaciones|01|-|||1|
+20190131|629300|Gastos de personal ...- Beneficios sociales ...- otros beneficios post-empleo|01|-|||1|
+20190131|631110|Gastos de servicios ...- Transporte, correos ...- transporte, de carga|01|-|||1|
+20190131|631120|Gastos de servicios ...- Transporte, correos ...- transporte, de pasajeros|01|-|||1|
+20190131|631200|Gastos de servicios ...- Transporte, correos ...- correos  |01|-|||1|
+20190131|631300|Gastos de servicios ...- Transporte, correos ...- alojamiento|01|-|||1|
+20190131|631400|Gastos de servicios ...- Transporte, correos ...- alimentación|01|-|||1|
+20190131|631500|Gastos de servicios ...- Transporte, correos ...- otros gastos de viaje |01|-|||1|
+20190131|632100|Gastos de servicios ...- Asesoría y consultoria - administrartiva |01|-|||1|
+20190131|632200|Gastos de servicios ...- Asesoría y consultoría - legal y tributaria |01|-|||1|
+20190131|632300|Gastos de servicios ...- Asesoría y consultoría - auditoría y contable |01|-|||1|
+20190131|632400|Gastos de servicios ...- Asesoría y consultoría - mercadotecnia |01|-|||1|
+20190131|632500|Gastos de servicios ...- Asesoría y consultoría - medioambiental |01|-|||1|
+20190131|632600|Gastos de servicios ...- Asesoría y consultoría - investigación y desarrollo |01|-|||1|
+20190131|632700|Gastos de servicios ...- Asesoría y consultoría - producción |01|-|||1|
+20190131|632900|Gastos de servicios ...- Asesoría y consultoría - otros |01|-|||1|
+20190131|63301|Gastos de servicios ...- Producción encargada a terceros - comisión de ventas   |01|-|||1|
+20190131|63302|Gastos de servicios ...- Producción encargada a terceros - comisión de cobranzas   |01|-|||1|
+20190131|63303|Gastos de servicios ...- Producción encargada a terceros - verificaciones|01|-|||1|
+20190131|634101|Gastos de servicios ...- Mantenimiento y reparaciones - edificios y locales|01|-|||1|
+20190131|634200|Gastos de servicios ...- Mantenimiento y reparaciones - activos adquiridos en arrendamiento financi|01|-|||1|
+20190131|634301|Gastos de servicios ...- Mantenimiento y reparaciones - muebles y enseres|01|-|||1|
+20190131|634302|Gastos de servicios ...- Mantenimiento y reparaciones - unidades de transporte|01|-|||1|
+20190131|634303|Gastos de servicios ...- Mantenimiento y reparaciones - combustible y lubricantes|01|-|||1|
+20190131|634304|Gastos de servicios ...- Mantenimiento y reparaciones - herramientas|01|-|||1|
+20190131|634305|Gastos de servicios ...- Mantenimiento y reparaciones - equipos diversos|01|-|||1|
+20190131|634400|Gastos de servicios ...- Mantenimiento y reparaciones - intangibles |01|-|||1|
+20190131|634500|Gastos de servicios ...- Mantenimiento y reparaciones - activos biológicos |01|-|||1|
+20190131|635100|Gastos de servicios ...- Alquileres - terrenos|01|-|||1|
+20190131|635200|Gastos de servicios ...- Alquileres - edificaciones  |01|-|||1|
+20190131|635300|Gastos de servicios ...- Alquileres - maquinarias y equipos de explotación|01|-|||1|
+20190131|635400|Gastos de servicios ...- Alquileres - equipo de transporte|01|-|||1|
+20190131|635600|Gastos de servicios ...- Alquileres - equipos diversos|01|-|||1|
+20190131|636100|Gastos de servicios ...- Servicios básicos - energía eléctrica|01|-|||1|
+20190131|636200|Gastos de servicios ...- Servicios básicos - gas|01|-|||1|
+20190131|636300|Gastos de servicios ...- Servicios básicos - agua|01|-|||1|
+20190131|636400|Gastos de servicios ...- Servicios básicos - teléfono|01|-|||1|
+20190131|636500|Gastos de servicios ...- Servicios - internet|01|-|||1|
+20190131|636600|Gastos de servicios ...- Servicios básicos - radio|01|-|||1|
+20190131|636700|Gastos de servicios ...- Servicios básicos - cable|01|-|||1|
+20190131|637101|Gastos de servicios ...- Publicidad, publicaciones, relaciones públicas - radial|01|-|||1|
+20190131|637102|Gastos de servicios ...- Publicidad, publicaciones, relaciones públicas - otros medios|01|-|||1|
+20190131|637103|Gastos de servicios ...- Publicidad, publicaciones, relaciones públicas - articulos promocionales|01|-|||1|
+20190131|637104|Gastos de servicios ...- Publicidad, publicaciones, relaciones públicas - televisión|01|-|||1|
+20190131|637201|Gastos de servicios ...- Publicidad, publicaciones, relaciones públicas - diarios y revistas|01|-|||1|
+20190131|637300|Gastos de servicios ...- Publicidad, publicaciones, relaciones públicas - relaciones públicas |01|-|||1|
+20190131|63801|Gastos de servicios ...- Servicios de contratistas - vigilancia|01|-|||1|
+20190131|63802|Gastos de servicios ...- Servicios de contratistas - guardianía|01|-|||1|
+20190131|63803|Gastos de servicios ...- Servicios de contratistas - conserjería|01|-|||1|
+20190131|639101|Gastos ...- Otros servicios ...- Gastos bancarios - mantenimiento de cuentas|01|-|||1|
+20190131|639102|Gastos ...- Otros servicios ...- Gastos bancarios - talonario de cheques|01|-|||1|
+20190131|639103|Gastos ...- Otros servicios ...- Gastos bancarios - transferencias de fondos|01|-|||1|
+20190131|639104|Gastos ...- Otros servicios ...- Gastos bancarios - otros servicios bancarios|01|-|||1|
+20190131|639200|Gastos de servicios ...- Otros servicios prestados ...- gastos de laboratorio|01|-|||1|
+20190131|639300|Gastos de servicios ...- Otros servicios prestados ...- gastos notariales y de registro |01|-|||1|
+20190131|639400|Gastos de servicios ...- Otros servicios prestados ...- trámites judiciales|01|-|||1|
+20190131|639500|Gastos de servicios ...- Otros servicios prestados ...- legalizaciones|01|-|||1|
+20190131|639600|Gastos de servicios ...- Otros servicios prestados ...- centrales de riesgo|01|-|||1|
+20190131|639700|Gastos de servicios ...- Otros servicios prestados ...- varios|01|-|||1|
+20190131|641100|Gastos por tributos - Gobierno central - impuesto general a las ventas y selectivo al consumo |01|-|||1|
+20190131|641200|Gastos por tributos - Gobierno central - impuesto a las transacciones financieras |01|-|||1|
+20190131|641300|Gastos por tributos - Gobierno central - impuesto temporal a los activos netos |01|-|||1|
+20190131|641400|Gastos por tributos - Gobierno central - impuesto a los juegos de casino y máquinas tragamonedas |01|-|||1|
+20190131|641500|Gastos por tributos - Gobierno central - regalías mineras |01|-|||1|
+20190131|641600|Gastos por tributos - Gobierno central - cánones |01|-|||1|
+20190131|641900|Gastos por tributos - Gobierno central - otros |01|-|||1|
+20190131|642000|Gastos por tributos - Gobierno regional |01|-|||1|
+20190131|643100|Gastos por tributos - Gobierno local - impuesto predial |01|-|||1|
+20190131|643200|Gastos por tributos - Gobierno local - arbitrios municipales y seguridad ciudadana |01|-|||1|
+20190131|643300|Gastos por tributos - Gobierno local - impuesto al patrimonio vehicular |01|-|||1|
+20190131|643400|Gastos por tributos - Gobierno local - licencia de funcionamiento |01|-|||1|
+20190131|643900|Gastos por tributos - Gobierno local - otros |01|-|||1|
+20190131|644100|Gastos por tributos - Otros gastos por tributos - contribución al SENATI |01|-|||1|
+20190131|644200|Gastos por tributos - Otros gastos por tributos - contribución al SENCICO|01|-|||1|
+20190131|644300|Gastos por tributos - Otros gastos por tributos - otros |01|-|||1|
+20190131|646000|Gastos por tributos - Cotizaciones con carácter de tributo|01|-|||1|
+20190131|649000|Gastos por tributos - Otros tributos|01|-|||1|
+20190131|65101|Otros gastos de ...- Seguros - robo, desfalco|01|-|||1|
+20190131|65102|Otros gastos de ...- Seguros - contra incendio|01|-|||1|
+20190131|65103|Otros gastos de ...- Seguros - vehiculos|01|-|||1|
+20190131|652000|Otros gastos de gestión - Regalías|01|-|||1|
+20190131|653000|Otros gastos de gestión - Suscripciones  |01|-|||1|
+20190131|654000|Otros gastos de gestión - Licencias y derechos de vigencia|01|-|||1|
+20190131|655110|Otros ...- Costo neto ...- Costo neto de enajenación de activos inmovilizados - inversiones inmobil|01|-|||1|
+20190131|655120|Otros ...- Costo neto ...- Costo neto de enajenación de activos inmovilizados - activos adquiridos |01|-|||1|
+20190131|655130|Otros ...- Costo neto ...- Costo neto de enajenación de activos inmovilizados - inmuebles, maquinar|01|-|||1|
+20190131|655140|Otros ...- Costo neto ...- Costo neto de enajenación de activos inmovilizados - intangibles|01|-|||1|
+20190131|655150|Otros ...- Costo neto ...- Costo neto de enajenación de activos inmovilizados - activos biológicos|01|-|||1|
+20190131|655210|Otros ...- Costo neto ...- operaciones discontinuadas,abandono de activos, inversiones inmobiliaria|01|-|||1|
+20190131|655220|Otros ...- Costo neto ...- operaciones discontinuadas,abandono de activos, activos adquiridos en ar|01|-|||1|
+20190131|655230|Otros ...- Costo neto ...- operaciones discontinuadas,abandono de activos, inmuebles, maquinaria y |01|-|||1|
+20190131|655240|Otros ...- Costo neto ...- operaciones discontinuadas,abandono de activos, intangibles |01|-|||1|
+20190131|655250|Otros ...- Costo neto ...- operaciones discontinuadas,abandono de activos, activos biológicos |01|-|||1|
+20190131|656000|Otros gastos de gestión - Suministros  |01|-|||1|
+20190131|657000|Otros gastos de gestión - Gastos de investigación y desarrollo|01|-|||1|
+20190131|658000|Otros gastos de gestión - Gestión medioambiental|01|-|||1|
+20190131|659100|Otros ...- Otros gastos de gestión - donaciones|01|-|||1|
+20190131|659200|Otros ...- Otros gastos de gestión - sanciones administrativas|01|-|||1|
+20190131|659800|Otros ...- Otros gastos de gestión - otros gastos ( )|01|-|||1|
+20190131|659900|Otros ...- Otros gastos de gestión - gastos extraordinarios ( )|01|-|||1|
+20190131|661100|Pérdida por medición ...- Activo realizable - mercaderías|01|-|||1|
+20190131|661200|Pérdida por medición ...- Activo realizable - productos terminados |01|-|||1|
+20190131|661310|Pérdida por medición ...- Activo realizable - activos no corrientes mantenidos para la venta, inver|01|-|||1|
+20190131|661320|Pérdida por medición ...- Activo realizable - activos no corrientes mantenidos para la venta, inmue|01|-|||1|
+20190131|661330|Pérdida por medición ...- Activo realizable - activos no corrientes mantenidos para la venta, intan|01|-|||1|
+20190131|661340|Pérdida por medición ...- Activo realizable - activos no corrientes mantenidos para la venta, activ|01|-|||1|
+20190131|662100|Pérdida por medición ...- Activo inmovilizado - inversiones inmobiliarias|01|-|||1|
+20190131|662200|Pérdida por medición ...- Activo inmovilizado - activos biológicos|01|-|||1|
+20190131|663000|Pérdida por medición ...- Obligaciones financieras|01|-|||1|
+20190131|664000|Pérdida por medición ...- Participación en los resultados de subsidiarias y afiliadas bajo el métod|01|-|||1|
+20190131|665000|Pérdida por medición ...- Gastos por participaciones en negocios conjuntos|01|-|||1|
+20190131|671100|Gastos financieros - Gastos en operaciones ...- préstamos de instituciones financieras y otras enti|01|-|||1|
+20190131|671200|Gastos financieros - Gastos en operaciones ...- contratos de arrendamiento financiero|01|-|||1|
+20190131|671300|Gastos financieros - Gastos en operaciones ...- emisión y colocación de instrumentos representativo|01|-|||1|
+20190131|671400|Gastos financieros - Gastos en operaciones ...- documentos vendidos o descontados|01|-|||1|
+20190131|672000|Gastos financieros - Pérdida por instrumentos financieros derivados|01|-|||1|
+20190131|673110|Gastos ...- Intereses por ...- Prestamos de instituciones ...- instituciones financieras|01|-|||1|
+20190131|673120|Gastos ...- Intereses por ...- Prestamos de instituciones ...- otras entidades|01|-|||1|
+20190131|673200|Gastos ...- Intereses por préstamos...- contratos de arrendamiento financiero|01|-|||1|
+20190131|673300|Gastos ...- Intereses por préstamos ...- otros instrumentos financieros por pagar (sobre giro banca|01|-|||1|
+20190131|673400|Gastos ...- Intereses por préstamos ...- documentos vendidos o descontados|01|-|||1|
+20190131|673500|Gastos ...- Intereses por préstamos ...- obligaciones emitidas|01|-|||1|
+20190131|673600|Gastos ...- Intereses por préstamos ...- obligaciones comerciales (compra de mercaderia)|01|-|||1|
+20190131|673700|Gastos ...- Intereses por préstamos ...- obligaciones tributarias|01|-|||1|
+20190131|674100|Gastos financieros - Gastos en operaciones de factoraje - gastos por menor valor |01|-|||1|
+20190131|675000|Gastos financieros - Descuentos concedidos por pronto pago|01|-|||1|
+20190131|676000|Gastos financieros - Diferencia de cambio|01|-|||1|
+20190131|677100|Gastos ...- Pérdida por medición de activos y pasivos financieros al valor razonable - inversiones |01|-|||1|
+20190131|677200|Gastos ...- Pérdida por medición de activos y pasivos financieros al valor razonable - inversiones |01|-|||1|
+20190131|677300|Gastos ...- Pérdida por medición de activos y pasivos financieros al valor razonable - otros |01|-|||1|
+20190131|678100|Gastos ..- Participación ..- participación en los resultados de subsidiarias y asociadas bajo el mé|01|-|||1|
+20190131|678200|Gastos ..- Participación ..- participaciones en negocios conjuntos |01|-|||1|
+20190131|679100|Gastos ...- Otros gastos financieros - primas por opciones|01|-|||1|
+20190131|679200|Gastos ...- Otros gastos financieros - gastos financieros en medición a valor descontado|01|-|||1|
+20190131|681110|Valuación y ...- Depreciación - Depreciación de inversiones inmobiliarias - edificaciones, costo|01|-|||1|
+20190131|681120|Valuación y ...- Depreciación - Depreciación de inversiones inmobiliarias - edificaciones, revaluac|01|-|||1|
+20190131|681130|Valuación y ...- Depreciación - Depreciación de inversiones inmoviliarias - edificaciones, costo de|01|-|||1|
+20190131|681210|Valuación y ...- Depreciación - Depreciación de activos adquiridos en arrendamiento financiero ...-|01|-|||1|
+20190131|681310|Valuación y ...- Depreciación - Depreciación de activos adquiridos en arrendamiento ...- edificacio|01|-|||1|
+20190131|681320|Valuación y ...- Depreciación - Depreciación de activos adquiridos en ...- maquinarias y equipos de|01|-|||1|
+20190131|681330|Valuación y ...- Depreciación - Depreciación de activos adquiridos en arrendamiento ...- equipo de |01|-|||1|
+20190131|681340|Valuación y ...- Depreciación - Depreciación de activos adquiridos en arrendamiento ...- equipos di|01|-|||1|
+20190131|681410|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo, costo - edificacion|01|-|||1|
+20190131|681420|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo, costo - maquinarias|01|-|||1|
+20190131|681430|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo, costo - equipo de t|01|-|||1|
+20190131|681440|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo, costo - muebles y e|01|-|||1|
+20190131|681450|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo, costo - equipos div|01|-|||1|
+20190131|681460|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo, costo - herramienta|01|-|||1|
+20190131|681510|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo ...- edificaciones|01|-|||1|
+20190131|681520|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo ...- maquinarias y e|01|-|||1|
+20190131|681530|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo ...- equipo de trans|01|-|||1|
+20190131|681540|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo ...- muebles y enser|01|-|||1|
+20190131|681550|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo ...- equipos diverso|01|-|||1|
+20190131|681560|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo ...- herramientas y |01|-|||1|
+20190131|681610|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo ...- edificaciones  |01|-|||1|
+20190131|681620|Valuación y ...- Depreciación - Depreciación de inmuebles, maquinaria y equipo ...- maquinarias y e|01|-|||1|
+20190131|681710|Valuación y ...- Depreciación - Depreciación de activos biológicos en producción ...- activos bioló|01|-|||1|
+20190131|681720|Valuación y ...- Depreciación - Depreciación de activos biológicos en producción ...- activos bioló|01|-|||1|
+20190131|681810|Valuación y ...- Depreciación - Depreciación de activos biológicos en producción ...- activos bioló|01|-|||1|
+20190131|681820|Valuación y ...- Depreciación - Depreciación de activos biológicos en producción ...- activos bioló|01|-|||1|
+20190131|682110|Valuación y ...- Amortización de ...- Amortización de intangibles, costo - concesiones, licencias y|01|-|||1|
+20190131|682120|Valuación y ...- Amortización de ...- Amortización de intangibles, costo - patentes y propiedad ind|01|-|||1|
+20190131|682130|Valuación y ...- Amortización de ...- Amortización de intangibles, costo - programas de computadora|01|-|||1|
+20190131|682140|Valuación y ...- Amortización de ...- Amortización de intangibles, costo - costos de exploración y |01|-|||1|
+20190131|682150|Valuación y ...- Amortización de ...- Amortización de intangibles, costo - fórmulas, diseños y prot|01|-|||1|
+20190131|682190|Valuación y ...- Amortización de ...- Amortización de intangibles, costo - otros activos intangible|01|-|||1|
+20190131|682210|Valuación y ...- Amortización de ...- Amortización de intangibles, revaluación - concesiones, licen|01|-|||1|
+20190131|682220|Valuación y ...- Amortización de ...- Amortización de intangibles, revaluación - patentes y propied|01|-|||1|
+20190131|682230|Valuación y ...- Amortización de ...- Amortización de intangibles, revaluación - programas de compu|01|-|||1|
+20190131|682240|Valuación y ...- Amortización de ...- Amortización de intangibles, revaluación - costos de explorac|01|-|||1|
+20190131|682250|Valuación y ...- Amortización de ...- Amortización de intangibles, revaluación - fórmulas, diseños |01|-|||1|
+20190131|682290|Valuación y ...- Amortización de ...- Amortización de intangibles, revaluación - otros activos inta|01|-|||1|
+20190131|683100|Valuación y ...- Agotamiento - agotamiento de recursos naturales adquiridos|01|-|||1|
+20190131|684110|Valuación y ...- Valuación de activos - estimación de cuentas de cobranza dudosa, cuentas por cobra|01|-|||1|
+20190131|684120|Valuación y ...- Valuación de activos - estimación de cuentas de cobranza dudosa, cuentas por cobra|01|-|||1|
+20190131|684130|Valuación y ...- Valuación de activos - estimación de cuentas de .., cuentas por cobrar al personal|01|-|||1|
+20190131|684140|Valuación y ...- Valuación de activos - estimación de cuentas de cobranza dudosa, cuentas por cobra|01|-|||1|
+20190131|684150|Valuación y ...- Valuación de activos - estimación de cuentas de cobranza dudosa, cuentas por cobra|01|-|||1|
+20190131|684200|Valuación y ...- Valuación de activos - desvalorización de existencias|01|-|||1|
+20190131|684310|Valuación y ...- Valuación ..- desvalorización de inversiones mobiliarias, inversiones a ser manten|01|-|||1|
+20190131|684320|Valuación y ...- Valuación ..- desvalorización de inversiones ., instrumentos financieros represent|01|-|||1|
+20190131|685110|Valuación y ...- Deterioro del ...- Desvalorización de inversiones inmobiliarias - edificaciones|01|-|||1|
+20190131|685210|Valuación y ...- Deterioro del ...- Desvalorización de inmuebles maquinaria y equipo - edificacione|01|-|||1|
+20190131|685220|Valuación y ...- Deterioro del ...- Desvalorización de inmuebles maquinaria y equipo - maquinarias |01|-|||1|
+20190131|685230|Valuación y ...- Deterioro del ...- Desvalorización de inmuebles maquinaria y equipo - equipo de tr|01|-|||1|
+20190131|685240|Valuación y ...- Deterioro del ...- Desvalorización de inmuebles maquinaria y equipo - muebles y en|01|-|||1|
+20190131|685250|Valuación y ...- Deterioro del ...- Desvalorización de inmuebles maquinaria y equipo - equipos dive|01|-|||1|
+20190131|685260|Valuación y ...- Deterioro del ...- Desvalorización de inmuebles maquinaria y equipo - herramientas|01|-|||1|
+20190131|685310|Valuación y ...- Deterioro del ...- Desvalorización de intangibles - concesiones, licencias y otros|01|-|||1|
+20190131|685320|Valuación y ...- Deterioro del ...- Desvalorización de intangibles - patentes y propiedad industria|01|-|||1|
+20190131|685330|Valuación y ...- Deterioro del ...- Desvalorización de intangibles - programas de computadora (soft|01|-|||1|
+20190131|685340|Valuación y ...- Deterioro del ...- Desvalorización de intangibles - costos de exploración y desarr|01|-|||1|
+20190131|685350|Valuación y ...- Deterioro del ...- Desvalorización de intangibles - fórmulas, diseños y prototipos|01|-|||1|
+20190131|685360|Valuación y ...- Deterioro del ...- Desvalorización de intangibles - otros activos intangibles|01|-|||1|
+20190131|685370|Valuación y ...- Deterioro del ...- Desvalorización de intangibles - plusvalía mercantil |01|-|||1|
+20190131|685410|Valuación y ...- Deterioro del ...- Desvalorización de activos biológicos en producción - activos b|01|-|||1|
+20190131|685420|Valuación y ...- Deterioro del ...- Desvalorización de activos biológicos en producción - activos b|01|-|||1|
+20190131|686110|Valuación y ...- Provisones - Provisión para litigios - provisión para litigios, costo|01|-|||1|
+20190131|686120|Valuación y ...- Provisiones - Provisión para litigios - provisión para litigios, actualización fin|01|-|||1|
+20190131|686210|Valuación y ...- Provisiones - Provisión por desmantelamiento, retiro o rehabilitación del inmovili|01|-|||1|
+20190131|686220|Valuación y ...- Provisiones - Provisión por desmantelamiento, retiro o rehabilitación del ..., act|01|-|||1|
+20190131|686300|Valuación y deterioro ...- Provisiones - provisión para reestructuraciones|01|-|||1|
+20190131|686410|Valuación y deterioro ...- Provisiones - provisión para protección y remediación del medio ambiente|01|-|||1|
+20190131|686420|Valuación y deterioro ...- Provisiones - provisión para protección y remediación del medio ambiente|01|-|||1|
+20190131|686500|Valuación y deterioro ...- Provisiones - provisión para gastos de responsabilidad social|01|-|||1|
+20190131|686610|Valuación y deterioro ...- Provisiones - provisión para garantías, costo  |01|-|||1|
+20190131|686620|Valuación y deterioro ...- Provisiones - provisión para garantías, actualización financiera |01|-|||1|
+20190131|686900|Valuación y deterioro ...- Provisiones - otras provisiones|01|-|||1|
+20190131|6911101|Costo de ventas - Mercaderías - mercaderías manufacturadas, terceros - Categoria de productos 01|01|-|||1|
+20190131|691120|Costo de ventas - Mercaderías - mercaderías manufacturadas, relacionadas|01|-|||1|
+20190131|691210|Costo de ventas - Mercaderías - mercaderías de extracción, terceros|01|-|||1|
+20190131|691220|Costo de ventas - Mercaderías - mercaderías de extracción, relacionadas|01|-|||1|
+20190131|691310|Costo de ventas - Mercaderías - mercaderías agropecuarias y piscícolas, terceros|01|-|||1|
+20190131|691320|Costo de ventas - Mercaderías - mercaderías agropecuarias y piscícolas, relacionadas|01|-|||1|
+20190131|691410|Costo de ventas - Mercaderías - mercaderías inmuebles, terceros|01|-|||1|
+20190131|691420|Costo de ventas - Mercaderías - mercaderías inmuebles, relacionadas|01|-|||1|
+20190131|691510|Costo de ventas - Mercaderías - otras mercaderías, terceros|01|-|||1|
+20190131|691520|Costo de ventas - Mercaderías - otras mercaderías, relacionadas|01|-|||1|
+20190131|692110|Costo de ...- Productos terminados - productos manufacturados, terceros|01|-|||1|
+20190131|692120|Costo de ...- Productos terminados - productos manufacturados, relacionadas|01|-|||1|
+20190131|692210|Costo de ...- Productos terminados - productos de extracción terminados, terceros|01|-|||1|
+20190131|692220|Costo de ...- Productos terminados - productos de extracción terminados, relacionadas|01|-|||1|
+20190131|692310|Costo de ...- Productos terminados - productos agropecuarios y piscícolas terminados, terceros|01|-|||1|
+20190131|692320|Costo de ...- Productos terminados - productos agropecuarios y piscícolas terminados, relacionadas|01|-|||1|
+20190131|692410|Costo de ...- Productos terminados - productos inmuebles terminados, terceros|01|-|||1|
+20190131|692420|Costo de ...- Productos terminados - productos inmuebles terminados, relacionadas|01|-|||1|
+20190131|692510|Costo de ...- Productos terminados - existencias de servicios terminados, terceros|01|-|||1|
+20190131|692520|Costo de ...- Productos terminados - existencias de servicios terminados, relacionadas|01|-|||1|
+20190131|692610|Costo de ...- Productos terminados - costos de financiación, productos terminados, terceros|01|-|||1|
+20190131|692620|Costo de ...- Productos terminados - costos de financiación, productos terminados, relacionadas|01|-|||1|
+20190131|692700|Costo de ventas - Productos terminados - costos de producción no absorbido, productos terminados |01|-|||1|
+20190131|692800|Costo de ventas - Productos terminados - costo de ineficiencia, productos terminados  |01|-|||1|
+20190131|693110|Costo de ...- Subproductos, desechos ...- subproductos, terceros|01|-|||1|
+20190131|693120|Costo de ...- Subproductos, desechos ...- subproductos, relacionadas|01|-|||1|
+20190131|693210|Costo de ...- Subproductos, desechos ...- desechos y desperdicios, terceros|01|-|||1|
+20190131|693220|Costo de ...- Subproductos, desechos ...- desechos y desperdicios, relacionadas|01|-|||1|
+20190131|694100|Costo de ventas - Servicios - terceros (Costo diferido)|01|-|||1|
+20190131|694200|Costo de ventas - Servicios - relacionadas|01|-|||1|
+20190131|695100|Costo de ventas - Gastos por desvalorización de existencias - mercaderías |01|-|||1|
+20190131|695200|Costo de ventas - Gastos por desvalorización de existencias - productos terminados |01|-|||1|
+20190131|695300|Costo de ventas - Gastos por desvalorización de existencias - subproductos, desechos y desperdicios|01|-|||1|
+20190131|695400|Costo de ventas - Gastos por desvalorización de existencias - productos en proceso |01|-|||1|
+20190131|695500|Costo de ventas - Gastos por desvalorización de existencias - materias primas |01|-|||1|
+20190131|695600|Costo de ventas - Gastos por desvalorización de existencias - materiales auxiliares, suministros y |01|-|||1|
+20190131|695700|Costo de ventas - Gastos por desvalorización de existencias - envases y embalajes |01|-|||1|
+20190131|695800|Costo de ventas - Gastos por desvalorización de existencias - existencias por recibir |01|-|||1|
+20190131|7011101|Ventas  - Mercaderías - mercaderías manufacturadas terceros - Categoria de productos 01|01|-|||1|
+20190131|701120|Ventas  - Mercaderías - mercaderías manufacturadas, relacionadas|01|-|||1|
+20190131|701210|Ventas  - Mercaderías - mercaderías de extracción, terceros|01|-|||1|
+20190131|701220|Ventas  - Mercaderías - mercaderías de extracción, relacionadas|01|-|||1|
+20190131|701310|Ventas  - Mercaderías - mercaderías agropecuarias y piscícolas, terceros|01|-|||1|
+20190131|701320|Ventas  - Mercaderías - mercaderías agropecuarias y piscícolas, relacionadas|01|-|||1|
+20190131|701410|Ventas  - Mercaderías - mercaderías inmuebles, terceros|01|-|||1|
+20190131|701420|Ventas  - Mercaderías - mercaderías inmuebles, relacionadas|01|-|||1|
+20190131|701510|Ventas  - Mercaderías - mercaderías otras, terceros (Venta Diferida)|01|-|||1|
+20190131|701520|Ventas  - Mercaderías - mercaderías otras, relacionadas|01|-|||1|
+20190131|702110|Ventas  - Productos terminados - productos manufacturados, terceros|01|-|||1|
+20190131|702120|Ventas  - Productos terminados - productos manufacturados, relacionadas|01|-|||1|
+20190131|702210|Ventas - Productos terminados - productos de extracción terminados, terceros|01|-|||1|
+20190131|702220|Ventas - Productos terminados - productos de extracción terminados, relacionadas|01|-|||1|
+20190131|702310|Ventas - Productos terminados - productos agropecuarios y piscícolas terminados, terceros|01|-|||1|
+20190131|702320|Ventas - Productos terminados - productos agropecuarios y piscícolas terminados, relacionadas|01|-|||1|
+20190131|702410|Ventas - Productos terminados - productos inmuebles terminados, terceros|01|-|||1|
+20190131|702420|Ventas - Productos terminados - productos inmuebles terminados, relacionadas|01|-|||1|
+20190131|702510|Ventas - Productos terminados - existencias de servicios, terceros|01|-|||1|
+20190131|702520|Ventas - Productos terminados - existencias de servicios, relacionadas|01|-|||1|
+20190131|703110|Ventas - Subproductos, desechos ... - subproductos, terceros|01|-|||1|
+20190131|703120|Ventas - Subproductos, desechos ... - subproductos, relacionadas|01|-|||1|
+20190131|703210|Ventas - Subproductos, desechos... - desechos y desperdicios, terceros   |01|-|||1|
+20190131|703220|Ventas - Subproductos, desechos... - desechos y desperdicios, relacionadas|01|-|||1|
+20190131|704100|Ventas - Prestación de servicios - terceros|01|-|||1|
+20190131|704200|Ventas - Prestación de servicios - relacionadas|01|-|||1|
+20190131|705000|Ventas - Software|01|-|||1|
+20190131|7091101|Ventas - Devoluciones ...- Mercaderías terceros - mercaderías manufacturadas  - Categoria de produc|01|-|||1|
+20190131|709120|Ventas - Devoluciones ...- Mercaderías terceros - mercaderías de extraccíon|01|-|||1|
+20190131|709130|Ventas - Devoluciones ...- Mercaderías terceros - mercaderías agropecuarias y piscícolas|01|-|||1|
+20190131|709140|Ventas - Devoluciones ...- Mercaderías terceros - mercaderías inmuebles|01|-|||1|
+20190131|709150|Ventas - Devoluciones ...- Mercaderías terceros - mercaderías otras|01|-|||1|
+20190131|709210|Ventas - Devoluciones ...- Mercaderias relacionadas - mercaderías manufacturadas   |01|-|||1|
+20190131|709220|Ventas - Devoluciones ...- Mercaderías relacionadas - mercaderías de extraccíon |01|-|||1|
+20190131|709230|Ventas - Devoluciones ...- Mercaderías relacionadas - mercaderías agropecuarias y piscícolas   |01|-|||1|
+20190131|709240|Ventas - Devoluciones ...- Mercaderías relacionadas - mercaderías inmuebles  |01|-|||1|
+20190131|709250|Ventas - Devoluciones ...- Mercaderías relacionadas - mercaderías otras  |01|-|||1|
+20190131|709310|Ventas - Devoluciones ...- Productos terminados terceros - productos manufacturados |01|-|||1|
+20190131|709320|Ventas - Devoluciones ...- Productos terminados terceros - productos de extraccíon terminados|01|-|||1|
+20190131|709330|Ventas - Devoluciones ...- Productos terminados terceros - productos agropecuarios y piscícolas ter|01|-|||1|
+20190131|709340|Ventas - Devoluciones ...- Productos terminados terceros - productos inmuebles terminados|01|-|||1|
+20190131|709350|Ventas - Devoluciones ...- Productos terminados terceros - existencias de servicios terminados|01|-|||1|
+20190131|709410|Ventas - Devoluciones ...- Productos terminados ...- productos manufacturados|01|-|||1|
+20190131|709420|Ventas - Devoluciones ...- Productos terminados ...- productos de extraccíon terminados|01|-|||1|
+20190131|709430|Ventas - Devoluciones ...- Productos terminados ...- productos agropecuarios y piscícolas terminado|01|-|||1|
+20190131|709440|Ventas - Devoluciones ...- Productos terminados ...- productos  inmuebles terminados|01|-|||1|
+20190131|709450|Ventas - Devoluciones ...- Productos terminados ...- existencias de servicios terminados|01|-|||1|
+20190131|709510|Ventas - Devoluciones ...- Subproductos, desechos ...- subproductos|01|-|||1|
+20190131|709520|Ventas - Devoluciones ...- Subproductos, desechos ... - desechos y desperdicios|01|-|||1|
+20190131|709610|Ventas - Devoluciones ...- Subproductos, desechos ...- subproductos |01|-|||1|
+20190131|709620|Ventas - Devoluciones ...- Subproductos, desechos ... - desechos y desperdicios |01|-|||1|
+20190131|709710|Ventas - Devoluciones - Prestación de servicios - terceros|01|-|||1|
+20190131|709720|Ventas - Devoluciones - Prestación de servicios - relacionadas|01|-|||1|
+20190131|711100|Variación de la producción almacenada - Variación de productos terminados - productos manufacturado|01|-|||1|
+20190131|711200|Variación de la produccíon almacenada - Variación de productos terminados - productos de extracción|01|-|||1|
+20190131|711300|Variación de la producción almacenada - Variación de productos terminados - productos agropecuarios|01|-|||1|
+20190131|711400|Variación de la producción almacenada - Variación de productos terminados - productos inmuebles ter|01|-|||1|
+20190131|711500|Variación de la producción almacenada - Variación de productos terminados - existencias de servicio|01|-|||1|
+20190131|712100|Variación de la producción almacenada - Variación de subproductos ...- sub productos|01|-|||1|
+20190131|712200|Variación de la producción almacenada - Variación de subproductos ...- desechos y desperdicios|01|-|||1|
+20190131|713100|Variación de la producción almacenada - Variación de productos en proceso - productos en proceso de|01|-|||1|
+20190131|713200|Variación de la producción almacenada - Variación de productos en proceso - productos extraídos en |01|-|||1|
+20190131|713300|Variación de la producción almacenada - Variación de productos en proceso - productos agropecuarios|01|-|||1|
+20190131|713400|Variación de la producción almacenada - Variación de productos en proceso - productos inmuebles en |01|-|||1|
+20190131|713500|Variación de la producción almacenada - Variación de productos en proceso - existencias de producto|01|-|||1|
+20190131|713800|Variación de la producción almacenada - Variación de productos en proceso - otros productos en proc|01|-|||1|
+20190131|714100|Variación de la producción almacenada - Variación ... - envases|01|-|||1|
+20190131|714200|Variación de la producción almacenada - Variación ... - embalajes|01|-|||1|
+20190131|715000|Variación de la producción almacenada - Variación de existencias de servicios|01|-|||1|
+20190131|721100|Produccíon de activo ...- Inversiones inmobiliarias - edificaciones|01|-|||1|
+20190131|722100|Producción de activo ...- Inmuebles, maquinaria y equipo - edificaciones|01|-|||1|
+20190131|722200|Producción de activo ...- Inmuebles, maquinaria y equipo - maquinarias y otros equipos de explotaci|01|-|||1|
+20190131|722300|Producción de activo ...- Inmuebles, maquinaria y equipo - equipo de transporte|01|-|||1|
+20190131|722400|Producción de activo ...- Inmuebles, maquinaria y equipo - muebles y enseres|01|-|||1|
+20190131|722500|Producción de activo ...- Inmuebles, maquinaria y equipo - equipos diversos |01|-|||1|
+20190131|722600|Producción de activo ...- Inmuebles, maquinaria y equipo - equipo de comunicación|01|-|||1|
+20190131|722700|Producción de activo ...- Inmuebles, maquinaria y equipo - equipo de seguridad|01|-|||1|
+20190131|722800|Producción de activo ...- Inmuebles, maquinaria y equipo - otros equipos   |01|-|||1|
+20190131|723100|Producción de activo ...- Intangibles - programas de computadora (software)|01|-|||1|
+20190131|723200|Producción de activo ...- Intangibles - costos de exploración y desarrollo|01|-|||1|
+20190131|723300|Producción de activo ...- Intangibles - fórmulas, diseños y prototipos  |01|-|||1|
+20190131|724100|Producción de activo ...- Activos biológicos - activos biológicos en desarrollo de origen animal  |01|-|||1|
+20190131|724200|Producción de activo ...- Activos biológicos - activos biológicos en desarrollo de origen vegetal|01|-|||1|
+20190131|725110|Producción de activo ...- Costos de financiación ...- costos de financiación  inversiones inmobilia|01|-|||1|
+20190131|725210|Producción de activo ...- Costos de ...- costos de financiación, inmuebles, maquinaria y equipo, ed|01|-|||1|
+20190131|725220|Producción de activo ...- Costos de ...- costos de financiación, inmuebles, ..., maquinarias y otro|01|-|||1|
+20190131|725300|Producción de activo ...- Costos de financiación capitalizados - costos de financiación, intangible|01|-|||1|
+20190131|725410|Producción de activo ...- Costos de ...- costos de financiación, activos biológicos en desarrollo, |01|-|||1|
+20190131|725420|Producción de activo ...- Costos de ...- costos de financiación, activos biológicos en desarrollo, |01|-|||1|
+20190131|731100|Descuentos ...- Descuentos,rebajas y bonificaciones obtenidos  - terceros|01|-|||1|
+20190131|731200|Descuentos ...- Descuentos,rebajas y bonificaciones obtenidos - relacionadas|01|-|||1|
+20190131|741100|Descuentos ...- Descuentos,rebajas y bonificaciones concedidos - terceros|01|-|||1|
+20190131|741200|Descuentos ...- Descuentos,rebajas y bonificaciones concedidos - relacionadas|01|-|||1|
+20190131|751000|Otros ingresos de gestión - Servicios en beneficio del personal|01|-|||1|
+20190131|752000|Otros ingresos de gestión - Comisiones y corretajes|01|-|||1|
+20190131|753000|Otros ingresos de gestión - Regalias|01|-|||1|
+20190131|754100|Otros ingresos ...- Alquileres - terrenos|01|-|||1|
+20190131|754200|Otros ingresos ...- Alquileres - edificaciones|01|-|||1|
+20190131|754300|Otros ingresos ...- Alquileres - maquinarias y equipos de explotación|01|-|||1|
+20190131|754400|Otros ingresos ...- Alquileres - equipo de transporte|01|-|||1|
+20190131|754500|Otros ingresos ...- Alquileres - equipos diversos|01|-|||1|
+20190131|755100|Otros ingresos ...- Recuperación ... -cuentas de cobranza dudosa|01|-|||1|
+20190131|755200|Otros ingresos ...- Recuperación ...- desvalorización de existencias|01|-|||1|
+20190131|755300|Otros ingresos ...- Recuperación ...- desvalorización de inversiones mobiliarias|01|-|||1|
+20190131|756100|Otros ingresos ...- Enajenación ...- inversiones mobiliarias|01|-|||1|
+20190131|756200|Otros ingresos ...- Enajenación ...- inversiones inmobiliarias|01|-|||1|
+20190131|756300|Otros ingresos ...- Enajenación ...- activos adquiridos en arrendamiento financiero|01|-|||1|
+20190131|756400|Otros ingresos ...- Enajenación ...- inmuebles, maquinaria y equipo intangible|01|-|||1|
+20190131|756500|Otros ingresos ...- Enajenación ...- intangibles|01|-|||1|
+20190131|756600|Otros ingresos ...- Enajenación ...- activos biológicos|01|-|||1|
+20190131|757100|Otros ingresos ...- Recuperación .....-Recuperación de deterioro de inversiones inmobiliarias|01|-|||1|
+20190131|757200|Otros ingresos ...- Recuperación .....-Recuperación de deterioro de inmuebles, maquinaria y equipo|01|-|||1|
+20190131|757300|Otros ingresos ...- Recuperación .....-Recuperación de deterioro de intangibles|01|-|||1|
+20190131|757400|Otros ingresos ...- Recuperación .....-Recuperación de deterioro de activos biológicos|01|-|||1|
+20190131|759100|Otros ingresos ...- Otros ingresos de gestión - sudsidios gubernamentales |01|-|||1|
+20190131|759200|Otros ingresos ...- Otros ingresos de gestión - reclamos al seguro|01|-|||1|
+20190131|759300|Otros ingresos ...- Otros ingresos de gestión - donaciones|01|-|||1|
+20190131|759910|Otros ingresos ...- Otros ingresos de gestión - otros ingresos de gestión|01|-|||1|
+20190131|759960|Otros ingresos ...- Otros ingresos de gestión - resultados por exposición a la inflación ( )|01|-|||1|
+20190131|759970|Otros ingresos ...- Otros ingresos de gestión - ingresos extraordinarios ( )|01|-|||1|
+20190131|759980|Otros ingresos ...- Otros ingresos de gestión - interes minoritario ( )|01|-|||1|
+20190131|759990|Otros ingresos ...- Otros ingresos de gestión - dividendos de acciones preferentes ( )|01|-|||1|
+20190131|761100|Ganancia por medición ...- Activo realizable - mercaderías|01|-|||1|
+20190131|761200|Ganancia por medición ...- Activo realizable - productos terminados|01|-|||1|
+20190131|761310|Ganancia por medición ...- Activo realizable - activos no corrientes..-Inversiones inmobiliarias|01|-|||1|
+20190131|761320|Ganancia por medición ...- Activo realizable - activos no corrientes..-Inmuebles, maquinaria y equi|01|-|||1|
+20190131|761330|Ganancia por medición ...- Activo realizable - activos no corrientes..-Intangibles|01|-|||1|
+20190131|761340|Ganancia por medición ...- Activo realizable - activos no corrientes..-Activos biológicos|01|-|||1|
+20190131|762100|Ganancia por medición ...- Activo inmovilizado  - inversiones inmobiliarias|01|-|||1|
+20190131|762200|Ganancia por medición ...- Activo inmovilizado - activos biológicos|01|-|||1|
+20190131|771000|Ingresos financieros - Ganancia por instrumento financiero derivado|01|-|||1|
+20190131|772100|Ingresos ...- Rendimientos ganados - depósitos en instituciones financieras|01|-|||1|
+20190131|77221|Ingresos ...- Rendimientos ganados - cuentas por cobrar comerciales - Por Devengar|01|-|||1|
+20190131|77222|Ingresos ...- Rendimientos ganados - cuentas por cobrar comerciales - Devengado|01|-|||1|
+20190131|772300|Ingresos ...- Rendimientos ganados - préstamos otorgados (Intereses Moratorios)|01|-|||1|
+20190131|772400|Ingresos ...- Rendimientos ganados - inversiones a ser mantenidas hasta vencimiento|01|-|||1|
+20190131|772500|Ingresos ...- Rendimientos ganados - instrumentos financieros representativos de derecho patrimonia|01|-|||1|
+20190131|773000|Ingresos financieros - Dividendos  |01|-|||1|
+20190131|774000|Ingresos financieros - Ingresos en operaciones de factoraje (factoring)|01|-|||1|
+20190131|775000|Ingresos financieros - Descuentos obtenidos por pronto pago|01|-|||1|
+20190131|776000|Ingresos financieros - Diferencia en Cambio (desajuste)|01|-|||1|
+20190131|777100|Ingresos financieros - Ganancia por...-Inversiones mantenidas para negociación |01|-|||1|
+20190131|777200|Ingresos financieros - Ganancia por...-Inversiones disponibles para la venta|01|-|||1|
+20190131|777300|Ingresos financieros - Ganancia por...-Otras|01|-|||1|
+20190131|778100|Ingresos financieros - Participación en...-Participación en result de subsidiarias y asociadas bajo|01|-|||1|
+20190131|778200|Ingresos financieros - Participación en...-Ingresos por participaciones en negocios conjuntos|01|-|||1|
+20190131|779200|Ingresos...- Otros ingresos ... -ingresos financieros  en medición a valor descontado (venta al cré|01|-|||1|
+20190131|781000|Cargas cubiertas por provisiones - Cargas cubiertas por provisiones|01|-|||1|
+20190131|791000|Cargas imputables ...- Cargas imputables a cuentas de costos y gastos|01|-|||1|
+20190131|792000|Cargas imputables ...- Gastos financieros imputables a cuentas de existencias|01|-|||1|
+20190131|801000|Margen comercial - Margen comercial|01|-|||1|
+20190131|811000|Producción del ejercicio - Producción de bienes|01|-|||1|
+20190131|812000|Producción del ejercicio - Producción de servicios |01|-|||1|
+20190131|813000|Producción del ejercicio - Producción de activo inmovilizado|01|-|||1|
+20190131|821000|Valor agregado - Valor agregado|01|-|||1|
+20190131|831000|Excedente bruto ...- Exdedente bruto (insuficiencia bruta) de explotación |01|-|||1|
+20190131|841000|Resultado de explotación - Resultado de explotación|01|-|||1|
+20190131|851000|Resultado antes ...- Resultado antes de participaciones e impuestos |01|-|||1|
+20190131|871000|Participaciones de ...- Participación de los trabajadores - corriente|01|-|||1|
+20190131|872000|Participaciones de ...- Participación de los trabajadores - diferida|01|-|||1|
+20190131|881000|Impuesto a la ...- Impuesto a la renta -corriente|01|-|||1|
+20190131|882000|Impuesto a la ...- Impuesto a la renta -diferido|01|-|||1|
+20190131|891000|Determinación del resultado del ejercicio - Utilidad|01|-|||1|
+20190131|892000|Determinación del resultado del ejercicio - Pérdida|01|-|||1|
+20190131|921100|Costo de Producción|01|-|||1|
+20190131|94101|Gastos de administración|01|-|||1|
+20190131|95101|Gastos de ventas|01|-|||1|
+20190131|97101|Gastos financieros |01|-|||1|
+20190131|999999|Ganancias-Pérdidas No Distribuidas|01|-|||1|

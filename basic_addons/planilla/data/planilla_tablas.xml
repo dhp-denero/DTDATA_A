@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="planilla.planilla_tipo_documento_01" model="planilla.tipo.documento">
+            <field name="codigo_sunat">01</field>
+            <field name="codigo_afp"></field>
+            <field name="descripcion">DOCUMENTO  NACIONAL DE IDENTIDAD</field>
+            <field name="descripcion_abrev">DNI</field>
+        </record>
+        <record id="planilla.planilla_tipo_documento_04" model="planilla.tipo.documento">
+            <field name="codigo_sunat">04</field>
+            <field name="codigo_afp"></field>
+            <field name="descripcion">CARNÉ DE EXTRANJERÍA</field>
+            <field name="descripcion_abrev">CARNÉ EXT.</field>
+        </record>
+        <record id="planilla.planilla_tipo_documento_06" model="planilla.tipo.documento">
+            <field name="codigo_sunat">06</field>
+            <field name="codigo_afp"></field>
+            <field name="descripcion">REG. ÚNICO DE CONTRIBUYENTES (1)</field>
+            <field name="descripcion_abrev">RUC</field>
+        </record>
+        <record id="planilla.planilla_tipo_documento_07" model="planilla.tipo.documento">
+            <field name="codigo_sunat">07</field>
+            <field name="codigo_afp"></field>
+            <field name="descripcion">PASAPORTE</field>
+            <field name="descripcion_abrev">PASAPORTE</field>
+        </record>
+        <record id="planilla.planilla_tipo_documento_09" model="planilla.tipo.documento">
+            <field name="codigo_sunat">09</field>
+            <field name="codigo_afp"></field>
+            <field name="descripcion">CARNÉ DE SOLICIT DE REFUGIO</field>
+            <field name="descripcion_abrev">CARNÉ SOLIC REFUGIO</field>
+        </record>
+        <record id="planilla.planilla_tipo_documento_11" model="planilla.tipo.documento">
+            <field name="codigo_sunat">11</field>
+            <field name="codigo_afp"></field>
+            <field name="descripcion">PARTIDA DE NACIMIENTO (2)</field>
+            <field name="descripcion_abrev">PART. NAC.</field>
+        </record>
+
+        <!-- descripcion pensionista -->
+        <record id="planilla.planilla_situacion_baja" model="planilla.situacion">
+            <field name="descripcion">BAJA</field>
+            <field name="descripcion_abrev">BAJA</field>
+        </record>
+        <record id="planilla.planilla_situacion_ac_sub" model="planilla.situacion">
+            <field name="descripcion">ACTIVO O SUBSIDIADO</field>
+            <field name="descripcion_abrev">ACTIVA O SUBSIDIADO</field>
+        </record>
+        <record id="planilla.planilla_situacion_vin_vinc" model="planilla.situacion">
+            <field name="descripcion">SIN VINCULO LABORAL CON CONEPTOS PENDIENTE DE LIQUIDAR</field>
+            <field name="descripcion_abrev">SIN VINC. LAB. CON CONC PEND POR LIQUIDAR</field>
+        </record>
+        <record id="planilla.planilla_situacion_suspen" model="planilla.situacion">
+            <field name="descripcion">SUSPENCION PERFECTA DE LABORES</field>
+            <field name="descripcion_abrev">SUSPENCION PERFECTA DE LABORES</field>
+        </record>
+
+        <!-- descripcion tipo trabajador -->
+        <record id="planilla.planilla_tipo_trabajador_ejec" model="planilla.tipo.trabajador">
+            <field name="descripcion">EJECUTIVO</field>
+            <field name="descripcion_abrev">EJECUTIVO</field>
+        </record>
+        <record id="planilla.planilla_tipo_trabajador_obr" model="planilla.tipo.trabajador">
+            <field name="descripcion">OBRERO</field>
+            <field name="descripcion_abrev">OBRERO</field>
+        </record>
+        <record id="planilla.planilla_tipo_trabajador_port" model="planilla.tipo.trabajador">
+            <field name="descripcion">TRABAJADOR PORTUARIO - LEY 27866</field>
+            <field name="descripcion_abrev">TRAB.PORTUARIO</field>
+        </record>
+        <record id="planilla.planilla_tipo_trabajador_sent" model="planilla.tipo.trabajador">
+            <field name="descripcion">PRACTICANTE SENATI - DEC. LEY 20151</field>
+            <field name="descripcion_abrev">PRACT. SENATI</field>
+        </record>
+
+
+        <!-- descripcion tipo suspencion -->
+        <record id="planilla.planilla_tipo_suspencion_ejec" model="planilla.tipo.suspension">
+            <field name="descripcion">S.P. SANCION DISCIPLINARIA</field>
+            <field name="descripcion_abrev">S.P. SANCION DISCIPLINARIA</field>
+        </record>
+        <record id="planilla.planilla_tipo_suspencion_obr" model="planilla.tipo.suspension">
+            <field name="descripcion">S.P. EJERCICIO DEL DERECHO DE HUELGA</field>
+            <field name="descripcion_abrev">S.P. EJERCICIO DERECHO HUELGA</field>
+        </record>
+        <record id="planilla.planilla_tipo_suspencion_port" model="planilla.tipo.suspension">
+            <field name="descripcion">S.P. DETENCIÓN DEL TRABAJADOR, SALVO EL CASO DE CONDENA PRIVATIVA DE LA LIBERTAD</field>
+            <field name="descripcion_abrev">S.P. DETENCIÓN DEL TRABAJADOR</field>
+        </record>
+        <record id="planilla.planilla_tipo_suspencion_sent" model="planilla.tipo.suspension">
+            <field name="descripcion">S.P. INHABILITACIÓN ADMINISTRATIVA, JUDICIAL  O PENA PRIVATIVA DE LA LIBERTAD EFECTIVA POR DELITO CULPOSO, POR PERIODO NO SUPERIOR A TRES MESES</field>
+            <field name="descripcion_abrev">S.P. INHAB. ADMINIST., JUDICIAL O PENA PRIVATIVA</field>
+        </record>
+    </data>
+</odoo>

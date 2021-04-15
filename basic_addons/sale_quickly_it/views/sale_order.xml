@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+        <record id="sale_order_cashbox" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="priority">17</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="busqueda_ruc"/>
+                    <field name="it_type_document" required="1"/>
+                    <field name="it_invoice_serie" domain="[('type_document_id','=',it_type_document)]" required="1"/>
+                    <field name="invoice_number"/>
+
+                    
+                </field>
+                <field name="validity_date" position="replace">
+                </field>
+                <field name="partner_order_id" position="replace">
+                </field>
+                <field name="cashbox_id" position="replace">
+                </field>
+                <field name="warehouse_id" position="replace">
+                </field>
+                <field name="pricelist_id" position="after">
+                    <field name="warehouse_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations"/>
+                </field>
+                <field name="payment_term_id" position="replace">
+                    
+                </field>
+                <xpath expr="//form//sheet//notebook//page[1]" position="after">
+                    <page string="Datos de Comprobante">
+                            <group>
+                               <field name="cashbox_id" required="1"/>
+                               <field name="account_journal" required="1"/>
+                               <field name="einvoice_means_payment" required="1"/>
+                            </group>
+                            <group>
+                               <field name="partner_order_id"/>
+                               <field name="validity_date"/>
+                               <field name="payment_term_id" required="1"/>
+                            </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_permisos_vendedor" model="ir.ui.view">
+        <field name="name">sale.order.secu</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="priority">17</field>
+        <field name="groups_id" eval="[(6, 0, [ref('sale_quickly_it.permisos_vendor')])]"/>
+        <field name="arch" type="xml">
+            <button name="action_quotation_send" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </button>
+            <button name="print_quotation" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </button>
+            <button name="action_confirm" position="replace">
+            </button>
+            <button name="action_confirm" position="replace">
+            </button>
+            <button name="action_cancel" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </button>
+            <button name="action_view_invoice" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </button>
+            
+        </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <record id="add_input_view" model="ir.ui.view">
+            <field name="name">add_input_view</field>
+            <field name="model">add.input</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Generar Input">
+                    <group>
+                        <field name="name" required="1"/>
+                        <field name="code" required="1"/>
+                    </group>
+                    <footer>
+                        <button name="generar_input" string="Generar Input" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                 </form>
+             </field>
+        </record>
+    </data>
+</odoo>

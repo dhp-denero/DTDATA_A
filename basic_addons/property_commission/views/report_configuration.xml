@@ -1,0 +1,29 @@
+<odoo>
+
+   <!--      <report
+            id = "commissiondetails_report"
+            model="commission.invoice"
+            string="Commission Details Report"
+            report_type="qweb-pdf"
+            name ="property_commission.commissiondetails_report_template_id"
+            attachment_use="False"
+            file ="property_commission.commissiondetails_report_template_id"/> -->
+
+        <report 
+            id="commission_owner_invoice_report"
+            model="commission.invoice.owner"
+            string="Commission Invoice Owner"
+            report_type="qweb-pdf"
+            name ="property_commission.commission_invoice_owner"
+            file ="property_commission.commission_invoice_owner"/> 
+
+         <report 
+            id="commission_for_invoice_report"
+            model="commission.invoice"
+            string="Commission Report"
+            report_type="qweb-pdf"
+            name ="property_commission.commission_report_template2"
+            attachment_use="False"
+            file ="property_commission.commission_report_template2"
+            menu="False"/> 
+</odoo>

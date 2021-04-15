@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="nominas_form_herencia" model="ir.ui.view">
+           <field name="name">Nominas.Form</field>
+           <field name="model">hr.contract</field>
+	   <field name="inherit_id" ref="planilla.hr_contract_view_form"/>
+	   <field name="arch" type="xml">
+	       <xpath expr="//field[@name='hourly_worker']" position="after">
+		   <field name="is_life_essalud" string="Tiene Essalud Vida" />
+	       </xpath>
+           </field>
+        </record>
+</odoo>

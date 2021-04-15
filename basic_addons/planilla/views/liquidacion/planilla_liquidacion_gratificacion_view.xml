@@ -1,0 +1,36 @@
+
+<odoo>
+    <record model="ir.ui.view" id="planilla_liquidacion_gratificacion_tree_view">
+        <field name="name">planilla_liquidacion_gratificacion_tree_view</field>
+        <field name="model">planilla.liquidacion.gratificacion.line</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0">
+                <field name="orden" string="Orden"/>
+                <field name="identification_number"/>
+                <field name="last_name_father"/>
+                <field name="last_name_mother"/>
+                <field name="names"/>
+                <field name="fecha_ingreso"/>
+                <field name="fecha_computable" string="Fecha Computo"/>
+                <field name="fecha_cese"/>
+                <field name="meses"/>
+                <field name="faltas"/>
+                <field name="basico" sum="basico"/>
+                <field name="a_familiar" sum="a_familiar"/>
+                <!-- comisiones (tiene que haber recibido comisiones 3 meses como minimo)-->
+                <field name="comision" sum="comision"/>
+                <field name="bonificacion" sum="bonificacion"/>
+                <field name="horas_extras_mean" sum=""/>
+                <field name="remuneracion_computable" sum="remuneracion_computable"/>
+                <field name="monto_x_mes" sum="monto_x_mes"/>
+                <field name="monto_x_dia" sum="monto_x_dia"/>
+                <field name="monto_x_meses" sum="monto_x_meses"/>
+                <field name="monto_x_dias" sum="monto_x_dias"/>
+                <field name="total_faltas" sum="total_faltas"/>
+                <field name="total_gratificacion" sum="total_gratificacion"/>
+                <field name="plus_9" sum="plus_9"/>
+                <field name="total" sum="total"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+<record id="permisos_vendor" model="res.groups">
+            <field name="name">Vendedor</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+            <field name="category_id">75</field>
+        </record>
+    </data>
+</odoo>

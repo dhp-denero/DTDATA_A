@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<!--Extiende la vista de view_kardex_fisico_d para agregarle el campo de ubicación -->
+    <record id="view_kardex_fisico_d_extended" model="ir.ui.view">
+        <field name="name">detalle.simple.fisico.total.d.extended</field>
+        <field name="model">detalle.simple.fisico.total.d</field>
+        <field name="inherit_id" ref="kardex_product_saldofisico_it.view_kardex_fisico_d"/>
+        <field name="arch" type="xml">
+        <xpath expr="//tree/field[@name='almacen']" position='after'>
+            <field name="location_id"/>
+        </xpath>
+        </field>
+    </record> 
+
+</data>
+</odoo>

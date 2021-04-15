@@ -1,0 +1,32 @@
+<odoo>
+    <record id="hr_salary_rule_category_inherit_tree" model="ir.ui.view">
+        <field name="name">hr_salary_rule_category_inherit_tree</field>
+        <field name="model">hr.salary.rule.category</field>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_category_tree" />
+        <field name="arch" type="xml">
+        <xpath expr="//tree" position ='attributes'>
+          <attribute name="editable">bottom</attribute>
+        </xpath>
+            <field name="code" position="after">
+                <field name="secuencia" />
+                <field name="is_ing_or_desc" />
+                <field name="aparece_en_nomina" />
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_salary_rule_category_inherit_form" model="ir.ui.view">
+        <field name="name">hr_salary_rule_category_inherit_form</field>
+        <field name="model">hr.salary.rule.category</field>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_category_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form/group[2]" position="before">
+                <group string="Parametros reporte">
+                    <field name="secuencia" required="1"/>
+                    <field name="is_ing_or_desc" widget="radio" required="1"/>
+                    <field name="aparece_en_nomina" required="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

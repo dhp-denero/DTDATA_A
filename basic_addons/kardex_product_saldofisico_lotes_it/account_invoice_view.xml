@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+
+
+
+
+
+        <record model="ir.ui.view" id="view_detalle_simple_fisico_total_d_wizard_form_lotes">
+            <field name="name">detalle.simple.fisico.total.d.wizard.lotes.form</field>
+            <field name="model">detalle.simple.fisico.total.d.wizard.lotes</field>
+            <field name="arch" type="xml">
+                <form string="Wizard">
+                    <group>
+                        <group>
+                            <field name="fiscalyear_id"/>
+                        </group>
+                        <group></group>
+                    </group>
+                    <separator/>
+                    <footer>
+                        <button string="Generar" name="do_rebuild" type="object" class="oe_highlight"/>
+                        o
+                        <button string="Cancelar" special="cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="view_kardex_fisico_d_lotes" model="ir.ui.view">
+            <field name="name">detalle.simple.fisico.total.d.lotes.tree</field>
+            <field name="model">detalle.simple.fisico.total.d.lotes</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Saldos" create="false" delete="false">
+                    <field name="producto" />
+                    <field name="lote" />
+                    <field name="categoria" />
+                    <field name="almacen" />
+                    <field name="saldo" string="Stock Disponible"  help="Stock Fisico - (Reservas +  Salidas en Espera)" />
+                                        <button name="get_stock_disponible" icon="fa-pencil-square-o" string="Ver Movimientos" type="object" attrs="{'invisible':[('saldo','=',0)]}" context="{'nombre_reducido':1}"/>
+                    <field name="saldo_fisico" string="Stock Físico" help="Saldo físico en almacen" />
+                                        <button name="get_saldo_fisico" icon="fa-pencil-square-o" string="Ver Movimientos" type="object" attrs="{'invisible':[('saldo_fisico','=',0)]}" context="{'nombre_reducido':1}"/>
+                    <field name="por_ingresar" help="Existencias por ingresar (Compras o Transf. Int.)"/>
+                                        <button name="get_por_ingresar" icon="fa-pencil-square-o" string="Ver Movimientos" type="object" attrs="{'invisible':[('por_ingresar','=',0)]}" context="{'nombre_reducido':1}"/>
+                    <field name="transito" help="Existencias en transito."/>
+                                        <button name="get_transito" icon="fa-pencil-square-o" string="Ver Movimientos" type="object" attrs="{'invisible':[('transito','=',0)]}" context="{'nombre_reducido':1}"/>
+                    <field name="salida_espera" help="Ventas, Transf Int. con saldo no disponible" />
+                                        <button name="get_salida_espera" icon="fa-pencil-square-o" string="Ver Movimientos" type="object" attrs="{'invisible':[('salida_espera','=',0)]}" context="{'nombre_reducido':1}"/>
+                    <field name="reservas" help="Reservas (Vtas, Transf. Int) se generan cuando hay Stock Disponible" />
+                                        <button name="get_reservas" icon="fa-pencil-square-o" string="Ver Movimientos" type="object" attrs="{'invisible':[('reservas','=',0)]}" context="{'nombre_reducido':1}"/>
+                    <field name="saldo_virtual" help="Stock Fisico + Por Ingresar + Trnasito - Salida Espera - Reservas" />
+                                        <button name="get_saldo_virtual" icon="fa-pencil-square-o" string="Ver Movimientos" type="object" attrs="{'invisible':[('saldo_virtual','=',0)]}" context="{'nombre_reducido':1}"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="view_kardex_fisico_dm_filter_lotes" model="ir.ui.view">
+            <field name="name">detalle.simple.fisico.total.d.lotes.select</field>
+            <field name="model">detalle.simple.fisico.total.d.lotes</field>
+            <!--<field name="domain">[('seguimiento','!=','none')]</field>-->
+            <field name="arch" type="xml">
+                <search string="Saldos">
+                   <field name="producto"/>
+                   <field name="lote"/>
+                   <field name="categoria"/>
+                    <field name="almacen" />
+                   <group expand="0" string="Group By">
+                       <filter string="Producto" icon="terp-personal" domain="[]" context="{'group_by' : 'producto'}" />
+                       <filter string="Lote" icon="terp-personal" domain="[]" context="{'group_by' : 'lote'}" />
+                       <filter string="Categoría" icon="terp-personal" domain="[]" context="{'group_by' : 'categoria'}" />
+                       <filter string="Almacen" icon="terp-personal" domain="[]" context="{'group_by' : 'almacen'}" />
+                   </group>
+               </search>
+            </field>
+        </record>
+
+
+
+        <record id="kardex_fisico_dmc_actionn_lotes" model="ir.actions.act_window">
+            <field name="name">Saldos y movimientos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">detalle.simple.fisico.total.d.wizard.lotes</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem name="Saldos Lote" id="kardex_fisicomc_menu_lotes"
+                 parent="kardex_it.kardex_main_menu" action="kardex_fisico_dmc_actionn_lotes"
+                 sequence="3" />
+
+
+
+
+
+    </data>
+</openerp>

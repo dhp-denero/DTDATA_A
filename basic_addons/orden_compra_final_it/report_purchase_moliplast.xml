@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        <template id="new_purchase_order_it.report_purchaseorder_document">
+        <t t-call="report.html_container">
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc"/>
+        </t>
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+        <div class="header" style="font-size:13px; font-family: 'Bookman Old Style'; padding-top:50px; padding-right: 40px;padding-left: 35px;">
+            <div class="row">
+                <div class="col-xs-3" style="padding-top:0px;">
+                    <img style="max-height: 95px;" t-att-src="'data:image/png;base64,%s' % company.logo" t-if="company.logo"/>
+
+                </div>
+                
+            
+                <div align="center" style = "border: 1px solid black; margin-left:650px;font-size:20px;">
+                     <strong>DNI/RUC: </strong>
+                         <span t-field="company.partner_id.nro_documento" />
+                    <p></p>
+                    
+                    <strong>ORDEN DE COMPRA</strong>
+                    <br>
+                    </br>
+                    <span t-field="o.name" align="center"/>
+                </div>
+            
+            </div>
+            <div class="row" align="left" style="padding-top:-30px;  padding-right: 0px;padding-left: 15px;">
+                <div >
+                    <span t-field="company.partner_id.street" />
+                    <br>Cel: <span t-field="company.partner_id.mobile" /> Telefono:<span t-field="company.partner_id.phone" /></br>
+                    <br>Email: <span t-field="company.partner_id.email" /></br>
+                </div>
+                <div style="margin-left:650px;padding-top:19px;">
+
+                    <br></br>
+                    <strong >FECHA:</strong>
+                    <span t-esc="o.change_time_pdf()[:20]"/>
+                    <br></br>
+                    <div style="padding-right:1px; ">
+                    <strong >Entrega: </strong>
+                    <span t-esc="o.x_condiciones_entrega_1" align="right"/>
+                    </div>
+                    <div style="padding-right:1px;">
+                    <strong>Validez: </strong>
+                    <span t-esc="o.x_validez_val_1" align="right"/>
+                    </div>
+                    <div style="padding-right:3px;">
+                    <strong >Pago: </strong>
+                    <span  t-esc="o.plazos_pago.name"/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div align="center">
+  
+                <br>
+                    <img style="max-height: 35px;" t-att-src="'data:image/png;base64,%s' % company.logo" t-if="company.logo"/>
+                </br>
+
+            </div>
+        </div>
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+        <div class="page" style="font-size:12px; font-family: 'Bookman Old Style';padding-top: 70px; padding-right: 40px;padding-left: 50px;">
+            <div class="oe_structure"/>
+            <div class="row" >
+                <div align="left">
+                    <p></p>
+                    <br></br>
+                    <p style="margin: 0;padding: 0;">
+                        <strong>SEÑORES: </strong>
+                        <span t-field="o.partner_id.name"/>
+                    </p>
+                    <p style="margin: 0;padding: 0;">
+                        <strong>RUC:</strong>
+                        <span t-field="o.partner_id.vat"/>
+                    </p>
+                    <p style="margin: 0;padding: 0;">
+                        <strong>DIRECCION: </strong>
+                        <span t-field="o.partner_id.street"/>
+                    </p>
+                    <p style="margin: 0;padding: 0;">
+                        <strong>CELULAR: </strong>
+                        <span t-field="o.partner_id.mobile"/>
+                    </p>
+                    
+                </div>
+            
+            </div>
+            <div class="row" style="padding-top:5px ">
+                
+                <div align="left">
+                    <p>
+                        <strong>LUGAR ENTREGA: </strong>
+                         <span t-field="o.picking_type_id.warehouse_id.name"/>
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+                <table class="table table-condensed">
+                    <thead style="background-color: #00004d;color:white;">
+                        <tr>
+                            <th class="text-center">
+                                <strong>Item</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Cantidad</strong>
+                            </th>
+                            <th class="text-left">
+                                <strong>Unidad</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Codigo</strong>
+                            </th>
+                            <th class="text-left">
+                                <strong>Descripcion</strong>
+                            </th>
+                            <th class="text-right">
+                                <strong>P. Unit.</strong>
+                            </th>
+                            <th class="text-right">
+                                <strong>Total</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-as="line" t-foreach="o.order_line" t-if="len(o.order_line)&lt;13">
+                            <td class="text-center">
+                                <span t-esc="line_index + 1"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="line.product_qty"/>
+                            </td>
+                            <td class="text-left">
+                                <span t-field="line.product_id.uom_id.name"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="line.product_id.default_code"/>
+                            </td>
+                            <td class="text-left">
+                                <span t-field="line.name"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="line.price_unit"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="line.price_subtotal"/>
+                            </td>
+                        </tr>
+                        <tr t-as="line" t-foreach="range(12)" t-if="len(o.order_line)&gt;12">
+                            <td class="text-center">
+                                <span t-esc="line_index + 1"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="o.order_line[line].product_qty"/>
+                            </td>
+                            <td class="text-left">
+                                <span t-field="o.order_line[line].product_id.uom_id.name"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="o.order_line[line].product_id.default_code"/>
+                            </td>
+                            <td class="text-left">
+                                <span t-field="o.order_line[line].name"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="o.order_line[line].price_unit"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="o.order_line[line].price_subtotal"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="page-break-before:always;" t-if="len(o.order_line)&gt;12"/>
+                <div style="padding-top: 150px;" t-if="len(o.order_line)&gt;12">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    <strong>Item</strong>
+                                </th>
+                                <th class="text-center">
+                                    <strong>Cantidad</strong>
+                                </th>
+                                <th class="text-left">
+                                    <strong>Unidad</strong>
+                                </th>
+                                <th class="text-center">
+                                    <strong>Codigo</strong>
+                                </th>
+                                <th class="text-left">
+                                    <strong>Descripcion</strong>
+                                </th>
+                                <th class="text-right">
+                                    <strong>Precio Unit.</strong>
+                                </th>
+                                <th class="text-right">
+                                    <strong>Precio Total</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-as="line2" t-foreach="range(12,len(o.order_line))">
+                                <td class="text-center">
+                                    <span t-esc="line2 + 1"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="o.order_line[line2].product_qty"/>
+                                </td>
+                                <td class="text-left">
+                                    <span t-field="o.order_line[line2].product_id.uom_id.name"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="o.order_line[line2].product_id.default_code"/>
+                                </td>
+                                <td class="text-left">
+                                    <span t-field="o.order_line[line2].name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.order_line[line2].price_unit"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.order_line[line2].price_subtotal"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 pull-right" style="margin-right:-10px;">
+                    <table class="table table-condensed">
+                        <tr class="border-black">
+                            <td>
+                                <strong>Subtotal</strong>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="o.amount_untaxed"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Impuestos</td>
+                            <td class="text-right">
+                                <span t-field="o.amount_tax"/>
+                            </td>
+                        </tr>
+                        <tr style="background-color: #00004d; color:white;">
+                            <td>
+                                <strong>Total</strong>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="o.amount_total"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div style="page-break-inside: avoid;">
+                <div class="row">
+                    <div class="col-xs-6" style="padding-left: 0px;">Observaciones: 
+                        <span t-field="o.notes"/></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3" style="padding-left: 0px; padding-top:7px">Aprobado por: 
+                    </div>
+                    <div class="col-xs-6" style="padding-left:25px; padding-top:12px;">
+                        <span t-field="o.create_uid.name"/>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure"/>
+        </div>
+ 
+        </t>
+   
+        </template>
+
+	</data>
+</openerp>

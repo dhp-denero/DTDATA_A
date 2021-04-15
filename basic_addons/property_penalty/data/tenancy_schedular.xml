@@ -1,0 +1,13 @@
+<odoo>
+		<!--Scheduler for tenancy penalty -->
+		<record id="tenancy_penalty_cron" model="ir.cron">
+			<field name="name">Tenancy Penalty</field>
+			<field name="interval_number">1</field>
+			<field name="interval_type">days</field>
+			<field name="numbercall">-1</field>
+			<field name="doall" eval="False"/>
+			<field name="model" eval="'account.analytic.account'"/>
+			<field name="function" eval="'check_all_penalty'"/>
+			<field name="args" eval="'()'" />
+		</record>
+</odoo>

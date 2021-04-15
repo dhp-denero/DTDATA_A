@@ -1,0 +1,23 @@
+<odoo>
+    <record id="custom_export_sale_file_save" model="ir.ui.view">
+        <field name="name">custom.export.sale.file</field>
+        <field name="model">custom.export.file</field>
+        <field name="arch" type="xml">
+            <form string="Exportacion">
+                <field name="output_name" invisible="1"/>
+                <div >
+                    <h2>Exportación</h2>
+                    <p>Este es el archivo generado: <field name="output_file" readonly="1" filename="output_name"/></p>
+                </div>
+            </form>
+        </field>
+    </record>
+	<record id="custom_export_file_save_action" model="ir.actions.act_window">
+		<field name="name">Exportacion</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">custom.export.file</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+	</record>
+</odoo>

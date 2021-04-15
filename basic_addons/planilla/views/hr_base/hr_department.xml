@@ -1,0 +1,25 @@
+<odoo>
+    <data><!--
+        <record id="hr_department_tree" model="ir.ui.view">
+            <field name="name">hr_department_tree_view</field>
+            <field name="model">hr.department</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <field name="manager_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_department" model="ir.actions.act_window">
+            <field name="name">Departamentos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.department</field>
+            <field name="view_id" ref="hr_department_tree"/>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html"> <p class="oe_view_nocontent_create"> Haga click aqui para crear un nuevo Departamento.</p></field>
+        </record>-->
+        <menuitem id="hr_depatment_menu" name="Departamentos" action="hr.open_module_tree_department" parent="planilla.menu_planilla_configuracion_tablas" sequence="6"/>
+        <menuitem id="hr_job_menu" name="Titulos de Trabajo" action="hr.action_hr_job" parent="planilla.menu_planilla_configuracion_tablas" sequence="7"/>
+    </data>
+</odoo>

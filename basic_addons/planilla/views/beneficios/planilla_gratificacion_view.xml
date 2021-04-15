@@ -1,0 +1,88 @@
+
+<odoo>
+    <record model="ir.ui.view" id="planilla_gratificacion_form_view">
+        <field name="name">planilla_gratificacion_form_view</field>
+        <field name="model">planilla.gratificacion</field>
+        <field name="arch" type="xml">
+            <form string="Gratificaciones">
+                <header>
+                    <button string="Calcular" type="object" name="calcular_gratificacion" class="oe_highlight"/>
+                    <button string="Exportar Excel" type="object" name="get_excel"/>
+                    <!--<button string="Generar Boleta" type="object" name="get_pdf" invisible="1"/>
+                    <button string="Agregar/Reemplazar Empleado" type="object" name="open_wizard"/>
+                    <button string="Adelantos" type="object" name="get_adelantos"/>
+                    <button string="Resumen Pago" type="object" name="resumen_pago"/> -->
+                </header>
+                <group string="Gratificaciones" col="2" colspan="2">
+                    <group>
+                        <field name="year" required="1"/>
+                        <field name="plus_9"/>
+                        <field name="calcular_meses_dias" />
+                    </group>
+                    <group>
+                        <field name="tipo"/>
+                        <label for="date_start" string="Periodo"/>
+                        <div>
+                            <field name="date_start" class="oe_inline" readonly="1"/>-<field name="date_end"  readonly="1" class="oe_inline"/>
+                        </div>
+                        <field name="deposit_date"/>
+                    </group>
+                </group>
+                <notebook col="2" colspan="2">
+                    <page string="Trabajadores" col="2" colspan="2">
+                        <field name="planilla_gratificacion_lines" col="2" colspan="2"/>
+                    </page>
+                    <!-- <page string="Adelantos">
+                        <field name="adelanto_lines"/>
+                    </page> -->
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="planilla_gratificacion_tree">
+        <field name="name">planilla_gratificacion_tree</field>
+        <field name="model">planilla.gratificacion</field>
+        <field name="arch" type="xml">
+            <tree string="Gratificaciones">
+                <field name="year" required="1" string="Año"/>
+                <field name="tipo" string="Tipo de gratificacion"/>
+                <field name="plus_9"/>
+                <field name="deposit_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="planilla_gratificacion_tree_view">
+        <field name="name">planilla_gratificacion_tree_view</field>
+        <field name="model">planilla.gratificacion.line</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0">
+                <field name="orden" string="Orden"/>
+                <field name="identification_number"/>
+                <field name="last_name_father"/>
+                <field name="last_name_mother"/>
+                <field name="names"/>
+                <field name="fecha_ingreso"/>
+                <field name="meses"/>
+                <field name="dias"/>
+                <field name="faltas"/>
+                <field name="basico" sum="basico"/>
+                <field name="a_familiar" sum="a_familiar"/>
+                <!-- comisiones (tiene que haber recibido comisiones 3 meses como minimo)-->
+                <field name="comision" sum="comision"/>
+                <field name="bonificacion" sum="bonificacion"/>
+                <field name="horas_extras_mean" sum=""/>
+                <field name="remuneracion_computable" sum="remuneracion_computable"/>
+                <field name="monto_x_mes" sum="monto_x_mes"/>
+                <field name="monto_x_dia" sum="monto_x_dia"/>
+                <field name="monto_x_meses" sum="monto_x_meses"/>
+                <field name="monto_x_dias" sum="monto_x_dias"/>
+                <field name="total_faltas" sum="total_faltas"/>
+                <field name="total_gratificacion" sum="total_gratificacion"/>
+                <field name="plus_9" sum="plus_9"/>
+                <field name="total" sum="total"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

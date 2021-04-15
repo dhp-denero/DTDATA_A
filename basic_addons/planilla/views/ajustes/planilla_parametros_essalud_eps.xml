@@ -1,0 +1,25 @@
+<!-- FIXME: deprecado (09/11/2018) -->
+<odoo>
+    <record id="planilla_parametros_essalud_eps_view_form" model="ir.ui.view">
+        <field name="name">planilla_parametros_essalud_eps_view_form</field>
+        <field name="model">planilla.parametros.essalud.eps</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Parametros de EsSalud/Eps">
+                    <field name="ratio_essalud" />
+                    <field name="ratio_eps" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="planilla_parametros_essalud_eps_view_tree" model="ir.ui.view">
+        <field name="name">planilla_parametros_essalud_eps_view_tree</field>
+        <field name="model">planilla.parametros.essalud.eps</field>
+        <field name="arch" type="xml">
+            <tree string="Parametros de EsSalud/Eps">
+                <field name="ratio_essalud" />
+                <field name="ratio_eps" />
+            </tree>
+        </field>
+    </record>
+</odoo>

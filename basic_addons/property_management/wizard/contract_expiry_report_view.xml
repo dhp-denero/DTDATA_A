@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<!-- Contract expiry wizard Form View  -->
+		<record id="tenancy_property_report" model="ir.ui.view">
+			<field name="name">Tenancy Expiry Report</field>
+			<field name="model">contract.report</field>
+			<field name="arch" type="xml">
+				<form string="Tenancy Expiry Report">
+					<separator string = "Tenancy Contract Expiry Report" colspan="4"/>
+					<group colspan="4" col="4">
+						<field name="start_date" />
+						<field name="end_date" />
+					</group>
+					<footer>
+						<button special="cancel" string="Cancel" icon="fa-times-circle" class="oe_highlight oe_link"/>
+						<button name="print_report" string="Print" icon="fa-print" type="object" class="oe_highlight"/>
+						<button name="open_contract_expiry_tree" icon="fa-list-alt" string="Open" type="object" class="oe_highlight" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!--Action for Contract expiry wizard  -->
+		<record id="action_contract_expiry" model="ir.actions.act_window">
+			<field name="name">Contract Expiry</field>
+			<field name="res_model">contract.report</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem name="Tenancy Contract Expiry" id="menu_contract_expiry" parent="menu_report_sub" action="action_contract_expiry" />
+
+</odoo>

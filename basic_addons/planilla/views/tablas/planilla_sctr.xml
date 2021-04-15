@@ -1,0 +1,13 @@
+<odoo>
+    <record id="planilla_sctr_view_tree" model="ir.ui.view">
+        <field name="name">planilla_sctr_view_tree</field>
+        <field name="model">planilla.sctr</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="code" required="1"/>
+                <field name="name" required="1"/>
+                <field name="porcentaje" required="1"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

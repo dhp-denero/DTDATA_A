@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <record id="stock_location_it_tree" model="ir.ui.view">
+            <field name="name">stock.location.it.tree</field>
+            <field name="model">stock.location.it</field>
+            <field name="arch" type="xml">
+                <tree string="Ubicaciones">
+                    <field name="name"/>
+                    <field name="location_code"/>
+                    <field name="product_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="stock_location_it_form" model="ir.ui.view">
+            <field name="name">stock.location.it.form</field>
+            <field name="model">stock.location.it</field>
+            <field name="arch" type="xml">
+                <form string="Ubicación">
+                    <sheet>
+                        <group string="Datos generales:">
+                            <field name="name" required="1" />
+                            <field name="location_code" required="1" />
+                            <field name="product_id" required="1" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_stock_location_it" model="ir.actions.act_window">
+            <field name="name">Ubicación de existencias</field>
+            <field name="res_model">stock.location.it</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Cree ubicación de existencias
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Ubicaciones de almacén"
+                  id="mnu_stock_location_it"
+                  parent="stock.menu_stock_config_settings"
+                  sequence="-1"
+                  action="action_stock_location_it"/>
+    </data>
+</odoo>

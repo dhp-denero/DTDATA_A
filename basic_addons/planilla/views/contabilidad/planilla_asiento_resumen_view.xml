@@ -1,0 +1,39 @@
+
+<odoo>
+
+    <record id="planilla_asiento_resumen_form_view" model="ir.ui.view">
+        <field name="name">planilla_asiento_resumen_form_view</field>
+        <field name="model">planilla.asiento.resumen.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="hr_payslip_run_id" />
+                    <field name="date_start_rel" string="Fecha de inicio"/>
+                    <field name="date_end_rel" string="Fecha de fin"/>
+                </group>
+                <footer>
+                    <button name="do_rebuild" string="Ver" type="object" class="oe_highlight" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="planilla_asiento_resumen_form_tree" model="ir.ui.view">
+        <field name="name">planilla_asiento_resumen_form_tree</field>
+        <field name="model">planilla.asiento.resumen</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="fecha_fin" />
+                <field name="name" />
+                <field name="concepto" />
+                <field name="debe" />
+                <field name="haber" />
+            </tree>
+        </field>
+    </record>
+
+
+
+
+
+</odoo>

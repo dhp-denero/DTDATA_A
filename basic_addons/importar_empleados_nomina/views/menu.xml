@@ -1,0 +1,4 @@
+<data>
+    <act_window id="action_planilla_importar_empleados" name="Importar Empleados" res_model="planilla.importar.empleados" view_mode="tree,form" />
+    <menuitem id="menu_planilla_importar_empleados" name="Importar Empleados" action="action_planilla_importar_empleados" parent="planilla.menu_planilla_importacion" sequence="30" />
+</data>

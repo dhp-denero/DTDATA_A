@@ -1,0 +1,57 @@
+<odoo>
+
+    <record id="planilla_afiliacion_line_tree" model="ir.ui.view">
+        <field name="name">Detalle de Periodo de afiliacion</field>
+        <field name="model">planilla.afiliacion.line</field>
+        <field name="arch" type="xml">
+            <tree string="Detalle de Periodo de afiliacion" create="1" delete="1" edit="1">
+                <field name="fecha_ini" />
+                <field name="fecha_fin" />
+                <field name="planilla_afiliacion_id" />
+                <field name="fondo" />
+                <field name="comf" />
+                <field name="comm" />
+                <field name="segi" />
+                <field name="remmax" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_planilla_afiliacion_form" model="ir.ui.view">
+        <field name="name">view_planilla_afiliacion_form</field>
+        <field name="model">planilla.afiliacion.line</field>
+        <field name="arch" type="xml">
+            <form string="Planilla afiliacion" create="1" delete="1" edit="1">
+                <sheet>
+                    <group>
+                        <field name="planilla_afiliacion_id" />
+                        <field name="fecha_ini" />
+                        <field name="fecha_fin" />
+                        <field name="remmax" />
+                    </group>
+                    <group>
+                        <field name="fondo" />
+                        <field name="comf" />
+                        <field name="comm" />
+                        <field name="segi" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- To-Do Task Search view -->
+    <record id="view_filter_planilla_afiliacion_line" model="ir.ui.view">
+        <field name="name">Periodo mes actual</field>
+        <field name="model">planilla.afiliacion.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- <filter name="periodo_mes_actual" string="Periodo mes actual" domain="[('periodo_id.code','=',(datetime.datetime.now()).strftime('%m/%Y') )]"/> -->
+                <group col="8" colspan="4" expand="0" string="Group By">
+                    <filter string="Por Afiliacion" name="group_periodo_id" icon="terp-partner" context="{'group_by':'planilla_afiliacion_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

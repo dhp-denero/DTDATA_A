@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="generate_invoices_wizard_view" model="ir.ui.view">
+            <field name="name">wizard for import csv xls file </field>
+            <field name="model">generate.invoices</field>
+            <field name="arch" type="xml">
+                <form string="Import invoices">
+
+                    <group>
+                        <group>
+                            <field name="import_option" widget='radio'/>
+                            <field name="invoice_type"/>
+                            <field name="import_by"/>
+	                    <field name="journal_id" required="1"  />
+                            <field name="link_example" readonly="1" widget="url"  />
+                        </group>
+                        <group>
+                            <field name="file" filename="name" />
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button name="import_invoices" string="Import" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="generate_invoices_wizard_action" model="ir.actions.act_window">
+            <field name="name">Import Invoices</field>
+            <field name="res_model">generate.invoices</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="generate_invoices_wizard_action"
+                  id="generate_invoices_wizard_menu" sequence="7"
+                  parent="account.menu_finance_entries"/>
+
+    </data>
+</openerp>
+ 
+

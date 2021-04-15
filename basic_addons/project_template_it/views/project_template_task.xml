@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="project_template_task_tree" model="ir.ui.view">
+            <field name="name">project.template.task.tree</field>
+            <field name="model">project.template.task</field>
+            <field name="arch" type="xml">
+                <tree string="Tareas para plantilla" editable="top">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_project_template_task" model="ir.actions.act_window">
+            <field name="name">Tareas para plantilla</field>
+            <field name="res_model">project.template.task</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="project_template_task_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Tareas para plantilla
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Tareas"
+                  id="mnu_project_template_task"
+                  action="action_project_template_task"
+                  parent="mnu_project_template_root"
+                  sequence="20"/>
+    </data>
+</odoo>

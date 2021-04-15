@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_inventory_config,stock.inventory.config,model_stock_inventory_config,,1,1,1,1
+access_stock_inventory_picking_in_link,stock.inventory.picking.in.link,model_stock_inventory_picking_in_link,,1,1,1,1
+access_stock_inventory_picking_out_link,stock.inventory.picking.out.link,model_stock_inventory_picking_out_link,,1,1,1,1

@@ -1,0 +1,64 @@
+import helpers.helper_liquidacion
+import tablas.afiliacion
+import contabilidad.distribucion_analitica
+import hr_base.hr_advance
+import hr_base.hr_loan
+import hr_base.hr_contract
+import hr_base.hr_control_vacaciones
+import hr_base.hr_payslip
+import hr_base.hr_salary_rule
+import hr_base.hr_payslip_run
+import hr_base.hr_payslip_worked_days
+import hr_base.hr_salary_rule_category
+import hr_base.hr_employee
+import hr_base.hr_provisiones
+import hr_base.hr_calendar
+import ajustes.planilla_ajustes
+import ajustes.planilla_parametros_gratificacion
+import ajustes.planilla_parametros_essalud_eps
+import ajustes.planilla_parametros_cts
+import ajustes.planilla_parametros_liquidacion
+import ajustes.planilla_quinta_categoria
+import ajustes.main_parameter_hr
+
+
+import beneficios.planilla_gratificacion
+import beneficios.planilla_cts
+import beneficios.planilla_cts_liquidacion_semestral
+
+import importdata.import_worked_days
+import exportdata.planilla_export_file
+import exportdata.planilla_afp_net_xlsx
+import exportdata.planilla_export_plame_rem
+import exportdata.planilla_export_plame_horas_rem
+
+import wizards.planilla_add_input
+import wizards.planilla_actualizar_afps
+import wizards.planilla_afiliacion_line_wizard
+import wizards.planilla_planilla_tabular
+import wizards.planilla_liquidacion_pdf_wizard
+import wizards.planilla_liquidacion_pdf_certificado_wizard
+
+import popup.custom_popup
+
+import tablas.planilla_tipo_documento
+import tablas.planilla_situacion
+import tablas.planilla_tipo_trabajador
+import tablas.planilla_tipo_suspencion
+import tablas.planilla_inputs_nomina
+import tablas.planilla_worked_days
+import tablas.planilla_seguro_salud
+import tablas.planilla_sctr
+
+import contabilidad.planilla_detalle_linea_nomina
+import contabilidad.planilla_asiento_resumen
+import contabilidad.planilla_detalle_asiento_distribuido
+import contabilidad.planilla_asiento_distribuido
+import contabilidad.planilla_asiento_contable
+
+import liquidacion.planilla_liquidacion
+import liquidacion.planilla_liquidacion_cts_line
+import liquidacion.planilla_liquidacion_gratificacion_line
+import liquidacion.planilla_liquidacion_vacaciones_line
+import liquidacion.planilla_liquidacion_indemnizacion_line
+

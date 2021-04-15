@@ -1,0 +1,48 @@
+
+<odoo>
+
+    <record id="planilla_detalle_linea_nomina_form_view" model="ir.ui.view">
+        <field name="name">planilla_detalle_linea_nomina_form_view</field>
+        <field name="model">planilla.detalle.linea.nomina.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="hr_payslip_run_id" />
+                    <field name="date_start_rel" string="Fecha de inicio"/>
+                    <field name="date_end_rel" string="Fecha de fin"/>
+                </group>
+                <footer>
+                    <button name="do_rebuild" string="Ver" type="object" class="oe_highlight" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="planilla_detalle_linea_nomina_tree_view" model="ir.ui.view">
+        <field name="name">planilla_detalle_linea_nomina_tree_view</field>
+        <field name="model">planilla.detalle.linea.nomina</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="fecha_ini"/>
+                <field name="fecha_fin" />
+                <field name="name" />
+                <field name="dni" />
+                <field name="nombres" />
+                <field name="sequence" />
+                <field name="concepto" />
+                <field name="cuenta_debe" />
+                <field name="cuenta_haber" />
+                <field name="monto" />
+                <!-- <field name="slip_id" /> -->
+                <!-- <field name="salary_rule_id" />
+                <field name="employee_id" />
+                <field name="contract_id" /> -->
+            </tree>
+        </field>
+    </record>
+
+
+
+
+
+</odoo>

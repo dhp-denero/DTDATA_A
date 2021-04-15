@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="purchase_state_importation_form_view">
+        <field name="name">purchase.state.importation.tree</field>
+        <field name="model">purchase.state.importation</field>
+        <field name="arch" type="xml">
+            <form string="Compras estado de importacion">
+            <group>
+                <field name="name"/>
+                <field name="active"/>
+            </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_purchase_state_importation_tree" model="ir.ui.view">
+        <field name="name">purchase.state.importation.tree</field>
+        <field name="model">purchase.state.importation</field>
+        <field name="arch" type="xml">
+            <tree string="Compras estado de importacion">
+                <field name="name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_purchase_state_importation_search" model="ir.ui.view">
+        <field name="name">purchase.state.importation.search</field>
+        <field name="model">purchase.state.importation</field>
+        <field name="arch" type="xml">
+            <search string="Compras estado de importacion">
+                <field name="name"/>
+                <field name="active"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_purchase_state_importation_view">
+        <field name="name">Estados de importacion compras</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">purchase.state.importation</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_purchase_state_importation_search"/>
+    </record>
+
+    <menuitem id="menu_purchase_state_importation"
+      parent="purchase.menu_purchase_config"
+      sequence="10"
+      action="action_purchase_state_importation_view" string="Estados de importacion"/>
+
+</odoo>

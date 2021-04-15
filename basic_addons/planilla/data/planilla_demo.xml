@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Employee -->
+    <data >
+        <record id="empleado_lily_cuenca" model="hr.employee" forcecreate="True">
+            <field eval="0" name="manager"/>
+            <field eval="100" name="time_efficiency"/>
+            <field eval="41339373" name="identification_id"/>
+
+            <field name="company_id" ref="base.main_company"/>
+            <field name="tablas_tipo_documento_id" ref="planilla.planilla_tipo_documento_01"/>
+            <field eval="1" name="active"/>
+            <field name="a_paterno">CUENCA</field>
+            <field name="a_materno">YZAGUIRRE</field>
+            <field name="nombres">LILY DEYSI</field>
+            <field name="resource_type">user</field>
+            <field name="work_location">Building 1, Second Floor</field>
+            <field name="work_phone">+3282823500</field>
+            <field name="image" type="base64" file="planilla/static/img/lily.jpeg"/>
+        </record>
+
+        <!-- Employee Contract -->
+
+        <record id="hr_contract_lily_cuenca" model="hr.contract">
+            <field name="name">CONTRATO LILY CUENCA</field>
+            <field name="cuspp">600610LCYNG4</field>
+            <field name="type_id" ref="hr_contract.hr_contract_type_emp"/>
+            <field name="tipo_trabajador_id" ref="planilla.planilla_tipo_trabajador_ejec"/>
+            <field name="date_start" eval="time.strftime('%Y-%m')+'-1'"/>
+            <field name="date_end" eval="time.strftime('%Y')+'-12-31'"/>
+            <field name="struct_id" ref="planilla.structure_nomina_habitat"/>
+            <field name="employee_id" ref="empleado_lily_cuenca"/>
+            <field name="afiliacion_id" ref="planilla.afp_prima"/>
+            <field name="distribucion_analitica_id" ref="planilla.DISTRIBUCION_ANALITICA_1"/>
+            <field name="situacion_id" ref="planilla.planilla_situacion_ac_sub"/>
+            <field name="notes">Default contract for marketing executives</field>
+            <field eval="4000.0" name="wage"/>
+            <!-- <field name="working_hours" ref="resource.timesheet_group1"/> -->
+        </record>
+    </data>
+</odoo>

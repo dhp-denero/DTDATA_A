@@ -1,0 +1,38 @@
+
+<odoo>
+    <record id="planilla_parametros_liquidacion_view_form" model="ir.ui.view">
+        <field name="name">planilla_parametros_liquidacion_view_form</field>
+        <field name="model">planilla.parametros.liquidacion</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Parametros de liquidacion">
+                    <group>
+                        <field name="cod_gratificacion" />
+                        <field name="cod_gratificacion_trunca" />
+                        <field name="cod_bonificacion_9" />
+                        <field name="cod_indemnizacion" />
+                    </group>
+                    <group>
+                        <field name="cod_cts" />
+                        <field name="cod_cts_trunca" />
+                        <field name="cod_vacacion_devengada" />
+                        <field name="cod_vacacion_trunca" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="planilla_parametros_liquidacion_view_tree" model="ir.ui.view">
+        <field name="name">planilla_parametros_liquidacion_view_tree</field>
+        <field name="model">planilla.parametros.liquidacion</field>
+        <field name="arch" type="xml">
+            <tree string="Parametros de liquidacion">
+                <field name="cod_vacacion_devengada" />
+                <field name="cod_vacacion_trunca" />
+                <field name="cod_cts_trunca" />
+                <field name="cod_gratificacion_trunca" />
+                <field name="cod_bonificacion_9" />
+            </tree>
+        </field>
+    </record>
+</odoo>

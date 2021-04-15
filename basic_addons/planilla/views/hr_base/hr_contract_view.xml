@@ -1,0 +1,77 @@
+<odoo>
+    <data>
+        <record id="hr_contract_view_form" model="ir.ui.view">
+            <field name="name">hr_contract_view</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="priority" eval="17" />
+            <field name="arch" type="xml">
+                <field name="type_id" position="replace">
+                    <field name="type_id" select="10"/>
+                    <field name="jornada" required="1"/>
+                </field>
+                <field name="analytic_account_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="job_id" position="after">
+                    <field name="tipo_trabajador_id" />
+                </field>
+
+                <xpath expr="//form/sheet/notebook/page[@name='information']" position="after">
+                    <page string="Datos Laborales">
+                        <group>
+                            <group>
+                                <field name="afiliacion_id" string="Afiliacion"/>
+                                <!-- <field name="tipo_seguro" string="Seguro"/> -->
+                                <field name="seguro_salud_id"/>
+                                <field name="tipo_comision" />
+                                <field name="distribucion_analitica_id"/>
+                                <field name="cuspp"/>
+                                <field name="situacion_id"/>
+                                <field name="hourly_worker" required="1"/>
+                            </group>
+                            <group>
+                                <field name="regimen_laboral_empresa"/>
+                                <field name="otros_5ta_categoria"/>
+                                <field name="remuneracion_mensual_proyectada"/>
+                                <field name="gratificacion_fiesta_patria_proyectada"/>
+                                <field name="gratificacion_navidad_proyectada"/>
+                                <field name="sctr"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Suspension Laboral">
+                        <field name="suspension_laboral">
+                            <tree editable='bottom'>
+                                <field name="tipo_suspension_id" required="1"/>
+                                <field name="motivo" required="1"/>
+                                <field name="nro_dias" required="1"/>
+                                <field name="periodos" required="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="AFP NET">
+                        <group col="3">
+                            <field name="excepcion_aportador"/>
+                            <separator />
+                            <field name="regimen_laboral" />
+                            <separator />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_contract_view_tree_inherit" model="ir.ui.view">
+            <field name="name">hr_contract_view</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+            <field name="priority" eval="17" />
+            <field name="arch" type="xml">
+                <field name="employee_id" position="after">
+                    <field name="state"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

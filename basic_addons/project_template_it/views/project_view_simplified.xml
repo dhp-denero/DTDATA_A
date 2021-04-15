@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="project_view_simplified" model="ir.ui.view">
+            <field name="name">project.view.simplified</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.project_project_view_form_simplified" />
+            <field name="arch" type="xml">
+                <group name="options" position="after">
+                    <group name="template" string="Plantilla">
+                        <field name="template_id" />
+                    </group>
+                </group>
+            </field>
+        </record>
+    </data>
+</odoo>

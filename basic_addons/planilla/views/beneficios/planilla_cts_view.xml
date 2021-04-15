@@ -1,0 +1,95 @@
+
+<odoo>
+    <record model="ir.ui.view" id="planilla_cts_form_view">
+        <field name="name">planilla_cts_form_view</field>
+        <field name="model">planilla.cts</field>
+        <field name="arch" type="xml">
+            <form string="CTS">
+                <header>
+                    <button string="Calcular" type="object" name="calcular_cts" class="oe_highlight"/>
+                    <button string="Exportar Excel" type="object" name="get_excel"/>
+                    <button string="Resumen Pago" type="object" name="resumen_pago"/>
+                    <button string="Reporte CTS" type="object" name="ver_wizard_cts_liquidacion_semestral"/>
+                    
+                    <!--<button string="Generar Boleta" type="object" name="get_pdf" invisible="1"/>
+                    <button string="Agregar/Reemplazar Empleado" type="object" name="open_wizard"/>
+                    <button string="Adelantos" type="object" name="get_adelantos"/>
+                    <button string="Resumen Pago" type="object" name="resumen_pago"/> -->
+                </header>
+                <group string="CTS" col="2" colspan="2">
+                    <group>
+                        <field name="year" required="1"/>
+                        <field name="tipo_cambio"/>
+                        <label for="date_start" string="Periodo"/>
+                        <div>
+                            <field name="date_start" class="oe_inline" readonly="1"/>-<field name="date_end" class="oe_inline" readonly="1"/>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="tipo"/>
+                        <field name="deposit_date"/>
+                    </group>
+                </group>
+                <notebook col="2" colspan="2">
+                    <page string="Trabajadores" col="2" colspan="2">
+                        <field name="planilla_cts_lines" col="2" colspan="2"/>
+                    </page>
+                    <!-- <page string="Adelantos">
+                        <field name="adelanto_lines"/>
+                    </page> -->
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="planilla_cts_tree_view">
+        <field name="name">planilla_cts_tree</field>
+        <field name="model">planilla.cts</field>
+        <field name="arch" type="xml">
+            <tree string="CTS">
+                <field name="year" string="Año"/>
+                <field name="tipo" string="Tipo de cts"/>
+                <field name="tipo_cambio"/>
+                <field name="deposit_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="planilla_cts_line_tree_view">
+        <field name="name">planilla_cts_line_tree_view</field>
+        <field name="model">planilla.cts.line</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0" editable="bottom">
+                <field name="orden" string="Orden" readonly="1"/>
+                <field name="identification_number" readonly="1"/>
+                <field name="last_name_father" readonly="1"/>
+                <field name="last_name_mother" readonly="1"/>
+                <field name="names" readonly="1"/>
+                <field name="fecha_ingreso" readonly="1"/>
+                <field name="basico" sum="basico" readonly="1"/>
+                <field name="a_familiar" sum="a_familiar" readonly="1"/>
+                <field name="gratificacion" sum="planificacion" readonly="1"/>
+                <field name="horas_extras_mean" sum="horas_extras_mean" readonly="1"/>
+                <field name="bonificacion" sum="bonificacion" readonly="1"/>
+                <field name="comision" sum="comision" readonly="1"/>
+                <field name="base" sum="base" readonly="1"/>
+                <field name="monto_x_mes" sum="monto_x_mes" readonly="1"/>
+                <field name="monto_x_dia" sum="monto_x_dia" readonly="1"/>
+                <field name="faltas" sum="faltas" readonly="1"/>
+                <field name="meses" sum="meses" readonly="1"/>
+                <field name="dias" sum="dias" readonly="1"/>
+                <field name="monto_x_meses" sum="monto_x_meses" readonly="1"/>
+                <field name="total_faltas" sum="total_faltas" readonly="1"/>
+                <field name="monto_x_dias" sum="monto_x_dias" readonly="1"/>
+                <field name="cts_soles" sum="cts_soles" readonly="1"/>
+                <field name="intereses_cts" sum="interes_cts" />
+                <field name="otros_dtos" sum="otros_dtos"/>
+                <field name="cts_a_pagar" sum="cts_a_pagar" readonly="1"/>
+                <field name="tipo_cambio_venta" sum="tipo_cambio_venta" readonly="1"/>
+                <field name="cts_dolares" sum="cts_dolares" readonly="1"/>
+                <field name="cta_cts" sum="cta_cts" readonly="1"/>
+                <field name="banco" sum="banco" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

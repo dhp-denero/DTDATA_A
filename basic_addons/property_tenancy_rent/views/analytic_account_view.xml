@@ -1,0 +1,114 @@
+<odoo>
+
+	<record id="property_analytic_view_tree_inhe1" model="ir.ui.view">
+		<field name="name">property.analytic.view.tree</field>
+		<field name="model">account.analytic.account</field>
+		<field name="arch" type="xml">
+			<tree string="Tenancy Details">
+				<field name="ten_date" />
+				<field name="name" string="Tenancy Name " />
+				<field name="ref" string="Code" />
+				<field name="prop_ids" />
+				<field name="property_owner_id" />
+				<field name="date_start" />
+				<field name="date" />
+				<field name="rent_type_id" />
+				<field name="rent" />
+				<field name="total_rent" sum="Total Rent" />
+				<field name="state" />
+				<field name="currency_id" invisible="1" />
+			</tree>
+		</field>
+	</record>
+
+	<record id="view_account_analytic_view_form_inherits" model="ir.ui.view">
+		<field name="name">property.analytic.view.form</field>
+		<field name="model">account.analytic.account</field>
+		<field name="inherit_id" ref="property_management.property_analytic_view_form" />
+		<field name="arch" type="xml">
+			<field name='is_property' position="after">
+				<field name="is_tenancy_rent" context="{'is_tenancy_rent1':1}" invisible='1'/>
+			</field>
+			<field name='property_id' position="before">
+				<field name="prop_ids" domain="[('state','=','draft')]"
+					attrs="{'readonly':[('state','!=','draft')], 'readonly':[('multi_prop','=',True)], 'invisible': [('is_tenancy_rent', '!=', True)], 'required': [('is_tenancy_rent', '=', True),('multi_prop','=',False)]}" />
+				<field name="property_owner_id"
+					attrs="{'readonly':[('state','!=','draft')], 'invisible': [('is_tenancy_rent', '!=', True)]}" />
+			</field>
+			<field name='property_id' position="attributes">
+				<attribute name="required">0</attribute>
+				<attribute name="attrs">{'invisible': [('is_tenancy_rent', '=',True)], 'readonly': [('multi_prop', '=',True)],'required': [('is_tenancy_rent', '!=', True),('multi_prop','=',False)]}</attribute>
+			</field>
+			<field name='tenant_id' position="attributes">
+				<attribute name="required">0</attribute>
+				<attribute name="attrs">{'required': [('is_tenancy_rent','!=',True)], 'invisible': [('is_tenancy_rent', '=',True)]}
+				</attribute>
+			</field>
+		</field>
+
+	</record>
+
+	<!--Property Tenancy Search View -->
+	<record id="property_analytic_rent_search_views" model="ir.ui.view">
+		<field name="name">property.analytic.search.view</field>
+		<field name="model">account.analytic.account</field>
+		<field name="arch" type="xml">
+			<search string="Property Tenancy">
+				<filter string="Draft" name="draft" domain="[('state','=','draft')]" />
+				<filter string="Open" name="open" domain="[('state','=','open')]" />
+				<filter string="Close" name="close" domain="[('state','=','close')]" />
+				<field name="name" string="Tenancy Name" />
+				<field name="ref" string="Code" />
+				<field name="property_owner_id" />
+				<field name="prop_ids" />
+				<field name="rent_type_id" />
+				<field name="ten_date" />
+				<field name="state" />
+				<newline />
+				<group expand="0" string="Group By..." colspan="4" col="10"
+					groups="base.group_extended">
+					<filter string="Owner" name="owner" icon="terp-personal" context="{'group_by':'property_owner_id'}" />
+					<filter string="Property" name="property" icon="terp-personal" context="{'group_by':'prop_ids'}" />
+					<filter string="Rent Type" name="renttype" icon="terp-personal" context="{'group_by':'rent_type_id'}" />
+					<filter string="State" name="state" icon="terp-personal" context="{'group_by':'state'}" />
+					<filter string="Date" context="{'group_by':'ten_date'}" />
+				</group>
+			</search>
+		</field>
+	</record>
+	<record id="action_analytic_rent_action" model="ir.actions.act_window">
+		<field name="name">Tenancy Rent</field>
+		<field name="res_model">account.analytic.account</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="domain">[('is_tenancy_rent','=',True)]</field>
+		<field name="context">{'default_is_tenancy_rent':True, 'is_tenancy_rent':True }
+		</field>
+		<field name="search_view_id"
+			ref="property_tenancy_rent.property_analytic_rent_search_views" />
+	</record>
+	<!--Action For Property Tenancy Form view -->
+	<record id="action_analytic_rent_form_view" model="ir.actions.act_window.view">
+		<field eval="2" name="sequence" />
+		<field name="view_mode">form</field>
+		<field name="view_id" ref="property_management.property_analytic_view_form" />
+		<field name="act_window_id" ref="property_tenancy_rent.action_analytic_rent_action" />
+	</record>
+	<!--Action For Property Tenancy Tree View -->
+	<record id="action_analytic_rent_tree_view" model="ir.actions.act_window.view">
+		<field eval="1" name="sequence" />
+		<field name="view_mode">tree</field>
+		<field name="view_id"
+			ref="property_tenancy_rent.property_analytic_view_tree_inhe1" />
+		<field name="act_window_id" ref="property_tenancy_rent.action_analytic_rent_action" />
+	</record>
+
+	<!--Property Tenancy Menu -->
+	<menuitem
+	   id="menu_tenancy_rents"
+	   name="Tenancy Rent"
+	   parent="property_management.menu_property_sub"
+	   action="action_analytic_rent_action"
+	   sequence="4" />
+
+</odoo>

@@ -1,0 +1,43 @@
+
+<odoo>
+    <record id="planilla_parametros_gratificacion_view_form" model="ir.ui.view">
+        <field name="name">planilla_parametros_gratificacion_view_form</field>
+        <field name="model">planilla.parametros.gratificacion</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Parametros de Gratificacion">
+                    <group>
+                        <field name="cod_gratificacion" />
+                        <field name="cod_bonificaciones" widget="many2many_tags"/>
+                        <field name="cod_comisiones" widget="many2many_tags"/>
+                        <field name="cod_sobretiempos" />
+                    </group>
+                    <group>
+                        <field name="cod_basico" />
+                        <field name="cod_asignacion_familiar" />
+                        <field name="cod_bonificacion_9" />
+                        <field name="cod_dias_faltas" />
+                    </group>
+                </group>
+                <group>
+                    <field name="cod_wds" widget="many2many_tags"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="planilla_parametros_gratificacion_view_tree" model="ir.ui.view">
+        <field name="name">planilla_parametros_gratificacion_view_tree</field>
+        <field name="model">planilla.parametros.gratificacion</field>
+        <field name="arch" type="xml">
+            <tree string="Parametros de Gratificacion">
+                <field name="cod_bonificaciones" />
+                <field name="cod_comisiones" />
+                <field name="cod_sobretiempos" />
+                <field name="cod_basico" />
+                <field name="cod_asignacion_familiar" />
+                <field name="cod_bonificacion_9" />
+                <field name="cod_dias_faltas" />
+            </tree>
+        </field>
+    </record>
+</odoo>
