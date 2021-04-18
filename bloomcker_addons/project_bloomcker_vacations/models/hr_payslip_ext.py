@@ -18,6 +18,7 @@ class HrPayslipExt(models.Model):
     _inherit = 'hr.payslip'
 
     monto_descanso = fields.Float("Monto por Descanso", compute="_get_descanso")
+    monto_subsidio = fields.Float("Monto por Subsidio", compute="_get_descanso")
     comi_promedio = fields.Float("Promedio de Comisiones", compute="_get_comisiones")
     fault_ids = fields.One2many('faults.bl', 'slip_base_id', string='Lineas de Faltas', ondelete='cascade')
     comisiones_aux = fields.Float("campo aux para comisiones")
@@ -45,10 +46,22 @@ class HrPayslipExt(models.Model):
     def _get_descanso(self):
         descansos_ids = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id)])
         amount = 0
+        dias = 0
+        subsidy = 0
         for descanso in descansos_ids:
+            dias += descanso.days_total
             amount += descanso.amount
+            if descanso.subsidy:
+                subsidy += descanso.amount
 
-        self.monto_descanso = amount
+        if dias > 20:
+            self.monto_descanso = (amount/dias)*20 - subsidy
+            self.monto_subsidio = (amount/dias)*(dias - 20) + subsidy
+        else:
+            self.monto_descanso = amount - subsidy
+            self.monto_subsidio = 0 + subsidy
+
+
 
     @api.multi
     def compute_sheet(self):
@@ -60,6 +73,13 @@ class HrPayslipExt(models.Model):
         config = config[0]
 
         breaks = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id)])
+        mother_days = self.env['hr.payslip.worked_days'].search([('payslip_id', '=', self.id), ('code', '=', 'DSUBM')], limit=1)
+        
+        if mother_days:
+            days_mother = mother_days.number_of_days
+        else:
+            days_mother = 0
+
         days_total = 0
         days_break = 0
         days_faults = 0
@@ -73,6 +93,8 @@ class HrPayslipExt(models.Model):
         for i in self.fault_ids:
             days_faults += i.days
 
+
+
         for days_line in self.worked_days_line_ids:
             if days_line.code == "DVAC":
                 days_line.number_of_days = days_total
@@ -81,7 +103,7 @@ class HrPayslipExt(models.Model):
             elif days_line.code == "FAL":
                 days_line.number_of_days = days_faults
             elif days_line.code == "DLAB":
-                days_line.number_of_days = 30 - days_total - days_break - days_faults
+                days_line.number_of_days = 30 - days_total - days_break - days_faults - days_mother
 
         self.env.cr.execute("""delete from hr_payslip_line
                             where employee_id = """+str(self.employee_id.id)+""" and slip_id = """+str(self.id))

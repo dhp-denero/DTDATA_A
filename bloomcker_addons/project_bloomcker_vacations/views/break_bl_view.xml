@@ -29,8 +29,10 @@
                                       <field name="reason" required="1"/>
                                       <field name="date_start" required="1"/>
                                       <field name="date_end" required="1"/>
-                                      <field name="days_total" required="1"/>
-                                      <field name="amount" required="1"/>
+                                      <field name="days_total"/>
+                                      <field name="days_period"/>
+                                      <field name="amount"/>
+                                      <field name="alert"/>
                                     </tree>
                                 </field>
                             </page>
@@ -51,6 +53,7 @@
                             <group>
                                 <field name="period"/>
                                 <field name="reason"/>
+                                <field name="subsidy" string="Subsidio"/>
                             </group>
                             <group>
                                 <field name="date_start"/>
@@ -72,8 +75,6 @@
                     <field name="dni"/>
                     <field name="employee_id"/>
                     <field name="state"/>
-                    <field name="alert_check" invisible="1"/>
-                    <button class="oe_stat_button" name="send_message" type="object" icon="fa-hand-paper-o" attrs="{'invisible':[('alert_check', '=' ,False)]}"></button>
                 </tree>
             </field>
         </record>

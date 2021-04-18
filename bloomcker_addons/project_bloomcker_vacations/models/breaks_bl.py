@@ -12,20 +12,6 @@ class breaksBL(models.Model):
     line_ids = fields.One2many('breaks.line.bl', 'breaks_base_id', string='Lineas de Descansos', ondelete='cascade')
     date_init = fields.Date('Fecha de Ingreso', related="employee_id.contract_id.date_start")
     dni = fields.Char('DNI', related="employee_id.identification_id")
-    alert_check = fields.Boolean(name="Alerta", compute="_get_alert")
-
-    def _get_alert(self):
-        for i in self:
-            periods = i.env['hr.payslip.run'].search([])
-            i.alert_check = False
-            for period in periods:
-                suma = 0
-                for line in i.line_ids:
-                    if line.period.id == period.id:
-                        suma += line.days_total
-
-                if suma > 20:
-                    i.alert_check = True
 
     def send_message(self):
         mensaje = "El Trabajador " + str(self.employee_id.name) + " tiene más de 20 días de descanso, Favor elaborar el Formulario 8001"
@@ -58,6 +44,26 @@ class breaksLines(models.Model):
     breaks_base_id = fields.Many2one('breaks.bl')
     employee_id = fields.Many2one('hr.employee','Apellidos y Nombres', related='breaks_base_id.employee_id', readonly=True)
     amount = fields.Float('Monto', compute='_get_amount')
+    subsidy = fields.Boolean(name="Subsidio", default=False)
+    days_period = fields.Integer('Días por Periodo', compute="_get_days_period")
+    alert = fields.Char('Alerta', compute="_get_alert")
+
+    def _get_days_period(self):
+        for record in self:
+            record.alert_check = False
+            suma = 0
+            for line in record.breaks_base_id.line_ids:
+                if line.period == record.period:
+                    suma += line.days_total
+
+            record.days_period = suma
+
+    def _get_alert(self):
+        for record in self:
+            if record.days_period > 20:
+                record.alert = "Excedencia"
+            else:
+                record.alert = ""
 
     def _get_amount(self):
         for j in self:
@@ -76,6 +82,10 @@ class breaksLines(models.Model):
             if line.date_end and line.date_start:
                 date_i = datetime.strptime(line.date_start, "%Y-%m-%d")
                 date_o = datetime.strptime(line.date_end, "%Y-%m-%d")
-                line.days_total = abs(date_o - date_i).days
+                line.days_total = abs(date_o - date_i).days + 1
             else:
                 line.days_total = 0
+
+    def send_message(self):
+        mensaje = "El Trabajador " + str(self.employee_id.name) + " tiene más de 20 días de descanso, Favor elaborar el Formulario 8001"
+        raise UserError(mensaje)
