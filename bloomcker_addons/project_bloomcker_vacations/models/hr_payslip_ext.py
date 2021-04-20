@@ -74,7 +74,13 @@ class HrPayslipExt(models.Model):
 
         breaks = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id)])
         mother_days = self.env['hr.payslip.worked_days'].search([('payslip_id', '=', self.id), ('code', '=', 'DSUBM')], limit=1)
-        
+        null_days = self.env['hr.payslip.worked_days'].search([('payslip_id', '=', self.id), ('code', '=', 'DNULL')], limit=1)
+
+        if null_days:
+            dias_null = null_days.number_of_days
+        else:
+            dias_null = 0
+
         if mother_days:
             days_mother = mother_days.number_of_days
         else:
@@ -103,7 +109,7 @@ class HrPayslipExt(models.Model):
             elif days_line.code == "FAL":
                 days_line.number_of_days = days_faults
             elif days_line.code == "DLAB":
-                days_line.number_of_days = 30 - days_total - days_break - days_faults - days_mother
+                days_line.number_of_days = 30 - days_total - days_break - days_faults - days_mother - dias_null
 
         self.env.cr.execute("""delete from hr_payslip_line
                             where employee_id = """+str(self.employee_id.id)+""" and slip_id = """+str(self.id))
