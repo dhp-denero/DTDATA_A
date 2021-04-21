@@ -14,7 +14,7 @@
         'views/break_bl_view.xml',
         'views/payslip_ext.xml',
         'data/data_config.xml',
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
     ],
     "application": True,
 }
