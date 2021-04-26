@@ -18,7 +18,6 @@ class HrPayslipExt(models.Model):
     _inherit = 'hr.payslip'
 
     monto_descanso = fields.Float("Monto por Descanso", compute="_get_descanso")
-    monto_subsidio = fields.Float("Monto por Subsidio", compute="_get_descanso")
     comi_promedio = fields.Float("Promedio de Comisiones", compute="_get_comisiones")
     fault_ids = fields.One2many('faults.bl', 'slip_base_id', string='Lineas de Faltas', ondelete='cascade')
     comisiones_aux = fields.Float("campo aux para comisiones")
@@ -47,19 +46,14 @@ class HrPayslipExt(models.Model):
         descansos_ids = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id)])
         amount = 0
         dias = 0
-        subsidy = 0
         for descanso in descansos_ids:
             dias += descanso.days_total
             amount += descanso.amount
-            if descanso.subsidy:
-                subsidy += descanso.amount
 
         if dias > 20:
-            self.monto_descanso = (amount/dias)*20 - subsidy
-            self.monto_subsidio = (amount/dias)*(dias - 20) + subsidy
+            self.monto_descanso = (amount/dias)*20
         else:
-            self.monto_descanso = amount - subsidy
-            self.monto_subsidio = 0 + subsidy
+            self.monto_descanso = amount
 
 
 

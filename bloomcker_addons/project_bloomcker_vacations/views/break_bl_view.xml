@@ -26,7 +26,7 @@
                                 <field name="line_ids">
                                     <tree>
                                       <field name="period" required="1"/>
-                                      <field name="reason" required="1"/>
+                                      <field name="type" required="1"/>
                                       <field name="date_start" required="1"/>
                                       <field name="date_end" required="1"/>
                                       <field name="days_total"/>
@@ -51,15 +51,15 @@
                         <h1>Lineas de Descansos</h1>
                         <group>
                             <group>
-                                <field name="period"/>
+                                <field name="period" required="1"/>
                                 <field name="reason"/>
-                                <field name="subsidy" string="Subsidio"/>
+                                <field name="type" required="1"/>
                             </group>
                             <group>
-                                <field name="date_start"/>
-                                <field name="date_end"/>
+                                <field name="date_start" required="1"/>
+                                <field name="date_end" required="1"/>
                                 <field name="days_total"/>
-                                <field name="amount" required="1"/>
+                                <field name="amount"/>
                             </group>
                         </group>
                     </sheet>
@@ -84,10 +84,11 @@
             <field name="model">breaks.line.bl</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="period"/>
+                    <field name="period" required="1"/>
+                    <field name="type" required="1"/>
                     <field name="reason"/>
-                    <field name="date_start"/>
-                    <field name="date_end"/>
+                    <field name="date_start" required="1"/>
+                    <field name="date_end" required="1"/>
                     <field name="days_total"/>
                 </tree>
             </field>

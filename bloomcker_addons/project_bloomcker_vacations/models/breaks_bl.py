@@ -39,14 +39,55 @@ class breaksLines(models.Model):
     date_start = fields.Date("Fecha de Inicio")
     date_end = fields.Date("Fecha de Fin")
     days_total = fields.Integer('Días', compute="_get_days_total")
-    reason = fields.Char('Motivo')
+    reason = fields.Text('Motivo')
     period = fields.Many2one('hr.payslip.run', string="Periodo")
     breaks_base_id = fields.Many2one('breaks.bl')
     employee_id = fields.Many2one('hr.employee','Apellidos y Nombres', related='breaks_base_id.employee_id', readonly=True)
     amount = fields.Float('Monto', compute='_get_amount')
-    subsidy = fields.Boolean(name="Subsidio", default=False)
     days_period = fields.Integer('Días por Periodo', compute="_get_days_period")
     alert = fields.Char('Alerta', compute="_get_alert")
+    type = fields.Selection([
+        ('break', 'Descanso Medico'),
+        ('subsidy', 'Subsidio'),
+        ('break_mother', 'Subsidio por Maternidad')], string='Tipo de Descanso')
+
+    @api.model
+    def create(self, vals):
+        result = super(breaksLines,self).create(vals)
+        if result:
+            try:
+                start = datetime.strptime(vals['date_start'], "%Y-%m-%d")
+                end = datetime.strptime(vals['date_end'], "%Y-%m-%d")
+                period = self.env['hr.payslip.run'].search([('id', '=', vals['period'])])
+            except:
+                raise UserError("Datos Suministrados Invalidos")
+
+            if str(start)[0:7] != str(end)[0:7] or start > end:
+                raise UserError("Fechas de Inicio o Fin Invalidas")
+
+            if period.date_start[0:7] != str(start)[0:7]:
+                raise UserError("Fechas de Inicio o Fin no Coinciden con periodo")
+
+            if vals['type'] == 'break':
+                lines = self.env['breaks.line.bl'].search([('breaks_base_id', '=', vals['breaks_base_id']), ('type', '=', 'break')])
+                if not period:
+                    raise UserError("Periodo Invalido")
+                days_total = 0
+                for i in lines:
+                    if i.period.date_start[0:4] == period.date_start[0:4]:
+                        days_total += i.days_total
+
+                date_i = datetime.strptime(vals['date_start'], "%Y-%m-%d")
+                date_o = datetime.strptime(vals['date_end'], "%Y-%m-%d")
+                days_record = abs(start - end).days + 1
+                if days_total <= 20:
+                    return result
+                else:
+                    mensaje = "Un Trabajador no puede sumar más de 20 días de descanso por año, favor elegir otro tipo"
+                    raise UserError(mensaje)
+            else:
+                return result
+
 
     def _get_days_period(self):
         for record in self:
