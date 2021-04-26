@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_employee_form_ext">
+            <field name="name">view_employee_form_ext</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="planilla.planilla_hr_employee_form_inherit_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='direccion']" position="replace">
+                    <field name="address_home_id" string="Contacto Asociado"/>
+                </xpath>
+                <xpath expr="//field[@name='address_home_id']" position="replace">
+                    <field name="direccion"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_employee_form_rrhh_ext">
+            <field name="name">view_employee_form_rrhh_ext</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[@name='hr_settings']/group/group[@name='active_group']" position="inside">
+                    <field name="date_entry"/>
+                    <field name="date_end"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
