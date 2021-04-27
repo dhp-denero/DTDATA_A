@@ -63,9 +63,9 @@ class ple_purchase_register_wizard(osv.TransientModel):
 			CASE WHEN compra.fechaemision is not Null THEN (to_char( compra.fechaemision::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo4,
 			CASE WHEN compra.fechavencimiento is not Null and compra.tipodocumento = '14' THEN (to_char( compra.fechavencimiento::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo5,
 			CASE WHEN anulado.name = compra.razonsocial and anulado.nro_documento = compra.ruc THEN '00' ELSE
-				CASE WHEN compra.tipodocumento is not Null THEN 
+				CASE WHEN compra.tipodocumento is not Null THEN
 					CASE WHEN compra.tipodocumento = 'CP' THEN '00' ELSE compra.tipodocumento END
-				ELSE '' 
+				ELSE ''
 			END END as campo6,
 			CASE WHEN compra.tipodocumento = '05' or compra.tipodocumento = '50' THEN compra.serie else
 			CASE WHEN compra.tipodocumento = '10' THEN '1683' ELSE
@@ -90,31 +90,32 @@ class ple_purchase_register_wizard(osv.TransientModel):
 			CASE WHEN compra.igvc is not Null THEN (compra.igvc)::varchar  ELSE '0.00' END as campo19,
 			CASE WHEN compra.cng is not Null THEN (compra.cng)::varchar ELSE '0.00' END as campo20,
 			CASE WHEN compra.isc is not Null THEN (compra.isc)::varchar ELSE '0.00' END as campo21,
-			CASE WHEN compra.otros is not Null THEN (compra.otros)::varchar ELSE '0.00' END as campo22,
-			CASE WHEN compra.total is not Null THEN (compra.total)::varchar ELSE '0.00' END as campo23,
-			CASE WHEN compra.moneda is not Null THEN 
+			'icbp' as campo22,
+			CASE WHEN compra.otros is not Null THEN (compra.otros)::varchar ELSE '0.00' END as campo23,
+			CASE WHEN compra.total is not Null THEN (compra.total)::varchar ELSE '0.00' END as campo24,
+			CASE WHEN compra.moneda is not Null THEN
 			CASE WHEN compra.moneda = 'PEN' THEN 'PEN' ELSE compra.moneda END
-			ELSE '' END as campo24,
-			CASE WHEN compra.tc is not Null THEN ( round(compra.tc,3) )::varchar ELSE '' END as campo25,
-			CASE WHEN compra.fechadm is not Null THEN (to_char( compra.fechadm::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo26,
-			CASE WHEN compra.td is not Null THEN compra.td ELSE '' END as campo27,
-			CASE WHEN compra.seried is not Null THEN repeat('0',4-char_length(compra.seried)) || compra.seried ELSE '' END as campo28,
-			CASE WHEN compra.td in ('50','52') THEN compra.seried ELSE '' END as campo29,
-			CASE WHEN compra.numerodd is not Null THEN compra.numerodd ELSE '' END as campo30,
+			ELSE '' END as campo25,
+			CASE WHEN compra.tc is not Null THEN ( round(compra.tc,3) )::varchar ELSE '' END as campo26,
+			CASE WHEN compra.fechadm is not Null THEN (to_char( compra.fechadm::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo27,
+			CASE WHEN compra.td is not Null THEN compra.td ELSE '' END as campo28,
+			CASE WHEN compra.seried is not Null THEN repeat('0',4-char_length(compra.seried)) || compra.seried ELSE '' END as campo29,
+			CASE WHEN compra.td in ('50','52') THEN compra.seried ELSE '' END as campo30,
+			CASE WHEN compra.numerodd is not Null THEN compra.numerodd ELSE '' END as campo31,
 
-			CASE WHEN compra.fechad is not Null THEN (to_char( compra.fechad::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo31,
-			CASE WHEN compra.numerod is not Null THEN compra.numerod ELSE '' END as campo32,
+			CASE WHEN compra.fechad is not Null THEN (to_char( compra.fechad::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo32,
+			CASE WHEN compra.numerod is not Null THEN compra.numerod ELSE '' END as campo33,
 
-			CASE WHEN ai.sujeto_a_retencion THEN '1'::varchar ELSE ''::varchar END as campo33,
-			CASE WHEN ai.tipo_adquisicion is not Null THEN ai.tipo_adquisicion::varchar ELSE ''::varchar END as campo34,
-			CASE WHEN ai.contrato_o_proyecto is not Null THEN ai.contrato_o_proyecto::varchar else ''::varchar END as campo35,
-			CASE WHEN ai.inconsistencia_tipo_cambio THEN '1'::varchar ELSE ''::varchar END as campo36,
-			CASE WHEN ai.proveedor_no_habido THEN '1'::varchar ELSE ''::varchar END as campo37,
-			CASE WHEN ai.renuncio_a_exoneracion_igv THEN '1'::varchar ELSE ''::varchar END as campo38,
-			CASE WHEN ai.inconsistencia_dni_liquidacion_comp THEN '1'::varchar ELSE ''::varchar END as campo39,
-			CASE WHEN ai.cancelado_medio_pago THEN '1'::varchar ELSE ''::varchar END as campo40,
+			CASE WHEN ai.sujeto_a_retencion THEN '1'::varchar ELSE ''::varchar END as campo34,
+			CASE WHEN ai.tipo_adquisicion is not Null THEN ai.tipo_adquisicion::varchar ELSE ''::varchar END as campo35,
+			CASE WHEN ai.contrato_o_proyecto is not Null THEN ai.contrato_o_proyecto::varchar else ''::varchar END as campo36,
+			CASE WHEN ai.inconsistencia_tipo_cambio THEN '1'::varchar ELSE ''::varchar END as campo37,
+			CASE WHEN ai.proveedor_no_habido THEN '1'::varchar ELSE ''::varchar END as campo38,
+			CASE WHEN ai.renuncio_a_exoneracion_igv THEN '1'::varchar ELSE ''::varchar END as campo39,
+			CASE WHEN ai.inconsistencia_dni_liquidacion_comp THEN '1'::varchar ELSE ''::varchar END as campo40,
+			CASE WHEN ai.cancelado_medio_pago THEN '1'::varchar ELSE ''::varchar END as campo41,
 
-			ai.estado_ple_compra as campo41,
+			ai.estado_ple_compra as campo42,
 			'' as campo35
 			from get_compra_1_1_1(0,219001) compra
 			inner join account_period ap on ap.name = compra.periodo
@@ -126,7 +127,7 @@ class ple_purchase_register_wizard(osv.TransientModel):
 			left join res_partner anulado on anulado.id = main_parameter.partner_null_id
 			where coalesce(rp_veri.is_resident,false) = false
 			) as T
-			where ( campo1 ='"""+period_ini+"""'  )  )  
+			where ( campo1 ='"""+period_ini+"""'  )  )
 			TO '""" + str(direccion + 'purchase.csv') + """'
 			with delimiter '|'
 			"""
@@ -144,7 +145,7 @@ compra.tipodocumento END as campo5,
 CASE
 WHEN "position"(ai.reference::text, '-'::text) = 0 THEN ''
 ELSE "substring"(ai.reference::text, 0, "position"(ai.reference::text, '-'::text))
-END 
+END
 aS campo6,
 CASE
 WHEN "position"(ai.reference::text, '-'::text) = 0 THEN ai.reference::text
@@ -188,9 +189,9 @@ left join account_period ap2 on ap2.date_start <= am.fecha_modify_ple_compra and
 left join res_partner rp on rp.id = am.partner_id
 left join res_partner rpb on rpb.id = ai.beneficiario_de_pagos
 inner join account_journal aj on aj.id = am.journal_id
-cross join main_parameter 
+cross join main_parameter
 left join res_partner anulado on anulado.id = main_parameter.partner_null_id
-where  (rp.is_resident=TRUE) and  ( ap2.id = """+ str(self.period_ini.id) + """ or ap.id = """+ str(self.period_ini.id) + """ )) as TOTALCS where campo5 in ('00','91','97','98') )  
+where  (rp.is_resident=TRUE) and  ( ap2.id = """+ str(self.period_ini.id) + """ or ap.id = """+ str(self.period_ini.id) + """ )) as TOTALCS where campo5 in ('00','91','97','98') )
 TO '"""+ str( direccion +  'purchase.csv' )+ """'
 with delimiter '|'
 			""")
@@ -207,9 +208,9 @@ with delimiter '|'
 			CASE WHEN compra.fechaemision is not Null THEN (to_char( compra.fechaemision::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo4,
 			CASE WHEN compra.fechavencimiento is not Null THEN (to_char( compra.fechavencimiento::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo5,
 			CASE WHEN anulado.name = compra.razonsocial and anulado.nro_documento = compra.ruc THEN '00' ELSE
-				CASE WHEN compra.tipodocumento is not Null THEN 
+				CASE WHEN compra.tipodocumento is not Null THEN
 					CASE WHEN compra.tipodocumento = 'CP' THEN '00' ELSE compra.tipodocumento END
-				ELSE '' 
+				ELSE ''
 			END END as campo6,
 			CASE WHEN compra.tipodocumento = '10' THEN '1683' ELSE
 			CASE WHEN compra.serie is not Null THEN repeat('0',4-char_length(compra.serie)) || compra.serie ELSE '' END END as campo7,
@@ -223,43 +224,44 @@ with delimiter '|'
 
 			CASE WHEN compra.bioge is not Null THEN (compra.bioge)::varchar ELSE '0.00' END as campo13,
 			CASE WHEN compra.igva is not Null THEN (compra.igva)::varchar ELSE '0.00' END as campo14,
-			CASE WHEN compra.otros is not Null THEN (compra.otros)::varchar ELSE '0.00' END as campo15,
-			CASE WHEN compra.total is not Null THEN (compra.total)::varchar ELSE '0.00' END as campo16,
+			'icbp' as campo15,
+			CASE WHEN compra.otros is not Null THEN (compra.otros)::varchar ELSE '0.00' END as campo16,
+			CASE WHEN compra.total is not Null THEN (compra.total)::varchar ELSE '0.00' END as campo17,
 
 
-			CASE WHEN compra.moneda is not Null THEN 
+			CASE WHEN compra.moneda is not Null THEN
 			CASE WHEN compra.moneda = 'PEN' THEN '' ELSE compra.moneda END
-			ELSE '' END as campo17,
+			ELSE '' END as campo18,
 
 
-			CASE WHEN compra.tc is not Null THEN ( round(compra.tc,3))::varchar ELSE '' END as campo18,
-			CASE WHEN compra.fechadm is not Null THEN (to_char( compra.fechadm::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo19,
-			CASE WHEN compra.td is not Null THEN compra.td ELSE '' END as campo20,
-			CASE WHEN compra.seried is not Null THEN repeat('0',4-char_length(compra.seried)) || compra.seried ELSE '' END as campo21,
-			CASE WHEN compra.numerodd is not Null THEN compra.numerodd ELSE '' END as campo22,
+			CASE WHEN compra.tc is not Null THEN ( round(compra.tc,3))::varchar ELSE '' END as campo19,
+			CASE WHEN compra.fechadm is not Null THEN (to_char( compra.fechadm::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo20,
+			CASE WHEN compra.td is not Null THEN compra.td ELSE '' END as campo21,
+			CASE WHEN compra.seried is not Null THEN repeat('0',4-char_length(compra.seried)) || compra.seried ELSE '' END as campo22,
+			CASE WHEN compra.numerodd is not Null THEN compra.numerodd ELSE '' END as campo23,
 
-			CASE WHEN compra.fechad is not Null THEN (to_char( compra.fechad::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo23,
-			CASE WHEN compra.numerod is not Null THEN compra.numerod ELSE '' END as campo24,
+			CASE WHEN compra.fechad is not Null THEN (to_char( compra.fechad::date , 'DD/MM/YYYY'))::varchar ELSE '' END as campo24,
+			CASE WHEN compra.numerod is not Null THEN compra.numerod ELSE '' END as campo25,
 
-			CASE WHEN ai.sujeto_a_retencion THEN '1'::varchar ELSE ''::varchar END  as campo25,
-
-
-			CASE WHEN ai.tipo_adquisicion is not Null THEN ai.tipo_adquisicion::varchar ELSE ''::varchar END as campo26,
+			CASE WHEN ai.sujeto_a_retencion THEN '1'::varchar ELSE ''::varchar END  as campo26,
 
 
-			CASE WHEN ai.inconsistencia_tipo_cambio THEN '1'::varchar ELSE ''::varchar END as campo27,
-			CASE WHEN ai.proveedor_no_habido THEN '1'::varchar ELSE ''::varchar END as campo28,
-			CASE WHEN ai.renuncio_a_exoneracion_igv THEN '1'::varchar ELSE ''::varchar END as campo29,
-			CASE WHEN ai.cancelado_medio_pago THEN '1'::varchar ELSE ''::varchar END as campo30,
+			CASE WHEN ai.tipo_adquisicion is not Null THEN ai.tipo_adquisicion::varchar ELSE ''::varchar END as campo27,
 
-			ai.estado_ple_compra as campo31,
-			'' as campo32
+
+			CASE WHEN ai.inconsistencia_tipo_cambio THEN '1'::varchar ELSE ''::varchar END as campo28,
+			CASE WHEN ai.proveedor_no_habido THEN '1'::varchar ELSE ''::varchar END as campo29,
+			CASE WHEN ai.renuncio_a_exoneracion_igv THEN '1'::varchar ELSE ''::varchar END as campo30,
+			CASE WHEN ai.cancelado_medio_pago THEN '1'::varchar ELSE ''::varchar END as campo31,
+
+			ai.estado_ple_compra as campo32,
+			'' as campo33
 			from get_compra_1_1_1(0,219001) compra
 			inner join account_period ap on ap.name = compra.periodo
 			inner join account_move am on am.id = compra.am_id
 			inner join account_invoice ai on ai.move_id = am.id
 			inner join account_journal aj on aj.id = am.journal_id
-			cross join main_parameter 
+			cross join main_parameter
 			left join res_partner anulado on anulado.id = main_parameter.partner_null_id
 					) as T where ( campo1 ='"""+period_ini+"""' )    )
 			TO '""" + str(direccion + 'purchase.csv') + """'
@@ -283,10 +285,45 @@ with delimiter '|'
 
 		exp = "".join(open(str(direccion + 'purchase.csv'), 'r').readlines())
 
-		# vals = {
-		#	'output_name': 'LE' + ruc + self.period_ini.code[3:7]+ self.period_ini.code[:2]+'00080100001'+('1' if len(exp) >0 else '0') + ('1' if mond == 'PEN' else '2') +'1.txt',
-		#	'output_file': base64.encodestring(  "\r\n" if exp =="" else exp ),
-		# }
+		if exp != '':
+			if self.tipo_ple == '81' or self.tipo_ple == '83':
+				new_datos = []
+				datos = exp.split('|')
+				if self.tipo_ple == '81':
+					for line in list(range(len(datos)/42)):
+						start = line*42
+						end = start + 42
+						record = datos[start:end]
+						move = self.env['account.invoice'].search([('reference', '=', record[8])], limit=1)
+						if move.move_id.icbp != 0:
+							record[21] = move.move_id.icbp
+						else:
+							record[21] = '0.00'
+						estruct = ''
+						for i in record:
+							estruct += str(i) + '|'
+						new_datos.append(estruct)
+
+
+				elif self.tipo_ple == '83':
+					for line in list(range(len(datos)/32)):
+						start = line*32
+						end = start + 32
+						record = datos[start:end]
+						move = self.env['account.invoice'].search([('reference', '=', record[8])], limit=1)
+						if move.move_id.icbp != 0:
+							record[14] = move.move_id.icbp
+						else:
+							record[14] = '0.00'
+						estruct = ''
+						for i in record:
+							estruct += str(i) + '|'
+						new_datos.append(estruct)
+
+				estruct = ''
+				for i in new_datos:
+					estruct += i
+				exp = estruct
 
 		direccion_ple = self.env['main.parameter'].search([])[
 			0].dir_ple_create_file
