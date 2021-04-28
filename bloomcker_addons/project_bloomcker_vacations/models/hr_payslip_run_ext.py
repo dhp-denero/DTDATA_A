@@ -127,7 +127,7 @@ class HrPayslipRunExt(models.Model):
 		#					u' tiene más de un contrato activo(Contrato->%s->Informacion->Duracion->date_end)' % empleado.name_related)
 
 		row_empleado = [Paragraph(empleado.tablas_tipo_documento_id.descripcion_abrev if empleado.tablas_tipo_documento_id.descripcion_abrev else '', style_cell), Paragraph(empleado.identification_id if empleado.identification_id else '', style_cell), Paragraph(
-			empleado.name_related.strip().title(), style_cell), '', '', '', Paragraph(contract_employee.situacion_id.descripcion_abrev if contract_employee.situacion_id.descripcion_abrev else '', style_cell), '']
+			empleado.name_total.strip().title(), style_cell), '', '', '', Paragraph(contract_employee.situacion_id.descripcion_abrev if contract_employee.situacion_id.descripcion_abrev else '', style_cell), '']
 
 		row_empleado_line_4 = [Paragraph(first_contract.date_start if first_contract else '', style_cell),
 			Paragraph(contract_employee.tipo_trabajador_id.descripcion_abrev.title() if contract_employee.tipo_trabajador_id.descripcion_abrev else '', style_cell),
