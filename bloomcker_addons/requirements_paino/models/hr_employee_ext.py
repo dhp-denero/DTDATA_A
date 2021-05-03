@@ -8,5 +8,7 @@ import logging
 class EmployeeExt(models.Model):
     _inherit = 'hr.employee'
 
-    date_entry = fields.Date('Fecha de Ingreso')
-    date_end = fields.Date('Fecha de Deceso')
+    date_entry_bl = fields.Date('Fecha de Ingreso')
+    date_end_bl = fields.Date('Fecha de Deceso')
+    # date_end = fields.Date('Fecha de Deceso')
+    # date_entry = fields.Date('Fecha de Ingreso')

@@ -20,8 +20,8 @@
             <field name="inherit_id" ref="hr.view_employee_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//form/sheet/notebook/page[@name='hr_settings']/group/group[@name='active_group']" position="inside">
-                    <field name="date_entry"/>
-                    <field name="date_end"/>
+                    <field name="date_entry_bl"/>
+                    <field name="date_end_bl"/>
                 </xpath>
             </field>
         </record>
