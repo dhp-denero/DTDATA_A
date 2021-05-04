@@ -6,7 +6,8 @@
     "author": "Luis Millan",
     "depends": [
         "base",
-        "planilla"
+        "planilla",
+        "requirements_paino"
     ],
     "data": [
         'views/vacations_bl_view.xml',

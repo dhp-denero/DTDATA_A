@@ -15,7 +15,7 @@ class VacationsBL(models.Model):
     days_devs = fields.Integer('Días Devengados', compute="_get_days")
     days_totals = fields.Integer('Días Totales', compute="_get_days")
     days = fields.Integer('Días por Devengar', compute="_get_days")
-    date_init = fields.Date('Fecha de Ingreso', related="employee_id.contract_id.date_start")
+    date_init = fields.Date('Fecha de Ingreso', related="employee_id.date_entry_bl")
 
     @api.model
     def create(self, vals):
@@ -30,7 +30,7 @@ class VacationsBL(models.Model):
             for line in i.line_ids:
                 i.days_devs += line.days_total
 
-            calculo = fields.Datetime.from_string(str(i.employee_id.contract_id.date_start)) - datetime.now()
+            calculo = fields.Datetime.from_string(str(i.date_init)) - datetime.now()
             i.days_totals = int(-calculo.days // 30)*2.5
             i.days = i.days_totals - i.days_devs
 
@@ -73,10 +73,7 @@ class VacationsBL(models.Model):
         for devengue in self.line_ids:
 
             slip = self.env['hr.payslip'].search([('employee_id', '=', devengue.employee_id.id), ('payslip_run_id', '=', devengue.period.id)], limit=1)
-            if not slip:
-                pass
-                # raise UserError(('Alguna de las lineas no es valida por no tener un nomina en el periodo indicado\n Debe Procesar Las Nominas.'))
-            else:
+            if slip:
                 vals = {
                     'date_end':devengue.date_end,
                     'date_start':devengue.date_start,

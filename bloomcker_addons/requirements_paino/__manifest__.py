@@ -10,6 +10,7 @@
     ],
     "data": [
         'views/hr_employee_form_view_ext.xml',
+        'views/hr_payslip_run_views_ext.xml'
         # 'views/payslip_ext.xml'
     ],
     "application": True,
