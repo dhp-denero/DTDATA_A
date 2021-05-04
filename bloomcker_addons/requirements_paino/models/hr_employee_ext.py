@@ -9,4 +9,4 @@ class EmployeeExt(models.Model):
     _inherit = 'hr.employee'
 
     date_entry_bl = fields.Date('Fecha de Ingreso')
-    date_end_bl = fields.Date('Fecha de Deceso')
+    date_end_bl = fields.Date('Fecha de Salida')

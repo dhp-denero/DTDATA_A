@@ -31,7 +31,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class PlanillaLiquidacion(models.Model):
+class PlanillaLiquidacionInherit(models.Model):
 	_inherit = "planilla.liquidacion"
 
 	@api.multi
