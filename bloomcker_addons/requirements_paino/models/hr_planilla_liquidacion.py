@@ -30,6 +30,19 @@ import decimal
 import logging
 _logger = logging.getLogger(__name__)
 
+class ContractInherit(models.Model):
+	_inherit = 'hr.contract'
+
+	date_start = fields.Date('Start Date', required=True, default=fields.Date.today)
+	date_end = fields.Date('End Date')
+
+	@api.onchange('employee_id')
+	def _onchange_employee_id(self):
+		if not self.employee_id:
+			return
+		else:
+			self.date_start = self.employee_id.date_entry_bl
+			self.date_end= self.employee_id.date_end_bl
 
 class PlanillaLiquidacionInherit(models.Model):
 	_inherit = "planilla.liquidacion"
