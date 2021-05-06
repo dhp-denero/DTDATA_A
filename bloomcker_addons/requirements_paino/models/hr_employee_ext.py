@@ -10,3 +10,13 @@ class EmployeeExt(models.Model):
 
     date_entry_bl = fields.Date('Fecha de Ingreso')
     date_end_bl = fields.Date('Fecha de Salida')
+
+    def get_view_bank(self):
+        return {
+            'domain' : filtro,
+            'type': 'ir.actions.act_window',
+            'res_model': 'account.move.line.book',
+            'view_mode': 'tree',
+            'view_type': 'form',
+            'views': [(False, 'tree')],
+        }
