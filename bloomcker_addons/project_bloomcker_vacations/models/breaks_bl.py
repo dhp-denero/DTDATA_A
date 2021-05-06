@@ -38,6 +38,8 @@ class breaksLines(models.Model):
 
     date_start = fields.Date("Fecha de Inicio")
     date_end = fields.Date("Fecha de Fin")
+    date_pre = fields.Date("Fecha de Pre")
+    date_pos = fields.Date("Fecha de Pos")
     days_total = fields.Integer('Días', compute="_get_days_total")
     reason = fields.Text('Motivo')
     period = fields.Many2one('hr.payslip.run', string="Periodo")
@@ -107,16 +109,38 @@ class breaksLines(models.Model):
                 record.alert = ""
 
     def _get_amount(self):
-        for j in self:
-            contracts = j.env['hr.contract'].search([('employee_id', '=', j.employee_id.id)], limit=6)
-            amount_total = 0
-            for i in contracts:
-                amount_total += i.wage
+        for record in self:
 
-            if amount_total:
-                amount_total = ((amount_total/len(contracts))/30)*j.days_total
+            if record.type == "subsidy":
+                contracts = record.env['hr.contract'].search([('employee_id', '=', record.employee_id.id)], limit=6)
+                amount_total = 0
+                for i in contracts:
+                    amount_total += i.wage
 
-            j.amount = amount_total
+                if amount_total:
+                    amount_total = ((amount_total/len(contracts))/30)*record.days_total
+
+                record.amount = amount_total
+            elif record.type == "break_mother":
+                contracts = record.env['hr.contract'].search([('employee_id', '=', record.employee_id.id)], limit=6)
+                amount_total = 0
+                for i in contracts:
+                    amount_total += i.wage
+
+                if amount_total:
+                    amount_total = ((amount_total/len(contracts))/30)*record.days_total
+
+                record.amount = amount_total
+            else:
+                contracts = record.env['hr.contract'].search([('employee_id', '=', record.employee_id.id)], limit=6)
+                amount_total = 0
+                for i in contracts:
+                    amount_total += i.wage
+
+                if amount_total:
+                    amount_total = ((amount_total/len(contracts))/30)*record.days_total
+
+                record.amount = amount_total
 
     def _get_days_total(self):
         for line in self:

@@ -54,6 +54,8 @@
                                 <field name="period" required="1"/>
                                 <field name="reason"/>
                                 <field name="type" required="1"/>
+                                <field name="date_pre" attrs="{'invisible':[('type', '!=' ,'break_mother')]}"/>
+                                <field name="date_pos" attrs="{'invisible':[('type', '!=' ,'break_mother')]}"/>
                             </group>
                             <group>
                                 <field name="date_start" required="1"/>
