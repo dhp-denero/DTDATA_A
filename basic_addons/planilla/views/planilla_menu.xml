@@ -11,7 +11,7 @@
 
     <!-- parametros -->
     <menuitem id="menu_planilla_parametros_generales" name="Parametros" parent="hr_payroll.menu_hr_payroll_configuration" sequence="32"/>
-    
+
     <act_window id="action_main_parameter_hr" name="Directorio de Descarga" res_model="main.parameter.hr" view_mode="tree,form" />
     <menuitem id="menu_main_parameter_hr" name="Directorio de Descarga" parent="menu_planilla_parametros_generales" action ="action_main_parameter_hr" sequence="4" />
     <act_window id="action_planilla_parametros_ajustes" name="Parametros Boleta de Pago" res_model="planilla.ajustes" view_mode="tree,form" />
@@ -52,13 +52,13 @@
 
     <act_window id="action_planilla_subseccion_asiento_resumen" name="Asiento Resumen" res_model="planilla.asiento.resumen.wizard" view_mode="form,tree" target="new"/>
     <menuitem id ="menu_planilla_subseccion_asiento_resumen" name="Asiento Resumen" parent="menu_planilla_seccion_contabilidad" action="action_planilla_subseccion_asiento_resumen"/>
-    
+
     <act_window id="action_planilla_subseccion_detalle_asiento_distribuido" name="Detalles Asiento Distribuido" res_model="planilla.detalle.asiento.distribuido.wizard" view_mode="form,tree" target="new"/>
     <menuitem id ="menu_planilla_subseccion_detalle_asiento_distribuido" name="Detalles Asiento Distribuido" parent="menu_planilla_seccion_contabilidad" action="action_planilla_subseccion_detalle_asiento_distribuido"/>
-    
+
     <act_window id="action_planilla_subseccion_asiento_distribuido" name="Asiento Distribuido" res_model="planilla.asiento.distribuido.wizard" view_mode="form,tree" target="new"/>
     <menuitem id ="menu_planilla_subseccion_asiento_distribuido" name="Asiento Distribuido" parent="menu_planilla_seccion_contabilidad" action="action_planilla_subseccion_asiento_distribuido"/>
-    
+
 
     <record id="group_hide_menus" model="res.groups">
         <field name="name">Restricted Menus Group</field>
@@ -73,7 +73,7 @@
     <record id="hr.menu_hr_root" model="ir.ui.menu">
         <field name="groups_id" eval="[(6, 0, [ref('group_hide_menus')])]"/>
     </record>
-    <!-- ocultando ausencias 
+    <!-- ocultando ausencias
     <record id="hr_holidays.menu_hr_holidays_root" model="ir.ui.menu">
         <field name="groups_id" eval="[(6, 0, [ref('group_hide_menus')])]"/>
     </record>-->
@@ -92,7 +92,7 @@
 
     <!-- menu categorias -->
     <act_window id="action_planilla_configuracion_categorias" name="Categorias de reglas salariales" res_model="hr.salary.rule.category" view_mode="tree,form" />
-    
+
     <menuitem id="hr_payroll.menu_hr_salary_rule_category_tree_view"
             parent="hr_payroll.menu_hr_payroll_configuration"
             groups="dummy_group"/>
@@ -122,10 +122,10 @@
 
     <act_window id="action_planilla_configuracion_tipo_suspension" name="Tipo Suspension" res_model="planilla.tipo.suspension" view_mode="tree,form" />
     <menuitem id="menu_planilla_configuracion_tipo_suspension" name="Tipo Suspension" parent="menu_planilla_configuracion_tablas" action ="action_planilla_configuracion_tipo_suspension" sequence="3" />
-    
+
     <act_window id="action_planilla_seguro_salud" name="Seguro Social" res_model="planilla.seguro.salud" view_mode="tree,form" />
     <menuitem id="menu_planilla_seguro_salud" name="Seguro Social" parent="menu_planilla_configuracion_tablas" action ="action_planilla_seguro_salud" sequence="3" />
-    
+
     <act_window id="action_planilla_sctr" name="SCTR" res_model="planilla.sctr" view_mode="tree,form" />
     <menuitem id="menu_planilla_sctr" name="SCTR" parent="menu_planilla_configuracion_tablas" action ="action_planilla_sctr" sequence="4" />
 
@@ -162,7 +162,7 @@
     <!-- menu worked_days -->
     <act_window id="action_planilla_import_worked_days" name="Importar Dias de Trabajo" res_model="planilla.import.worked.days" view_mode="tree,form" />
     <menuitem id="menu_planilla_import_worked_days" name="Importar Dias de Trabajo" action="action_planilla_import_worked_days" parent="menu_planilla_importacion" sequence="30" />
-    
+
     <act_window id="action_generate_worked_days" name="Generar Plantilla Dias de Trabajo" res_model="planilla.import.worked.days.wizard" view_mode="form" target="new"/>
     <menuitem id="menu_planilla_import_worked_days_wizard" name="Generar Plantilla Dias de Trabajo" action="action_generate_worked_days" parent="menu_planilla_importacion" sequence="31"/>
 
