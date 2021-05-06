@@ -6,7 +6,7 @@
             <field name="arch" type="xml">
                 <form string="Control Vacaciones">
                     <header>
-                        <button name="get_lines" type="object" string="Calcular" class="oe_highlight"/>
+                        <button name="get_lines" type="object" string="Importar EPS" class="oe_highlight" confirm="Esta acción Reconstruira los EPS Borrando asi todos los Costos."/>
                         <button name="mod_lines" type="object" string="Modificar Lineas" class="oe_highlight"/>
                     </header>
                     <sheet>

@@ -15,15 +15,6 @@ class EpsBase(models.Model):
     porcentaje_credito = fields.Float("Crédito ESSALUD (%)", default=25)
     porcentaje_descuento = fields.Float("Descuento ESSALUD (%)", default=18)
 
-    # @api.model
-    # def create(self, vals):
-    #     eps_base_ids = self.env['eps.base'].search([])
-    #     for i in eps_base_ids:
-    #         if i.nomina == vals['nomina']:
-    #             raise UserError('No se puede crear mas de un Cálculo EPS de la Misma Nomina')
-    #
-    #     return super(EPS,self).create(vals)
-
     def get_lines(self):
 
         if self.line_ids:
@@ -69,8 +60,8 @@ class EpsLine(models.Model):
     period = fields.Date('Periodo')
     eps_base_id = fields.Many2one('eps.base', readonly=True)
     payslip_id = fields.Many2one('hr.payslip', readonly=True)
-    dni = fields.Integer(string='DNI')
-    employee_id = fields.Many2one('hr.employee','Apellidos y Nombres')
+    dni = fields.Char(string='DNI', readonly=True, related="employee_id.identification_id")
+    employee_id = fields.Many2one('hr.employee','Apellidos y Nombres', required=True)
     plan = fields.Char('Plan', compute="_get_plan")
     base_afecta = fields.Float("Base Afecta ESSALUD")
     aporte_essalud = fields.Float("Aporte ESSALUD", compute="_get_amounts")
@@ -92,3 +83,25 @@ class EpsLine(models.Model):
     @api.onchange('descuento')
     def _onchange_descuento(self):
         self.payslip_id.write({"descuento_eps": self.descuento})
+
+    @api.model
+    def create(self, vals):
+        result = super(EpsLine,self).create(vals)
+        if result:
+            try:
+                employee = self.env['hr.employee'].search([('id', '=', vals['employee_id'])], limit=1)
+                base = self.env['eps.base'].search([('id', '=', vals['eps_base_id'])], limit=1)
+                slip = self.env['hr.payslip'].search([('payslip_run_id', '=', base.nomina.id), ('employee_id', '=', employee.id)], limit=1)
+            except:
+                return result
+            if slip and employee:
+                base_afecta = 0
+                if employee.eps_check:
+                    for record in slip.line_ids:
+                        if record.code == "AESSALUD":
+                            base_afecta = record.total
+                            break
+                result.base_afecta = base_afecta
+                result.period = slip.date_from
+
+            return result
