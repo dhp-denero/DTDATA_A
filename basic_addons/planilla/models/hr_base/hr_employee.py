@@ -16,7 +16,7 @@ class HrEmployee(models.Model):
 
     tablas_tipo_documento_id = fields.Many2one('planilla.tipo.documento', 'Tipo Documento')
     identification_id = fields.Char(string='Identification No', groups='hr.group_hr_user',required=True)
-    
+
     condicion = fields.Selection([
         ('domiciliado', 'Domiciliado'),
         ('nodomiciliado', 'No Domiciliado'),
@@ -73,7 +73,7 @@ class HrEmployee(models.Model):
         for i in self:
             i.store_name = "%s %s %s"%(i.a_paterno or '',i.a_materno or '',i.nombres or '')
     store_name = fields.Char(compute=_get_name,store=True)
-    
+
     @api.onchange('a_paterno','a_materno','nombres')
     def onchange_name_last_fp(self):
         self.name = ( (self.a_paterno if self.a_paterno else '') + " " + (self.a_materno if self.a_materno else '' ) + " " + (self.nombres if self.nombres else '' ) ).strip()
@@ -81,7 +81,7 @@ class HrEmployee(models.Model):
     @api.multi
     def get_wizard(self):
         return self.env['hr.ultima.vacacion'].get_wizard(self.ids)
-    
+
     @api.multi
     def drop_contracts(self):
         for employee in self.ids:
@@ -91,7 +91,7 @@ class HrEmployee(models.Model):
                     contract.write({'situacion_id':self.env['planilla.situacion'].search([('codigo','=','0')],limit=1).id,
                                     'flag':True})
         return self.env['planilla.warning'].info(title='Resultado', message="Se cambio la situacion de todos los contratos de los empleados seleccionados a la situacion 'BAJA'")
-    
+
     @api.multi
     def refresh_employee_name(self):
         for employee in self.ids:
@@ -122,7 +122,7 @@ class HrEmployee(models.Model):
                 if vals['identification_id'].strip() == employee.identification_id:
                     raise UserError('No se puede generar dos empleados con el mismo DNI')
         return super(HrEmployee,self).create(vals)
-    
+
     @api.multi
     def write(self,vals):
         if 'identification_id' in vals:

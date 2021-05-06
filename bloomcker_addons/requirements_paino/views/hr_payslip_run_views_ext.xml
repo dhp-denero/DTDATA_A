@@ -1,13 +1,56 @@
 
 <odoo>
-    <record id="hr_payslip_run_ext_form" model="ir.ui.view">
-        <field name="name">hr.payslip.run.ext.form</field>
-        <field name="model">hr.payslip.run</field>
-        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//form/header" position="inside">
-                <button name="update_employees" string="Actualizar Slips" type="object" class="oe_highlight fa fa-sync" confirm="Esta Acción Actualizara la lista de nominas"/>
-            </xpath>
-        </field>
+  <record id="hr_payslip_run_ext_form" model="ir.ui.view">
+      <field name="name">hr.payslip.run.ext.form</field>
+      <field name="model">hr.payslip.run</field>
+      <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+      <field name="arch" type="xml">
+          <xpath expr="//form/header" position="inside">
+              <button name="update_employees" string="Actualizar Slips" type="object" class="oe_highlight fa fa-sync" confirm="Esta Acción Actualizara la lista de nominas"/>
+          </xpath>
+      </field>
+  </record>
+
+
+  <record model='ir.ui.view' id='wizard_form_planilla'>
+      <field name="name">wizard.form.planilla.inherit</field>
+      <field name="model">wizard.form.planilla</field>
+      <field name="arch" type="xml">
+          <form string="Wizard">
+            <group string="Tipo de reporte">
+                <group>
+                  <field name="tipo"/>
+                </group>
+            </group>
+            <footer>
+                <button name="do_rebuild" string="Actualizar" type="object" context="{'default': 'default_planilla'}" class="oe_highlight"/>
+                    or
+                <button string="Cancelar" class="oe_link" special="cancel"/>
+            </footer>
+          </form>
+      </field>
+  </record>
+
+  <record id="action_planilla_exportar_nomina_excel" model="ir.actions.act_window">
+      <field name="name">Exportar Nómina Excel</field>
+      <field name="res_model">wizard.form.planilla</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="wizard_form_planilla"/>
+      <field name="target">new</field>
+      <field name="context">{'default_planilla': active_id}</field>
+  </record>
+
+    <record id="hr_payslip_run_inherit_form_wizard" model="ir.ui.view">
+      <field name="name">hr_payslip_run_inherit_form_wizard</field>
+      <field name="model">hr.payslip.run</field>
+      <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+      <field name="arch" type="xml">
+          <xpath expr="//form/header/button[@name='%(hr_payroll.action_hr_payslip_by_employees)d']" position="after">
+              <button name="%(action_planilla_exportar_nomina_excel)d" string="Exportar nómina a excel" class="fa fa-file-text-o" type="action"></button>
+          </xpath>
+      </field>
     </record>
+
+
 </odoo>

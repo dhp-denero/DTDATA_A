@@ -128,7 +128,7 @@
 
 
     <!-- ver en pantalla -->
-    <record id="planilla_exportar_nomina_excel" model="ir.actions.server">
+    <!-- <record id="planilla_exportar_nomina_excel" model="ir.actions.server">
         <field name="name">Exportar Nómina Excel</field>
         <field name="model_id" ref="model_hr_payslip_run"/>
         <field name="state">code</field>
@@ -141,7 +141,7 @@
         <field eval="'hr.payslip.run'" name="model"/>
         <field name="name">Exportar Nómina Excel</field>
         <field eval="'ir.actions.server,%d'%planilla_exportar_nomina_excel" name="value"/>
-    </record>
+    </record> -->
 
 
     <!-- ver en pantalla -->
@@ -220,6 +220,6 @@
         <field name="name">Generar Asiento Contable</field>
         <field eval="'ir.actions.server,%d'%planilla_generar_asiento_contable" name="value" />
     </record>
-    
-    
+
+
 </odoo>
