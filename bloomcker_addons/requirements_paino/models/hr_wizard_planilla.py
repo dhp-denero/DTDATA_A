@@ -49,7 +49,7 @@ class WizardPlanilla(models.TransientModel):
 	_name = "wizard.form.planilla"
 	_description = "Current Planilla Report"
 
-	tipo = fields.Selection([('no practicante', 'no practicante'), ('practicante', 'practicante')], required=True, index=True, default='practicante')
+	tipo = fields.Selection([('no practicante', 'Empleado'), ('practicante', 'practicante')], required=True, index=True, default='practicante')
 
 
 	@api.multi
@@ -120,8 +120,12 @@ class WizardPlanilla(models.TransientModel):
 			x, 1, payslip.get_mes(int(payslip.date_end[5:7]) if payslip.date_end else 0).upper()+"-"+payslip.date_end[:4], formatLeft)
 
 
-		worksheet.write(x+1, 0, u"Tipo:", bold)
-		worksheet.write(x+1, 1, self.tipo, formatLeft)
+		worksheet.write(x+1, 0, u"Reporte para:", bold)
+
+		if self.tipo == 'practicante':
+			worksheet.write(x+1, 1, u"Practicantes", formatLeft)
+		else:
+			worksheet.write(x+1, 1, u"Empleados", formatLeft)
 
 		x = x+3
 
