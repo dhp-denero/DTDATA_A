@@ -117,18 +117,27 @@ class PlanillaLiquidacionInherit(models.Model):
 			contratos_empleado = self.env['hr.contract'].search(
 				[('employee_id', '=', contrato.employee_id.id),
 				('date_end', '<=', contrato.date_end)], order='date_end desc')
+
+			_logger.info('contratos_empleado')
+			_logger.info(contratos_empleado)
 			if len(contratos_empleado) > 0:
 				# datetime
 				fecha_ini = fields.Date.from_string(
-					contratos_empleado[0].date_start)
+					contratos_empleado[-1].date_start)
 				fecha_fin_contrato = fields.Date.from_string(
 					contratos_empleado[0].date_end)
+				_logger.info(contratos_empleado[-1])
+				_logger.info(fecha_fin_contrato)
 				# 2 busco los contratos anteriores que esten continuos(no mas de un dia de diferencia entre contratos)
 				for i in range(1, len(contratos_empleado)):
 					c_empleado = contratos_empleado[i]
 					fecha_fin = fields.Date.from_string(c_empleado.date_end)
 					if abs(((fecha_fin)-(fecha_ini)).days) == 1:
+						_logger.info('diferencia de 1')
 						fecha_ini = fields.Date.from_string(c_empleado.date_start)
+				_logger.info('FECHA INI Y FECHA FIN')
+				_logger.info(fecha_ini)
+				_logger.info(fecha_fin_contrato)
 				if self.month == 12:
 					grati = self.env['planilla.gratificacion'].search([('year','=',self.year),('tipo','=',self.month)])
 					employee_filtered = filter(lambda g:g.employee_id.id == contrato.employee_id.id,grati.planilla_gratificacion_lines)
@@ -253,9 +262,9 @@ class PlanillaLiquidacionInherit(models.Model):
 			'last_name_father': contrato.employee_id.a_paterno,
 			'last_name_mother': contrato.employee_id.a_materno,
 			'names': contrato.employee_id.nombres,
-			'fecha_ingreso': contrato.employee_id.date_entry_bl,
+			'fecha_ingreso': fecha_ini,
 			'fecha_computable': fecha_computable,
-			'fecha_cese': contrato.employee_id.date_end_bl,
+			'fecha_cese': fecha_fin,
 			'meses': meses,
 			'dias': dias,
 			'faltas': faltas,
@@ -296,6 +305,9 @@ class PlanillaLiquidacionInherit(models.Model):
 		else:
 			fecha_computable = rango_inicio_planilla
 
+		_logger.info('diferencia_meses_dias')
+		_logger.info(fecha_computable)
+		_logger.info(fecha_fin)
 		meses, dias = helper_liquidacion.diferencia_meses_dias(
 			fecha_computable, fecha_fin)
 
@@ -421,9 +433,9 @@ class PlanillaLiquidacionInherit(models.Model):
 			'last_name_father': contrato.employee_id.a_paterno,
 			'last_name_mother': contrato.employee_id.a_materno,
 			'names': contrato.employee_id.nombres,
-			'fecha_ingreso': contrato.employee_id.date_entry_bl,
+			'fecha_ingreso': fecha_ini,
 			'fecha_computable': fecha_computable,
-			'fecha_cese': contrato.employee_id.date_end_bl,
+			'fecha_cese': fecha_fin,
 			'basico': basico,
 			'a_familiar': afam,
 			'gratificacion': gratificacion,
@@ -611,9 +623,9 @@ class PlanillaLiquidacionInherit(models.Model):
 			'last_name_father': contrato.employee_id.a_paterno,
 			'last_name_mother': contrato.employee_id.a_materno,
 			'names': contrato.employee_id.nombres,
-			'fecha_ingreso': contrato.employee_id.date_entry_bl,
+			'fecha_ingreso': fecha_ini,
 			'fecha_computable': fecha_computable,
-			'fecha_cese': contrato.employee_id.date_end_bl,
+			'fecha_cese': fecha_fin,
 			'faltas': faltas,
 			'basico': basico,
 			'afam': afam,
@@ -645,8 +657,8 @@ class PlanillaLiquidacionInherit(models.Model):
 			'last_name_father': contrato.employee_id.a_paterno,
 			'last_name_mother': contrato.employee_id.a_materno,
 			'names': contrato.employee_id.nombres,
-			'fecha_ingreso': contrato.employee_id.date_entry_bl,
-			'fecha_cese': contrato.employee_id.date_end_bl,
+			'fecha_ingreso': fecha_ini,
+			'fecha_cese': fecha_fin,
 		}
 		self.planilla_indemnizacion_lines.create(vals)
 
