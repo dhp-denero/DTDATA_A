@@ -112,35 +112,78 @@ class breaksLines(models.Model):
         for record in self:
 
             if record.type == "subsidy":
-                contracts = record.env['hr.contract'].search([('employee_id', '=', record.employee_id.id)], limit=6)
-                amount_total = 0
-                for i in contracts:
-                    amount_total += i.wage
+                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('state', '=', 'done'), ('date_from', '<=', record.date_start)], limit=12)
+                basic_total = 0
+                extras = 0
+                for nomina in nominas:
+                    basic_total += nomina.contract_id.wage
+                    for linea in nomina.line_ids:
+                        if linea.code == "COMI":
+                            extras += linea.total
+                        elif linea.code == "HE25":
+                            extras += linea.total
+                        elif linea.code == "HE35":
+                            extras += linea.total
+                        elif linea.code == "HE100":
+                            extras += linea.total
+                        elif linea.code == "LEY26504":
+                            extras += linea.total
+                        elif linea.code == "CONDTRA":
+                            extras += linea.total
+                        elif linea.code == "TRABCOMB":
+                            extras += linea.total
 
-                if amount_total:
-                    amount_total = ((amount_total/len(contracts))/30)*record.days_total
+                if basic_total:
+                    prome_diario = (basic_total + extras)/(len(nominas)*30)
+                    record.amount = record.days_total*prome_diario
+                else:
+                    record.amount = 0
 
-                record.amount = amount_total
             elif record.type == "break_mother":
-                contracts = record.env['hr.contract'].search([('employee_id', '=', record.employee_id.id)], limit=6)
-                amount_total = 0
-                for i in contracts:
-                    amount_total += i.wage
+                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('state', '=', 'done'), ('date_from', '<=', record.date_start)], limit=12)
+                basic_total = 0
+                extras = 0
+                for nomina in nominas:
+                    basic_total += nomina.contract_id.wage
+                    for linea in nomina.line_ids:
+                        if linea.code == "COMI":
+                            extras += linea.total
+                        elif linea.code == "HE25":
+                            extras += linea.total
+                        elif linea.code == "HE35":
+                            extras += linea.total
+                        elif linea.code == "HE100":
+                            extras += linea.total
+                        elif linea.code == "LEY26504":
+                            extras += linea.total
+                        elif linea.code == "CONDTRA":
+                            extras += linea.total
+                        elif linea.code == "TRABCOMB":
+                            extras += linea.total
 
-                if amount_total:
-                    amount_total = ((amount_total/len(contracts))/30)*record.days_total
+                if basic_total:
+                    prome_diario = (basic_total + extras)/(len(nominas)*30)
+                    record.amount = record.days_total*prome_diario
+                else:
+                    record.amount = 0
 
                 record.amount = amount_total
             else:
-                contracts = record.env['hr.contract'].search([('employee_id', '=', record.employee_id.id)], limit=6)
-                amount_total = 0
-                for i in contracts:
-                    amount_total += i.wage
+                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('state', '=', 'done'), ('payslip_run_id', '=', record.period.id)], limit=1)
+                basic_total = 0
+                extras = 0
+                for nomina in nominas:
+                    basic_total += nomina.contract_id.wage
+                    for linea in nomina.line_ids:
+                        if linea.code == "LEY26504":
+                            extras += linea.total
+                            break
 
-                if amount_total:
-                    amount_total = ((amount_total/len(contracts))/30)*record.days_total
-
-                record.amount = amount_total
+                if basic_total:
+                    prome_diario = (basic_total + extras)/(len(nominas)*30)
+                    record.amount = record.days_total*prome_diario
+                else:
+                    record.amount = 0
 
     def _get_days_total(self):
         for line in self:
