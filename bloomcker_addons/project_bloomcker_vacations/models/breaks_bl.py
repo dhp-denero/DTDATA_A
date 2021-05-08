@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
 from odoo.exceptions import UserError
-from datetime import datetime
+from datetime import datetime, date, time, timedelta
 
 class breaksBL(models.Model):
 
@@ -45,7 +45,7 @@ class breaksLines(models.Model):
     period = fields.Many2one('hr.payslip.run', string="Periodo")
     breaks_base_id = fields.Many2one('breaks.bl')
     employee_id = fields.Many2one('hr.employee','Apellidos y Nombres', related='breaks_base_id.employee_id', readonly=True)
-    amount = fields.Float('Monto', compute='_get_amount')
+    amount = fields.Float('Monto')
     days_period = fields.Integer('Días por Periodo', compute="_get_days_period")
     alert = fields.Char('Alerta', compute="_get_alert")
     type = fields.Selection([
@@ -70,6 +70,9 @@ class breaksLines(models.Model):
             if period.date_start[0:7] != str(start)[0:7]:
                 raise UserError("Fechas de Inicio o Fin no Coinciden con periodo")
 
+            if not result.type:
+                result.type = 'break'
+
             if vals['type'] == 'break':
                 lines = self.env['breaks.line.bl'].search([('breaks_base_id', '=', vals['breaks_base_id']), ('type', '=', 'break')])
                 if not period:
@@ -79,16 +82,41 @@ class breaksLines(models.Model):
                     if i.period.date_start[0:4] == period.date_start[0:4]:
                         days_total += i.days_total
 
-                date_i = datetime.strptime(vals['date_start'], "%Y-%m-%d")
-                date_o = datetime.strptime(vals['date_end'], "%Y-%m-%d")
                 days_record = abs(start - end).days + 1
+
                 if days_total <= 20:
                     return result
                 else:
-                    mensaje = "Un Trabajador no puede sumar más de 20 días de descanso por año, favor elegir otro tipo"
-                    raise UserError(mensaje)
-            else:
-                return result
+                    if days_total == days_record:
+                        diff = 20 - days_total
+                        result.date_end = start+timedelta(days=19)
+                        new_vals = {
+                            'date_start': str((start + timedelta(days=20)).date()),
+                            'date_end': vals['date_end'],
+                            'type': 'subsidy',
+                            'period': result.period.id,
+                            'reason': result.reason,
+                            'breaks_base_id': result.breaks_base_id.id
+                        }
+                        self.env['breaks.line.bl'].create(new_vals)
+                    elif days_total - days_record < 20 and days_total - days_record > 0:
+                        diff = days_total - 20
+                        desc = days_record - diff
+                        result.date_end = start+timedelta(days=desc-1)
+                        new_vals = {
+                            'date_start': str((start + timedelta(days=desc)).date()),
+                            'date_end': vals['date_end'],
+                            'type': 'subsidy',
+                            'period': result.period.id,
+                            'reason': result.reason,
+                            'breaks_base_id': result.breaks_base_id.id
+                        }
+                        self.env['breaks.line.bl'].create(new_vals)
+                    else:
+                        result.type = 'subsidy'
+
+            result.get_amount()
+            return result
 
 
     def _get_days_period(self):
@@ -108,7 +136,7 @@ class breaksLines(models.Model):
             else:
                 record.alert = ""
 
-    def _get_amount(self):
+    def get_amount(self):
         for record in self:
 
             if record.type == "subsidy":

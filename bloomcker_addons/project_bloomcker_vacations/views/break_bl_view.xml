@@ -33,6 +33,7 @@
                                       <field name="days_period"/>
                                       <field name="amount"/>
                                       <field name="alert"/>
+                                      <button name="get_amount" type="object" string="Calcular" class="oe_highlight"/>
                                     </tree>
                                 </field>
                             </page>
