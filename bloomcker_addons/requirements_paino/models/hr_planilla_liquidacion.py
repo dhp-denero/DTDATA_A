@@ -468,6 +468,10 @@ class PlanillaLiquidacionInherit(models.Model):
 	def calcular_vacaciones(self, contrato, date_start_liquidacion, date_end_liquidacion, fecha_ini, fecha_fin,e):
 		self.ensure_one()
 		helper_liquidacion = self.env['planilla.helpers']
+		vacations_days = self.env['vacations.bl'].search([('employee_id','=',contrato.employee_id.id)], limit=1).days
+		_logger.info('calcular_vacaciones')
+		_logger.info(vacations_days)
+
 		parametros_gratificacion = self.env['planilla.gratificacion'].get_parametros_gratificacion()
 		'''
 			se toma como base el año actual por ejm si su contrato inicia 2015-05-13
@@ -506,6 +510,14 @@ class PlanillaLiquidacionInherit(models.Model):
 
 		meses, dias = helper_liquidacion.diferencia_meses_dias(
 			fecha_ini, fecha_fin)
+
+
+		if vacations_days > 30:
+			meses = vacations_days // 30
+			dias = vacations_days % 30
+		else:
+			meses = 0
+			dias = vacations_days
 
 		# 4 sacando basico afam y faltas
 		if fecha_fin.month-fecha_ini.month == 0:

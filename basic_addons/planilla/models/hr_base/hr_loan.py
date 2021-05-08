@@ -62,7 +62,7 @@ class HrLoan(models.Model):
 
 		try:
 			direccion = self.env['main.parameter.hr'].search([])[0].dir_create_file
-		except: 
+		except:
 			raise UserError('Falta configurar un directorio de descargas en el menu Configuracion/Parametros/Directorio de Descarga')
 		workbook = Workbook(direccion +'prestamos.xlsx')
 
@@ -155,7 +155,7 @@ class HrLoan(models.Model):
 		workbook.close()
 
 		f = open(direccion + 'prestamos.xlsx', 'rb')
-		
+
 		vals = {
 			'output_name': 'Prestamo - %s.xlsx'%(self.date),
 			'output_file': base64.encodestring(''.join(f.readlines())),
@@ -175,13 +175,13 @@ class HrLoan(models.Model):
 	def get_pdf(self):
 		try:
 			direccion = self.env['main.parameter.hr'].search([])[0].dir_create_file
-		except: 
+		except:
 			raise UserError('Falta configurar un directorio de descargas en el menu Configuracion/Parametros/Directorio de Descarga')
 		doc = SimpleDocTemplate(direccion + 'prestamos.pdf',pagesize=letter)
 		elements = []
 		style_title = ParagraphStyle(name='Center', alignment=TA_CENTER, fontSize=14, fontName="times-roman")
 		style_cell = ParagraphStyle(name='Center', alignment=TA_CENTER, fontSize=9.6, fontName="times-roman")
-		
+
 		try:
 			logo = open(direccion+"logo.jpg","rb")
 			c = Image(logo,2*inch,0.5*inch)
