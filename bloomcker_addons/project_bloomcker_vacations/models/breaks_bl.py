@@ -50,7 +50,7 @@ class breaksLines(models.Model):
     alert = fields.Char('Alerta', compute="_get_alert")
     type = fields.Selection([
         ('break', 'Descanso Medico'),
-        ('subsidy', 'Subsidio'),
+        ('subsidy', 'Subsidio por Enfermedad'),
         ('break_mother', 'Subsidio por Maternidad')], string='Tipo de Descanso')
 
     @api.model
