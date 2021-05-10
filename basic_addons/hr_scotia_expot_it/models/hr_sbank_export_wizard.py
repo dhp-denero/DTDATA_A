@@ -37,8 +37,8 @@ class hr_payslip_run(models.Model):
 				'default_type_export':'payslip_run',
 				'default_payslip_run_id':self.id,
 			})
-			
-		
+
+
 		return {
 			'type': 'ir.actions.act_window',
 			'res_model': 'hr.sbank.export.wizard',
@@ -59,13 +59,13 @@ class hr_sbank_export_wizard(models.TransientModel):
 
 	def make_excel_pla_export(self):
 		if self.type_export!='payslip_run':
-			raise UserError('El formato seleccionado aun está en desarrollo')			
+			raise UserError('El formato seleccionado aun está en desarrollo')
 
 		self.env['planilla.planilla.tabular.wizard'].reconstruye_tabla(self.payslip_run_id.date_start,self.payslip_run_id.date_end)
 
 		try:
 			direccion = self.env['main.parameter.hr'].search([])[0].dir_create_file
-		except: 
+		except:
 			raise UserError('Falta configurar un directorio de descargas en el menu Configuracion/Parametros/Directorio de Descarga')
 		workbook = Workbook(direccion+'planilla_exportar.xlsx')
 		worksheet = workbook.add_worksheet(
@@ -91,7 +91,7 @@ class hr_sbank_export_wizard(models.TransientModel):
 		formatLeft = workbook.add_format(
 			{'num_format': '0.00', 'font_name': 'Arial', 'align': 'left', 'font_size': fontSize})
 		formatRight = workbook.add_format(
-			{'num_format': '0.00', 'font_name': 'Arial', 'align': 'right', 'font_size': fontSize})		
+			{'num_format': '0.00', 'font_name': 'Arial', 'align': 'right', 'font_size': fontSize})
 		formatLeftColor = workbook.add_format(
 			{'bold': True, 'num_format': '0.00', 'font_name': 'Arial', 'align': 'left', 'bg_color': '#99CCFF', 'font_size': fontSize})
 		styleFooterSum = workbook.add_format(
@@ -140,7 +140,7 @@ class hr_sbank_export_wizard(models.TransientModel):
 		worksheet.write(x, 9, 'DOCUMENTO DE INDENTIDAD', formatLeftColor)
 		worksheet.write(x, 10, 'CCI', formatLeftColor)
 		x=x+1
-		
+
 		for l in self.payslip_run_id.slip_ids:
 			if not l.employee_id.bank_account_id.acc_number:
 				continue
@@ -160,7 +160,7 @@ class hr_sbank_export_wizard(models.TransientModel):
 				cci=l.employee_id.bank_account_id.acc_icc_number
 			else:
 				codofi=l.employee_id.bank_account_id.acc_number[desde-1:hasta]
-				codcta=l.employee_id.bank_account_id.acc_number[int(self.name.cod_cta_pos)+1:]
+				codcta=l.employee_id.bank_account_id.acc_number[hasta+1:]
 
 			nombresc=l.employee_id.nombres.strip()+' '+l.employee_id.a_paterno.strip()+' '+l.employee_id.a_materno.strip()
 
