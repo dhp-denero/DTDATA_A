@@ -18,6 +18,8 @@ class HrPayslipExt(models.Model):
     _inherit = 'hr.payslip'
 
     monto_descanso = fields.Float("Monto por Descanso", compute="_get_descanso")
+    monto_subsidy = fields.Float("Monto por Subsidio", compute="_get_descanso")
+    monto_break_mother = fields.Float("Monto por Descanso", compute="_get_descanso")
     comi_promedio = fields.Float("Promedio de Comisiones", compute="_get_comisiones")
     fault_ids = fields.One2many('faults.bl', 'slip_base_id', string='Lineas de Faltas', ondelete='cascade')
     comisiones_aux = fields.Float("campo aux para comisiones")
@@ -43,17 +45,25 @@ class HrPayslipExt(models.Model):
                 j.comi_promedio = 0
 
     def _get_descanso(self):
-        descansos_ids = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id)])
-        amount = 0
-        dias = 0
-        for descanso in descansos_ids:
-            dias += descanso.days_total
-            amount += descanso.amount
+        breacks_ids = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id), ('type', '=', 'break')])
+        subsidy_ids = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id), ('type', '=', 'subsidy')])
+        break_mother_ids = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id), ('type', '=', 'break_mother')])
+        amount_break = 0
+        amount_subsidy = 0
+        amount_mother = 0
 
-        if dias > 20:
-            self.monto_descanso = (amount/dias)*20
-        else:
-            self.monto_descanso = amount
+        for break_i in breacks_ids:
+            amount_break += break_i.amount
+
+        for subsidy in subsidy_ids:
+            amount_subsidy += subsidy.amount
+
+        for mother in break_mother_ids:
+            amount_mother = mother.amount
+
+        self.monto_descanso = amount_break
+        self.monto_subsidy = amount_subsidy
+        self.monto_break_mother = amount_mother
 
 
 
