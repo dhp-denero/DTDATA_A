@@ -51,7 +51,6 @@ class WizardPlanilla(models.TransientModel):
 
 	tipo = fields.Selection([('no practicante', 'Empleado'), ('practicante', 'practicante')], required=True, index=True, default='practicante')
 
-
 	@api.multi
 	def do_rebuild(self,default):
 		payslip = self.env['hr.payslip.run'].browse(int(default.get('default_planilla')))
