@@ -149,10 +149,10 @@ class WizardPlanilla(models.TransientModel):
 		array_sum = [0 for r in range(len(array_payslip[0].line_ids))]
 
 		for slip in array_payslip:
-			worksheet.write(i,0,slip.employee_id.name_total,formatLeft)
-			worksheet.write(i,1,slip.employee_id.identification_id,formatLeft)
+			worksheet.write(i,0,slip.contract_id.employee_id.name_total,formatLeft)
+			worksheet.write(i,1,slip.contract_id.employee_id.identification_id,formatLeft)
 			worksheet.write(i,2,slip.contract_id.afiliacion_id.entidad,formatLeft)
-			worksheet.write(i,5,slip.employee_id.department_id.name if slip.employee_id.department_id.name else '',formatLeft)
+			worksheet.write(i,5,slip.contract_id.employee_id.department_id.name if slip.contract_id.employee_id.department_id.name else '',formatLeft)
 
 			for j in range(len(slip.line_ids)):
 				array_sum[j] += slip.line_ids[j].total
