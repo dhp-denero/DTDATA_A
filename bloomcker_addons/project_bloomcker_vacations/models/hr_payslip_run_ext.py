@@ -46,6 +46,17 @@ class HrPayslipRunExt(models.Model):
 
 	_inherit = ['hr.payslip.run']
 
+	def recompute_sheet_lotes(self):
+		for record in self.slip_ids:
+			record.compute_sheet()
+			# number = record.number
+			# record.line_ids.unlink()
+			# contract_ids = record.contract_id.ids
+			# lines = [(0, 0, line) for line in record.get_payslip_lines(contract_ids, record.id)]
+			# record.write({'line_ids': lines, 'number': number})
+
+
+
 	@api.multi
 	def genera_boleta_empleado(self, date_start, date_end, payslips, dias_no_laborados, dias_laborados, total_horas_jornada_ordinaria, total_minutos_jornada_ordinaria, total_sobretiempo, dias_subsidiados, elements, company, categories, planilla_ajustes):
 		try:

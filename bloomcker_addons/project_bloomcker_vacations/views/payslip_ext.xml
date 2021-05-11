@@ -23,5 +23,15 @@
                 </xpath>
             </field>
         </record>
+        <record id="hr_payslip_run_ext_form" model="ir.ui.view">
+            <field name="name">hr.payslip.run.ext.form</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header" position="inside">
+                    <button name="recompute_sheet_lotes" string="Recalcular Reglas" type="object" class="oe_highlight fa fa-sync" confirm="Esta Acción Recalculara las reglas salariales"/>
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>
