@@ -590,10 +590,10 @@ class PlanillaLiquidacionInherit(models.Model):
 		rem_computable = basico + afam + bonificacion + comision + promedio_horas_trabajo_extra
 		if contrato.regimen_laboral_empresa == 'pequenhaempresa':
 				rem_computable = rem_computable/2.0
-		monto_x_mes = round(rem_computable/12.0, 2)
-		monto_x_dia = round(monto_x_mes/30.0, 2)
-		monto_x_meses = round(monto_x_mes*meses, 2)
-		monto_x_dias = round(monto_x_dia*dias, 2)
+		monto_x_mes = rem_computable/12.0
+		monto_x_dia = rem_computable/30.0
+		monto_x_meses = monto_x_mes*meses
+		monto_x_dias = monto_x_dia*dias
 		total_faltas = round(monto_x_dia*faltas, 2)
 
 		vacaciones_truncas = monto_x_meses+monto_x_dias
@@ -647,8 +647,8 @@ class PlanillaLiquidacionInherit(models.Model):
 			'remuneracion_computable': rem_computable,
 			'meses': meses,
 			'dias': dias,
-			'monto_x_mes': monto_x_meses,
-			'monto_x_dia': monto_x_dias,
+			'monto_x_mes': round(rem_computable/12.0, 2),
+			'monto_x_dia': round(rem_computable/30.0, 2),
 			'vacaciones_devengadas': '',
 			'vacaciones_truncas': vacaciones_truncas,
 			'total_vacaciones': total_vacaciones,
