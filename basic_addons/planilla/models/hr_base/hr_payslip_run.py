@@ -41,6 +41,9 @@ from datetime import date, datetime
 from openerp.osv import osv
 from math import modf
 from decimal import *
+import logging
+_logger = logging.getLogger(__name__)
+
 
 class HrPayslipRun(models.Model):
 
@@ -702,10 +705,12 @@ class HrPayslipRun(models.Model):
 						inner join hr_payslip_line hpl on hp.id=hpl.slip_id
 						inner join hr_salary_rule as sr on sr.code = hpl.code
 						inner join hr_employee e on e.id = hpl.employee_id
+						inner join hr_contract hc on hc.id = hp.contract_id
 						inner join hr_salary_rule_category hsrc on hsrc.id = hpl.category_id
 						left join planilla_tipo_documento ptd on ptd.id = e.tablas_tipo_documento_id
-						where  hpr.id = %d
+						where hpr.id = %d
 						and e.id = %d
+						and hc.regimen_laboral_empresa in ('practicante')
 						and sr.cod_sunat != ''
 						and hpl.appears_on_payslip = 't'
 						group by sr.cod_sunat,e.identification_id

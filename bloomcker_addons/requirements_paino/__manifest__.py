@@ -13,6 +13,7 @@
         'views/hr_employee_form_view_ext.xml',
         'views/hr_payslip_run_views_ext.xml',
         'views/hr_loan_view_ext.xml',
+        'wizards/hr_payslip_run_wizard.xml',
         # 'views/payslip_ext.xml'
     ],
     "application": True,
