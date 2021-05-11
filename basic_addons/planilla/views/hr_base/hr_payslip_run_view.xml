@@ -30,11 +30,11 @@
                 <button name="importar_beneficios_sociales" string="Importar beneficios sociales" type="object" class="oe_highlight fa fa-desktop" attrs="{'invisible':[('cts_flag','!=',True),('grati_flag','!=',True),('liqui_flag','!=',True)]}"/>
                 <button name="generar_planilla_tabular" string="Planilla en pantalla" type="object" class="fa fa-file-text-o" states="draft"/>
                 <!-- <button name="ver_pantalla_planilla_tabular" string="Ver en pantalla" type="object" class="fa fa-file-text-o" states="draft"/> -->
-                <button name="exportar_planilla_tabular_xlsx" string="Exportar excel" type="object" class="fa fa-file-text-o" states="draft"/>
+                <!-- <button name="exportar_planilla_tabular_xlsx" string="Exportar excel" type="object" class="fa fa-file-text-o" states="draft"/>
                 <button name="exportar_plame" string="Exportar Plame" type="object" class="fa fa-file-text-o" states="draft"/>
                 <button name="exportar_plame_horas" string="Exportar Plame Horas" type="object" class="fa fa-file-text-o" states="draft"/>
                 <button name="exportar_plame_subsidios" string="Exportar Plame Subsidios" type="object" class="fa fa-file-text-o" states="draft"/>
-                <button name="exportar_plame_tasas" string="Exportar Plame Tasas" type="object" class="fa fa-file-text-o" states="draft"/>
+                <button name="exportar_plame_tasas" string="Exportar Plame Tasas" type="object" class="fa fa-file-text-o" states="draft"/> -->
                 <button name="recalcular_inputs" string="Generar Inputs" type="object" class="fa fa-file-text-o" states="draft"/>
                 <button name="import_advances" string="Importar Adelantos" type="object" class="oe_highlight fa fa-desktop"/>
                 <button name="import_loans" string="Importar Prestamos" type="object" class="oe_highlight fa fa-desktop"/>

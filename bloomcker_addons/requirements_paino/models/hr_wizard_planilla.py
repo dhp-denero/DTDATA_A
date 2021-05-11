@@ -147,8 +147,12 @@ class WizardPlanilla(models.TransientModel):
 		i = 7
 		array_sum =[]
 		array_sum = [0 for r in range(len(array_payslip[0].line_ids))]
+		_logger.info('array_payslip')
+		_logger.info(array_payslip)
 
 		for slip in array_payslip:
+			_logger.info(slip)
+			_logger.info(slip.contract_id.employee_id)
 			worksheet.write(i,0,slip.contract_id.employee_id.name_total,formatLeft)
 			worksheet.write(i,1,slip.contract_id.employee_id.identification_id,formatLeft)
 			worksheet.write(i,2,slip.contract_id.afiliacion_id.entidad,formatLeft)
