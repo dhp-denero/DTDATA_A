@@ -46,15 +46,21 @@ class HrPayslipRunExt(models.Model):
 
 	_inherit = ['hr.payslip.run']
 
+	def deleted_sheet(self):
+		for record in self.slip_ids:
+			for payslip in record:
+				payslip.line_ids.unlink()
+
 	def recompute_sheet_lotes(self):
 		for record in self.slip_ids:
-			record.compute_sheet()
-			# number = record.number
-			# record.line_ids.unlink()
-			# contract_ids = record.contract_id.ids
-			# lines = [(0, 0, line) for line in record.get_payslip_lines(contract_ids, record.id)]
-			# record.write({'line_ids': lines, 'number': number})
-
+			# record.compute_sheet()
+			for payslip in record:
+				number = payslip.number
+				# payslip.line_ids.unlink()
+				contract_ids = payslip.contract_id.ids
+				lines = [(0, 0, line) for line in record.get_payslip_lines(contract_ids, payslip.id)]
+				payslip.write({'line_ids': lines, 'number': number})
+        	return True
 
 
 	@api.multi

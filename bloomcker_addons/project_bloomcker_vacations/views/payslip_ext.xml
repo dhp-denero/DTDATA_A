@@ -29,7 +29,8 @@
             <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//form/header" position="inside">
-                    <button name="recompute_sheet_lotes" string="Recalcular Reglas" type="object" class="oe_highlight fa fa-sync" confirm="Esta Acción Recalculara las reglas salariales"/>
+                    <button name="recompute_sheet_lotes" string="Recalcular Reglas Salariales" type="object" class="oe_highlight fa fa-sync" confirm="Esta Acción Recalculara las reglas salariales"/>
+                    <button name="deleted_sheet" string="Borrar Reglas Salariales" type="object" class="oe_highlight fa fa-sync" confirm="Esta Acción Borrara todas los calculos de reglas salariales"/>
                 </xpath>
             </field>
         </record>
