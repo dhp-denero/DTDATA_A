@@ -194,8 +194,6 @@ class breaksLines(models.Model):
                     record.amount = record.days_total*prome_diario
                 else:
                     record.amount = 0
-
-                record.amount = amount_total
             else:
                 nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('payslip_run_id', '=', record.period.id)], limit=1)
                 basic_total = 0

@@ -76,7 +76,9 @@ class HrPayslipExt(models.Model):
                 u'No esta configurado los parametros para Quinta Categoria')
         config = config[0]
 
-        breaks = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id)])
+        breaks = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id), ('type', '=', 'break')])
+        breaks_mother = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id), ('type', '=', 'break_mother')])
+        subsidy = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id), ('type', '=', 'subsidy')])
         mother_days = self.env['hr.payslip.worked_days'].search([('payslip_id', '=', self.id), ('code', '=', 'DSUBM')], limit=1)
         null_days = self.env['hr.payslip.worked_days'].search([('payslip_id', '=', self.id), ('code', '=', 'DNULL')], limit=1)
 
@@ -99,10 +101,18 @@ class HrPayslipExt(models.Model):
 
         days_total = 0
         days_break = 0
+        days_break_mother = 0
+        days_subsidy = 0
         days_faults = 0
 
         for i in breaks:
             days_break += i.days_total
+
+        for i in breaks_mother:
+            days_break_mother += i.days_total
+
+        for i in subsidy:
+            days_subsidy += i.days_total
 
         for i in self.periodos_devengue:
             days_total += i.dias
@@ -115,12 +125,16 @@ class HrPayslipExt(models.Model):
         for days_line in self.worked_days_line_ids:
             if days_line.code == "DVAC":
                 days_line.number_of_days = days_total
-            elif days_line.code == "DSUBE":
+            elif days_line.code == "DESC":
                 days_line.number_of_days = days_break
+            elif days_line.code == "DSUBM":
+                days_line.number_of_days = days_break_mother
+            elif days_line.code == "DSUBE":
+                days_line.number_of_days = days_subsidy
             elif days_line.code == "FAL":
                 days_line.number_of_days = days_faults
             elif days_line.code == "DLAB":
-                days_line.number_of_days = num_days_m - days_total - days_break - days_faults - days_mother - dias_null
+                days_line.number_of_days = num_days_m - days_total - days_break - days_faults - days_mother - dias_null - days_break_mother - days_subsidy
 
         self.env.cr.execute("""delete from hr_payslip_line
                             where employee_id = """+str(self.employee_id.id)+""" and slip_id = """+str(self.id))
