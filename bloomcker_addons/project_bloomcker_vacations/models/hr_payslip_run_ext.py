@@ -41,6 +41,8 @@ from datetime import date, datetime
 from openerp.osv import osv
 from math import modf
 from decimal import *
+import logging
+_logger = logging.getLogger(__name__)
 
 class HrPayslipRunExt(models.Model):
 
@@ -69,6 +71,7 @@ class HrPayslipRunExt(models.Model):
 			ruta = self.env['main.parameter.hr'].search([])[0].dir_create_file
 		except:
 			raise UserError('Falta configurar un directorio de descargas en el menu Configuracion/Parametros/Directorio de Descarga')
+		_logger.info('genera_boleta_empleado')
 		style_title = ParagraphStyle(
 			name='Center', alignment=TA_LEFT, fontSize=14, fontName="times-roman")
 		style_form = ParagraphStyle(
@@ -301,7 +304,7 @@ class HrPayslipRunExt(models.Model):
 			i = i+1
 
 			for regla_salarial in reglas_salariales_list:
-
+				_logger.info(regla_salarial)
 				cod_sunat = Paragraph(regla_salarial['cod_sunat'] if regla_salarial['cod_sunat'] else '', style_cell_left)
 				namee = Paragraph(regla_salarial['name'] if regla_salarial['name'] else '', style_cell_left)
 				total = Paragraph('{0:.2f}'.format(regla_salarial['total'] if regla_salarial['total'] else ''), style_cell_right)
