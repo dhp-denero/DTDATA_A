@@ -50,12 +50,12 @@ class HrPayslipRunExt(models.Model):
 
 	def deleted_sheet(self):
 		for record in self.slip_ids:
-			for payslip in record:
-				payslip.line_ids.unlink()
+			self._cr.execute("DELETE FROM hr_payslip_line WHERE slip_id=%s", (record.id,))
+		return True
 
 	def recompute_sheet_lotes(self):
 		for record in self.slip_ids:
-			# record.compute_sheet()
+			self._cr.execute("DELETE FROM hr_payslip_line WHERE slip_id=%s", (record.id,))
 			for payslip in record:
 				number = payslip.number
 				# payslip.line_ids.unlink()
