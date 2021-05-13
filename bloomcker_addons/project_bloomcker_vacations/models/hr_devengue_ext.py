@@ -23,6 +23,6 @@ class DevengueExt(models.Model):
             if days_line.code == "DVAC":
                 days_line.number_of_days = days_total
             elif days_line.code == "DLAB":
-                days_line.number_of_days = 30 - days_total
+                days_line.number_of_days = days_line.number_of_days - days_total
 
         return result
