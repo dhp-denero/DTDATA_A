@@ -56,12 +56,68 @@ class HrPayslipRunExt(models.Model):
 	def recompute_sheet_lotes(self):
 		for record in self.slip_ids:
 			self._cr.execute("DELETE FROM hr_payslip_line WHERE slip_id=%s", (record.id,))
+
+			breaks = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'break')])
+			breaks_mother = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'break_mother')])
+			subsidy = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'subsidy')])
+			mother_days = self.env['hr.payslip.worked_days'].search([('payslip_id', '=', record.id), ('code', '=', 'DSUBM')], limit=1)
+
+			date_c = datetime.strptime(record.contract_id.date_start, "%Y-%m-%d")
+			date_n = datetime.strptime(record.date_from, "%Y-%m-%d")
+			days_exit = abs(date_c - date_n).days
+			num_days_m = 30
+
+			if days_exit < 29 and str(date_c)[5:7] == str(date_n)[5:7]:
+				num_days_m = 30 - days_exit
+			else:
+				dias_null = 0
+
+			if mother_days:
+				days_mother = mother_days.number_of_days
+			else:
+				days_mother = 0
+
+			days_total = 0
+			days_break = 0
+			days_break_mother = 0
+			days_subsidy = 0
+			days_faults = 0
+
+			for i in breaks:
+				days_break += i.days_total
+
+			for i in breaks_mother:
+				days_break_mother += i.days_total
+
+			for i in subsidy:
+				days_subsidy += i.days_total
+
+			for i in record.periodos_devengue:
+				days_total += i.dias
+
+			for i in record.fault_ids:
+				days_faults += i.days
+
+			for days_line in record.worked_days_line_ids:
+				if days_line.code == "DVAC":
+					days_line.number_of_days = days_total
+				elif days_line.code == "DESC":
+					days_line.number_of_days = days_break
+				elif days_line.code == "DSUBM":
+					days_line.number_of_days = days_break_mother
+				elif days_line.code == "DSUBE":
+					days_line.number_of_days = days_subsidy
+				elif days_line.code == "FAL":
+					days_line.number_of_days = days_faults
+				elif days_line.code == "DLAB":
+					days_line.number_of_days = num_days_m - days_total - days_break - days_faults - days_mother - dias_null - days_break_mother - days_subsidy
+
 			for payslip in record:
 				number = payslip.number
-				# payslip.line_ids.unlink()
 				contract_ids = payslip.contract_id.ids
 				lines = [(0, 0, line) for line in record.get_payslip_lines(contract_ids, payslip.id)]
 				payslip.write({'line_ids': lines, 'number': number})
+
         	return True
 
 
@@ -445,7 +501,7 @@ class HrPayslipRunExt(models.Model):
 				detalle_vacaciones.append([tipo, date_start, date_end, dias,])
 
 			for i in descansos_ids:
-				tipo = Paragraph("Descanso Médico", style_cell_left)
+				tipo = Paragraph(dict(i._fields['type'].selection).get(i.type), style_cell_left)
 				date_start = Paragraph(str(i.date_start), style_cell_right)
 				date_end = Paragraph(str(i.date_end), style_cell_right)
 				dias = Paragraph(str(i.days_total), style_cell_right)
