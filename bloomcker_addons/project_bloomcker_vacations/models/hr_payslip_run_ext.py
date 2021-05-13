@@ -57,60 +57,60 @@ class HrPayslipRunExt(models.Model):
 		for record in self.slip_ids:
 			self._cr.execute("DELETE FROM hr_payslip_line WHERE slip_id=%s", (record.id,))
 
-			breaks = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'break')])
-			breaks_mother = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'break_mother')])
-			subsidy = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'subsidy')])
-			mother_days = self.env['hr.payslip.worked_days'].search([('payslip_id', '=', record.id), ('code', '=', 'DSUBM')], limit=1)
-
-			date_c = datetime.strptime(record.contract_id.date_start, "%Y-%m-%d")
-			date_n = datetime.strptime(record.date_from, "%Y-%m-%d")
-			days_exit = abs(date_c - date_n).days
-			num_days_m = 30
-
-			if days_exit < 29 and str(date_c)[5:7] == str(date_n)[5:7]:
-				num_days_m = 30 - days_exit
-			else:
-				dias_null = 0
-
-			if mother_days:
-				days_mother = mother_days.number_of_days
-			else:
-				days_mother = 0
-
-			days_total = 0
-			days_break = 0
-			days_break_mother = 0
-			days_subsidy = 0
-			days_faults = 0
-
-			for i in breaks:
-				days_break += i.days_total
-
-			for i in breaks_mother:
-				days_break_mother += i.days_total
-
-			for i in subsidy:
-				days_subsidy += i.days_total
-
-			for i in record.periodos_devengue:
-				days_total += i.dias
-
-			for i in record.fault_ids:
-				days_faults += i.days
-
-			for days_line in record.worked_days_line_ids:
-				if days_line.code == "DVAC":
-					days_line.number_of_days = days_total
-				elif days_line.code == "DESC":
-					days_line.number_of_days = days_break
-				elif days_line.code == "DSUBM":
-					days_line.number_of_days = days_break_mother
-				elif days_line.code == "DSUBE":
-					days_line.number_of_days = days_subsidy
-				elif days_line.code == "FAL":
-					days_line.number_of_days = days_faults
-				elif days_line.code == "DLAB":
-					days_line.number_of_days = num_days_m - days_total - days_break - days_faults - days_mother - dias_null - days_break_mother - days_subsidy
+			# breaks = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'break')])
+			# breaks_mother = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'break_mother')])
+			# subsidy = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'subsidy')])
+			# mother_days = self.env['hr.payslip.worked_days'].search([('payslip_id', '=', record.id), ('code', '=', 'DSUBM')], limit=1)
+			#
+			# date_c = datetime.strptime(record.contract_id.date_start, "%Y-%m-%d")
+			# date_n = datetime.strptime(record.date_from, "%Y-%m-%d")
+			# days_exit = abs(date_c - date_n).days
+			# num_days_m = 30
+			#
+			# if days_exit < 29 and str(date_c)[5:7] == str(date_n)[5:7]:
+			# 	num_days_m = 30 - days_exit
+			# else:
+			# 	dias_null = 0
+			#
+			# if mother_days:
+			# 	days_mother = mother_days.number_of_days
+			# else:
+			# 	days_mother = 0
+			#
+			# days_total = 0
+			# days_break = 0
+			# days_break_mother = 0
+			# days_subsidy = 0
+			# days_faults = 0
+			#
+			# for i in breaks:
+			# 	days_break += i.days_total
+			#
+			# for i in breaks_mother:
+			# 	days_break_mother += i.days_total
+			#
+			# for i in subsidy:
+			# 	days_subsidy += i.days_total
+			#
+			# for i in record.periodos_devengue:
+			# 	days_total += i.dias
+			#
+			# for i in record.fault_ids:
+			# 	days_faults += i.days
+			#
+			# for days_line in record.worked_days_line_ids:
+			# 	if days_line.code == "DVAC":
+			# 		days_line.number_of_days = days_total
+			# 	elif days_line.code == "DESC":
+			# 		days_line.number_of_days = days_break
+			# 	elif days_line.code == "DSUBM":
+			# 		days_line.number_of_days = days_break_mother
+			# 	elif days_line.code == "DSUBE":
+			# 		days_line.number_of_days = days_subsidy
+			# 	elif days_line.code == "FAL":
+			# 		days_line.number_of_days = days_faults
+			# 	elif days_line.code == "DLAB":
+			# 		days_line.number_of_days = num_days_m - days_total - days_break - days_faults - days_mother - dias_null - days_break_mother - days_subsidy
 
 			for payslip in record:
 				number = payslip.number
