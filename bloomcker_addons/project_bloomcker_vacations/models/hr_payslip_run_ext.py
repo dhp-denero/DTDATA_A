@@ -500,7 +500,7 @@ class HrPayslipRunExt(models.Model):
 				try:
 					tipo = Paragraph(dict(i._fields['type'].selection).get(i.type), style_cell_left)
 				except:
-					tipo = Paragraph("Descanso Médico").get(i.type), style_cell_left)
+					tipo = Paragraph("Descanso Médico", style_cell_left)
 				date_start = Paragraph(str(i.date_start), style_cell_right)
 				date_end = Paragraph(str(i.date_end), style_cell_right)
 				dias = Paragraph(str(i.days_total), style_cell_right)
