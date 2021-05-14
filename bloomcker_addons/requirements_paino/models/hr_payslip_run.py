@@ -76,8 +76,10 @@ class EmployeeExt(models.Model):
 		for contract in self.env['hr.contract'].browse([row['id'] for row in employee_aux_ids]):
 			if contract.employee_id.id not in employees:
 				slip_data = self.env['hr.payslip'].onchange_employee_id(from_date, to_date, contract.employee_id.id, contract.id)
+				number = self.env['ir.sequence'].next_by_code('salary.slip')
 				res = {
 					'employee_id': contract.employee_id.id,
+					'number':number,
 					'name': slip_data['value'].get('name'),
 					'struct_id': slip_data['value'].get('struct_id'),
 					'contract_id': contract.id,
