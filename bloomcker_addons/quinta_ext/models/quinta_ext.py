@@ -331,7 +331,7 @@ class QuintaExt(models.Model):
         if self.periodo.code.split('/')[0] in ('01'):
             pass
         elif self.periodo.code.split('/')[0] != '01':
-            for i_e in range(3):
+            for i_e in range(int(self.periodo.code.split('/')[0])-1):
                 tmp = self.env['quinta.categoria.detalle'].search(
                     [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
                 if len(tmp) > 0:
