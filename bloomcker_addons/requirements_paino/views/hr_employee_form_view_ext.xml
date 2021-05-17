@@ -25,15 +25,16 @@
                 </xpath>
             </field>
         </record>
-        <!-- <record model="ir.ui.view" id="view_employee_form_bank_ext">
+        <record model="ir.ui.view" id="view_employee_form_bank_ext">
             <field name="name">view_employee_form_bank_ext</field>
             <field name="model">hr.employee</field>
-            <field name="inherit_id" ref="planilla.planilla_hr_employee_form_inherit_form"/>
+            <!-- <field name="inherit_id" ref="planilla.planilla_hr_employee_form_inherit_form"/> -->
+            <field name="inherit_id" ref="hr.view_employee_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='bank_account_id']" position="after">
+                <xpath expr="//form/sheet/notebook/page[3]" position="inside">
                     <button name="get_view_bank" string="Crea Cuenta" type="object" class="oe_highlight fa fa-sync"/>
                 </xpath>
             </field>
-        </record> -->
+        </record>
     </data>
 </odoo>

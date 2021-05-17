@@ -27,8 +27,6 @@ class QuintaDetalExt(models.Model):
 
         self.grat_compu = proyec_remu
 
-
-
 class QuintaExt(models.Model):
     _inherit = 'quinta.categoria'
 
@@ -317,23 +315,22 @@ class QuintaExt(models.Model):
 
         factor = {
             '01': 12,
-            '02': 12,
-            '03': 12,
+            '02': 11,
+            '03': 10,
             '04': 9,
             '05': 8,
-            '06': 8,
-            '07': 8,
+            '06': 7,
+            '07': 6,
             '08': 5,
             '09': 4,
-            '10': 4,
-            '11': 4,
+            '10': 3,
+            '11': 2,
             '12': 1,
         }
         respuesta['retenciones_ant'] = 0
-        if self.periodo.code.split('/')[0] in ('01', '02', '03'):
-            respuesta['retenciones_ant'] = -retencion_m_anterior
+        if self.periodo.code.split('/')[0] in ('01'):
             pass
-        elif self.periodo.code.split('/')[0] == '04':
+        elif self.periodo.code.split('/')[0] != '01':
             for i_e in range(3):
                 tmp = self.env['quinta.categoria.detalle'].search(
                     [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
@@ -341,37 +338,48 @@ class QuintaExt(models.Model):
                     respuesta['retenciones_ant'] -= tmp[0].retencion
             respuesta['retenciones_ant'] -= retencion_m_anterior
 
-        elif self.periodo.code.split('/')[0] in ('05', '06', '07'):
-            for i_e in range(4):
-                tmp = self.env['quinta.categoria.detalle'].search(
-                    [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
-                if len(tmp) > 0:
-                    respuesta['retenciones_ant'] -= tmp[0].retencion
-            respuesta['retenciones_ant'] -= retencion_m_anterior
-
-        elif self.periodo.code.split('/')[0] in ('08'):
-            for i_e in range(7):
-                tmp = self.env['quinta.categoria.detalle'].search(
-                    [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
-                if len(tmp) > 0:
-                    respuesta['retenciones_ant'] -= tmp[0].retencion
-            respuesta['retenciones_ant'] -= retencion_m_anterior
-
-        elif self.periodo.code.split('/')[0] in ('09', '10', '11'):
-            for i_e in range(8):
-                tmp = self.env['quinta.categoria.detalle'].search(
-                    [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
-                if len(tmp) > 0:
-                    respuesta['retenciones_ant'] -= tmp[0].retencion
-            respuesta['retenciones_ant'] -= retencion_m_anterior
-
-        elif self.periodo.code.split('/')[0] in ('12'):
-            for i_e in range(11):
-                tmp = self.env['quinta.categoria.detalle'].search(
-                    [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
-                if len(tmp) > 0:
-                    respuesta['retenciones_ant'] -= tmp[0].retencion
-            respuesta['retenciones_ant'] -= retencion_m_anterior
+        # if self.periodo.code.split('/')[0] in ('01', '02', '03'):
+        #     respuesta['retenciones_ant'] = -retencion_m_anterior
+        #     pass
+        # elif self.periodo.code.split('/')[0] == '04':
+        #     for i_e in range(3):
+        #         tmp = self.env['quinta.categoria.detalle'].search(
+        #             [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
+        #         if len(tmp) > 0:
+        #             respuesta['retenciones_ant'] -= tmp[0].retencion
+        #     respuesta['retenciones_ant'] -= retencion_m_anterior
+        #
+        # elif self.periodo.code.split('/')[0] in ('05', '06', '07'):
+        #     for i_e in range(4):
+        #         tmp = self.env['quinta.categoria.detalle'].search(
+        #             [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
+        #         if len(tmp) > 0:
+        #             respuesta['retenciones_ant'] -= tmp[0].retencion
+        #     respuesta['retenciones_ant'] -= retencion_m_anterior
+        #
+        # elif self.periodo.code.split('/')[0] in ('08'):
+        #     for i_e in range(7):
+        #         tmp = self.env['quinta.categoria.detalle'].search(
+        #             [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
+        #         if len(tmp) > 0:
+        #             respuesta['retenciones_ant'] -= tmp[0].retencion
+        #     respuesta['retenciones_ant'] -= retencion_m_anterior
+        #
+        # elif self.periodo.code.split('/')[0] in ('09', '10', '11'):
+        #     for i_e in range(8):
+        #         tmp = self.env['quinta.categoria.detalle'].search(
+        #             [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
+        #         if len(tmp) > 0:
+        #             respuesta['retenciones_ant'] -= tmp[0].retencion
+        #     respuesta['retenciones_ant'] -= retencion_m_anterior
+        #
+        # elif self.periodo.code.split('/')[0] in ('12'):
+        #     for i_e in range(11):
+        #         tmp = self.env['quinta.categoria.detalle'].search(
+        #             [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
+        #         if len(tmp) > 0:
+        #             respuesta['retenciones_ant'] -= tmp[0].retencion
+        #     respuesta['retenciones_ant'] -= retencion_m_anterior
 
         respuesta['renta_anual_proy'] = respuesta['impuesto1'] + respuesta['impuesto2'] + \
             respuesta['impuesto3'] + respuesta['impuesto4'] + \
