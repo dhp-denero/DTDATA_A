@@ -55,11 +55,7 @@ class HrPayslipRunExt(models.Model):
 
 	def recompute_sheet_lotes(self):
 		for record in self.slip_ids:
-			config = self.env['planilla.quinta.categoria'].search([])
-			if len(config) == 0:
-				raise ValidationError(u'No esta configurado los parametros para Quinta Categoria')
-			config = config[0]
-			record.env.cr.execute("""delete from hr_payslip_line where employee_id = """+str(record.employee_id.id)+""" and slip_id = """+str(record.id))
+			record.comisiones_aux = record.comi_promedio
 			record._cr.execute("DELETE FROM hr_payslip_line WHERE slip_id=%s", (record.id,))
 			breaks = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'break')])
 			breaks_mother = self.env['breaks.line.bl'].search([('employee_id', '=', record.employee_id.id), ('period', '=', record.payslip_run_id.id), ('type', '=', 'break_mother')])
