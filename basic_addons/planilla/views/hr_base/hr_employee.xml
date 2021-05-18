@@ -44,10 +44,10 @@
                     <attribute name="invisible">1</attribute>
                 </field>
                 <xpath expr="//form/sheet/notebook/page[2]" position="after">
-                    <page string="Cuentas Bancarias">
+                    <page name="hr_account_bank" string="Cuentas Bancarias">
                         <group>
                             <group>
-                                <field name="bank_account_id" string="Cuenta Sueldo"/>
+                                <field name="bank_account_id" string="Cuenta Sueldo" create="true"/>
                                 <field name="bank_account_id_acc_number_rel" readonly="1" />
                                 <field name="bank_account_id_bank_id_rel" readonly="1" />
                                 <field name="bank_account_id_currency_id_rel" readonly="1" />

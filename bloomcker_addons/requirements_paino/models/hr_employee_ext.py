@@ -37,3 +37,11 @@ class EmployeeExt(models.Model):
 				if contract_ids_sorted_by_date_start[-1].date_end:
 					record.date_end_bl = contract_ids_sorted_by_date_start[-1].date_end
 				_logger.info(contract_ids_sorted_by_date_start[-1])
+
+	def get_view_bank(self):
+		return {
+			"type": "ir.actions.act_window",
+			"res_model": "res.partner.bank",
+			"views": [[False, "form"]],
+			"target": "new",
+		}
