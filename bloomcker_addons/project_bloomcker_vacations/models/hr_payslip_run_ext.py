@@ -476,8 +476,11 @@ class HrPayslipRunExt(models.Model):
 		essalud = 0
 		for payslip in payslips:
 			essalud += payslip.essalud
-		if essalud > 0:
-			detalle_trabajador.append(['',Paragraph('Aportes ESSALUD',style_cell_left),'','','','','',Paragraph('{0:.2f}'.format(essalud), style_cell_right)])
+
+		total_essalud = self.env['hr.payslip.line'].search([('employee_id', '=', payslips[0].employee_id.id), ('slip_id', '=', payslips[0].id), ('code', '=', 'TOTAPOR')], limit=1)
+
+		if len(total_essalud) > 0:
+			detalle_trabajador.append(['',Paragraph('TOTAL APORTES',style_cell_left),'','','','','',Paragraph('{0:.2f}'.format(total_essalud.total), style_cell_right)])
 			positions_in_tables.append(('SPAN', (1, i), (4, i)))
 
 		descansos_ids = self.env['breaks.line.bl'].search([('employee_id', '=', payslips[0].employee_id.id), ('period', '=', payslips[0].payslip_run_id.id)])
