@@ -418,6 +418,8 @@ class QuintaExt(models.Model):
         respuesta['renta_total'] = respuesta['renta_extraor'] + \
             respuesta['renta_mensual']
 
+        respuesta['retenciones_ant'] -= -respuesta['renta_extraor']
+
         respuesta['padre'] = self.id
         respuesta['retencion'] = respuesta['renta_total']
 
