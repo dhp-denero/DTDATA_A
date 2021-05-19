@@ -478,8 +478,12 @@ class HrPayslipRunExt(models.Model):
 			essalud += payslip.essalud
 
 		total_essalud = self.env['hr.payslip.line'].search([('employee_id', '=', payslips[0].employee_id.id), ('slip_id', '=', payslips[0].id), ('code', '=', 'TOTAPOR')], limit=1)
+		essalud_rule = self.env['hr.payslip.line'].search([('employee_id', '=', payslips[0].employee_id.id), ('slip_id', '=', payslips[0].id), ('code', '=', 'ESSALUD')], limit=1)
 
 		if len(total_essalud) > 0:
+			if essalud_rule and essalud_rule.total:
+				detalle_trabajador.append(['',Paragraph('Aportes ESSALUD',style_cell_left),'','','','','',Paragraph('{0:.2f}'.format(essalud_rule.total), style_cell_right)])
+				positions_in_tables.append(('SPAN', (1, i), (4, i)))
 			detalle_trabajador.append(['',Paragraph('TOTAL APORTES',style_cell_left),'','','','','',Paragraph('{0:.2f}'.format(total_essalud.total), style_cell_right)])
 			positions_in_tables.append(('SPAN', (1, i), (4, i)))
 
