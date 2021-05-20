@@ -141,10 +141,8 @@ class breaksLines(models.Model):
 
             if record.type == "subsidy":
                 nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start)], limit=12)
-                basic_total = 0
                 extras = 0
                 for nomina in nominas:
-                    basic_total += nomina.contract_id.wage
                     for linea in nomina.line_ids:
                         if linea.code == "COMI":
                             extras += linea.total
@@ -162,19 +160,19 @@ class breaksLines(models.Model):
                             extras += linea.total
                         elif linea.code == "VAC":
                             extras += linea.total
+                        elif linea.code == "BAS_M":
+                            extras += linea.total
 
-                if basic_total:
-                    prome_diario = (basic_total + extras)/(len(nominas)*30)
+                if extras:
+                    prome_diario = extras/(len(nominas)*30)
                     record.amount = record.days_total*prome_diario
                 else:
                     record.amount = 0
 
             elif record.type == "break_mother":
                 nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start)], limit=12)
-                basic_total = 0
                 extras = 0
                 for nomina in nominas:
-                    basic_total += nomina.contract_id.wage
                     for linea in nomina.line_ids:
                         if linea.code == "COMI":
                             extras += linea.total
@@ -192,9 +190,11 @@ class breaksLines(models.Model):
                             extras += linea.total
                         elif linea.code == "VAC":
                             extras += linea.total
+                        elif linea.code == "BAS_M":
+                            extras += linea.total
 
-                if basic_total:
-                    prome_diario = (basic_total + extras)/(len(nominas)*30)
+                if extras:
+                    prome_diario = extras/(len(nominas)*30)
                     record.amount = record.days_total*prome_diario
                 else:
                     record.amount = 0
