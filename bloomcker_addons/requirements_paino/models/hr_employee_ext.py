@@ -31,8 +31,6 @@ class EmployeeExt(models.Model):
 
 	bank_account_cts_id = fields.Many2one('res.partner.bank', string='Cuenta CTS',
 		domain="[('partner_id', '=', address_home_id)]", help='Cuenta CTS')
-<<<<<<< Updated upstream
-
 
 	@api.multi
 	@api.depends('contract_ids.date_start')
@@ -60,5 +58,3 @@ class EmployeeExt(models.Model):
 			"views": [[False, "form"]],
 			"target": "new",
 		}
-=======
->>>>>>> Stashed changes
