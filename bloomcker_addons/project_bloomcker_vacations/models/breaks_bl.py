@@ -162,6 +162,8 @@ class breaksLines(models.Model):
                             extras += linea.total
                         elif linea.code == "BAS_M":
                             extras += linea.total
+                        elif linea.code == "AF":
+                            extras += linea.total
 
                 if extras:
                     prome_diario = extras/(len(nominas)*30)
@@ -191,6 +193,8 @@ class breaksLines(models.Model):
                         elif linea.code == "VAC":
                             extras += linea.total
                         elif linea.code == "BAS_M":
+                            extras += linea.total
+                        elif linea.code == "AF":
                             extras += linea.total
 
                 if extras:
