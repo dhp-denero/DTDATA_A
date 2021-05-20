@@ -56,7 +56,7 @@ class PlanillaImportarEmpleados(models.Model):
                 continue
             for col in range(s.ncols):
                 value = (s.cell(row, col).value)
-                
+
                 if col == 12:
                     # y,m,d=xlrd.xldate_as_tuple(value, workbook_datemode)
                     a1_as_datetime = datetime(
@@ -165,9 +165,9 @@ class PlanillaImportarEmpleados(models.Model):
 
             try:
                 dni=repr(record[0])
-                dni=dni[:-2] if '.' in dni else unicodedata.normalize('NFKD', record[0] ).encode('ascii','ignore') 
+                dni=dni[:-2] if '.' in dni else unicodedata.normalize('NFKD', record[0] ).encode('ascii','ignore')
             except ValueError:
-                dni=unicodedata.normalize('NFKD', record[0]  ).encode('ascii','ignore') 
+                dni=unicodedata.normalize('NFKD', record[0]  ).encode('ascii','ignore')
             # informacion empleado
             data = {
                 'identification_id': dni,
@@ -211,14 +211,14 @@ class PlanillaImportarEmpleados(models.Model):
             try:
                 dni=repr(s.cell(fila, 0).value)
                 # print "el dni es ",dni
-                dni=dni[:-2] if '.' in dni else unicodedata.normalize('NFKD', s.cell(fila, 0).value ).encode('ascii','ignore') 
+                dni=dni[:-2] if '.' in dni else unicodedata.normalize('NFKD', s.cell(fila, 0).value ).encode('ascii','ignore')
             except ValueError:
-                dni=unicodedata.normalize('NFKD', s.cell(fila, 0).value  ).encode('ascii','ignore') 
+                dni=unicodedata.normalize('NFKD', s.cell(fila, 0).value  ).encode('ascii','ignore')
             # print dni
             query = """
-            select identification_id as dni ,he.bank_account_id as banco from 
+            select identification_id as dni ,he.bank_account_id as banco from
             hr_employee he
-            inner join 
+            inner join
             res_partner_bank rpb
             on he.bank_account_id = rpb.id
             where  he.identification_id ='"""+dni+"""'
@@ -234,10 +234,6 @@ class PlanillaImportarEmpleados(models.Model):
                     value=value[:-2]
                 # print value
                 # print a.acc_number
-                a.acc_number = value 
+                a.acc_number = value
             else:
                 print "CORRIGEME A MA NOOOOOOOOOOO",dni
-
-
-
-

@@ -66,7 +66,7 @@ class HrPayslip(models.Model):
         planilla_ajustes = self.env['planilla.ajustes'].search([], limit=1)
         try:
             ruta = self.env['main.parameter.hr'].search([])[0].dir_create_file
-        except: 
+        except:
             raise UserError('Falta configurar un directorio de descargas en el menu Configuracion/Parametros/Directorio de Descarga')
         archivo_pdf = SimpleDocTemplate(
             ruta+"planilla_tmp.pdf", pagesize=A4, rightMargin=30, leftMargin=30, topMargin=30, bottomMargin=20)
@@ -77,11 +77,11 @@ class HrPayslip(models.Model):
             [('aparece_en_nomina', '=', True)], order="secuencia")
 
         for payslip in payslips:
-            dias_no_laborados += int(payslip.worked_days_line_ids.search([('code', '=', planilla_ajustes.cod_dias_no_laborados.codigo if planilla_ajustes else ''), 
+            dias_no_laborados += int(payslip.worked_days_line_ids.search([('code', '=', planilla_ajustes.cod_dias_no_laborados.codigo if planilla_ajustes else ''),
                                                                         ('payslip_id', '=', payslip.id)], limit=1).number_of_days)
         for payslip in payslips:
             if not payslip.contract_id.hourly_worker:
-                dias_laborados += int(payslip.worked_days_line_ids.search([('code', '=', planilla_ajustes.cod_dias_laborados.codigo if len(planilla_ajustes) > 0 else ''), 
+                dias_laborados += int(payslip.worked_days_line_ids.search([('code', '=', planilla_ajustes.cod_dias_laborados.codigo if len(planilla_ajustes) > 0 else ''),
                                                                     ('payslip_id', '=', payslip.id)], limit=1).number_of_days)
         dias_laborados=dias_laborados-self.feriados if dias_laborados > 0 else 0
         if not planilla_ajustes.cod_dias_subsidiados:
@@ -102,7 +102,7 @@ class HrPayslip(models.Model):
         # str(int(self.env.cr.dictfetchone()['horas']))
         total_sobretiempo = self.env.cr.dictfetchone()
         for payslip in payslips:
-            dias_faltas += self.env['hr.payslip.worked_days'].search([('code', '=', planilla_ajustes.cod_dias_no_laborados.codigo if planilla_ajustes else ''), 
+            dias_faltas += self.env['hr.payslip.worked_days'].search([('code', '=', planilla_ajustes.cod_dias_no_laborados.codigo if planilla_ajustes else ''),
                                                                     ('payslip_id', '=', payslip.id)], limit=1).number_of_days
         if self.employee_id.calendar_id:
             total = self.employee_id.calendar_id.average_hours if self.employee_id.calendar_id.average_hours > 0 else 8
@@ -170,7 +170,7 @@ class HrPayslip(models.Model):
             raise ValidationError(
                 u'No esta configurado los parametros para Quinta Categoria')
         config = config[0]
-        self.env.cr.execute("""delete from hr_payslip_line 
+        self.env.cr.execute("""delete from hr_payslip_line
                             where employee_id = """+str(self.employee_id.id)+""" and slip_id = """+str(self.id))
         super(HrPayslip, self).compute_sheet()
 

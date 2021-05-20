@@ -9,14 +9,29 @@ _logger = logging.getLogger(__name__)
 class EmployeeExt(models.Model):
 	_inherit = 'hr.employee'
 
-	date_entry_bl = fields.Date('Fecha de Ingreso',compute='_entry_bl')
-	date_end_bl = fields.Date('Fecha de Salida',compute='_end_bl')
+	def _default_entry_bl(self):
+		contract_ids = self.env['hr.contract'].search([('employee_id','=',self.id)])
+		_logger.info(contract_ids)
+		if contract_ids:
+			contract_ids_sorted_by_date_start = contract_ids.sorted(lambda c: c.date_start)
+			return contract_ids_sorted_by_date_start[0].date_start
+
+	def _default_end_bl(self):
+		contract_ids = self.env['hr.contract'].search([('employee_id','=',self.id)])
+		if contract_ids:
+			contract_ids_sorted_by_date_start = contract_ids.sorted(lambda c: c.date_start)
+			if contract_ids_sorted_by_date_start[-1].date_end:
+				return contract_ids_sorted_by_date_start[-1].date_end
+
+	date_entry_bl = fields.Date('Fecha de Ingreso',default=lambda self: self._default_entry_bl())
+	date_end_bl = fields.Date('Fecha de Salida',default=_default_end_bl)
 
 	bank_account_id = fields.Many2one('res.partner.bank', string='Bank Account Number',
 		domain="[('partner_id', '=', address_home_id)]", help='Employee bank inherit')
 
 	bank_account_cts_id = fields.Many2one('res.partner.bank', string='Cuenta CTS',
 		domain="[('partner_id', '=', address_home_id)]", help='Cuenta CTS')
+<<<<<<< Updated upstream
 
 
 	@api.multi
@@ -45,3 +60,5 @@ class EmployeeExt(models.Model):
 			"views": [[False, "form"]],
 			"target": "new",
 		}
+=======
+>>>>>>> Stashed changes

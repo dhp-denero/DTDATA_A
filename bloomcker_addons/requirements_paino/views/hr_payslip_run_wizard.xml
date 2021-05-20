@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_hr_sbank_export_xlsm_wizard_form" model="ir.ui.view">
+        <field name="name">hr.sbank.export.wizard.xlsm.form</field>
+        <field name="model">hr.sbank.export.xlsm.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Exportar Planilla">
+                <group>
+                    <field name="name"/>
+                    <field name="pay_date"/>
+                    <field name="type_export"/>
+                    <field name="payslip_run_id"/>
+                    <field name="type_employee"/>
+                </group>
+                <footer>
+                    <button name="make_excel_pla_export_xlsm" string="Generar macro" type="object" class="oe_highlight" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="hr_payslip_run_form_extend" model="ir.ui.view">
+        <field name="name">hr_payslip_run_form_extend</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header" position="inside">
+                <button name="make_excel_sbank_xlsm" string="Exportar a ScotiaBank - Macro" type="object" class="oe_highlight fa fa-desktop"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>
