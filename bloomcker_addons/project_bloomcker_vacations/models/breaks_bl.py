@@ -140,7 +140,7 @@ class breaksLines(models.Model):
         for record in self:
 
             if record.type == "subsidy":
-                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('state', '=', 'done'), ('date_from', '<=', record.date_start)], limit=12)
+                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<=', record.date_start)], limit=12)
                 basic_total = 0
                 extras = 0
                 for nomina in nominas:
@@ -159,6 +159,8 @@ class breaksLines(models.Model):
                         elif linea.code == "CONDTRA":
                             extras += linea.total
                         elif linea.code == "TRABCOMB":
+                            extras += linea.total
+                        elif linea.code == "VAC":
                             extras += linea.total
 
                 if basic_total:
@@ -168,7 +170,7 @@ class breaksLines(models.Model):
                     record.amount = 0
 
             elif record.type == "break_mother":
-                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('state', '=', 'done'), ('date_from', '<=', record.date_start)], limit=12)
+                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<=', record.date_start)], limit=12)
                 basic_total = 0
                 extras = 0
                 for nomina in nominas:
@@ -187,6 +189,8 @@ class breaksLines(models.Model):
                         elif linea.code == "CONDTRA":
                             extras += linea.total
                         elif linea.code == "TRABCOMB":
+                            extras += linea.total
+                        elif linea.code == "VAC":
                             extras += linea.total
 
                 if basic_total:
