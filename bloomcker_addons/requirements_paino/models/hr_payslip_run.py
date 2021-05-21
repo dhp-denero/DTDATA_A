@@ -351,6 +351,7 @@ class hr_sbank_export_xlsm_wizard(models.TransientModel):
 
 
 	def make_excel_pla_export_xlsm(self):
+		_logger.info('make_excel_pla_export_xlsm')
 		if self.type_export!='payslip_run':
 			raise UserError('El formato seleccionado aun está en desarrollo')
 
@@ -363,10 +364,6 @@ class hr_sbank_export_xlsm_wizard(models.TransientModel):
 		workbook = Workbook(direccion+'planilla_exportar.xlsm')
 		worksheet = workbook.add_worksheet('PLANILLAS')
 		workbook.set_vba_name('planilla_exportar')
-		worksheet.insert_button('Z3', {'macro':   'say_hello',
-                               'caption': 'Press Me',
-                               'width':   80,
-                               'height':  30})
 		worksheet.set_landscape()  # Horizontal
 		worksheet.set_paper(9)  # A-4
 		worksheet.set_margins(left=0.75, right=0.75, top=1, bottom=1)
@@ -376,6 +373,7 @@ class hr_sbank_export_xlsm_wizard(models.TransientModel):
 		bold = workbook.add_format(
 			{'bold': True, 'font_name': 'Arial', 'font_size': fontSize})
 		normal = workbook.add_format()
+		formatop = workbook.add_format()
 		boldbord = workbook.add_format({'bold': True, 'font_name': 'Arial'})
 		# boldbord.set_border(style=1)
 		boldbord.set_align('center')
@@ -390,23 +388,31 @@ class hr_sbank_export_xlsm_wizard(models.TransientModel):
 		formatRight = workbook.add_format(
 			{'num_format': '0.00', 'font_name': 'Arial', 'align': 'right', 'font_size': fontSize})
 		formatLeftColor = workbook.add_format(
-			{'bold': True, 'num_format': '0.00', 'font_name': 'Arial', 'align': 'left', 'bg_color': '#99CCFF', 'font_size': fontSize})
+			{'bold': True, 'num_format': '0.00', 'font_name': 'Arial', 'align': 'center', 'bg_color': '#FF0000', 'font_size': fontSize,'font_color': 'white'})
 		styleFooterSum = workbook.add_format(
 			{'bold': True, 'num_format': '0.00', 'font_name': 'Arial', 'align': 'right', 'font_size': fontSize, 'top': 1, 'bottom': 2})
 		styleFooterSum.set_bottom(6)
+		formatLeftColor.set_align('vcenter')
+		formatLeftColor.set_text_wrap()
+		formatop.set_border_color('#FFFFFF')
 		numberdos.set_font_size(fontSize)
 		bord = workbook.add_format()
 		bord.set_border(style=1)
 		bord.set_text_wrap()
 		# numberdos.set_border(style=1)
-
+		worksheet.set_row(0, 10,formatop)
+		worksheet.set_row(1, 10,formatop)
+		worksheet.set_row(2, 10,formatop)
+		worksheet.set_row(3, 10,formatop)
+		worksheet.set_row(4, 10,formatop)
+		worksheet.set_row(5, 10,formatop)
 		title = workbook.add_format({'bold': True, 'font_name': 'Arial'})
 		title.set_align('center')
 		title.set_align('vcenter')
 
 		workbook.add_vba_project('/mnt/extra-addons2/requirements_paino/data/vbaProject.bin')
 		# title.set_text_wrap()
-		worksheet.insert_button('M3', {'macro':   'Generar_txt',
+		worksheet.insert_button('F3', {'macro':   'Generar_txt',
                                'caption': 'Convertir a txt',
                                'width':   200,
                                'height':  30})
@@ -424,14 +430,24 @@ class hr_sbank_export_xlsm_wizard(models.TransientModel):
 		reload(sys)
 		sys.setdefaultencoding('iso-8859-1')
 		worksheet.merge_range(
-			'D1:O1', u"PLANILLA DE SUELDOS Y SALARIOS EXPORTAR", title)
+			'A1:J1', u"PLANILLA DE SUELDOS Y SALARIOS EXPORTAR", title)
 		worksheet.set_row(x, 29)
 		x = x+2
 
 		worksheet.write(x, 0, u"Empresa:", bold)
 		worksheet.write(x, 1, company.name, formatLeft)
-
-
+		worksheet.set_row(6, 30)
+		worksheet.set_column(0, 0, 10)
+		worksheet.set_column(1, 1, 30)
+		worksheet.set_column(2, 2, 10)
+		worksheet.set_column(3, 3, 10)
+		worksheet.set_column(4, 4, 10)
+		worksheet.set_column(5, 5, 10)
+		worksheet.set_column(6, 6, 10)
+		worksheet.set_column(7, 7, 10)
+		worksheet.set_column(8, 8, 10)
+		worksheet.set_column(9, 9, 10)
+		worksheet.set_column(10, 10, 30)
 		x = x+4
 
 		header_planilla_tabular = self.env['ir.model.fields'].search(
@@ -473,8 +489,8 @@ class hr_sbank_export_xlsm_wizard(models.TransientModel):
 
 				nombresc=l.employee_id.nombres.strip()+' '+l.employee_id.a_paterno.strip()+' '+l.employee_id.a_materno.strip()
 
-				worksheet.write(x,0,l.employee_id.identification_id,formatLeft)
-				worksheet.write(x,1,nombresc,formatLeft)
+				worksheet.write(x,0,l.employee_id.identification_id[0:8],formatLeft)
+				worksheet.write(x,1,nombresc[0:30],formatLeft)
 				worksheet.write(x,2,self.name.text_concep,formatLeft)
 				worksheet.write(x,3,self.pay_date,formatLeft)
 				worksheet.write(x,4,valor,formatRight)
@@ -482,7 +498,7 @@ class hr_sbank_export_xlsm_wizard(models.TransientModel):
 				worksheet.write(x,6,codofi,formatLeft)
 				worksheet.write(x,7,codcta,formatLeft)
 				worksheet.write(x,8,'',formatLeft)
-				worksheet.write(x,9,l.employee_id.identification_id,formatLeft)
+				worksheet.write(x,9,l.employee_id.identification_id[0:8],formatLeft)
 				worksheet.write(x,10,cci,formatLeft)
 				x=x+1
 		else:
