@@ -16,9 +16,6 @@
         'views/hr_payslip_run_wizard.xml',
         'views/hr_planilla_cts_line_ext.xml',
         'wizards/hr_payslip_run_wizard.xml',
-        'data/boleta_template.xml',
-        'data/planilla_tmp.xml',
-        # 'views/payslip_ext.xml'
     ],
     "application": True,
 }
