@@ -28,7 +28,7 @@ class EmployeeExt(models.Model):
 
 	bank_account_id = fields.Many2one('res.partner.bank', string='Bank Account Number',
 		domain="[('partner_id', '=', address_home_id)]", help='Employee bank inherit')
-
+	
 	bank_account_cts_id = fields.Many2one('res.partner.bank', string='Cuenta CTS',
 		domain="[('partner_id', '=', address_home_id)]", help='Cuenta CTS')
 
