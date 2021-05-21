@@ -525,8 +525,8 @@ class hr_sbank_export_xlsm_wizard(models.TransientModel):
 
 				nombresc=l.employee_id.nombres.strip()+' '+l.employee_id.a_paterno.strip()+' '+l.employee_id.a_materno.strip()
 
-				worksheet.write(x,0,l.employee_id.identification_id,formatLeft)
-				worksheet.write(x,1,nombresc,formatLeft)
+				worksheet.write(x,0,l.employee_id.identification_id[0:8],formatLeft)
+				worksheet.write(x,1,nombresc[0:30],formatLeft)
 				worksheet.write(x,2,self.name.text_concep,formatLeft)
 				worksheet.write(x,3,self.pay_date,formatLeft)
 				worksheet.write(x,4,valor,formatRight)
@@ -534,7 +534,7 @@ class hr_sbank_export_xlsm_wizard(models.TransientModel):
 				worksheet.write(x,6,codofi,formatLeft)
 				worksheet.write(x,7,codcta,formatLeft)
 				worksheet.write(x,8,'',formatLeft)
-				worksheet.write(x,9,l.employee_id.identification_id,formatLeft)
+				worksheet.write(x,9,l.employee_id.identification_id[0:8],formatLeft)
 				worksheet.write(x,10,cci,formatLeft)
 				x=x+1
 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="hr_planilla_cts_line_form">
+        <field name="name">hr_planilla_cts_line_form</field>
+        <field name="model">planilla.cts.line</field>
+        <field name="arch" type="xml">
+          <form>
+            <header>
+                <button string="CTS en XML" name="imprimir_cts_xml" type="object" class="oe_highlight"/>
+            </header>
+            <sheet>
+              <group>
+                  <group>
+                      <field name="identification_number"/>
+                      <field name="planilla_cts_id"/>
+                      <field name="comision"/>
+                      <field name="bonificacion"/>
+                      <field name="employee_id"/>
+                      <field name="cta_cts"/>
+                      <field name="otros_dtos"/>
+                      <field name="dias_proxima_fecha"/>
+                      <field name="last_name_father"/>
+                      <field name="last_name_mother"/>
+                      <field name="a_familiar"/>
+                      <field name="base"/>
+                      <field name="total_faltas"/>
+                      <field name="cts_a_pagar"/>
+                      <field name="cts_dolares"/>
+                      <field name="monto_x_dias"/>
+                  </group>
+                  <group>
+                      <field name="horas_extras_mean"/>
+                      <field name="intereses_cts"/>
+                      <field name="names"/>
+                      <field name="monto_x_dia"/>
+                      <field name="banco"/>
+                      <field name="tipo_cambio_venta"/>
+                      <field name="faltas"/>
+                      <field name="monto_x_mes"/>
+                      <field name="dias"/>
+                      <field name="monto_x_meses"/>
+                      <field name="cts_soles"/>
+                      <field name="gratificacion"/>
+                      <field name="orden"/>
+                      <field name="fecha_ingreso"/>
+                      <field name="meses"/>
+                      <field name="basico"/>
+                  </group>
+              </group>
+            </sheet>
+          </form>
+        </field>
+    </record>
+  </data>
+</odoo>
