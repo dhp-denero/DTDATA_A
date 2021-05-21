@@ -1,6 +1,7 @@
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError, ValidationError
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
+from numero_letras import numero_a_letras, numero_a_moneda
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -62,7 +63,7 @@ class HrPayslipExtend(models.Model):
 		total.text = "2800.00"
 		tipo_cambio.text = "3.3610"
 		importe_depositado_dolares.text = "416.54"
-		importe_letras.text = "CUATROCIENTOS DIEC Y SEIS Y 54/100 DOLARES AMERICANOS"
+		importe_letras.text = numero_a_letras(416.54)
 		concepto.text = "SEULDO BASICO"
 		monto.text = "2400.00"
 
