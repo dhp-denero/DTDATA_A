@@ -11,7 +11,6 @@ class HrPayslipExtend(models.Model):
 
 	@api.multi
 	def imprimir_boleta_xml(self):
-		_logger.info('imprimir_xml')
 		self.ensure_one()
 
 		records = Element('records')

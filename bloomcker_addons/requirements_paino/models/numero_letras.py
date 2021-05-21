@@ -73,9 +73,9 @@ def numero_a_letras(numero):
     letras_decimal = ''
     parte_decimal = int(round((abs(numero) - abs(numero_entero)) * 100))
     if parte_decimal > 9:
-        letras_decimal = 'punto %s' % numero_a_letras(parte_decimal)
+        letras_decimal = 'y %s' % numero_a_letras(parte_decimal)
     elif parte_decimal > 0:
-        letras_decimal = 'punto cero %s' % numero_a_letras(parte_decimal)
+        letras_decimal = 'y cero %s' % numero_a_letras(parte_decimal)
     if (numero_entero <= 99):
         resultado = leer_decenas(numero_entero)
     elif (numero_entero <= 999):
