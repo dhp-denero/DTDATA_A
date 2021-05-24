@@ -206,8 +206,16 @@ class breaksLines(models.Model):
                 nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('payslip_run_id', '=', record.period.id)], limit=1)
                 basic_total = 0
                 extras = 0
+                dlab = 30
+
                 for nomina in nominas:
                     basic_total += nomina.contract_id.wage
+
+                    for line in nomina.input_line_ids:
+                        if line.code == "COMI":
+                            extras += line.amount
+                            break
+
                     for linea in nomina.line_ids:
                         if linea.code == "LEY26504":
                             extras += linea.total

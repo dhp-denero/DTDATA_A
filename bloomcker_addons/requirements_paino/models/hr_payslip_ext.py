@@ -31,6 +31,7 @@ class HrPayslipExtend(models.Model):
 		hequarto = SubElement(record, 'hequarto')
 		hetrigquinto = SubElement(record, 'hetrigquinto')
 		heciento = SubElement(record, 'heciento')
+		lsgh = SubElement(record, 'lsgh')
 		basico = SubElement(record, 'basico')
 		tcontrato = SubElement(record, 'tcontrato')
 		cargo = SubElement(record, 'cargo')
@@ -52,6 +53,7 @@ class HrPayslipExtend(models.Model):
 		aportaciones = SubElement(record, 'aportaciones')
 
 		dvacn = dsuben = dsubmn = dlabn = he25n = he35n = he100n = faln = 0
+		tingr = tdes = totapor = net = 0
 
 		for line in self.worked_days_line_ids:
 			if line.code == "DVAC":
@@ -71,9 +73,20 @@ class HrPayslipExtend(models.Model):
 			elif line.code == "FAL":
 				faln = line.number_of_days
 
+		for line in self.line_ids:
+			if line.code == "TINGR":
+				tingr = line.total
+			elif line.code == "TDES":
+				tdes = line.total
+			elif line.code == "TOTAPOR":
+				totapor = line.total
+			elif line.code == "NET":
+				net = line.total
+
 		tipo.text = self.employee_id.tablas_tipo_documento_id.codigo_sunat
 		de.text = self.employee_id.identification_id
 		codigo.text = self.employee_id.identification_id
+		mesyanho.text = "PRUEBA - BOLETA DE PAGO DE REMUNERACIONES D.S.N°001-98TR MES" + "ABRIL" + "DEL" + "2021"
 		nombres.text = self.employee_id.name
 		dni.text = self.employee_id.identification_id
 		fingreso.text = self.employee_id.date_entry_bl
@@ -81,6 +94,7 @@ class HrPayslipExtend(models.Model):
 		dvac.text = str(int(dvacn))
 		dsub.text = str(int(dsuben))
 		ddme.text = str(int(dsubmn))
+		lsgh.text = "0"
 		hlab.text = str(int(dlabn*8))
 		hequarto.text = str(int(he25n))
 		hetrigquinto.text = str(int(he35n))
@@ -94,10 +108,10 @@ class HrPayslipExtend(models.Model):
 		nrocta.text = self.employee_id.bank_account_id_acc_number_rel
 		dfalta.text = str(int(faln))
 		dtrabajados.text = str(int(dlabn))
-		totalingresos.text = str(0)
-		totaldescuentos.text = str(0)
-		totalaportes.text = str(0)
-		totalneto.text = str(0)
+		totalingresos.text = str(tingr)
+		totaldescuentos.text = str(tdes)
+		totalaportes.text = str(totapor)
+		totalneto.text = str(net)
 
 		for line in self.line_ids:
 			if line.category_id.code == "ING" and line.total:
