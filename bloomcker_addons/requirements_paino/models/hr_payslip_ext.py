@@ -33,6 +33,7 @@ class HrPayslipExtend(models.Model):
 		heciento = SubElement(record, 'heciento')
 		basico = SubElement(record, 'basico')
 		tcontrato = SubElement(record, 'tcontrato')
+		cargo = SubElement(record, 'cargo')
 		vacini = SubElement(record, 'vacini')
 		vacfin = SubElement(record, 'vacfin')
 		oficina = SubElement(record, 'oficina')
@@ -46,31 +47,71 @@ class HrPayslipExtend(models.Model):
 		totaldescuentos = SubElement(record, 'totaldescuentos')
 		totalaportes = SubElement(record, 'totalaportes')
 		totalneto = SubElement(record, 'totalneto')
-		vacfin = SubElement(record, 'vacfin')
+		ingresos = SubElement(record, 'ingresos')
+		descuentos = SubElement(record, 'descuentos')
+		aportaciones = SubElement(record, 'aportaciones')
+
+		dvacn = dsuben = dsubmn = dlabn = he25n = he35n = he100n = faln = 0
 
 		for line in self.worked_days_line_ids:
 			if line.code == "DVAC":
-				dvac = line.number_of_days
+				dvacn = line.number_of_days
 			elif line.code == "DESUBE":
-				dsube = line.number_of_days
+				dsuben = line.number_of_days
 			elif line.code == "DSUBM":
-				dsubm = line.number_of_days
+				dsubmn = line.number_of_days
 			elif line.code == "DLAB":
-				dlab = line.number_of_days
-
-		# for line in self.line_ids:
-
-
+				dlabn = line.number_of_days
+			elif line.code == "HE25":
+				he25n = line.number_of_hours
+			elif line.code == "HE100":
+				he100n = line.number_of_hours
+			elif line.code == "HE35":
+				he35n = line.number_of_hours
+			elif line.code == "FAL":
+				faln = line.number_of_days
 
 		tipo.text = self.employee_id.tablas_tipo_documento_id.codigo_sunat
 		de.text = self.employee_id.identification_id
-		codigo = self.employee_id.identification_id
+		codigo.text = self.employee_id.identification_id
 		nombres.text = self.employee_id.name
 		dni.text = self.employee_id.identification_id
 		fingreso.text = self.employee_id.date_entry_bl
 		fcese.text = self.employee_id.date_end_bl
-		# dvac.text =
+		dvac.text = str(int(dvacn))
+		dsub.text = str(int(dsuben))
+		ddme.text = str(int(dsubmn))
+		hlab.text = str(int(dlabn*8))
+		hequarto.text = str(int(he25n))
+		hetrigquinto.text = str(int(he35n))
+		heciento.text = str(int(he100n))
+		basico.text = str(self.contract_id.wage)
+		tcontrato.text = self.contract_id.type_id.name
+		cargo.text = self.contract_id.job_id.name
+		oficina.text = "NOTARIA"
+		cuspp.text = str(self.contract_id.cuspp)
+		banco.text = self.employee_id.bank_account_id_bank_id_rel.name
+		nrocta.text = self.employee_id.bank_account_id_acc_number_rel
+		dfalta.text = str(int(faln))
+		dtrabajados.text = str(int(dlabn))
+		totalingresos.text = str(0)
+		totaldescuentos.text = str(0)
+		totalaportes.text = str(0)
+		totalneto.text = str(0)
 
+		for line in self.line_ids:
+			if line.category_id.code == "ING" and line.total:
+				ingreso = SubElement(ingresos, 'ingreso')
+				idetalle = SubElement(ingreso, 'idetalle').text = line.name
+				imonto = SubElement(ingreso, 'imonto').text = str(line.total)
+			elif line.category_id.code == "DES_NET" and line.total:
+				descuento = SubElement(descuentos, 'descuento')
+				ddetalle = SubElement(descuento, 'ddetalle').text = line.name
+				dmonto = SubElement(descuento, 'dmonto').text = str(line.total)
+			elif line.category_id.code == "APOR_TRA" and line.total:
+				aportacione = SubElement(aportaciones, 'aportacione')
+				adetalle = SubElement(aportacione, 'adetalle').text = line.name
+				amonto = SubElement(aportacione, 'amonto').text = str(line.total)
 
 		vals = {
 			'output_name': 'output.xml',
