@@ -86,7 +86,33 @@ class HrPayslipExtend(models.Model):
 		tipo.text = self.employee_id.tablas_tipo_documento_id.codigo_sunat
 		de.text = self.employee_id.identification_id
 		codigo.text = self.employee_id.identification_id
-		mesyanho.text = "PRUEBA - BOLETA DE PAGO DE REMUNERACIONES D.S.N°001-98TR MES" + "ABRIL" + "DEL" + "2021"
+		mes = ""
+		if self.date_from[5:7] == "01":
+			mes = "ENERO"
+		elif self.date_from[5:7] == "02":
+			mes = "FEBRERO"
+		elif self.date_from[5:7] == "03":
+			mes = "MARZO"
+		elif self.date_from[5:7] == "04":
+			mes = "ABRIL"
+		elif self.date_from[5:7] == "05":
+			mes = "MAYO"
+		elif self.date_from[5:7] == "06":
+			mes = "JUNIO"
+		elif self.date_from[5:7] == "07":
+			mes = "JULIO"
+		elif self.date_from[5:7] == "08":
+			mes = "AGOSTO"
+		elif self.date_from[5:7] == "09":
+			mes = "SEPTIEMBRE"
+		elif self.date_from[5:7] == "10":
+			mes = "OCTUBRE"
+		elif self.date_from[5:7] == "11":
+			mes = "NOVIEMBRE"
+		elif self.date_from[5:7] == "12":
+			mes = "DICIEMBRE"
+
+		mesyanho.text = "PRUEBA - BOLETA DE PAGO DE REMUNERACIONES D.S.N 001-98TR MES "+ mes +" ANO " + self.date_from[0:4]
 		nombres.text = self.employee_id.name
 		dni.text = self.employee_id.identification_id
 		fingreso.text = self.employee_id.date_entry_bl
