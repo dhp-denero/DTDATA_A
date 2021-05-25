@@ -129,6 +129,7 @@ class HrPayslipExtend(models.Model):
 		tcontrato.text = self.contract_id.type_id.name
 		cargo.text = self.contract_id.job_id.name
 		oficina.text = "NOTARIA"
+		regpensionario.text = self.contract_id.afiliacion_id.entidad
 		cuspp.text = str(self.contract_id.cuspp)
 		banco.text = self.employee_id.bank_account_id_bank_id_rel.name
 		nrocta.text = self.employee_id.bank_account_id_acc_number_rel
