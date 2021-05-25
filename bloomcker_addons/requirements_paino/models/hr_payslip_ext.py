@@ -87,6 +87,7 @@ class HrPayslipExtend(models.Model):
 		de.text = self.employee_id.identification_id
 		codigo.text = self.employee_id.identification_id
 		mes = ""
+
 		if self.date_from[5:7] == "01":
 			mes = "ENERO"
 		elif self.date_from[5:7] == "02":

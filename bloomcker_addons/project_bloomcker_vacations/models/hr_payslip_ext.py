@@ -21,6 +21,7 @@ class HrPayslipExt(models.Model):
     monto_subsidy = fields.Float("Monto por Subsidio", compute="_get_descanso")
     monto_break_mother = fields.Float("Monto por Descanso", compute="_get_descanso")
     comi_promedio = fields.Float("Promedio de Comisiones", compute="_get_comisiones")
+    comisiones_prom_6 = fields.Float("Promedio las ultimas 6 comisiones", compute="_get_comi_6")
     fault_ids = fields.One2many('faults.bl', 'slip_base_id', string='Lineas de Faltas', ondelete='cascade')
     comisiones_aux = fields.Float("campo aux para comisiones")
 
@@ -44,6 +45,18 @@ class HrPayslipExt(models.Model):
             else:
                 j.comi_promedio = 0
 
+    def _get_comi_6(self):
+        for record in self:
+            comisiones_ids = record.env['hr.payslip.line'].search([('employee_id', '=', record.employee_id.id), ('code', '=', 'COMI'), ('slip_id', '!=', record.id)], limit=6)
+            monto = 0
+            for line in comisiones_ids:
+                monto += line.total
+
+            if comisiones_ids:
+                record.comisiones_prom_6 = monto / len(comisiones_ids)
+            else:
+                record.comisiones_prom_6 = 0
+
     def _get_descanso(self):
         breacks_ids = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id), ('type', '=', 'break')])
         subsidy_ids = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id), ('type', '=', 'subsidy')])
@@ -64,8 +77,6 @@ class HrPayslipExt(models.Model):
         self.monto_descanso = amount_break
         self.monto_subsidy = amount_subsidy
         self.monto_break_mother = amount_mother
-
-
 
     @api.multi
     def compute_sheet(self):
