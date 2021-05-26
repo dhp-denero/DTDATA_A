@@ -36,5 +36,15 @@
                 </xpath>
             </field>
         </record>
+        <record model="ir.ui.view" id="view_employee_tree_ext">
+            <field name="name">view_employee_tree_ext</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='department_id']" position="after">
+                    <field name="state_contract"/>
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>

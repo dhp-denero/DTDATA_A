@@ -25,10 +25,11 @@ class EmployeeExt(models.Model):
 
 	date_entry_bl = fields.Date('Fecha de Ingreso',default=lambda self: self._default_entry_bl())
 	date_end_bl = fields.Date('Fecha de Salida',default=_default_end_bl)
+	state_contract = fields.Selection([('active','Activo'),('close','Inactivo')], compute="get_state_ext", string="Estatus")
 
 	bank_account_id = fields.Many2one('res.partner.bank', string='Bank Account Number',
 		domain="[('partner_id', '=', address_home_id)]", help='Employee bank inherit')
-	
+
 	bank_account_cts_id = fields.Many2one('res.partner.bank', string='Cuenta CTS',
 		domain="[('partner_id', '=', address_home_id)]", help='Cuenta CTS')
 
@@ -58,3 +59,19 @@ class EmployeeExt(models.Model):
 			"views": [[False, "form"]],
 			"target": "new",
 		}
+
+	def get_state_ext(self):
+		for record in self:
+			if record.contract_id.state == 'draft' or record.contract_id.state == 'open':
+				record.state_contract = 'active'
+			else:
+				record.state_contract = 'close'
+
+class ContractExt(models.Model):
+	_inherit = 'hr.contract'
+
+	def verify_date_end(self):
+		contract_ids = self.env['hr.contract'].search(['|', ('state','=','draft'), ('state','=','open')])
+		for contract in contract_ids:
+			if contract.date_end and fields.Datetime.from_string(str(contract.date_end)) <= datetime.now():
+				contract.state = 'close'
