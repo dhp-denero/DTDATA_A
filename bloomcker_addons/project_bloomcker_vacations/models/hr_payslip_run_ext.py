@@ -67,7 +67,7 @@ class HrPayslipRunExt(models.Model):
 			num_days_m = 30
 
 			if days_exit < 29 and str(date_c)[5:7] == str(date_n)[5:7]:
-				num_days_m = 30 - days_exit
+				num_days_m = 30 - days_exit + 1
 
 			if mother_days:
 				days_mother = mother_days.number_of_days

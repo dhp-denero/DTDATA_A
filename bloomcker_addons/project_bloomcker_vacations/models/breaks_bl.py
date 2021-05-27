@@ -211,11 +211,6 @@ class breaksLines(models.Model):
                 for nomina in nominas:
                     basic_total += nomina.contract_id.wage
 
-                    # for line in nomina.input_line_ids:
-                    #     if line.code == "COMI":
-                    #         extras += line.amount
-                    #         break
-
                     for linea in nomina.line_ids:
                         if linea.code == "LEY26504":
                             extras += linea.total
