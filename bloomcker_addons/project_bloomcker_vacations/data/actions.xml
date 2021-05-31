@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+<record id="braks_compute_action" model="ir.actions.server">
+  <field name="name">Calculo de Descansos</field>
+  <field name="model_id" ref="project_bloomcker_vacations.model_breaks_bl" />
+  <field name="condition">True</field>
+  <field name="type">ir.actions.server</field>
+  <field name="state">code</field>
+  <field name="code">action = model.onchange_line_ids()</field>
+</record>
+</odoo>

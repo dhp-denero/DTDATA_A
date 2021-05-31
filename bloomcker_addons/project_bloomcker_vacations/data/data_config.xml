@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data>
         <record id="param_sale_order_report" model="ir.config_parameter">
             <field name="display_name">Días de Periodo</field>
             <field name="key">bl-001</field>

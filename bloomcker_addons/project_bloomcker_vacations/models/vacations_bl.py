@@ -34,7 +34,6 @@ class VacationsBL(models.Model):
             i.days_totals = int(-calculo.days // 30)*2.5
             i.days = i.days_totals - i.days_devs
 
-
     def _get_dni(self):
         for i in self:
             i.dni = i.employee_id.identification_id
@@ -48,7 +47,6 @@ class VacationsBL(models.Model):
                 'state':'inactive',
             }
             line = self.env['vacations.bl'].create(vals)
-
 
     def get_lines(self):
 

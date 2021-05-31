@@ -31,6 +31,11 @@ class breaksBL(models.Model):
                     'view_id': compose_form.id,
                 }
 
+    @api.onchange('line_ids')
+    def onchange_line_ids(self):
+        for record in self:
+            for line in record.line_ids:
+                line.get_amount()
 
 class breaksLines(models.Model):
 
@@ -84,9 +89,7 @@ class breaksLines(models.Model):
 
                 days_record = abs(start - end).days + 1
 
-                if days_total <= 20:
-                    return result
-                else:
+                if days_total > 20:
                     if days_total == days_record:
                         diff = 20 - days_total
                         result.date_end = start+timedelta(days=19)
@@ -116,8 +119,8 @@ class breaksLines(models.Model):
                         result.type = 'subsidy'
 
             result.get_amount()
+            # raise UserError(result)
             return result
-
 
     def _get_days_period(self):
         for record in self:
@@ -234,3 +237,8 @@ class breaksLines(models.Model):
     def send_message(self):
         mensaje = "El Trabajador " + str(self.employee_id.name) + " tiene más de 20 días de descanso, Favor elaborar el Formulario 8001"
         raise UserError(mensaje)
+
+    @api.onchange('days_total')
+    @api.depends('days_total', 'type')
+    def onchange_days_total(self):
+        self.get_amount()
