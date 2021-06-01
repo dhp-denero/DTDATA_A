@@ -71,7 +71,7 @@ class HrPayslipExt(models.Model):
             for line in horas_ext:
                 if line.slip_id.date_from[0:4] == self.payslip_run_id.date_start[0:4]:
                     if line.slip_id.date_from[5:7] in meses and int(line.slip_id.date_from[5:7]) <= int(self.payslip_run_id.date_start[5:7]):
-                        monto += line.monto
+                        monto += line.total
                         contador += 1
 
             if monto and contador:
