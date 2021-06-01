@@ -62,6 +62,7 @@ class HrPayslipExt(models.Model):
         for record in self:
             horas_ext = record.env['hr.payslip.line'].search([('employee_id', '=', record.employee_id.id), ('code', '=', 'TOT_EXT'), ('slip_id', '!=', record.id)])
             monto = 0
+            contador = 0
 
             if int(self.payslip_run_id.date_start[5:7]) > 6:
                 meses = ["07", "08", "09", "10", "11", "12"]
