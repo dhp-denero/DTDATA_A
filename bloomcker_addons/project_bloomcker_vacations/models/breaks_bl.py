@@ -143,7 +143,7 @@ class breaksLines(models.Model):
         for record in self:
 
             if record.type == "subsidy":
-                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start)], limit=12)
+                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start), ('date_from', '!=', record.period.date_start)], limit=12)
                 extras = 0
                 for nomina in nominas:
                     for linea in nomina.line_ids:
@@ -175,7 +175,7 @@ class breaksLines(models.Model):
                     record.amount = 0
 
             elif record.type == "break_mother":
-                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start)], limit=12)
+                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start), ('date_from', '!=', record.period.date_start)], limit=12)
                 extras = 0
                 for nomina in nominas:
                     for linea in nomina.line_ids:
