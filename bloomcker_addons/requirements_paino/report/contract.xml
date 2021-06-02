@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <template id="contract_paper">
+        <t t-call="report.layout">
+            <t t-foreach="docs" t-as="doc">
+            <div class="page" align="justify">
+                <h3 align="center">CONVENIO DE PRÁCTICAS PRE PROFESIONALES</h3>
+                <p>
+                    Conste por el presente documento que se firma por triplicado, el Convenio de Practica Preprofesional, celebrado de conformidad con el artículo 12º y
+                    siguientes de la Ley Nº 28518, Ley sobre Modalidades Formativas Laborales y su Reglamento, aprobado mediante Decreto Supremo N° 007-2005-TR, que se
+                    celebra entre <strong>LA EMPRESA</strong>, <strong>EL CENTRO DE FORMACIÓN PROFESIONAL</strong> y <strong>EL PRACTICANTE</strong>, identificados en este documento, de acuerdo a los términos y condiciones
+                    siguientes:
+                </p>
+                <h3>CONDICIONES GENERALES:</h3>
+                <h3>A. LA EMPRESA</h3>
+                <p>
+                    Razón Social: <t t-esc="doc.employee_id.company_id.name"/><br/>
+                    RUC: <t t-esc="doc.employee_id.company_id.partner_id.nro_documento"/><br/>
+                    Domicilio: <t t-esc="doc.employee_id.company_id.partner_id.street"/><br/>
+                    Actividad Económica: Actividades Jurídicas<br/>
+                    Representante: <t t-esc="doc.employee_id.company_id.partner_id.name"/><br/>
+                    Doc. de Identidad del Representante: <t t-esc="doc.employee_id.company_id.partner_id.nro_documento"/><br/>
+                </p>
+                <h3>B. EL CENTRO DE FORMACIÓN PROFESIONAL</h3>
+                <p>
+                    Razón Social: <t t-esc="doc.employee_id.nombres"/><br/>
+                    RUC: <t t-esc="doc.employee_id.identification_id"/><br/>
+                    Domicilio: <t t-esc="doc.employee_id.direccion"/><br/>
+                    Representante: <t t-esc="doc.employee_id.coach_id.nombres"/><br/>
+                    DNI: <t t-esc="doc.employee_id.identification_id"/><br/>
+                    Cargo: <t t-esc="doc.employee_id.job_id.name"/><br/>
+                </p>
+
+                <h3>C. EL PRACTICANTE</h3>
+                <p>
+                    Nombre: <t t-esc="doc.employee_id.nombres"/><br/>
+                    Doc. De Identidad: <t t-esc="doc.employee_id.identification_id"/><br/>
+                    Nacionalidad: <t t-esc="doc.employee_id.country_id.name"/><br/>
+                    Fecha de Nacimiento: <t t-esc="doc.employee_id.birthday"/><br/>
+                    Sexo: <t t-esc="doc.employee_id.gender"/><br/>
+                    Domicilio	 : <t t-esc="doc.employee_id.direccion"/><br/>
+                    Situación del Practicante	 : VI Ciclo de la Facultad de Derecho<br/>
+                    Centro de Formación: Universidad de San Martín de Porres.<br/>
+                    Profesional que lo presenta: Dr. Michel Alonso Romero Arteaga
+                    Doc. de Identidad del<br/>
+                    Representante  		:  07509635<br/>
+                    Especialidad			 : Facultad de Derecho
+                    Ocupación materia de<br/>
+                    la capacitación		 : Check List de los documentos faltantes en los contratos<br/>
+                </p>
+
+                <h3>D. CONDICIONES DEL CONVENIO</h3>
+                <p>
+                    Plazo de duración	: Un (01) mes desde el 01/06/2021 hasta el 30/06/2021<br/>
+                    Días de las prácticas		: De Lunes a Viernes<br/>
+                    Horario de las prácticas         : De 09:00 a 16:00 horas<br/>
+                    Horario de Refrigerio		: De 13:00 a 14:00 horas<br/>
+                    Subvención Económica	: S/. 930.00 (Novecientos Treinta y 00/100 Soles)
+                    Área donde se realiza las<br/>
+                    Prácticas			: Bell Boy<br/>
+                </p>
+
+
+
+                <h3>CLÁUSULAS DEL CONVENIO:</h3>
+
+                <p>
+                    <strong>PRIMERO: EL PRACTICANTE</strong> manifiesta su interés y necesidad de efectuar su Práctica Pre-Profesional, durante su condición de estudiante, para aplicar sus conocimientos, habilidades y aptitudes, mediante el desempeño en una situación real de trabajo. Por su parte, <strong>LA EMPRESA</strong> acepta colaborar, tanto con el indicado <strong>CENTRO DE FORMACIÓN PROFESIONAL</strong> como con <strong>EL PRACTICANTE</strong> en su tarea formativa.<br/>
+                    <br/>
+                    <strong>SEGUNDO: EL PRACTICANTE</strong> desempeñará las actividades formativas de Derecho en el área Legal en el domicilio de la empresa de acuerdo a las condiciones generales señalados en el literal A).<br/>
+                    <br/>
+                    <strong>TERCERO:</strong> Para efectos del presente convenio <strong>LA EMPRESA</strong>, se obliga a:<br/>
+                    <br/>
+                    1) Brindar orientación y capacitación técnica y profesional a <strong>EL PRACTICANTE</strong>,   dentro de su área de formación académica, así como evaluar sus prácticas.<br/>
+                    2) Designar a un supervisor para impartir la orientación correspondiente a <strong>EL  PRACTICANTE</strong> y para verificar el desarrollo y cumplimiento del Plan de Específico de Aprendizaje.<br/>
+                    3) Emitir los informes que requiera el <strong>CENTRO DE FORMACIÓN PROFESIONAL</strong>, en relación con las actividades de <strong>EL PRACTICANTE</strong>.<br/>
+                    4) No cobrar suma alguna por la Formación otorgada.<br/>
+                    5) Pagar puntualmente AL <strong>PRACTICANTE</strong> una subvención mensual convenida.<br/>
+                    6) Otorgar <strong>AL PRACTICANTE</strong> una subvención adicional equivalente a media  subvención económica mensual cada seis meses de duración continua de las prácticas.<br/>
+                    7) Otorgar un descanso de quince (15) días debidamente subvencionados cuando la duración de las prácticas sea superior a doce (12) meses, teniendo en cuenta la       acumulación de los periodos intermitentes que hubiera realizado <strong>EL PRACTICANTE</strong>.<br/>
+                    8) Cubrir los riesgos de enfermedad y accidentes de <strong>EL PRACTICANTE</strong>, a través      de EsSalud o de un seguro privado con una cobertura equivalente a catorce (14) subvenciones mensuales en caso de enfermedad y treinta (30) por accidente.<br/>
+                    9) Expedir la certificación de Prácticas Preprofesionales correspondiente.<br/>
+                    <br/>
+                    <strong>CUARTO:</strong> Para efectos del presente convenio <strong>EL PRACTICANTE</strong>, se obliga a:<br/>
+                    <br/>
+                    1) Suscribir un convenio de Práctica con <strong>LA EMPRESA</strong> acatando las disposiciones formativas que se le asignen.<br/>
+                    2)   Desarrollar sus Prácticas Preprofesionales con disciplina y responsabilidad.<br/>
+                    3) Cumplir con el desarrollo del Plan Específico de Aprendizaje que aplique <strong>LA EMPRESA</strong>.<br/>
+                    4)   Sujetarse a las disposiciones administrativas internas que le señale <strong>LA EMPRESA</strong>.<br/>
+                    <br/>
+                    <strong>QUINTO:</strong> Son obligaciones del <strong>CENTRO DE FORMACIÓN PROFESIONAL:</strong><br/>
+                    <br/>
+                    1)   Planificar y desarrollar los programas formativos que respondan a las necesidades del mercado laboral con participación del sector productivo.<br/>
+                    2)  Dirigir y conducir las actividades de formación de <strong>EL PRACTICANTE</strong> en coordinación con La empresa.<br/>
+                    3)   Supervisar, evaluar y certificar las actividades formativas.<br/>
+                    4)   Coordinar con la empresa el mecanismo de monitoreo y supervisión de las actividades que desarrolla el practicante.<br/>
+                    <br/>
+                    <strong>SEXTO: LA EMPRESA</strong> ha contratado el seguro de <strong>RIMAC</strong> para cubrir los riesgos de enfermedad y accidentes de <strong>EL PRACTICANTE</strong>.<br/>
+                    <br/>
+                    <strong>SEPTIMO: LA EMPRESA</strong> concederá a <strong>EL PRACTICANTE</strong> una subvención económica mensual de S/. 930.00  (Novecientos treinta  y 00/100 soles)<br/>
+                    De conformidad con el artículo 47° de la Ley N° 28518, esta subvención económica mensual no tiene carácter remunerativo y no está afecta al pago del Impuesto a la Renta, otros impuestos, contribuciones ni aportaciones de ningún tipo a cargo de <strong>LA EMPRESA</strong>.
+                    La subvención económica mensual no está sujeta a ningún tipo de retención a cargo de<strong>EL PRACTICANTE</strong>, salvo afiliación facultativa por parte de éste a un sistema pensionario.<br/>
+                    <br/>
+                    <strong>OCTAVO:</strong> Las partes acuerdan la aplicación de las causas de modificación, suspensión y  terminación del convenio, que se detallan a continuación:<br/>
+                    <br/>
+                    Son causas de modificación del convenio:<br/>
+                    <br/>
+                    a) El cambio de horario de clases de <strong>EL PRACTICANTE</strong> que dificulte el  cumplimiento de las 6 horas semanales de capacitación.<br/>
+                    b) Por acuerdo entre <strong>EL PRACTICANTE</strong>, <strong>LA EMPRESA</strong>, <strong>EL CENTRO DE FORMACIÓN PROFESIONAL</strong>.<br/>
+                    <br/>
+                    Son causas de suspensión del convenio:<br/>
+                    <br/>
+                    a)  La enfermedad y el accidente comprobados, sin perjuicio de lo establecido en el numeral 8) de la cláusula tercera del presente convenio.<br/>
+                    b)   Por descanso físico subvencionado en caso que el convenio se prorrogue a un plazo       mayor de doce meses.<br/>
+                    c)   El permiso concedido por la empresa.<br/>
+                    d)   La sanción disciplinaria.<br/>
+                    e)   El caso fortuito o fuerza mayor.<br/>
+                    <br/>
+                    Son causas de terminación del convenio:<br/>
+                    <br/>
+                    a)   El cumplimiento del plazo estipulado en la letra D, Condiciones del Convenio, de las Condiciones Generales.<br/>
+                    b)   El mutuo disenso entre <strong>EL PRACTICANTE y LA EMPRESA</strong>.<br/>
+                    c)   El fallecimiento de <strong>EL PRACTICANTE</strong>.<br/>
+                    d)   La invalidez absoluta permanente.<br/>
+                    e)  No guardar reserva de toda la información y/o documentación que <strong>EL PRACTICANTE</strong>  conozca durante el desarrollo de la práctica.<br/>
+                    f)   El incumplimiento de cualquiera de las obligaciones por parte de <strong>EL PRACTICANTE</strong> y específicamente las contempladas en la cláusula cuarta del presente convenio.<br/>
+                    g) El incumplimiento de cualquiera de las obligaciones por parte del <strong>CENTRO DE FORMACIÓN PROFESIONAL</strong>, específicamente las contempladas en la cláusula quinta del presente convenio.<br/>
+                    h)  Por renuncia o retiro voluntario por parte de <strong>EL PRACTICANTE</strong>, mediante aviso  a <strong>LA EMPRESA</strong> con antelación de diez (10) días hábiles.<br/>
+                    <br/>
+                    <strong>NOVENO: EL PRACTICANTE</strong> declara conocer la naturaleza del presente convenio, el cual no tiene carácter laboral, de tal modo que sólo genera para las partes, los derechos y obligaciones específicamente previsto en el mismo y en el texto de la Ley N° 28518 y el Decreto Supremo N° 007-2005-TR.<br/>
+                    <br/>
+                    <strong>DÉCIMO:</strong> Para todos los efectos relacionados con el presente convenio, las partes señalan como su domicilio el que aparece consignado en la parte introductoria de éste, los cuales se tendrán por válidos en tanto la variación no haya sido comunicada por escrito a la otra parte. Las partes, después de leído el presente convenio, se ratifican en su contenido y lo suscriben en señal de conformidad en cuatro ejemplares; el primero para <strong>LA EMPRESA</strong>, el segundo para <strong>EL PRACTICANTE</strong>, el tercero para <strong>EL CENTRO DE FORMACIÓN PROFESIONAL</strong>, y el cuarto será puesto en conocimiento y registrado ante la Autoridad Administrativa de Trabajo dentro de los quince (15) días naturales de la suscripción; de lo que damos fe.<br/>
+                    <br/>
+                    Suscrito en la ciudad de Lima, a los 26 días del mes de mayo de 2021<br/>
+                </p>
+            </div>
+            </t>
+        </t>
+    </template>
+
+    <report
+            id="report_contract_paper"
+            string="Contrato"
+            model="hr.contract"
+            report_type="qweb-pdf"
+            file="requirements_paino.contract_paper"
+            name="requirements_paino.contract_paper"
+        />
+  </data>
+</odoo>

@@ -16,6 +16,7 @@
         'views/hr_payslip_run_wizard.xml',
         'views/hr_planilla_cts_line_ext.xml',
         'data/cron_ext.xml',
+        'report/contract.xml',
         'wizards/hr_payslip_run_wizard.xml',
     ],
     "application": True,
