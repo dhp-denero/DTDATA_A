@@ -60,9 +60,8 @@ class HrPayslipExt(models.Model):
 
     def _get_horas_prom(self):
         for record in self:
-            horas_ext = record.env['hr.payslip.line'].search([('employee_id', '=', record.employee_id.id), ('code', '=', 'TOT_EXT'), ('slip_id', '!=', record.id)])
+            horas_ext = record.env['hr.payslip.line'].search([('employee_id', '=', record.employee_id.id), ('code', '=', 'TOT_EXT')])
             monto = 0
-            contador = 0
 
             if int(self.payslip_run_id.date_start[5:7]) > 6:
                 meses = ["07", "08", "09", "10", "11", "12"]
@@ -73,12 +72,11 @@ class HrPayslipExt(models.Model):
                 if line.slip_id.date_from[0:4] == self.payslip_run_id.date_start[0:4]:
                     if line.slip_id.date_from[5:7] in meses and int(line.slip_id.date_from[5:7]) <= int(self.payslip_run_id.date_start[5:7]):
                         monto += line.total
-                        contador += 1
 
-            if monto and contador:
-                record.horas_ext_prom = monto / contador
+            if monto:
+                record.horas_ext_prom = monto / 6
             else:
-                record.horas_ext_prom = prome = 0
+                record.horas_ext_prom = 0
 
     def _get_descanso(self):
         breacks_ids = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id), ('type', '=', 'break')])
