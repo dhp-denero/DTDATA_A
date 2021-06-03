@@ -175,36 +175,43 @@ class breaksLines(models.Model):
                     record.amount = 0
 
             elif record.type == "break_mother":
-                nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start), ('date_from', '!=', record.period.date_start)], limit=12)
-                extras = 0
-                for nomina in nominas:
-                    for linea in nomina.line_ids:
-                        if linea.code == "COMI":
-                            extras += linea.total
-                        elif linea.code == "HE25":
-                            extras += linea.total
-                        elif linea.code == "HE35":
-                            extras += linea.total
-                        elif linea.code == "HE100":
-                            extras += linea.total
-                        elif linea.code == "LEY26504":
-                            extras += linea.total
-                        elif linea.code == "CONDTRA":
-                            extras += linea.total
-                        elif linea.code == "TRABCOMB":
-                            extras += linea.total
-                        elif linea.code == "VAC":
-                            extras += linea.total
-                        elif linea.code == "BAS_M":
-                            extras += linea.total
-                        elif linea.code == "AF":
-                            extras += linea.total
+                ready = False
+                for line in  record.breaks_base_id.line_ids:
+                    if line.date_start[0:4] == record.date_start[0:4] and line.type == "break_mother" and line.id != record.id:
+                        record.amount = line.amount
+                        ready = True
 
-                if extras:
-                    prome_diario = extras/(len(nominas)*30)
-                    record.amount = record.days_total*prome_diario
-                else:
-                    record.amount = 0
+                if not ready:
+                    nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start), ('date_from', '!=', record.period.date_start)], limit=12)
+                    extras = 0
+                    for nomina in nominas:
+                        for linea in nomina.line_ids:
+                            if linea.code == "COMI":
+                                extras += linea.total
+                            elif linea.code == "HE25":
+                                extras += linea.total
+                            elif linea.code == "HE35":
+                                extras += linea.total
+                            elif linea.code == "HE100":
+                                extras += linea.total
+                            elif linea.code == "LEY26504":
+                                extras += linea.total
+                            elif linea.code == "CONDTRA":
+                                extras += linea.total
+                            elif linea.code == "TRABCOMB":
+                                extras += linea.total
+                            elif linea.code == "VAC":
+                                extras += linea.total
+                            elif linea.code == "BAS_M":
+                                extras += linea.total
+                            elif linea.code == "AF":
+                                extras += linea.total
+
+                    if extras:
+                        prome_diario = extras/(len(nominas)*30)
+                        record.amount = record.days_total*prome_diario
+                    else:
+                        record.amount = 0
             else:
                 nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('payslip_run_id', '=', record.period.id)], limit=1)
                 basic_total = 0
