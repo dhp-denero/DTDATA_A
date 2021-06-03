@@ -178,7 +178,7 @@ class breaksLines(models.Model):
                 ready = False
                 for line in  record.breaks_base_id.line_ids:
                     if line.date_start[0:4] == record.date_start[0:4] and line.type == "break_mother" and line.id != record.id:
-                        record.amount = line.amount
+                        record.amount = (line.amount/line.days_total)*record.days_total
                         ready = True
 
                 if not ready:
