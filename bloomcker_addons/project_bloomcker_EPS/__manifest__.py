@@ -13,6 +13,7 @@
         'views/hr_employee_ext_views.xml',
         'views/payslip_ext.xml',
         'views/eps_base.xml',
+        'views/contract_view.xml',
         'security/ir.model.access.csv',
     ],
     "application": True,

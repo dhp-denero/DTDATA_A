@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="contract_view_form_ext" model="ir.ui.view">
+            <field name="name">contract.view.form.ext</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="planilla.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='seguro_salud_id']" position="after">
+                    <field name="plan_eps"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

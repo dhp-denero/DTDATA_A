@@ -141,7 +141,6 @@ class breaksLines(models.Model):
 
     def get_amount(self):
         for record in self:
-
             if record.type == "subsidy":
                 nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start), ('date_from', '!=', record.period.date_start)], limit=12)
                 extras = 0
