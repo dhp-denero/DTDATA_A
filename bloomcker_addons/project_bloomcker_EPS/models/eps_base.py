@@ -103,5 +103,6 @@ class EpsLine(models.Model):
                             break
                 result.base_afecta = base_afecta
                 result.period = slip.date_from
+                result.payslip_id = slip.id
 
             return result

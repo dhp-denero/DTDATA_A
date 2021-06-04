@@ -15,7 +15,8 @@ class EmployeeExt(models.Model):
     work_condition_fuel = fields.Float('Condición de Trabajo Combustible', default=0)
 
     def _get_eps_check(self):
-        if self.contract_id.seguro_salud_id.seguro == 'EPS':
-            self.eps_check = True
-        else:
-            self.eps_check = False
+        for record in self:
+            if record.contract_id.seguro_salud_id.seguro == 'EPS':
+                record.eps_check = True
+            else:
+                record.eps_check = False
