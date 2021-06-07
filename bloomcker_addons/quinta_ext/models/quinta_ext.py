@@ -138,7 +138,6 @@ class QuintaExt(models.Model):
         t = self.env['planilla.warning'].info(title='Resultado de importacion', message="SE CALCULO QUINTA DE MANERA EXITOSA!")
         return t
 
-
     @api.one
     def datos_quinta(self, config, employee_id, remuneracion_ordinaria_afecta, remuneracion_extraordinaria_afecta, gratificacion_julio, gratificacion_diciembre, remuneracion_m_anterior, retencion_m_anterior, rem_ord_otra_empresa, rem_ext_otra_empresa,remuneracion_basica_quinta,flag=False):
 
@@ -418,7 +417,7 @@ class QuintaExt(models.Model):
         respuesta['renta_total'] = respuesta['renta_extraor'] + \
             respuesta['renta_mensual']
 
-        respuesta['retenciones_ant'] -= -respuesta['renta_extraor']
+        # respuesta['retenciones_ant'] -= -respuesta['renta_extraor'] # Cleyner me obligo a quitar esta, linea Luis Millan 07/06/2021
 
         respuesta['padre'] = self.id
         respuesta['retencion'] = respuesta['renta_total']
@@ -430,7 +429,6 @@ class QuintaExt(models.Model):
         respuesta['ingresos_extra_afe'] = remuneracion_extraordinaria_afecta
 
         return respuesta
-
 
     @api.one
     def add_employee(self, elimina_detalle=True):
@@ -525,7 +523,6 @@ class QuintaExt(models.Model):
                     employees.append(i.employee_id)
         t = self.env['planilla.warning'].info(title='Resultado de importacion', message="SE CALCULO QUINTA DE MANERA EXITOSA!")
         return t
-
 
     @api.one
     def actualizar_data(self):
