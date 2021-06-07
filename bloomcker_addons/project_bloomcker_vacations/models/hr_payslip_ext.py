@@ -119,8 +119,8 @@ class HrPayslipExt(models.Model):
         days_exit = abs(date_c - date_n).days
         num_days_m = 30
 
-        if record.employee_id.date_end_bl:
-            date_end = datetime.strptime(record.employee_id.date_end_bl, "%Y-%m-%d")
+        if self.employee_id.date_end_bl:
+            date_end = datetime.strptime(self.employee_id.date_end_bl, "%Y-%m-%d")
             if date_end[0:7] == date_n[0:7]:
                 num_days_m = 30 - int(date_end[8:10])
 
