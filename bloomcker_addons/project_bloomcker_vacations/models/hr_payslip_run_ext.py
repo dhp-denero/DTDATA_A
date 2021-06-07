@@ -121,7 +121,6 @@ class HrPayslipRunExt(models.Model):
 
         	return True
 
-
 	@api.multi
 	def genera_boleta_empleado(self, date_start, date_end, payslips, dias_no_laborados, dias_laborados, total_horas_jornada_ordinaria, total_minutos_jornada_ordinaria, total_sobretiempo, dias_subsidiados, elements, company, categories, planilla_ajustes):
 		try:
