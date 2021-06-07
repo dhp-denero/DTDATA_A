@@ -144,7 +144,10 @@ class breaksLines(models.Model):
             if record.type == "subsidy":
                 nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start), ('date_from', '!=', record.period.date_start)], limit=12)
                 extras = 0
+                count = 0
+                extras_t = 0
                 for nomina in nominas:
+                    flag = False
                     for linea in nomina.line_ids:
                         if linea.code == "COMI":
                             extras += linea.total
@@ -166,9 +169,19 @@ class breaksLines(models.Model):
                             extras += linea.total
                         elif linea.code == "AF":
                             extras += linea.total
+                        elif linea.code == "SUBE":
+                            if linea.total:
+                                flag = True
+                        elif linea.code == "DESC":
+                            if linea.total:
+                                flag = True
+                    if not flag:
+                        extras_t += extras
+                    else:
+                        count += 1
 
-                if extras:
-                    prome_diario = extras/(len(nominas)*30)
+                if extras_t:
+                    prome_diario = extras_t/((len(nominas)-count)*30)
                     record.amount = record.days_total*prome_diario
                 else:
                     record.amount = 0
