@@ -452,9 +452,19 @@ class QuintaExt(models.Model):
             if i.employee_id not in employees:
                 if i.employee_id.id == self.new_employee_id.id:
                     proyec_remu = 0
+                    grati_julio = 0
+                    grati_dicie = 0
+                    proyec_remu = 0
                     for j in i.line_ids:
-                        if j.code == "PROYREM":
+                        if j.code == "PROGRATI":
+                            grati_julio = j.total
+                        elif j.code == "GRATDIC":
+                            grati_dicie = j.total
+                        elif j.code == "PROYREM":
                             proyec_remu = j.total
+                    # for j in i.line_ids:
+                    #     if j.code == "PROYREM":
+                    #         proyec_remu = j.total
 
                     sql = """
                         select distinct
@@ -514,6 +524,11 @@ class QuintaExt(models.Model):
                     else:
                         gratificacion_julio = res[0]['gfp']
                         gratificacion_diciembre = res[0]['gnp']
+
+                    # Culpa de Cleyner 07/06/2021
+                    gratificacion_julio = grati_julio
+                    gratificacion_diciembre = grati_dicie
+                    
                     respuesta = self.datos_quinta(config, i.employee_id,remuneracion_ordinaria_afecta, remuneracion_extraordinaria_afecta,
                                                 gratificacion_julio, gratificacion_diciembre, 0, 0, 0, 0,remuneracion_basica_quinta,True)
                     if respuesta[0]:
