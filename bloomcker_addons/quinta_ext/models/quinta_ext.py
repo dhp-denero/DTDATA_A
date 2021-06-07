@@ -124,6 +124,10 @@ class QuintaExt(models.Model):
                         gratificacion_julio = grati_julio
                         gratificacion_diciembre = grati_dicie
 
+                    # Culpa de Cleyner 07/06/2021
+                    gratificacion_julio = grati_julio
+                    gratificacion_diciembre = grati_dicie
+
                     respuesta = self.datos_quinta(config, i.employee_id,remuneracion_ordinaria_afecta, remuneracion_extraordinaria_afecta,
                                                 gratificacion_julio, gratificacion_diciembre, 0, 0, 0, 0,remuneracion_basica_quinta)
                     if respuesta[0]:
@@ -417,7 +421,7 @@ class QuintaExt(models.Model):
         respuesta['renta_total'] = respuesta['renta_extraor'] + \
             respuesta['renta_mensual']
 
-        # respuesta['retenciones_ant'] -= -respuesta['renta_extraor'] # Cleyner me obligo a quitar esta, linea Luis Millan 07/06/2021
+        # respuesta['retenciones_ant'] -= -respuesta['renta_extraor'] # Cleyner me obligo a quitar esta linea, Luis Millan 07/06/2021
 
         respuesta['padre'] = self.id
         respuesta['retencion'] = respuesta['renta_total']
