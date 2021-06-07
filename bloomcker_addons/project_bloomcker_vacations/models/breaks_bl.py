@@ -143,10 +143,10 @@ class breaksLines(models.Model):
         for record in self:
             if record.type == "subsidy":
                 nominas = record.env['hr.payslip'].search([('employee_id', '=', record.employee_id.id), ('date_from', '<', record.date_start), ('date_from', '!=', record.period.date_start)], limit=12)
-                extras = 0
                 count = 0
                 extras_t = 0
                 for nomina in nominas:
+                    extras = 0
                     flag = False
                     for linea in nomina.line_ids:
                         if linea.code == "COMI":
