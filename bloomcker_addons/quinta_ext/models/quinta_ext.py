@@ -379,8 +379,9 @@ class QuintaExt(models.Model):
 
         respuesta['renta_extraor'] = (respuesta['eimpuesto1'] + respuesta['eimpuesto2'] + respuesta['eimpuesto3'] + respuesta['eimpuesto4'] + respuesta['eimpuesto5'] - (
             respuesta['impuesto1'] + respuesta['impuesto2'] + respuesta['impuesto3'] + respuesta['impuesto4'] + respuesta['impuesto5']))  # / respuesta['factor']
-        respuesta['renta_total'] = respuesta['renta_extraor'] + \
-            respuesta['renta_mensual']
+        respuesta['renta_total'] = respuesta['renta_extraor'] + respuesta['renta_mensual']
+        if respuesta['renta_total'] < 0:
+            respuesta['renta_total'] = 0
 
         # respuesta['retenciones_ant'] -= -respuesta['renta_extraor'] # Cleyner me obligo a quitar esta linea, Luis Millan 07/06/2021
 
