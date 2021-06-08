@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
+
 import logging
 
 
@@ -130,6 +131,7 @@ class QuintaExt(models.Model):
 
                     respuesta = self.datos_quinta(config, i.employee_id,remuneracion_ordinaria_afecta, remuneracion_extraordinaria_afecta,
                                                 gratificacion_julio, gratificacion_diciembre, 0, 0, 0, 0,remuneracion_basica_quinta)
+
                     if respuesta[0]:
                         respuesta = respuesta[0]
                         respuesta['slip_id'] = i.id
@@ -138,6 +140,7 @@ class QuintaExt(models.Model):
                         self.ingresos_extra_afe += respuesta['ingresos_extra_afe']
                         self.retencion += respuesta['renta_total']
                         employees.append(i.employee_id.id)
+
         nomina.write({'flag':True})
         t = self.env['planilla.warning'].info(title='Resultado de importacion', message="SE CALCULO QUINTA DE MANERA EXITOSA!")
         return t
@@ -204,10 +207,11 @@ class QuintaExt(models.Model):
                     rma = anterior_grat[0].remuneracion_m_anterior
                 if anterior_grat[0].retencion_m_anterior > 0:
                     rtma = anterior_grat[0].retencion_m_anterior
+
         if remuneracion_m_anterior > 0.0:
             ant += remuneracion_m_anterior
-        uits = self.env['planilla.5ta.uit'].search(
-            [('planilla_id', '=', config.id), ('anio', '=', self.periodo.fiscalyear_id.id)])
+
+        uits = self.env['planilla.5ta.uit'].search([('planilla_id', '=', config.id), ('anio', '=', self.periodo.fiscalyear_id.id)])
         if len(uits) == 0:
             raise ValidationError(
                 u'No esta configurado el valor UIT para el anio fiscal')
@@ -227,9 +231,9 @@ class QuintaExt(models.Model):
         respuesta['renum_anual_proy'] = respuesta['proyec_anual'] + respuesta['grat_julio'] + respuesta['grat_diciem'] + respuesta['renum_ant'] + respuesta['renum_ant_irre']
         respuesta['_7uits'] = - (val_uits*7)
         respuesta['renta_neta_proy'] = respuesta['renum_anual_proy'] + respuesta['_7uits']
-        if not flag:
-            if respuesta['renta_neta_proy'] <= 0:
-                return False
+        # if not flag:
+        #     if respuesta['renta_neta_proy'] <= 0:
+        #         return False
 
         acumulador = respuesta['renta_neta_proy']
 
@@ -340,49 +344,6 @@ class QuintaExt(models.Model):
                 if len(tmp) > 0:
                     respuesta['retenciones_ant'] -= tmp[0].retencion
             respuesta['retenciones_ant'] -= retencion_m_anterior
-
-        # if self.periodo.code.split('/')[0] in ('01', '02', '03'):
-        #     respuesta['retenciones_ant'] = -retencion_m_anterior
-        #     pass
-        # elif self.periodo.code.split('/')[0] == '04':
-        #     for i_e in range(3):
-        #         tmp = self.env['quinta.categoria.detalle'].search(
-        #             [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
-        #         if len(tmp) > 0:
-        #             respuesta['retenciones_ant'] -= tmp[0].retencion
-        #     respuesta['retenciones_ant'] -= retencion_m_anterior
-        #
-        # elif self.periodo.code.split('/')[0] in ('05', '06', '07'):
-        #     for i_e in range(4):
-        #         tmp = self.env['quinta.categoria.detalle'].search(
-        #             [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
-        #         if len(tmp) > 0:
-        #             respuesta['retenciones_ant'] -= tmp[0].retencion
-        #     respuesta['retenciones_ant'] -= retencion_m_anterior
-        #
-        # elif self.periodo.code.split('/')[0] in ('08'):
-        #     for i_e in range(7):
-        #         tmp = self.env['quinta.categoria.detalle'].search(
-        #             [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
-        #         if len(tmp) > 0:
-        #             respuesta['retenciones_ant'] -= tmp[0].retencion
-        #     respuesta['retenciones_ant'] -= retencion_m_anterior
-        #
-        # elif self.periodo.code.split('/')[0] in ('09', '10', '11'):
-        #     for i_e in range(8):
-        #         tmp = self.env['quinta.categoria.detalle'].search(
-        #             [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
-        #         if len(tmp) > 0:
-        #             respuesta['retenciones_ant'] -= tmp[0].retencion
-        #     respuesta['retenciones_ant'] -= retencion_m_anterior
-        #
-        # elif self.periodo.code.split('/')[0] in ('12'):
-        #     for i_e in range(11):
-        #         tmp = self.env['quinta.categoria.detalle'].search(
-        #             [('periodo.code', '=', periodo_num[i_e] + self.periodo.fiscalyear_id.name), ('empleado', '=', employee_id.id), ('padre', '!=', False)])
-        #         if len(tmp) > 0:
-        #             respuesta['retenciones_ant'] -= tmp[0].retencion
-        #     respuesta['retenciones_ant'] -= retencion_m_anterior
 
         respuesta['renta_anual_proy'] = respuesta['impuesto1'] + respuesta['impuesto2'] + \
             respuesta['impuesto3'] + respuesta['impuesto4'] + \
@@ -528,7 +489,7 @@ class QuintaExt(models.Model):
                     # Culpa de Cleyner 07/06/2021
                     gratificacion_julio = grati_julio
                     gratificacion_diciembre = grati_dicie
-                    
+
                     respuesta = self.datos_quinta(config, i.employee_id,remuneracion_ordinaria_afecta, remuneracion_extraordinaria_afecta,
                                                 gratificacion_julio, gratificacion_diciembre, 0, 0, 0, 0,remuneracion_basica_quinta,True)
                     if respuesta[0]:
