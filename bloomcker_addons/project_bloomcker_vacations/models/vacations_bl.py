@@ -6,6 +6,7 @@ from datetime import datetime
 class VacationsBL(models.Model):
 
     _name = 'vacations.bl'
+    _rec_name = 'employee_id'
 
     code = fields.Char('Codigo')
     dni = fields.Char('DNI', compute="_get_dni")

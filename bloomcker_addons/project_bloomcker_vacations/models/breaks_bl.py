@@ -6,6 +6,7 @@ from datetime import datetime, date, time, timedelta
 class breaksBL(models.Model):
 
     _name = 'breaks.bl'
+    _rec_name = 'employee_id'
 
     employee_id = fields.Many2one('hr.employee','Apellidos y Nombres')
     state = fields.Selection([ ('active', 'Activo'), ('inactive', 'Inactivo')], string='Estado')
