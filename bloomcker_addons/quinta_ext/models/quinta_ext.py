@@ -357,19 +357,26 @@ class QuintaExt(models.Model):
 
         acumulador = respuesta['total_renta_neta_extra']
 
-        respuesta['etramo1'] = min(acumulador, limite1)
-        acumulador -= respuesta['etramo1']
+        if acumulador > 0:
+            respuesta['etramo1'] = min(acumulador, limite1)
+            acumulador -= respuesta['etramo1']
 
-        respuesta['etramo2'] = min(acumulador, limite2 - limite1)
-        acumulador -= respuesta['etramo2']
+            respuesta['etramo2'] = min(acumulador, limite2 - limite1)
+            acumulador -= respuesta['etramo2']
 
-        respuesta['etramo3'] = min(acumulador, limite3 - limite2)
-        acumulador -= respuesta['etramo3']
+            respuesta['etramo3'] = min(acumulador, limite3 - limite2)
+            acumulador -= respuesta['etramo3']
 
-        respuesta['etramo4'] = min(acumulador, limite4 - limite3)
-        acumulador -= respuesta['etramo4']
+            respuesta['etramo4'] = min(acumulador, limite4 - limite3)
+            acumulador -= respuesta['etramo4']
 
-        respuesta['etramo5'] = acumulador
+            respuesta['etramo5'] = acumulador
+        else:
+            respuesta['etramo1'] = 0
+            respuesta['etramo2'] = 0
+            respuesta['etramo3'] = 0
+            respuesta['etramo4'] = 0
+            respuesta['etramo5'] = 0
 
         respuesta['eimpuesto1'] = respuesta['etramo1'] * tasa1 / 100
         respuesta['eimpuesto2'] = respuesta['etramo2'] * tasa2 / 100

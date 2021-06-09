@@ -23,6 +23,7 @@ class HrPayslipExt(models.Model):
     comi_promedio = fields.Float("Promedio de Comisiones", compute="_get_comisiones")
     comisiones_prom_6 = fields.Float("Promedio las ultimas 6 comisiones", compute="_get_comi_6")
     horas_ext_prom = fields.Float("Promedio de horas extra", compute="_get_horas_prom")
+    prom_remu = fields.Float("Promedio de horas extra", compute="_get_remu_prom")
     fault_ids = fields.One2many('faults.bl', 'slip_base_id', string='Lineas de Faltas', ondelete='cascade')
     comisiones_aux = fields.Float("campo aux para comisiones")
 
@@ -77,6 +78,26 @@ class HrPayslipExt(models.Model):
                 record.horas_ext_prom = monto / 6
             else:
                 record.horas_ext_prom = 0
+
+        def _get_remu_prom(self):
+            for record in self:
+                horas_ext = record.env['hr.payslip.line'].search([('employee_id', '=', record.employee_id.id), ('code', '=', 'OREMU')])
+                monto = 0
+
+                if int(self.payslip_run_id.date_start[5:7]) > 6:
+                    meses = ["07", "08", "09", "10", "11", "12"]
+                else:
+                    meses = ["01", "02", "03", "04", "05", "06"]
+
+                for line in horas_ext:
+                    if line.slip_id.date_from[0:4] == self.payslip_run_id.date_start[0:4]:
+                        if line.slip_id.date_from[5:7] in meses and int(line.slip_id.date_from[5:7]) <= int(self.payslip_run_id.date_start[5:7]):
+                            monto += line.total
+
+                if monto:
+                    record.prom_remu = monto / 6
+                else:
+                    record.prom_remu = 0
 
     def _get_descanso(self):
         breacks_ids = self.env['breaks.line.bl'].search([('employee_id', '=', self.employee_id.id), ('period', '=', self.payslip_run_id.id), ('type', '=', 'break')])
