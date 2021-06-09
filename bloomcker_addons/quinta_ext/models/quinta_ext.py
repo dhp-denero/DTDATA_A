@@ -357,32 +357,54 @@ class QuintaExt(models.Model):
 
         if respuesta['total_renta_neta_extra'] < 0:
             respuesta['total_renta_neta_extra'] = 0
+            acumulador = respuesta['total_renta_neta_extra']
 
+            respuesta['etramo1'] = min(acumulador, limite1)
+            acumulador -= respuesta['etramo1']
 
-        acumulador = respuesta['total_renta_neta_extra']
+            respuesta['etramo2'] = min(acumulador, limite2 - limite1)
+            acumulador -= respuesta['etramo2']
 
-        respuesta['etramo1'] = min(acumulador, limite1)
-        acumulador -= respuesta['etramo1']
+            respuesta['etramo3'] = min(acumulador, limite3 - limite2)
+            acumulador -= respuesta['etramo3']
 
-        respuesta['etramo2'] = min(acumulador, limite2 - limite1)
-        acumulador -= respuesta['etramo2']
+            respuesta['etramo4'] = min(acumulador, limite4 - limite3)
+            acumulador -= respuesta['etramo4']
 
-        respuesta['etramo3'] = min(acumulador, limite3 - limite2)
-        acumulador -= respuesta['etramo3']
+            respuesta['etramo5'] = acumulador
 
-        respuesta['etramo4'] = min(acumulador, limite4 - limite3)
-        acumulador -= respuesta['etramo4']
+            respuesta['eimpuesto1'] = respuesta['etramo1'] * tasa1 / 100
+            respuesta['eimpuesto2'] = respuesta['etramo2'] * tasa2 / 100
+            respuesta['eimpuesto3'] = respuesta['etramo3'] * tasa3 / 100
+            respuesta['eimpuesto4'] = respuesta['etramo4'] * tasa4 / 100
+            respuesta['eimpuesto5'] = respuesta['etramo5'] * tasa5 / 100
 
-        respuesta['etramo5'] = acumulador
+            respuesta['renta_extraor'] = 0
+        else:
+            acumulador = respuesta['total_renta_neta_extra']
 
-        respuesta['eimpuesto1'] = respuesta['etramo1'] * tasa1 / 100
-        respuesta['eimpuesto2'] = respuesta['etramo2'] * tasa2 / 100
-        respuesta['eimpuesto3'] = respuesta['etramo3'] * tasa3 / 100
-        respuesta['eimpuesto4'] = respuesta['etramo4'] * tasa4 / 100
-        respuesta['eimpuesto5'] = respuesta['etramo5'] * tasa5 / 100
+            respuesta['etramo1'] = min(acumulador, limite1)
+            acumulador -= respuesta['etramo1']
 
-        respuesta['renta_extraor'] = (respuesta['eimpuesto1'] + respuesta['eimpuesto2'] + respuesta['eimpuesto3'] + respuesta['eimpuesto4'] + respuesta['eimpuesto5'] - (
-            respuesta['impuesto1'] + respuesta['impuesto2'] + respuesta['impuesto3'] + respuesta['impuesto4'] + respuesta['impuesto5']))  # / respuesta['factor']
+            respuesta['etramo2'] = min(acumulador, limite2 - limite1)
+            acumulador -= respuesta['etramo2']
+
+            respuesta['etramo3'] = min(acumulador, limite3 - limite2)
+            acumulador -= respuesta['etramo3']
+
+            respuesta['etramo4'] = min(acumulador, limite4 - limite3)
+            acumulador -= respuesta['etramo4']
+
+            respuesta['etramo5'] = acumulador
+
+            respuesta['eimpuesto1'] = respuesta['etramo1'] * tasa1 / 100
+            respuesta['eimpuesto2'] = respuesta['etramo2'] * tasa2 / 100
+            respuesta['eimpuesto3'] = respuesta['etramo3'] * tasa3 / 100
+            respuesta['eimpuesto4'] = respuesta['etramo4'] * tasa4 / 100
+            respuesta['eimpuesto5'] = respuesta['etramo5'] * tasa5 / 100
+
+            respuesta['renta_extraor'] = (respuesta['eimpuesto1'] + respuesta['eimpuesto2'] + respuesta['eimpuesto3'] + respuesta['eimpuesto4'] + respuesta['eimpuesto5'] - (
+                respuesta['impuesto1'] + respuesta['impuesto2'] + respuesta['impuesto3'] + respuesta['impuesto4'] + respuesta['impuesto5']))  # / respuesta['factor']
         respuesta['renta_total'] = respuesta['renta_extraor'] + respuesta['renta_mensual']
         if respuesta['renta_total'] < 0:
             respuesta['renta_total'] = 0
