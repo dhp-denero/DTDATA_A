@@ -23,7 +23,7 @@ class HrPayslipExt(models.Model):
     comi_promedio = fields.Float("Promedio de Comisiones", compute="_get_comisiones")
     comisiones_prom_6 = fields.Float("Promedio las ultimas 6 comisiones", compute="_get_comi_6")
     horas_ext_prom = fields.Float("Promedio de horas extra", compute="_get_horas_prom")
-    prom_remu = fields.Float("Promedio de horas extra", compute="_get_remu_prom")
+    prom_remu = fields.Float("Promedio de Otras Remuneraciones", compute="_get_remu_prom")
     fault_ids = fields.One2many('faults.bl', 'slip_base_id', string='Lineas de Faltas', ondelete='cascade')
     comisiones_aux = fields.Float("campo aux para comisiones")
 

@@ -355,6 +355,10 @@ class QuintaExt(models.Model):
         respuesta['total_renta_neta_extra'] = respuesta['renta_neta_proy'] + \
             respuesta['remun_extra_periodo']
 
+        if respuesta['total_renta_neta_extra'] < 0:
+            respuesta['total_renta_neta_extra'] = 0
+
+
         acumulador = respuesta['total_renta_neta_extra']
 
         respuesta['etramo1'] = min(acumulador, limite1)
