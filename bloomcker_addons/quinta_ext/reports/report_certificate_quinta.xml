@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="certificate_quinta_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-foreach="doc.employee_ids" t-as="employee">
+                        <div class="header" align="center">
+                            <span><strong>CERTIFICADO DE RENTAS Y RETENCIONES POR RENTAS DE QUINTA CATEGORIA</strong></span>
+                        </div >
+                        <div class="page" width="70%">
+                            <h3 align="center">EJERCICIO GRAVABLE <t t-esc="doc.current.year"/></h3>
+                            <h4 align="center"><strong><t t-esc="employee.company_id.name"/> - RUC N <t t-esc="employee.company_id.company_registry"/></strong></h4>
+                            <h4 align="center"><t t-esc="employee.company_id.street"/> - <t t-esc="employee.company_id.state_id.name"/> - <t t-esc="employee.company_id.country_id.name"/></h4><br/>
+                            <h3>CERTIFICA</h3>
+                            <br/>
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td>Que a don (ña):</td>
+                                    <td><t t-esc="employee.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Identificado (a) con DNI N: </td>
+                                    <td><t t-esc="employee.identification_id"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Domiciliado (a) en: </td>
+                                    <td><t t-esc="employee.address_id.street"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Por sus Funciones de: </td>
+                                    <td><t t-esc="employee.job_id.name"/></td>
+                                </tr>
+                            </table><br/>
+                            <span><strong>1. REMUNERACIÓN BRUTA</strong></span><br/>
+                            <t t-set="ingresos" t-value="doc.get_rem_bruta(employee.id)"/>
+                            <t t-set="total" t-value="doc.sum_rem_bruta(ingresos)"/>
+                            <t t-set="impuestos" t-value="doc.get_impuesto_renta()"/>
+                            <table class="table table-borderless">
+                                <t t-foreach="ingresos" t-as="ingreso">
+                                    <tr>
+                                      <td><t t-esc="ingreso['name']"/></td>
+                                      <td><t t-esc="ingreso['total']"/></td>
+                                    </tr>
+                                </t>
+                                <tr>
+                                  <td>Remuneración Bruta Total:</td>
+                                  <td><t t-esc="total"/></td>
+                                </tr>
+                            </table><br/>
+                            <span><strong>2. DEDUCCIÓN SOBRE LA RENTA DE QUINTA CATEGORIA</strong></span><br/>
+                            <t t-set="deduccion" t-value="doc.get_deducion(total)"/>
+                            <table class="table table-borderless">
+                                <tr>
+                                  <td>Menos 7 UIT (S/ <t t-esc="deduccion[1]"/> x 7) Máximo <t t-esc="deduccion[0]"/></td>
+                                  <td>(<t t-esc="deduccion[0]"/>)</td>
+                                </tr>
+                            </table><br/>
+                            <span><strong>3. REMUNERACIÓN AFECTA (RENTA DE QUINTA)</strong></span><br/>
+                            <table class="table table-borderless">
+                                <tr>
+                                  <td>Renta Neta Imponible:</td>
+                                  <td>(<t t-esc="deduccion[2]"/>)</td>
+                                </tr>
+                            </table><br/>
+                            <span><strong>4. IMPUESTO A LA RENTA</strong></span><br/>
+                            <table class="table table-borderless">
+                                <t t-foreach="impuestos" t-as="impuesto">
+                                    <tr>
+                                      <td><t t-esc="impuesto['limite']"/> UIT =</td>
+                                      <td><t t-esc="impuesto['monto']"/></td>
+                                      <td><t t-esc="impuesto['monto']"/>.<t t-esc="impuesto['tasa']"/>% = <t t-esc="impuesto['total']"/></td>
+                                      <td><t t-esc="impuesto['total']"/></td>
+                                    </tr>
+                                </t>
+                            </table><br/>
+                            <span><strong>5. RETENCIÓN</strong></span><br/>
+                            <span><strong>6. IMPUESTO TOTAL RETENIDO</strong></span><br/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

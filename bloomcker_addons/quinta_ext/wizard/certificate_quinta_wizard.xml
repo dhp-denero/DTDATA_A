@@ -1,11 +1,10 @@
-<?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
-    <data>
-        <record model="ir.ui.view" id="certificate_quinta_view_form">
-            <field name="name">certificate.quinta.view.form</field>
+	<data>
+		<record model="ir.ui.view" id="certificate_quinta_view_form">
+            <field name="name">certificate_quinta_view_form</field>
             <field name="model">certificate.quinta.wizard</field>
             <field name="arch" type="xml">
-                <form string="Certificado de Quinta">
+                <form string="Certificado">
                     <group>
                         <field name="employee_ids" nolabel="1" domain="[('id','in',context['employees'])]">
                             <tree editable="bottom">
@@ -13,8 +12,13 @@
                             </tree>
                         </field>
                     </group>
+                    <footer>
+                        <button string="Generar" type="object" name="do_rebuild" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
                 </form>
             </field>
         </record>
-    </data>
+	</data>
 </odoo>

@@ -1,6 +1,5 @@
 <odoo>
 	<data>
-
 		<record model="ir.ui.view" id="planilla_liquidacion_pdf_certificado_wizard_view_form">
             <field name="name">planilla_liquidacion_pdf_certificado_wizard_view_form</field>
             <field name="model">planilla.liquidacion.pdf.certificado.wizard</field>
@@ -8,7 +7,7 @@
                 <form string="Certificado">
                 	<group col="2">
                         <group>
-                    	   <field name="date"/>                            
+                    	   <field name="date"/>
                         </group>
                         <group></group>
                     </group>
@@ -17,7 +16,7 @@
                             <tree editable="bottom">
                                 <field name="name_related"/>
                             </tree>
-                        </field>                        
+                        </field>
                     </group>
                     <footer>
                         <button string="Generar" type="object" name="do_rebuild" class="oe_highlight"/>

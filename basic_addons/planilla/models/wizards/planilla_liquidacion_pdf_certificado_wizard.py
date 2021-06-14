@@ -30,8 +30,7 @@ class PlanillaLiquidacionCertificadoWizard(models.TransientModel):
 	_name = 'planilla.liquidacion.pdf.certificado.wizard'
 
 	date = fields.Date("Fecha", required=True)
-	employee_ids = fields.Many2many(
-		'hr.employee', 'certificado_employee_rel', 'certificado_id', 'employee_id', 'empleados')
+	employee_ids = fields.Many2many('hr.employee', 'certificado_employee_rel', 'certificado_id', 'employee_id', 'empleados')
 
 	@api.one
 	def date_to_text(self, date):
@@ -67,7 +66,7 @@ class PlanillaLiquidacionCertificadoWizard(models.TransientModel):
 		title = 'Certificado_Trabajo.pdf'
 		try:
 			direccion = self.env['main.parameter.hr'].search([])[0].dir_create_file
-		except: 
+		except:
 			raise UserError('Falta configurar un directorio de descargas en el menu Configuracion/Parametros/Directorio de Descarga')
 		vals = {
 			'output_name': title,
@@ -160,7 +159,7 @@ class PlanillaLiquidacionCertificadoWizard(models.TransientModel):
 					sust = " el Sr. "
 				else:
 					sust = " la Sra. "
-				
+
 				data = [
 					[Paragraph("<font size="+str(font_size)+">" + u"Dejamos constancia que" + sust + "<b>" + employee.name_related.upper() + u"</b>, identificado con <b>DNI Nº " + (employee.identification_id if employee.identification_id else '') + u"</b> prestó servicios en nuestra empresa desde el " + (self.date_to_text(contract.date_start)[0] if len(self.date_to_text(contract.date_start)) > 0 else '') + ", hasta el " + (self.date_to_text(
 						contract.date_end)[0] if len(self.date_to_text(contract.date_end)) > 0 else '') + u", desempeñandose como <b>" + (employee.job_id.name if employee.job_id.name else '') + u"</b>, demostrando durante su permanencia responsabilidad, honestidad y dedicación en las labores que le fueron encomendadas. <br/><br/> Extendemos el presente a solicitud del interesado(a) para los fines que estime pertinentes." + "</font>", style)]

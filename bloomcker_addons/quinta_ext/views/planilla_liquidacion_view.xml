@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record id="planilla_liquidacion_form_ext" model="ir.ui.view">
+            <field name="name">planilla.liquidacion.form.ext</field>
+            <field name="model">planilla.liquidacion</field>
+            <field name="inherit_id" ref="planilla.planilla_liquidacion_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button string="Certificado Qunta" type="object" name="get_certificado_quinta_wizard" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
